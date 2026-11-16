@@ -54,7 +54,7 @@
 		     stress test (-Pcapacity). -->
 		<dmp.test.excludedGroups>integration,capacity</dmp.test.excludedGroups>
 		<camel.version>4.22.0</camel.version>
-		<aas4j.version>2.0.1</aas4j.version>
+		<aas4j.version>3.0.1</aas4j.version>
 		<kafka.version>4.3.1</kafka.version>
 		<milo.version>1.1.8</milo.version>
 		<slf4j.version>2.0.18</slf4j.version>
@@ -123,21 +123,14 @@
 	
 	<dependencyManagement>
 		<dependencies>
-			<!-- One Jackson core line for the reactor: AAS4J 2.0.1 is built against 2.20.x. -->
+			<!-- Jackson 2 (com.fasterxml) on Camel 4.22's line, every module alike. AAS4J 3 uses Jackson 3
+			     (tools.jackson), which lives beside it in its own packages. -->
 			<dependency>
-				<groupId>com.fasterxml.jackson.core</groupId>
-				<artifactId>jackson-databind</artifactId>
-				<version>2.20.1</version>
-			</dependency>
-			<dependency>
-				<groupId>com.fasterxml.jackson.core</groupId>
-				<artifactId>jackson-core</artifactId>
-				<version>2.20.1</version>
-			</dependency>
-			<dependency>
-				<groupId>com.fasterxml.jackson.core</groupId>
-				<artifactId>jackson-annotations</artifactId>
-				<version>2.20</version>
+				<groupId>com.fasterxml.jackson</groupId>
+				<artifactId>jackson-bom</artifactId>
+				<version>2.22.1</version>
+				<type>pom</type>
+				<scope>import</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.eclipse.digitaltwin.aas4j</groupId>
@@ -204,6 +197,14 @@
 				<groupId>io.netty</groupId>
 				<artifactId>netty-bom</artifactId>
 				<version>4.1.140.Final</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<!-- Jackson 3 (tools.jackson) for AAS4J 3 and json-schema-validator 3, which is built against 3.1.8. -->
+			<dependency>
+				<groupId>tools.jackson</groupId>
+				<artifactId>jackson-bom</artifactId>
+				<version>3.1.8</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>

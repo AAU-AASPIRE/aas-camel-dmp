@@ -2,29 +2,29 @@
  * SPDX-License-Identifier: MIT */
 package dk.aau.smartproductionlab.dmp.core.configuration.route.pipeline;
 
-import java.util.Set;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import dk.aau.smartproductionlab.dmp.core.util.JsonCodec;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.networknt.schema.JsonSchema;
-import com.networknt.schema.JsonSchemaFactory;
-import com.networknt.schema.SpecVersion;
-import com.networknt.schema.ValidationMessage;
+import com.networknt.schema.Error;
+import com.networknt.schema.Schema;
+import com.networknt.schema.SchemaRegistry;
+import com.networknt.schema.SpecificationVersion;
+import tools.jackson.databind.json.JsonMapper;
 
 /** Compiled affordance schema guard; the node sets DMP_AFFORDANCE_VALIDATION. */
 public final class AffordanceValidation {
 	private static final Logger LOGGER = LoggerFactory.getLogger(AffordanceValidation.class);
-	private static final ObjectMapper MAPPER = new ObjectMapper();
-	private static final JsonSchemaFactory FACTORY = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V202012);
+	private static final JsonMapper MAPPER = JsonMapper.builder().build();
+	private static final SchemaRegistry REGISTRY = SchemaRegistry.withDefaultDialect(SpecificationVersion.DRAFT_2020_12);
 
 	public enum Mode { OFF, ON, REPORT }
 
 	private final Mode mode;
 	private final String label;
-	private final JsonSchema validator;
+	private final Schema validator;
 
 	public AffordanceValidation(Object schema, String label) {
 		this(schema, label, configuredMode());
@@ -38,7 +38,7 @@ public final class AffordanceValidation {
 		}
 		try {
 			// Compile at route build, including in OFF mode: malformed descriptors fail loudly.
-			this.validator = schema == null ? null : FACTORY.getSchema(MAPPER.valueToTree(schema));
+			this.validator = schema == null ? null : REGISTRY.getSchema(MAPPER.<tools.jackson.databind.JsonNode>valueToTree(schema));
 		} catch (RuntimeException e) {
 			throw new IllegalArgumentException("Invalid JSON Schema for " + label, e);
 		}
@@ -64,7 +64,7 @@ public final class AffordanceValidation {
 			throw new PayloadValidationException(
 					PayloadValidationException.Stage.COMMAND,
 					"Invalid outgoing affordance payload for " + label,
-					messages(value).stream().map(ValidationMessage::getMessage).toList());
+					messages(value).stream().map(Error::getMessage).toList());
 		}
 	}
 
@@ -73,7 +73,7 @@ public final class AffordanceValidation {
 		if (validator == null || mode == Mode.OFF) {
 			return;
 		}
-		Set<ValidationMessage> violations = messages(value);
+		List<Error> violations = messages(value);
 		if (violations.isEmpty()) {
 			return;
 		}
@@ -82,7 +82,7 @@ public final class AffordanceValidation {
 			throw new PayloadValidationException(
 					PayloadValidationException.Stage.RESPONSE,
 					"Device response violates the declared output schema", violations.stream()
-							.map(ValidationMessage::getMessage).toList());
+							.map(Error::getMessage).toList());
 		}
 	}
 
@@ -90,7 +90,7 @@ public final class AffordanceValidation {
 		if (validator == null || mode == Mode.OFF) {
 			return true;
 		}
-		Set<ValidationMessage> violations = messages(value);
+		List<Error> violations = messages(value);
 		if (violations.isEmpty()) {
 			return true;
 		}
@@ -98,8 +98,8 @@ public final class AffordanceValidation {
 		return mode == Mode.REPORT;
 	}
 
-	private Set<ValidationMessage> messages(Object value) {
-		return validator == null ? Set.of()
+	private List<Error> messages(Object value) {
+		return validator == null ? List.of()
 				: validator.validate(MAPPER.valueToTree(JsonCodec.toJsonCompatibleValue(value)));
 	}
 }
