@@ -1,0 +1,12 @@
+{
+ "idShort": "Runtime",
+ "modelType": "Submodel",
+ "id": "a/submodels/Runtime",
+ "submodelElements": [
+  {
+   "idShort": "State",
+   "modelType": "Property",
+   "valueType": "xs:string"
+  }
+ ]
+}

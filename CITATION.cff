@@ -1,0 +1,56 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper below."
+title: "AAS-Camel-DMP"
+abstract: "A bi-directional data mapping processor for Asset Administration Shells: it executes IDTA AIMC and AID submodels as Apache Camel routes."
+type: software
+license: MIT
+repository-code: "https://github.com/tristan-schwoerer/aas-camel-dmp"
+version: 1.0.0
+authors:
+  - given-names: Tristan
+    family-names: Schwörer
+    affiliation: Aalborg University
+  - given-names: Martin Bieber
+    family-names: Jensen
+    affiliation: Aalborg University
+  - given-names: Casper
+    family-names: Schou
+    affiliation: Aalborg University
+  - given-names: Dimitrios
+    family-names: Chrysostomou
+    affiliation: Aalborg University
+keywords:
+  - Asset Administration Shell
+  - Asset Integration
+  - Vertical Integration
+  - Data Mapping Processor
+  - Plug and Produce
+preferred-citation:
+  type: article
+  title: "AAS-Camel-DMP -- A Bi-directional Data Mapping Processor for Automated Vertical Asset Integration"
+  authors:
+    - given-names: Tristan
+      family-names: Schwörer
+      affiliation: Aalborg University
+    - given-names: Martin Bieber
+      family-names: Jensen
+      affiliation: Aalborg University
+    - given-names: Casper
+      family-names: Schou
+      affiliation: Aalborg University
+    - given-names: Dimitrios
+      family-names: Chrysostomou
+      affiliation: Aalborg University
+  journal: "Procedia CIRP"
+  publisher:
+    name: Elsevier
+  issn: "2212-8271"
+  year: 2026
+  status: submitted
+  conference:
+    name: "60th CIRP Conference on Manufacturing Systems (CIRP CMS 2027)"
+    city: Vienna
+    country: AT
+    date-start: 2027-05-12
+    date-end: 2027-05-14
+  url: "https://vbn.aau.dk/en/publications/aas-camel-dmp-a-bi-directional-data-mapping-processor-for-automat/"

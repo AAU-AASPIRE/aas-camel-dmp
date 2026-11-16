@@ -1,0 +1,138 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>dk.aau.smartproductionlab</groupId>
+		<artifactId>dmp.parent</artifactId>
+		<version>${revision}</version>
+	</parent>
+	<artifactId>dmp.camel-aas</artifactId>
+	<name>AAS-Camel-DMP Camel AAS</name>
+	<description>AAS element reads, writes and change events, and the AAS Operation bridge</description>
+
+	<packaging>jar</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.awaitility</groupId>
+			<artifactId>awaitility</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- AAS metamodel v3 and its JSON serialization (the format BaSyx v2 serves). -->
+		<dependency>
+			<groupId>org.eclipse.digitaltwin.aas4j</groupId>
+			<artifactId>aas4j-model</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.digitaltwin.aas4j</groupId>
+			<artifactId>aas4j-dataformat-json</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+		<!-- camel -->
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-support</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>dk.aau.smartproductionlab</groupId>
+			<artifactId>dmp.core</artifactId>
+			<version>${revision}</version>
+		</dependency>
+		<dependency>
+			<groupId>dk.aau.smartproductionlab</groupId>
+			<artifactId>dmp.camel-lua</artifactId>
+			<version>${revision}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Logging backend for tests only; dmp.component chooses the runtime backend. -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- testing -->
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-test-junit5</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-jetty</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-paho-mqtt5</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-mock</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+
+			<!-- generate camel meta-data -->
+			<plugin>
+				<groupId>org.apache.camel</groupId>
+				<artifactId>camel-component-maven-plugin</artifactId>
+				<version>${camel.version}</version>
+				<executions>
+					<execution>
+                        <?m2e ignore?>
+						<id>generate</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<phase>process-classes</phase>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>3.4.0</version>
+				<executions>
+					<execution>
+						<phase>initialize</phase>
+						<goals>
+							<goal>add-source</goal>
+							<goal>add-resource</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>src/generated/java</source>
+							</sources>
+							<resources>
+								<resource>
+									<directory>src/generated/resources</directory>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

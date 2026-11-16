@@ -1,0 +1,75 @@
+{
+ "compilerContext": {
+  "aas_id": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS",
+  "aas_id_short": "planarTableShuttle1AAS",
+  "aas_base_url": "http://aas-server:8081",
+  "influx_url": "http://influxdb:8086",
+  "influx_org": "ap2030"
+ },
+ "authoredMappings": [
+  {
+   "index": 0,
+   "idShort": null,
+   "sourceIds": [
+    "StationState"
+   ],
+   "sinkIds": [
+    "Live"
+   ]
+  },
+  {
+   "index": 1,
+   "idShort": null,
+   "sourceIds": [
+    "Uuid"
+   ],
+   "sinkIds": [
+    "Halt"
+   ]
+  },
+  {
+   "index": 2,
+   "idShort": null,
+   "sourceIds": [
+    "Uuid"
+   ],
+   "sinkIds": [
+    "Occupy"
+   ]
+  },
+  {
+   "index": 3,
+   "idShort": null,
+   "sourceIds": [
+    "Uuid"
+   ],
+   "sinkIds": [
+    "Release"
+   ]
+  },
+  {
+   "index": 4,
+   "idShort": null,
+   "sourceIds": [
+    "Uuid",
+    "ProductID",
+    "X",
+    "Y",
+    "Theta"
+   ],
+   "sinkIds": [
+    "MoveToPosition"
+   ]
+  },
+  {
+   "index": 5,
+   "idShort": null,
+   "sourceIds": [
+    "Location"
+   ],
+   "sinkIds": [
+    "Live"
+   ]
+  }
+ ]
+}

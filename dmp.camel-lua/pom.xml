@@ -1,0 +1,76 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>dk.aau.smartproductionlab</groupId>
+		<artifactId>dmp.parent</artifactId>
+		<version>${revision}</version>
+	</parent>
+	<artifactId>dmp.camel-lua</artifactId>
+	<name>AAS-Camel-DMP Camel Lua</name>
+	<description>The lua: component: sandboxed AIMC transformation blobs on LuaJ</description>
+
+	<packaging>jar</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
+
+	<build>
+		<plugins>
+
+			<!-- generate camel meta-data for the lua: component -->
+			<plugin>
+				<groupId>org.apache.camel</groupId>
+				<artifactId>camel-component-maven-plugin</artifactId>
+				<version>${camel.version}</version>
+				<executions>
+					<execution>
+						<?m2e ignore?>
+						<id>generate</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<phase>process-classes</phase>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<!-- Logging backend for tests only; dmp.component chooses the runtime backend. -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>dk.aau.smartproductionlab</groupId>
+			<artifactId>dmp.core</artifactId>
+			<version>${revision}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-core</artifactId>
+		</dependency>
+
+		<!-- Lua engine: pure Java, no JNI, works on all architectures.
+		     There is no org.apache.camel:camel-lua; this module IS the Lua integration. -->
+		<dependency>
+			<groupId>org.luaj</groupId>
+			<artifactId>luaj-jse</artifactId>
+			<version>3.0.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-test-junit5</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>

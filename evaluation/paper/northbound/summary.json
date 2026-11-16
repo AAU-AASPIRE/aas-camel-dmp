@@ -1,0 +1,3649 @@
+{
+  "experiment": "northbound",
+  "run": "20261030T103632Z",
+  "points": {
+    "nodered-dmp-aas-property-1048576B": {
+      "status": "ok",
+      "point": {
+        "name": "nodered-dmp-aas-property-1048576B",
+        "system": "nodered-dmp",
+        "scenario": "aas-property",
+        "payload_bytes": 1048576,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "nodered-dmp",
+      "timeline": {
+        "down": 1793356594632837098,
+        "infrastructure": 1793356594688534164,
+        "system": 1793356613233782858,
+        "deploy": 1793356643971717530,
+        "ready": 1793356646178727286,
+        "load": 1793356647275437056,
+        "drain": 1793356728724552594,
+        "drained": 1793356738729010945,
+        "teardown": 1793356740279241854
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.00000020901503,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 22.254272,
+            "p25": 24.9460915,
+            "p50": 26.452406,
+            "p75": 28.673205,
+            "p99": 38.18516516,
+            "max": 47.105298
+          }
+        }
+      }
+    },
+    "databridge-aas-property-512B": {
+      "status": "ok",
+      "point": {
+        "name": "databridge-aas-property-512B",
+        "system": "databridge",
+        "scenario": "aas-property",
+        "payload_bytes": 512,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "databridge",
+      "timeline": {
+        "down": 1793356741343867913,
+        "infrastructure": 1793356741412804256,
+        "system": 1793356759743400158,
+        "deploy": 1793356762486645835,
+        "ready": 1793356763813954164,
+        "load": 1793356765480521023,
+        "drain": 1793356847125878232,
+        "drained": 1793356852127599644,
+        "teardown": 1793356858620389929
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.000016847941573,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 4.859828,
+            "p25": 5.74548575,
+            "p50": 6.559832500000001,
+            "p75": 7.1310155,
+            "p99": 10.897772719999999,
+            "max": 18.198473
+          }
+        }
+      }
+    },
+    "dmp-influxdb-segment-1048576B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-influxdb-segment-1048576B",
+        "system": "dmp",
+        "scenario": "influxdb-segment",
+        "payload_bytes": 1048576,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793356858835528420,
+        "infrastructure": 1793356858904319389,
+        "system": 1793356877150790819,
+        "deploy": 1793356883845832775,
+        "ready": 1793356886560382897,
+        "load": 1793356887663085526,
+        "drain": 1793356969092995893,
+        "drained": 1793356974094715566,
+        "teardown": 1793356976616129001
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999999456260465,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 17.309328,
+            "p25": 22.26047225,
+            "p50": 25.182999000000002,
+            "p75": 58.4011475,
+            "p99": 106.76939915999999,
+            "max": 128.560482
+          }
+        }
+      }
+    },
+    "nodered-dmp-aas-property-524288B": {
+      "status": "ok",
+      "point": {
+        "name": "nodered-dmp-aas-property-524288B",
+        "system": "nodered-dmp",
+        "scenario": "aas-property",
+        "payload_bytes": 524288,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "nodered-dmp",
+      "timeline": {
+        "down": 1793356981628027735,
+        "infrastructure": 1793356981686673671,
+        "system": 1793357000062442476,
+        "deploy": 1793357030761807733,
+        "ready": 1793357032781299756,
+        "load": 1793357033892200247,
+        "drain": 1793357115279807245,
+        "drained": 1793357125284338594,
+        "teardown": 1793357126655387856
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.000004448749891,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 14.24772,
+            "p25": 16.23787475,
+            "p50": 17.488443,
+            "p75": 19.892296,
+            "p99": 33.121375470000004,
+            "max": 61.996722
+          }
+        }
+      }
+    },
+    "databridge-aas-property-2048B": {
+      "status": "ok",
+      "point": {
+        "name": "databridge-aas-property-2048B",
+        "system": "databridge",
+        "scenario": "aas-property",
+        "payload_bytes": 2048,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "databridge",
+      "timeline": {
+        "down": 1793357127172970089,
+        "infrastructure": 1793357127234775812,
+        "system": 1793357145974728379,
+        "deploy": 1793357148710418445,
+        "ready": 1793357149954218181,
+        "load": 1793357151061193614,
+        "drain": 1793357232432816851,
+        "drained": 1793357237436048672,
+        "teardown": 1793357243843447840
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999975756820042,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 4.791976,
+            "p25": 5.64904325,
+            "p50": 6.1464669999999995,
+            "p75": 6.891023,
+            "p99": 8.684084449999997,
+            "max": 14.61516
+          }
+        }
+      }
+    },
+    "dmp-aas-property-256B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-aas-property-256B",
+        "system": "dmp",
+        "scenario": "aas-property",
+        "payload_bytes": 256,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793357244086921532,
+        "infrastructure": 1793357244149452489,
+        "system": 1793357262314028490,
+        "deploy": 1793357268991713750,
+        "ready": 1793357271631105784,
+        "load": 1793357272725619624,
+        "drain": 1793357354100536704,
+        "drained": 1793357359103273612,
+        "teardown": 1793357361693841788
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999991752594449,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 4.805707,
+            "p25": 5.652489,
+            "p50": 6.061048,
+            "p75": 6.92870475,
+            "p99": 13.745123379999995,
+            "max": 17.057777
+          }
+        }
+      }
+    },
+    "dmp-aas-property-32768B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-aas-property-32768B",
+        "system": "dmp",
+        "scenario": "aas-property",
+        "payload_bytes": 32768,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793357361996819450,
+        "infrastructure": 1793357362052482478,
+        "system": 1793357380341038553,
+        "deploy": 1793357387023041507,
+        "ready": 1793357389784186055,
+        "load": 1793357390878370890,
+        "drain": 1793357472307300444,
+        "drained": 1793357477309129600,
+        "teardown": 1793357479357575387
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.000041656600905,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 5.384636,
+            "p25": 6.298377,
+            "p50": 6.7420455,
+            "p75": 7.4678059999999995,
+            "p99": 9.669684709999995,
+            "max": 13.064709
+          }
+        }
+      }
+    },
+    "nodered-dmp-aas-property-131072B": {
+      "status": "ok",
+      "point": {
+        "name": "nodered-dmp-aas-property-131072B",
+        "system": "nodered-dmp",
+        "scenario": "aas-property",
+        "payload_bytes": 131072,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "nodered-dmp",
+      "timeline": {
+        "down": 1793357479592871885,
+        "infrastructure": 1793357479643934058,
+        "system": 1793357497996665813,
+        "deploy": 1793357528693784899,
+        "ready": 1793357530809991333,
+        "load": 1793357531928440821,
+        "drain": 1793357613352588641,
+        "drained": 1793357623356928774,
+        "teardown": 1793357624840742481
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999988754102796,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 7.776669,
+            "p25": 9.05040425,
+            "p50": 9.6699225,
+            "p75": 10.748740000000002,
+            "p99": 21.96548893,
+            "max": 35.138152
+          }
+        }
+      }
+    },
+    "dmp-aas-property-1024B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-aas-property-1024B",
+        "system": "dmp",
+        "scenario": "aas-property",
+        "payload_bytes": 1024,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793357625160751014,
+        "infrastructure": 1793357625224191399,
+        "system": 1793357643380617360,
+        "deploy": 1793357650072672193,
+        "ready": 1793357652697142983,
+        "load": 1793357653791447518,
+        "drain": 1793357735153857791,
+        "drained": 1793357740156789547,
+        "teardown": 1793357742289344673
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999972576202085,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 4.632782,
+            "p25": 5.53046975,
+            "p50": 6.1161695,
+            "p75": 7.04332475,
+            "p99": 9.465997369999997,
+            "max": 19.561987
+          }
+        }
+      }
+    },
+    "dmp-influxdb-segment-16384B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-influxdb-segment-16384B",
+        "system": "dmp",
+        "scenario": "influxdb-segment",
+        "payload_bytes": 16384,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793357742508224439,
+        "infrastructure": 1793357742559203781,
+        "system": 1793357760734947178,
+        "deploy": 1793357767431946754,
+        "ready": 1793357770124754035,
+        "load": 1793357771229463843,
+        "drain": 1793357852571746445,
+        "drained": 1793357857573784717,
+        "teardown": 1793357860102752578
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999992552760137,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 2.588025,
+            "p25": 3.63876825,
+            "p50": 3.8248,
+            "p75": 4.02729525,
+            "p99": 44.75446116999999,
+            "max": 54.231823
+          }
+        }
+      }
+    },
+    "dmp-aas-property-131072B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-aas-property-131072B",
+        "system": "dmp",
+        "scenario": "aas-property",
+        "payload_bytes": 131072,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793357860429026914,
+        "infrastructure": 1793357860484617948,
+        "system": 1793357878680149221,
+        "deploy": 1793357885360997244,
+        "ready": 1793357888083100210,
+        "load": 1793357889197631976,
+        "drain": 1793357970589991752,
+        "drained": 1793357975592739725,
+        "teardown": 1793357977585858136
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999988085823878,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 6.948417,
+            "p25": 7.813617750000001,
+            "p50": 8.409259,
+            "p75": 9.18676675,
+            "p99": 13.341668919999993,
+            "max": 18.529819
+          }
+        }
+      }
+    },
+    "patch-aas-property-2097152B": {
+      "status": "ok",
+      "point": {
+        "name": "patch-aas-property-2097152B",
+        "system": "patch",
+        "scenario": "aas-property",
+        "payload_bytes": 2097152,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "patch",
+      "timeline": {
+        "down": 1793357977972721535,
+        "infrastructure": 1793357978040766624,
+        "system": 1793357996182971957,
+        "deploy": 1793357996182992532,
+        "ready": 1793357996894739223,
+        "load": 1793357996894758462,
+        "drain": 1793358077420203349,
+        "drained": 1793358077420225029,
+        "teardown": 1793358078635673981
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999748791619572,
+          "acknowledged": 600,
+          "acked_ms": {
+            "n": 600,
+            "min": 22.798736,
+            "p25": 25.4579055,
+            "p50": 26.7692185,
+            "p75": 28.477384,
+            "p99": 33.633344089999994,
+            "max": 36.233204
+          }
+        }
+      }
+    },
+    "databridge-aas-property-131072B": {
+      "status": "ok",
+      "point": {
+        "name": "databridge-aas-property-131072B",
+        "system": "databridge",
+        "scenario": "aas-property",
+        "payload_bytes": 131072,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "databridge",
+      "timeline": {
+        "down": 1793358078637914040,
+        "infrastructure": 1793358078706187929,
+        "system": 1793358096895398793,
+        "deploy": 1793358099571050365,
+        "ready": 1793358100833833129,
+        "load": 1793358101940946775,
+        "drain": 1793358183559465438,
+        "drained": 1793358188561338716,
+        "teardown": 1793358194916850684
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.000035838358823,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 6.900943,
+            "p25": 7.786054999999999,
+            "p50": 8.4575195,
+            "p75": 9.345792,
+            "p99": 12.909997559999999,
+            "max": 14.762227
+          }
+        }
+      }
+    },
+    "dmp-aas-property-1048576B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-aas-property-1048576B",
+        "system": "dmp",
+        "scenario": "aas-property",
+        "payload_bytes": 1048576,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793358195305789506,
+        "infrastructure": 1793358195371883303,
+        "system": 1793358213703841074,
+        "deploy": 1793358220398060099,
+        "ready": 1793358223147598664,
+        "load": 1793358224245743550,
+        "drain": 1793358306208580636,
+        "drained": 1793358311210775118,
+        "teardown": 1793358313816519437
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999986531737672,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 19.861361,
+            "p25": 23.177782,
+            "p50": 25.2205625,
+            "p75": 28.18305225,
+            "p99": 38.32690535,
+            "max": 44.274044
+          }
+        }
+      }
+    },
+    "nodered-dmp-aas-property-2048B": {
+      "status": "ok",
+      "point": {
+        "name": "nodered-dmp-aas-property-2048B",
+        "system": "nodered-dmp",
+        "scenario": "aas-property",
+        "payload_bytes": 2048,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "nodered-dmp",
+      "timeline": {
+        "down": 1793358315071715234,
+        "infrastructure": 1793358315131811230,
+        "system": 1793358333362087592,
+        "deploy": 1793358364081109832,
+        "ready": 1793358366095791187,
+        "load": 1793358367200784598,
+        "drain": 1793358448673088485,
+        "drained": 1793358458677002559,
+        "teardown": 1793358460198039824
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999993775796863,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 6.05996,
+            "p25": 7.02242375,
+            "p50": 7.6913825,
+            "p75": 8.4838415,
+            "p99": 11.03584117,
+            "max": 20.850274
+          }
+        }
+      }
+    },
+    "databridge-aas-property-65536B": {
+      "status": "ok",
+      "point": {
+        "name": "databridge-aas-property-65536B",
+        "system": "databridge",
+        "scenario": "aas-property",
+        "payload_bytes": 65536,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "databridge",
+      "timeline": {
+        "down": 1793358460447436223,
+        "infrastructure": 1793358460524006794,
+        "system": 1793358478961248135,
+        "deploy": 1793358481660998752,
+        "ready": 1793358483006904159,
+        "load": 1793358484124027637,
+        "drain": 1793358565535555726,
+        "drained": 1793358570537266410,
+        "teardown": 1793358577018716186
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.00000839917233,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 6.153698,
+            "p25": 7.19883875,
+            "p50": 7.8303495000000005,
+            "p75": 8.6031995,
+            "p99": 13.134240739999997,
+            "max": 17.836145
+          }
+        }
+      }
+    },
+    "nodered-dmp-aas-property-16384B": {
+      "status": "ok",
+      "point": {
+        "name": "nodered-dmp-aas-property-16384B",
+        "system": "nodered-dmp",
+        "scenario": "aas-property",
+        "payload_bytes": 16384,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "nodered-dmp",
+      "timeline": {
+        "down": 1793358577342145126,
+        "infrastructure": 1793358577409384365,
+        "system": 1793358596073387043,
+        "deploy": 1793358626818243962,
+        "ready": 1793358628870911731,
+        "load": 1793358629982829903,
+        "drain": 1793358711359380940,
+        "drained": 1793358721363274450,
+        "teardown": 1793358722791982146
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999999852253758,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 6.181386,
+            "p25": 7.1842965,
+            "p50": 7.836368,
+            "p75": 8.6677475,
+            "p99": 11.846807599999998,
+            "max": 19.113742
+          }
+        }
+      }
+    },
+    "dmp-aas-property-65536B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-aas-property-65536B",
+        "system": "dmp",
+        "scenario": "aas-property",
+        "payload_bytes": 65536,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793358723050587648,
+        "infrastructure": 1793358723120037886,
+        "system": 1793358741562267190,
+        "deploy": 1793358748282872147,
+        "ready": 1793358750983224088,
+        "load": 1793358752087586800,
+        "drain": 1793358833475792679,
+        "drained": 1793358838477516342,
+        "teardown": 1793358840958882064
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.000022521252724,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 6.332043,
+            "p25": 7.1669755,
+            "p50": 7.7117345,
+            "p75": 8.6611125,
+            "p99": 13.699361719999994,
+            "max": 19.684497
+          }
+        }
+      }
+    },
+    "dmp-influxdb-segment-512B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-influxdb-segment-512B",
+        "system": "dmp",
+        "scenario": "influxdb-segment",
+        "payload_bytes": 512,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793358841258103956,
+        "infrastructure": 1793358841316084294,
+        "system": 1793358859898764122,
+        "deploy": 1793358866635714527,
+        "ready": 1793358869374950652,
+        "load": 1793358870483602101,
+        "drain": 1793358951903103169,
+        "drained": 1793358956905426438,
+        "teardown": 1793358959462619844
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999999071118618,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 2.380458,
+            "p25": 3.17041275,
+            "p50": 3.5400970000000003,
+            "p75": 3.7413534999999998,
+            "p99": 4.27828936,
+            "max": 7.254867
+          }
+        }
+      }
+    },
+    "databridge-aas-property-4096B": {
+      "status": "ok",
+      "point": {
+        "name": "databridge-aas-property-4096B",
+        "system": "databridge",
+        "scenario": "aas-property",
+        "payload_bytes": 4096,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "databridge",
+      "timeline": {
+        "down": 1793358959700070729,
+        "infrastructure": 1793358959765224988,
+        "system": 1793358978014895565,
+        "deploy": 1793358980689108732,
+        "ready": 1793358981966070748,
+        "load": 1793358983068126998,
+        "drain": 1793359064442575482,
+        "drained": 1793359069444717363,
+        "teardown": 1793359075824318749
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999983593349123,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 5.368927,
+            "p25": 6.2718757499999995,
+            "p50": 6.726134,
+            "p75": 7.64798725,
+            "p99": 10.918772969999997,
+            "max": 16.591547
+          }
+        }
+      }
+    },
+    "patch-aas-property-262144B": {
+      "status": "ok",
+      "point": {
+        "name": "patch-aas-property-262144B",
+        "system": "patch",
+        "scenario": "aas-property",
+        "payload_bytes": 262144,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "patch",
+      "timeline": {
+        "down": 1793359076100936587,
+        "infrastructure": 1793359076174371457,
+        "system": 1793359094844385093,
+        "deploy": 1793359094844415213,
+        "ready": 1793359095639382497,
+        "load": 1793359095639410255,
+        "drain": 1793359176075644242,
+        "drained": 1793359176075670327,
+        "teardown": 1793359177242840242
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.000001483973508,
+          "acknowledged": 600,
+          "acked_ms": {
+            "n": 600,
+            "min": 6.493857,
+            "p25": 7.5960227499999995,
+            "p50": 8.33342,
+            "p75": 9.209515,
+            "p99": 13.685499019999996,
+            "max": 21.284192
+          }
+        }
+      }
+    },
+    "dmp-aas-property-16384B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-aas-property-16384B",
+        "system": "dmp",
+        "scenario": "aas-property",
+        "payload_bytes": 16384,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793359177245379547,
+        "infrastructure": 1793359177309153244,
+        "system": 1793359196224338897,
+        "deploy": 1793359202939424545,
+        "ready": 1793359205675620540,
+        "load": 1793359206785375334,
+        "drain": 1793359288325921134,
+        "drained": 1793359293327696466,
+        "teardown": 1793359295853182931
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.99999910784649,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 5.368488,
+            "p25": 6.34185525,
+            "p50": 6.906013,
+            "p75": 7.76868475,
+            "p99": 12.450096279999997,
+            "max": 17.899754
+          }
+        }
+      }
+    },
+    "dmp-aas-property-2048B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-aas-property-2048B",
+        "system": "dmp",
+        "scenario": "aas-property",
+        "payload_bytes": 2048,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793359296096649960,
+        "infrastructure": 1793359296168426826,
+        "system": 1793359314641418505,
+        "deploy": 1793359321363234885,
+        "ready": 1793359324190543108,
+        "load": 1793359325310913032,
+        "drain": 1793359406691295564,
+        "drained": 1793359411692946849,
+        "teardown": 1793359413928265159
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.000020773331967,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 5.1649,
+            "p25": 6.08311475,
+            "p50": 6.5201340000000005,
+            "p75": 7.220312249999999,
+            "p99": 10.590197490000001,
+            "max": 15.31102
+          }
+        }
+      }
+    },
+    "nodered-dmp-aas-property-4096B": {
+      "status": "ok",
+      "point": {
+        "name": "nodered-dmp-aas-property-4096B",
+        "system": "nodered-dmp",
+        "scenario": "aas-property",
+        "payload_bytes": 4096,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "nodered-dmp",
+      "timeline": {
+        "down": 1793359414177925272,
+        "infrastructure": 1793359414249925167,
+        "system": 1793359432765640752,
+        "deploy": 1793359463481896934,
+        "ready": 1793359465710577665,
+        "load": 1793359466823730310,
+        "drain": 1793359548260682936,
+        "drained": 1793359558264523910,
+        "teardown": 1793359559722197283
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.99997942742129,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 6.045208,
+            "p25": 7.08614925,
+            "p50": 7.7663575,
+            "p75": 8.68631275,
+            "p99": 11.962284239999997,
+            "max": 14.369818
+          }
+        }
+      }
+    },
+    "databridge-aas-property-262144B": {
+      "status": "ok",
+      "point": {
+        "name": "databridge-aas-property-262144B",
+        "system": "databridge",
+        "scenario": "aas-property",
+        "payload_bytes": 262144,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "databridge",
+      "timeline": {
+        "down": 1793359559978889424,
+        "infrastructure": 1793359560046486201,
+        "system": 1793359578466643670,
+        "deploy": 1793359581193233213,
+        "ready": 1793359582604375251,
+        "load": 1793359583716779458,
+        "drain": 1793359665145355142,
+        "drained": 1793359670147368351,
+        "teardown": 1793359676607136124
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.000001078464223,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 9.446289,
+            "p25": 11.25836925,
+            "p50": 11.9266255,
+            "p75": 12.9362325,
+            "p99": 16.9123162,
+            "max": 17.862241
+          }
+        }
+      }
+    },
+    "dmp-influxdb-segment-131072B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-influxdb-segment-131072B",
+        "system": "dmp",
+        "scenario": "influxdb-segment",
+        "payload_bytes": 131072,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793359677100355157,
+        "infrastructure": 1793359677160852834,
+        "system": 1793359696128303110,
+        "deploy": 1793359702862162743,
+        "ready": 1793359705846045626,
+        "load": 1793359706963106366,
+        "drain": 1793359788406272698,
+        "drained": 1793359793407830240,
+        "teardown": 1793359795652062297
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.99999003874114,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 4.623798,
+            "p25": 5.65326625,
+            "p50": 5.948691,
+            "p75": 6.430331499999999,
+            "p99": 9.534694229999998,
+            "max": 13.06638
+          }
+        }
+      }
+    },
+    "nodered-dmp-aas-property-2097152B": {
+      "status": "ok",
+      "point": {
+        "name": "nodered-dmp-aas-property-2097152B",
+        "system": "nodered-dmp",
+        "scenario": "aas-property",
+        "payload_bytes": 2097152,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "nodered-dmp",
+      "timeline": {
+        "down": 1793359796496442159,
+        "infrastructure": 1793359796570736313,
+        "system": 1793359815028319507,
+        "deploy": 1793359845763124683,
+        "ready": 1793359848114763145,
+        "load": 1793359849242758218,
+        "drain": 1793359930878443274,
+        "drained": 1793359940381884261,
+        "teardown": 1793359941915015156
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.000019893027888,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 41.848777,
+            "p25": 48.043308499999995,
+            "p50": 52.6676505,
+            "p75": 57.72577725,
+            "p99": 72.36202868,
+            "max": 80.428553
+          }
+        }
+      }
+    },
+    "databridge-aas-property-32768B": {
+      "status": "ok",
+      "point": {
+        "name": "databridge-aas-property-32768B",
+        "system": "databridge",
+        "scenario": "aas-property",
+        "payload_bytes": 32768,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "databridge",
+      "timeline": {
+        "down": 1793359943749431546,
+        "infrastructure": 1793359943820251490,
+        "system": 1793359962383267919,
+        "deploy": 1793359965092669135,
+        "ready": 1793359966458585919,
+        "load": 1793359967567582761,
+        "drain": 1793360049157966646,
+        "drained": 1793360054159664332,
+        "teardown": 1793360060576821707
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.0000006292154,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 5.646038,
+            "p25": 6.6998922499999995,
+            "p50": 7.221581,
+            "p75": 8.039762249999999,
+            "p99": 11.90124436,
+            "max": 16.361711
+          }
+        }
+      }
+    },
+    "databridge-aas-property-16384B": {
+      "status": "ok",
+      "point": {
+        "name": "databridge-aas-property-16384B",
+        "system": "databridge",
+        "scenario": "aas-property",
+        "payload_bytes": 16384,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "databridge",
+      "timeline": {
+        "down": 1793360060877160184,
+        "infrastructure": 1793360060947311875,
+        "system": 1793360079981020688,
+        "deploy": 1793360082702843038,
+        "ready": 1793360084109363925,
+        "load": 1793360085254650058,
+        "drain": 1793360166699642468,
+        "drained": 1793360171701921332,
+        "teardown": 1793360178144345962
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999996529717398,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 5.178355,
+            "p25": 5.94354925,
+            "p50": 6.5402365,
+            "p75": 7.292213,
+            "p99": 10.985845049999986,
+            "max": 23.6883
+          }
+        }
+      }
+    },
+    "nodered-dmp-aas-property-32768B": {
+      "status": "ok",
+      "point": {
+        "name": "nodered-dmp-aas-property-32768B",
+        "system": "nodered-dmp",
+        "scenario": "aas-property",
+        "payload_bytes": 32768,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "nodered-dmp",
+      "timeline": {
+        "down": 1793360178421419534,
+        "infrastructure": 1793360178482131253,
+        "system": 1793360196662252073,
+        "deploy": 1793360227340519064,
+        "ready": 1793360229334012175,
+        "load": 1793360230441228703,
+        "drain": 1793360311791775228,
+        "drained": 1793360321795656633,
+        "teardown": 1793360323276446121
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999998005175689,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 6.564922,
+            "p25": 7.67820025,
+            "p50": 8.280454500000001,
+            "p75": 9.10691975,
+            "p99": 12.610800939999999,
+            "max": 17.501554
+          }
+        }
+      }
+    },
+    "dmp-aas-property-8192B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-aas-property-8192B",
+        "system": "dmp",
+        "scenario": "aas-property",
+        "payload_bytes": 8192,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793360323558449979,
+        "infrastructure": 1793360323626890664,
+        "system": 1793360342174067252,
+        "deploy": 1793360348896155317,
+        "ready": 1793360351645971373,
+        "load": 1793360352754306725,
+        "drain": 1793360434178565577,
+        "drained": 1793360439180384637,
+        "teardown": 1793360441478513303
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.000023897219044,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 5.262078,
+            "p25": 5.9101295,
+            "p50": 6.5323645,
+            "p75": 7.369823,
+            "p99": 10.40310207,
+            "max": 14.106229
+          }
+        }
+      }
+    },
+    "dmp-influxdb-segment-262144B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-influxdb-segment-262144B",
+        "system": "dmp",
+        "scenario": "influxdb-segment",
+        "payload_bytes": 262144,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793360441817187492,
+        "infrastructure": 1793360441879497991,
+        "system": 1793360460515950269,
+        "deploy": 1793360467250772460,
+        "ready": 1793360470052584388,
+        "load": 1793360471159722362,
+        "drain": 1793360552544222242,
+        "drained": 1793360557545841681,
+        "teardown": 1793360559835139463
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999996963773876,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 6.111247,
+            "p25": 7.2873065,
+            "p50": 7.945878499999999,
+            "p75": 8.793543,
+            "p99": 21.60725787999995,
+            "max": 63.228707
+          }
+        }
+      }
+    },
+    "databridge-aas-property-1024B": {
+      "status": "ok",
+      "point": {
+        "name": "databridge-aas-property-1024B",
+        "system": "databridge",
+        "scenario": "aas-property",
+        "payload_bytes": 1024,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "databridge",
+      "timeline": {
+        "down": 1793360561222871465,
+        "infrastructure": 1793360561286221023,
+        "system": 1793360579781917884,
+        "deploy": 1793360582501252080,
+        "ready": 1793360583797702427,
+        "load": 1793360584909480739,
+        "drain": 1793360666318472974,
+        "drained": 1793360671319916224,
+        "teardown": 1793360677683379261
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999984288505487,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 4.979766,
+            "p25": 5.784575,
+            "p50": 6.3449085,
+            "p75": 7.1831305,
+            "p99": 10.58234016,
+            "max": 27.316932
+          }
+        }
+      }
+    },
+    "patch-aas-property-2048B": {
+      "status": "ok",
+      "point": {
+        "name": "patch-aas-property-2048B",
+        "system": "patch",
+        "scenario": "aas-property",
+        "payload_bytes": 2048,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "patch",
+      "timeline": {
+        "down": 1793360677904420549,
+        "infrastructure": 1793360677961261279,
+        "system": 1793360696337280838,
+        "deploy": 1793360696337300427,
+        "ready": 1793360697055917223,
+        "load": 1793360697055938051,
+        "drain": 1793360777584894862,
+        "drained": 1793360777584917469,
+        "teardown": 1793360778842924624
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.000022634274938,
+          "acknowledged": 600,
+          "acked_ms": {
+            "n": 600,
+            "min": 3.998998,
+            "p25": 4.763741,
+            "p50": 5.2114285,
+            "p75": 5.86092425,
+            "p99": 8.616517609999992,
+            "max": 15.163522
+          }
+        }
+      }
+    },
+    "patch-aas-property-256B": {
+      "status": "ok",
+      "point": {
+        "name": "patch-aas-property-256B",
+        "system": "patch",
+        "scenario": "aas-property",
+        "payload_bytes": 256,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "patch",
+      "timeline": {
+        "down": 1793360778845972836,
+        "infrastructure": 1793360778908538964,
+        "system": 1793360797410099026,
+        "deploy": 1793360797410120308,
+        "ready": 1793360798107942957,
+        "load": 1793360798107964442,
+        "drain": 1793360878591921908,
+        "drained": 1793360878591959736,
+        "teardown": 1793360879748749210
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.000000375626056,
+          "acknowledged": 600,
+          "acked_ms": {
+            "n": 600,
+            "min": 4.067545,
+            "p25": 4.77725575,
+            "p50": 5.2090335,
+            "p75": 6.00577425,
+            "p99": 8.08949247,
+            "max": 17.792797
+          }
+        }
+      }
+    },
+    "patch-aas-property-512B": {
+      "status": "ok",
+      "point": {
+        "name": "patch-aas-property-512B",
+        "system": "patch",
+        "scenario": "aas-property",
+        "payload_bytes": 512,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "patch",
+      "timeline": {
+        "down": 1793360879751911396,
+        "infrastructure": 1793360879808335146,
+        "system": 1793360898314244907,
+        "deploy": 1793360898314270127,
+        "ready": 1793360899213382944,
+        "load": 1793360899213410862,
+        "drain": 1793360979715904180,
+        "drained": 1793360979715929606,
+        "teardown": 1793360980998202572
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.000016295352095,
+          "acknowledged": 600,
+          "acked_ms": {
+            "n": 600,
+            "min": 3.717851,
+            "p25": 4.8121575,
+            "p50": 5.4133595,
+            "p75": 6.15262075,
+            "p99": 8.6571156,
+            "max": 14.114079
+          }
+        }
+      }
+    },
+    "nodered-dmp-aas-property-8192B": {
+      "status": "ok",
+      "point": {
+        "name": "nodered-dmp-aas-property-8192B",
+        "system": "nodered-dmp",
+        "scenario": "aas-property",
+        "payload_bytes": 8192,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "nodered-dmp",
+      "timeline": {
+        "down": 1793360981001581806,
+        "infrastructure": 1793360981065713901,
+        "system": 1793360999536728700,
+        "deploy": 1793361030262816909,
+        "ready": 1793361032583703207,
+        "load": 1793361033688812429,
+        "drain": 1793361115127272588,
+        "drained": 1793361125131101091,
+        "teardown": 1793361126675042942
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999985310539106,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 5.769611,
+            "p25": 7.112705,
+            "p50": 7.648333,
+            "p75": 8.6163645,
+            "p99": 11.688592369999997,
+            "max": 20.436004
+          }
+        }
+      }
+    },
+    "patch-aas-property-524288B": {
+      "status": "ok",
+      "point": {
+        "name": "patch-aas-property-524288B",
+        "system": "patch",
+        "scenario": "aas-property",
+        "payload_bytes": 524288,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "patch",
+      "timeline": {
+        "down": 1793361126914436733,
+        "infrastructure": 1793361126968891899,
+        "system": 1793361145447479823,
+        "deploy": 1793361145447501841,
+        "ready": 1793361146200445985,
+        "load": 1793361146200468737,
+        "drain": 1793361226659732499,
+        "drained": 1793361226659762871,
+        "teardown": 1793361228075216517
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999913419614398,
+          "acknowledged": 600,
+          "acked_ms": {
+            "n": 600,
+            "min": 9.173617,
+            "p25": 11.632380000000001,
+            "p50": 12.899829,
+            "p75": 14.3242575,
+            "p99": 22.44563606,
+            "max": 29.38978
+          }
+        }
+      }
+    },
+    "dmp-influxdb-segment-256B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-influxdb-segment-256B",
+        "system": "dmp",
+        "scenario": "influxdb-segment",
+        "payload_bytes": 256,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793361228078301169,
+        "infrastructure": 1793361228138736079,
+        "system": 1793361247132377484,
+        "deploy": 1793361253845287333,
+        "ready": 1793361256669067387,
+        "load": 1793361257783800329,
+        "drain": 1793361339182911440,
+        "drained": 1793361344184516630,
+        "teardown": 1793361346371149689
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.000005286313312,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 2.985978,
+            "p25": 3.4990437500000002,
+            "p50": 3.6446435,
+            "p75": 3.78548625,
+            "p99": 4.24631938,
+            "max": 4.865658
+          }
+        }
+      }
+    },
+    "databridge-aas-property-8192B": {
+      "status": "ok",
+      "point": {
+        "name": "databridge-aas-property-8192B",
+        "system": "databridge",
+        "scenario": "aas-property",
+        "payload_bytes": 8192,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "databridge",
+      "timeline": {
+        "down": 1793361346610163652,
+        "infrastructure": 1793361346680634579,
+        "system": 1793361365205535564,
+        "deploy": 1793361367938150554,
+        "ready": 1793361369351057833,
+        "load": 1793361370469201902,
+        "drain": 1793361451881679339,
+        "drained": 1793361456883787834,
+        "teardown": 1793361463339459483
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.000003123540207,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 5.193553,
+            "p25": 6.22981925,
+            "p50": 6.6345465,
+            "p75": 7.509102,
+            "p99": 10.517426139999994,
+            "max": 15.620432
+          }
+        }
+      }
+    },
+    "databridge-aas-property-256B": {
+      "status": "ok",
+      "point": {
+        "name": "databridge-aas-property-256B",
+        "system": "databridge",
+        "scenario": "aas-property",
+        "payload_bytes": 256,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "databridge",
+      "timeline": {
+        "down": 1793361463595417865,
+        "infrastructure": 1793361463662958122,
+        "system": 1793361482132298190,
+        "deploy": 1793361484834313830,
+        "ready": 1793361486184918450,
+        "load": 1793361487304684681,
+        "drain": 1793361568713865738,
+        "drained": 1793361573715650819,
+        "teardown": 1793361580186524016
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.00000101352264,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 4.900338,
+            "p25": 6.01525125,
+            "p50": 6.536587,
+            "p75": 7.296493,
+            "p99": 9.862632569999999,
+            "max": 14.097456
+          }
+        }
+      }
+    },
+    "patch-aas-property-8192B": {
+      "status": "ok",
+      "point": {
+        "name": "patch-aas-property-8192B",
+        "system": "patch",
+        "scenario": "aas-property",
+        "payload_bytes": 8192,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "patch",
+      "timeline": {
+        "down": 1793361580398958124,
+        "infrastructure": 1793361580459559127,
+        "system": 1793361598897583353,
+        "deploy": 1793361598897603825,
+        "ready": 1793361599679980702,
+        "load": 1793361599680002231,
+        "drain": 1793361680115096507,
+        "drained": 1793361680115116061,
+        "teardown": 1793361681419680943
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999998697329051,
+          "acknowledged": 600,
+          "acked_ms": {
+            "n": 600,
+            "min": 4.26852,
+            "p25": 5.04599125,
+            "p50": 5.448874999999999,
+            "p75": 6.0531355,
+            "p99": 7.627008869999999,
+            "max": 11.582879
+          }
+        }
+      }
+    },
+    "patch-aas-property-131072B": {
+      "status": "ok",
+      "point": {
+        "name": "patch-aas-property-131072B",
+        "system": "patch",
+        "scenario": "aas-property",
+        "payload_bytes": 131072,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "patch",
+      "timeline": {
+        "down": 1793361681422029190,
+        "infrastructure": 1793361681482209879,
+        "system": 1793361700105757289,
+        "deploy": 1793361700105781376,
+        "ready": 1793361700932512935,
+        "load": 1793361700932534102,
+        "drain": 1793361781443798550,
+        "drained": 1793361781443822918,
+        "teardown": 1793361782648995536
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999995681971814,
+          "acknowledged": 600,
+          "acked_ms": {
+            "n": 600,
+            "min": 5.350879,
+            "p25": 6.278253250000001,
+            "p50": 6.854183,
+            "p75": 7.5548945,
+            "p99": 11.1962857,
+            "max": 13.059881
+          }
+        }
+      }
+    },
+    "dmp-influxdb-segment-1024B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-influxdb-segment-1024B",
+        "system": "dmp",
+        "scenario": "influxdb-segment",
+        "payload_bytes": 1024,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793361782652127580,
+        "infrastructure": 1793361782709850186,
+        "system": 1793361801276309431,
+        "deploy": 1793361807992422703,
+        "ready": 1793361810718723542,
+        "load": 1793361811823769225,
+        "drain": 1793361893246262971,
+        "drained": 1793361898247747183,
+        "teardown": 1793361900767380522
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.99999843555951,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 2.389763,
+            "p25": 3.478279,
+            "p50": 3.6719910000000002,
+            "p75": 3.880916,
+            "p99": 4.72984265,
+            "max": 6.356875
+          }
+        }
+      }
+    },
+    "nodered-dmp-aas-property-65536B": {
+      "status": "ok",
+      "point": {
+        "name": "nodered-dmp-aas-property-65536B",
+        "system": "nodered-dmp",
+        "scenario": "aas-property",
+        "payload_bytes": 65536,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "nodered-dmp",
+      "timeline": {
+        "down": 1793361901001190646,
+        "infrastructure": 1793361901071718343,
+        "system": 1793361919300221342,
+        "deploy": 1793361949983971790,
+        "ready": 1793361952013108157,
+        "load": 1793361953124274197,
+        "drain": 1793362034497735830,
+        "drained": 1793362044501574402,
+        "teardown": 1793362046009079702
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.000000620367317,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 6.500279,
+            "p25": 7.91880525,
+            "p50": 8.596748,
+            "p75": 9.800023249999999,
+            "p99": 14.624614419999997,
+            "max": 21.640798
+          }
+        }
+      }
+    },
+    "dmp-influxdb-segment-8192B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-influxdb-segment-8192B",
+        "system": "dmp",
+        "scenario": "influxdb-segment",
+        "payload_bytes": 8192,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793362046267758948,
+        "infrastructure": 1793362046327558378,
+        "system": 1793362064535824819,
+        "deploy": 1793362071216150541,
+        "ready": 1793362073913226806,
+        "load": 1793362075019606300,
+        "drain": 1793362156405574391,
+        "drained": 1793362161406799660,
+        "teardown": 1793362163833842479
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.000004463774948,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 2.605642,
+            "p25": 3.627217,
+            "p50": 3.8325329999999997,
+            "p75": 4.04947925,
+            "p99": 45.58772818,
+            "max": 46.628206
+          }
+        }
+      }
+    },
+    "dmp-influxdb-segment-32768B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-influxdb-segment-32768B",
+        "system": "dmp",
+        "scenario": "influxdb-segment",
+        "payload_bytes": 32768,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793362164149247827,
+        "infrastructure": 1793362164228624617,
+        "system": 1793362182951600016,
+        "deploy": 1793362189690576443,
+        "ready": 1793362192513144994,
+        "load": 1793362193623653829,
+        "drain": 1793362275047456385,
+        "drained": 1793362280048611318,
+        "teardown": 1793362282385826653
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.00003153916458,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 2.966658,
+            "p25": 4.18037275,
+            "p50": 4.332945499999999,
+            "p75": 4.51517325,
+            "p99": 44.367912960000005,
+            "max": 54.411567
+          }
+        }
+      }
+    },
+    "nodered-dmp-aas-property-512B": {
+      "status": "ok",
+      "point": {
+        "name": "nodered-dmp-aas-property-512B",
+        "system": "nodered-dmp",
+        "scenario": "aas-property",
+        "payload_bytes": 512,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "nodered-dmp",
+      "timeline": {
+        "down": 1793362282801301584,
+        "infrastructure": 1793362282866846671,
+        "system": 1793362301786591126,
+        "deploy": 1793362332511054664,
+        "ready": 1793362334863795175,
+        "load": 1793362336016378445,
+        "drain": 1793362417494725757,
+        "drained": 1793362427498880139,
+        "teardown": 1793362428923820581
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999996856428368,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 5.976268,
+            "p25": 6.9484385,
+            "p50": 7.496873,
+            "p75": 8.33901125,
+            "p99": 11.28610891,
+            "max": 12.727831
+          }
+        }
+      }
+    },
+    "patch-aas-property-32768B": {
+      "status": "ok",
+      "point": {
+        "name": "patch-aas-property-32768B",
+        "system": "patch",
+        "scenario": "aas-property",
+        "payload_bytes": 32768,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "patch",
+      "timeline": {
+        "down": 1793362429162091949,
+        "infrastructure": 1793362429235434578,
+        "system": 1793362447542424114,
+        "deploy": 1793362447542443962,
+        "ready": 1793362448270350676,
+        "load": 1793362448270368806,
+        "drain": 1793362528695952571,
+        "drained": 1793362528695970581,
+        "teardown": 1793362529813369753
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.000014469636964,
+          "acknowledged": 600,
+          "acked_ms": {
+            "n": 600,
+            "min": 3.986307,
+            "p25": 4.67734775,
+            "p50": 5.2134955000000005,
+            "p75": 5.99178475,
+            "p99": 7.930794219999999,
+            "max": 18.717733
+          }
+        }
+      }
+    },
+    "dmp-aas-property-4096B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-aas-property-4096B",
+        "system": "dmp",
+        "scenario": "aas-property",
+        "payload_bytes": 4096,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793362529815347457,
+        "infrastructure": 1793362529870806623,
+        "system": 1793362548249817516,
+        "deploy": 1793362554973653464,
+        "ready": 1793362557679235567,
+        "load": 1793362558837869829,
+        "drain": 1793362640210242997,
+        "drained": 1793362645212286051,
+        "teardown": 1793362647270106941
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999988998676544,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 5.332547,
+            "p25": 6.149413,
+            "p50": 6.626605,
+            "p75": 7.52370825,
+            "p99": 12.68154841,
+            "max": 16.86588
+          }
+        }
+      }
+    },
+    "databridge-aas-property-1048576B": {
+      "status": "ok",
+      "point": {
+        "name": "databridge-aas-property-1048576B",
+        "system": "databridge",
+        "scenario": "aas-property",
+        "payload_bytes": 1048576,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "databridge",
+      "timeline": {
+        "down": 1793362647512593677,
+        "infrastructure": 1793362647578486474,
+        "system": 1793362666023098971,
+        "deploy": 1793362668729600676,
+        "ready": 1793362670164161630,
+        "load": 1793362671281953102,
+        "drain": 1793362752871371808,
+        "drained": 1793362757873015718,
+        "teardown": 1793362764268552340
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.000001392821563,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 23.966717,
+            "p25": 29.47105325,
+            "p50": 32.064343,
+            "p75": 34.97505225,
+            "p99": 44.86590191999998,
+            "max": 51.03095
+          }
+        }
+      }
+    },
+    "nodered-dmp-aas-property-1024B": {
+      "status": "ok",
+      "point": {
+        "name": "nodered-dmp-aas-property-1024B",
+        "system": "nodered-dmp",
+        "scenario": "aas-property",
+        "payload_bytes": 1024,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "nodered-dmp",
+      "timeline": {
+        "down": 1793362765100520533,
+        "infrastructure": 1793362765167281640,
+        "system": 1793362783728698852,
+        "deploy": 1793362814447313817,
+        "ready": 1793362816566427369,
+        "load": 1793362817676082685,
+        "drain": 1793362899087597712,
+        "drained": 1793362909090824825,
+        "teardown": 1793362910505004301
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999994345579157,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 5.478154,
+            "p25": 6.619128249999999,
+            "p50": 7.554714,
+            "p75": 8.403636,
+            "p99": 11.220058029999999,
+            "max": 12.101643
+          }
+        }
+      }
+    },
+    "dmp-influxdb-segment-4096B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-influxdb-segment-4096B",
+        "system": "dmp",
+        "scenario": "influxdb-segment",
+        "payload_bytes": 4096,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793362910730223420,
+        "infrastructure": 1793362910788075779,
+        "system": 1793362929237620146,
+        "deploy": 1793362935962177686,
+        "ready": 1793362938728800372,
+        "load": 1793362939843224694,
+        "drain": 1793363021309198183,
+        "drained": 1793363026310561089,
+        "teardown": 1793363028736820680
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999990616202462,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 2.463002,
+            "p25": 3.45640075,
+            "p50": 3.703227,
+            "p75": 3.8887572500000003,
+            "p99": 4.470943109999999,
+            "max": 9.502581
+          }
+        }
+      }
+    },
+    "dmp-influxdb-segment-2048B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-influxdb-segment-2048B",
+        "system": "dmp",
+        "scenario": "influxdb-segment",
+        "payload_bytes": 2048,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793363028998764601,
+        "infrastructure": 1793363029066002096,
+        "system": 1793363048084548819,
+        "deploy": 1793363054805754861,
+        "ready": 1793363057646742444,
+        "load": 1793363058755570952,
+        "drain": 1793363140190716620,
+        "drained": 1793363145192715172,
+        "teardown": 1793363147489233605
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999977509566442,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 2.346264,
+            "p25": 3.4317265,
+            "p50": 3.670858,
+            "p75": 3.8771762499999998,
+            "p99": 4.400628279999999,
+            "max": 5.283112
+          }
+        }
+      }
+    },
+    "patch-aas-property-16384B": {
+      "status": "ok",
+      "point": {
+        "name": "patch-aas-property-16384B",
+        "system": "patch",
+        "scenario": "aas-property",
+        "payload_bytes": 16384,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "patch",
+      "timeline": {
+        "down": 1793363147737862790,
+        "infrastructure": 1793363147808874388,
+        "system": 1793363166261826974,
+        "deploy": 1793363166261850720,
+        "ready": 1793363167120693667,
+        "load": 1793363167120715375,
+        "drain": 1793363247582946295,
+        "drained": 1793363247582971591,
+        "teardown": 1793363248726683657
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999999471953283,
+          "acknowledged": 600,
+          "acked_ms": {
+            "n": 600,
+            "min": 4.229527,
+            "p25": 4.992762,
+            "p50": 5.492637,
+            "p75": 6.105252999999999,
+            "p99": 8.213282829999997,
+            "max": 11.186715
+          }
+        }
+      }
+    },
+    "databridge-aas-property-524288B": {
+      "status": "ok",
+      "point": {
+        "name": "databridge-aas-property-524288B",
+        "system": "databridge",
+        "scenario": "aas-property",
+        "payload_bytes": 524288,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "databridge",
+      "timeline": {
+        "down": 1793363248730332885,
+        "infrastructure": 1793363248816614453,
+        "system": 1793363267324021468,
+        "deploy": 1793363270043772668,
+        "ready": 1793363271478537141,
+        "load": 1793363272586064496,
+        "drain": 1793363354012983480,
+        "drained": 1793363359015185587,
+        "teardown": 1793363365258530480
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.99997434630955,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 13.929249,
+            "p25": 15.694727499999999,
+            "p50": 17.404175000000002,
+            "p75": 18.635541,
+            "p99": 27.147022739999993,
+            "max": 40.708307
+          }
+        }
+      }
+    },
+    "dmp-influxdb-segment-65536B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-influxdb-segment-65536B",
+        "system": "dmp",
+        "scenario": "influxdb-segment",
+        "payload_bytes": 65536,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793363365772077906,
+        "infrastructure": 1793363365835582900,
+        "system": 1793363384010331452,
+        "deploy": 1793363390700692046,
+        "ready": 1793363393368952648,
+        "load": 1793363394473102085,
+        "drain": 1793363475812036852,
+        "drained": 1793363480813972547,
+        "teardown": 1793363483306789547
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.000012615541792,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 3.119501,
+            "p25": 4.168332250000001,
+            "p50": 4.471629500000001,
+            "p75": 4.755522,
+            "p99": 46.13893271,
+            "max": 49.21822
+          }
+        }
+      }
+    },
+    "patch-aas-property-1048576B": {
+      "status": "ok",
+      "point": {
+        "name": "patch-aas-property-1048576B",
+        "system": "patch",
+        "scenario": "aas-property",
+        "payload_bytes": 1048576,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "patch",
+      "timeline": {
+        "down": 1793363483765485448,
+        "infrastructure": 1793363483823310024,
+        "system": 1793363501978710121,
+        "deploy": 1793363501978735825,
+        "ready": 1793363502597861963,
+        "load": 1793363502597881143,
+        "drain": 1793363583030285882,
+        "drained": 1793363583030309999,
+        "teardown": 1793363584280902071
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999917960439332,
+          "acknowledged": 600,
+          "acked_ms": {
+            "n": 600,
+            "min": 13.409854,
+            "p25": 15.769943249999999,
+            "p50": 16.7089255,
+            "p75": 17.72622925,
+            "p99": 22.71117221,
+            "max": 24.893148
+          }
+        }
+      }
+    },
+    "dmp-influxdb-segment-524288B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-influxdb-segment-524288B",
+        "system": "dmp",
+        "scenario": "influxdb-segment",
+        "payload_bytes": 524288,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793363584283931666,
+        "infrastructure": 1793363584338879565,
+        "system": 1793363602573733933,
+        "deploy": 1793363609265854866,
+        "ready": 1793363611961975228,
+        "load": 1793363613067716971,
+        "drain": 1793363694567633479,
+        "drained": 1793363699570109974,
+        "teardown": 1793363701888694424
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999987372803924,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 9.066305,
+            "p25": 12.317747,
+            "p50": 13.7417355,
+            "p75": 15.43319125,
+            "p99": 25.62984395,
+            "max": 49.302513
+          }
+        }
+      }
+    },
+    "dmp-aas-property-524288B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-aas-property-524288B",
+        "system": "dmp",
+        "scenario": "aas-property",
+        "payload_bytes": 524288,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793363704148686014,
+        "infrastructure": 1793363704206135993,
+        "system": 1793363722383843663,
+        "deploy": 1793363729070505736,
+        "ready": 1793363731725772122,
+        "load": 1793363732832605811,
+        "drain": 1793363814880663343,
+        "drained": 1793363819883990745,
+        "teardown": 1793363822226943002
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999966362550545,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 13.309215,
+            "p25": 15.5895735,
+            "p50": 16.5286705,
+            "p75": 17.79767175,
+            "p99": 23.64140092,
+            "max": 26.001403
+          }
+        }
+      }
+    },
+    "patch-aas-property-65536B": {
+      "status": "ok",
+      "point": {
+        "name": "patch-aas-property-65536B",
+        "system": "patch",
+        "scenario": "aas-property",
+        "payload_bytes": 65536,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "patch",
+      "timeline": {
+        "down": 1793363823046442983,
+        "infrastructure": 1793363823108493550,
+        "system": 1793363841283750142,
+        "deploy": 1793363841283773264,
+        "ready": 1793363842028933186,
+        "load": 1793363842028955122,
+        "drain": 1793363922392939576,
+        "drained": 1793363922392964652,
+        "teardown": 1793363923575412207
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.000060475157042,
+          "acknowledged": 600,
+          "acked_ms": {
+            "n": 600,
+            "min": 4.235682,
+            "p25": 5.1413025,
+            "p50": 5.5158380000000005,
+            "p75": 6.18718775,
+            "p99": 8.37167635,
+            "max": 13.920299
+          }
+        }
+      }
+    },
+    "patch-aas-property-1024B": {
+      "status": "ok",
+      "point": {
+        "name": "patch-aas-property-1024B",
+        "system": "patch",
+        "scenario": "aas-property",
+        "payload_bytes": 1024,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "patch",
+      "timeline": {
+        "down": 1793363923577421361,
+        "infrastructure": 1793363923632251786,
+        "system": 1793363941894838306,
+        "deploy": 1793363941894858552,
+        "ready": 1793363942608718205,
+        "load": 1793363942608738380,
+        "drain": 1793364023017642665,
+        "drained": 1793364023017665966,
+        "teardown": 1793364024086751804
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999988689662208,
+          "acknowledged": 600,
+          "acked_ms": {
+            "n": 600,
+            "min": 3.441365,
+            "p25": 4.45273225,
+            "p50": 4.967529000000001,
+            "p75": 5.49909375,
+            "p99": 6.80507188,
+            "max": 7.890153
+          }
+        }
+      }
+    },
+    "databridge-aas-property-2097152B": {
+      "status": "ok",
+      "point": {
+        "name": "databridge-aas-property-2097152B",
+        "system": "databridge",
+        "scenario": "aas-property",
+        "payload_bytes": 2097152,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "databridge",
+      "timeline": {
+        "down": 1793364024090203978,
+        "infrastructure": 1793364024156115377,
+        "system": 1793364042338301136,
+        "deploy": 1793364045025877546,
+        "ready": 1793364046276191746,
+        "load": 1793364047381684584,
+        "drain": 1793364129354239029,
+        "drained": 1793364134357757984,
+        "teardown": 1793364140955098915
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999981838597257,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 42.476996,
+            "p25": 46.15283075,
+            "p50": 48.073395,
+            "p75": 51.071283,
+            "p99": 58.19145622,
+            "max": 64.220039
+          }
+        }
+      }
+    },
+    "nodered-dmp-aas-property-262144B": {
+      "status": "ok",
+      "point": {
+        "name": "nodered-dmp-aas-property-262144B",
+        "system": "nodered-dmp",
+        "scenario": "aas-property",
+        "payload_bytes": 262144,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "nodered-dmp",
+      "timeline": {
+        "down": 1793364142082343437,
+        "infrastructure": 1793364142137789780,
+        "system": 1793364160328139685,
+        "deploy": 1793364191017789167,
+        "ready": 1793364192994557570,
+        "load": 1793364194091671100,
+        "drain": 1793364275967483197,
+        "drained": 1793364285471963543,
+        "teardown": 1793364286971925375
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999956385332128,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 9.206031,
+            "p25": 10.98235875,
+            "p50": 11.6988315,
+            "p75": 12.5480225,
+            "p99": 16.55924305,
+            "max": 17.537755
+          }
+        }
+      }
+    },
+    "nodered-dmp-aas-property-256B": {
+      "status": "ok",
+      "point": {
+        "name": "nodered-dmp-aas-property-256B",
+        "system": "nodered-dmp",
+        "scenario": "aas-property",
+        "payload_bytes": 256,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "nodered-dmp",
+      "timeline": {
+        "down": 1793364287362949683,
+        "infrastructure": 1793364287423866023,
+        "system": 1793364305584672440,
+        "deploy": 1793364336285994471,
+        "ready": 1793364338211291507,
+        "load": 1793364339316579998,
+        "drain": 1793364420713802028,
+        "drained": 1793364430719420489,
+        "teardown": 1793364432190933812
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.000049008921321,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 5.260473,
+            "p25": 6.314381,
+            "p50": 6.8581075,
+            "p75": 7.583533500000001,
+            "p99": 9.627672509999998,
+            "max": 10.993652
+          }
+        }
+      }
+    },
+    "dmp-aas-property-512B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-aas-property-512B",
+        "system": "dmp",
+        "scenario": "aas-property",
+        "payload_bytes": 512,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793364432388233649,
+        "infrastructure": 1793364432441920138,
+        "system": 1793364450589527195,
+        "deploy": 1793364457284120681,
+        "ready": 1793364460045102596,
+        "load": 1793364461148356100,
+        "drain": 1793364542516723876,
+        "drained": 1793364547518832364,
+        "teardown": 1793364549600500431
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.000008964615716,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 4.904829,
+            "p25": 5.7235075,
+            "p50": 6.1409945,
+            "p75": 6.79536625,
+            "p99": 8.977964519999997,
+            "max": 11.429773
+          }
+        }
+      }
+    },
+    "dmp-aas-property-262144B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-aas-property-262144B",
+        "system": "dmp",
+        "scenario": "aas-property",
+        "payload_bytes": 262144,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793364549791431592,
+        "infrastructure": 1793364549854162567,
+        "system": 1793364567997719167,
+        "deploy": 1793364574681044878,
+        "ready": 1793364577331053179,
+        "load": 1793364578428130181,
+        "drain": 1793364660171274691,
+        "drained": 1793364665174491142,
+        "teardown": 1793364667415369418
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999971996071745,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 8.833576,
+            "p25": 9.9052065,
+            "p50": 10.447779,
+            "p75": 11.4001115,
+            "p99": 14.335356819999996,
+            "max": 16.812054
+          }
+        }
+      }
+    },
+    "patch-aas-property-4096B": {
+      "status": "ok",
+      "point": {
+        "name": "patch-aas-property-4096B",
+        "system": "patch",
+        "scenario": "aas-property",
+        "payload_bytes": 4096,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "patch",
+      "timeline": {
+        "down": 1793364667908613831,
+        "infrastructure": 1793364667965510980,
+        "system": 1793364686147374973,
+        "deploy": 1793364686147400629,
+        "ready": 1793364686749964665,
+        "load": 1793364686749983346,
+        "drain": 1793364767104675662,
+        "drained": 1793364767104702180,
+        "teardown": 1793364768335887236
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.00000330701278,
+          "acknowledged": 600,
+          "acked_ms": {
+            "n": 600,
+            "min": 3.52104,
+            "p25": 4.3778245,
+            "p50": 4.860049500000001,
+            "p75": 5.373862750000001,
+            "p99": 6.628407159999999,
+            "max": 7.571852
+          }
+        }
+      }
+    },
+    "dmp-aas-property-2097152B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-aas-property-2097152B",
+        "system": "dmp",
+        "scenario": "aas-property",
+        "payload_bytes": 2097152,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 60,
+        "capture": true,
+        "variant": null
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793364768339019252,
+        "infrastructure": 1793364768401137134,
+        "system": 1793364786591195882,
+        "deploy": 1793364793279962633,
+        "ready": 1793364795982555345,
+        "load": 1793364797080837047,
+        "drain": 1793364879444615094,
+        "drained": 1793364884447265926,
+        "teardown": 1793364886572980852
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999991829055089,
+          "acknowledged": 600,
+          "matched_by_order": 0,
+          "acked_ms": {
+            "n": 600,
+            "min": 38.886883,
+            "p25": 41.947914749999995,
+            "p50": 43.18503,
+            "p75": 44.68690925,
+            "p99": 52.18275748,
+            "max": 60.484367
+          }
+        }
+      }
+    }
+  }
+}

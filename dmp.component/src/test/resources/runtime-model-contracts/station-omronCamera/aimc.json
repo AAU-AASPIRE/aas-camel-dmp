@@ -1,0 +1,3565 @@
+{
+ "idShort": "AssetInterfacesMappingConfiguration",
+ "description": [
+  {
+   "language": "en",
+   "text": "The AIMC 2.0 is used to describe how data is mapped from asset to AAS or from AAS to AAS."
+  }
+ ],
+ "modelType": "Submodel",
+ "id": "https://smartproductionlab.aau.dk/aas/omronCameraSystemAAS/submodels/AssetInterfacesMappingConfiguration",
+ "semanticId": {
+  "type": "ExternalReference",
+  "keys": [
+   {
+    "type": "GlobalReference",
+    "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/Submodel"
+   }
+  ]
+ },
+ "submodelElements": [
+  {
+   "idShort": "MappingConfigurations",
+   "description": [
+    {
+     "language": "en",
+     "text": "List of MappingConfigurations that each map and transform data from their sources to their sinks."
+    }
+   ],
+   "modelType": "SubmodelElementList",
+   "semanticId": {
+    "type": "ExternalReference",
+    "keys": [
+     {
+      "type": "GlobalReference",
+      "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/1/0/MappingConfigurations"
+     }
+    ]
+   },
+   "orderRelevant": false,
+   "typeValueListElement": "SubmodelElementCollection",
+   "semanticIdListElement": {
+    "type": "ExternalReference",
+    "keys": [
+     {
+      "type": "GlobalReference",
+      "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration"
+     }
+    ]
+   },
+   "value": [
+    {
+     "displayName": [
+      {
+       "language": "en",
+       "text": "StationState"
+      }
+     ],
+     "description": [
+      {
+       "language": "en",
+       "text": "A MappingConfiguration defines one logical unit of sources (inputs) and sinks (outputs) that are in relation to one another. The relation can be expressed via a transformation."
+      }
+     ],
+     "modelType": "SubmodelElementCollection",
+     "semanticId": {
+      "type": "ExternalReference",
+      "keys": [
+       {
+        "type": "GlobalReference",
+        "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration"
+       }
+      ]
+     },
+     "value": [
+      {
+       "idShort": "DefaultPollingInterval",
+       "description": [
+        {
+         "language": "en",
+         "text": "The DefaultPollingInterval defines the default time interval in seconds for fetching new data from the synchronous data sources defined in this MappingConfiguration. It must be greater than zero for synchronous protocols (e.g. HTTP) that need polling and is ignored for asynchronous protocols (e.g. MQTT)."
+        }
+       ],
+       "modelType": "Property",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/DefaultPollingInterval"
+         }
+        ]
+       },
+       "value": "0.0",
+       "valueType": "xs:double"
+      },
+      {
+       "idShort": "Transformation",
+       "description": [
+        {
+         "language": "en",
+         "text": "The transformation allows for transforming incoming data before writing it to the sinks. The transformation must contain an \"aimc_main(sources)\" entrypoint function in Lua."
+        }
+       ],
+       "modelType": "Blob",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Transformation"
+         }
+        ]
+       },
+       "contentType": "text/plain",
+       "value": "ZnVuY3Rpb24gYWltY19tYWluKHNvdXJjZXMpCiAgICBsb2NhbCBxdWV1ZSA9IHNvdXJjZXMuU3RhdGlvblN0YXRlLlByb2Nlc3NRdWV1ZSBvciB7fQogICAgcmV0dXJuIHsgTGl2ZSA9IHsKICAgICAgICBQYWNrTUxTdGF0ZSA9IHNvdXJjZXMuU3RhdGlvblN0YXRlLlN0YXRlLAogICAgICAgIE9jY3VwYXRpb25TdGF0ZSA9ICgjcXVldWUgPT0gMCkgYW5kICJbXSIgb3IganNvbi5lbmNvZGUocXVldWUpLAogICAgfSB9CmVuZAo="
+      },
+      {
+       "idShort": "Sources",
+       "description": [
+        {
+         "language": "en",
+         "text": "This list includes all data sources that are used in this MappingConfiguration."
+        }
+       ],
+       "modelType": "SubmodelElementList",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sources"
+         }
+        ]
+       },
+       "orderRelevant": false,
+       "typeValueListElement": "SubmodelElementCollection",
+       "semanticIdListElement": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source"
+         }
+        ]
+       },
+       "value": [
+        {
+         "displayName": [
+          {
+           "language": "en",
+           "text": "StationState"
+          }
+         ],
+         "description": [
+          {
+           "language": "en",
+           "text": "A data source is defined by a Source reference, PollingInterval and SourceId."
+          }
+         ],
+         "modelType": "SubmodelElementCollection",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source"
+           }
+          ]
+         },
+         "value": [
+          {
+           "idShort": "Source",
+           "description": [
+            {
+             "language": "en",
+             "text": "This holds a reference to the respective SubmodelElement used as data source. A data source can be any SubmodelElement including those defined in the InteractionMetadata of AID Submodels for fetching live-data from assets."
+            }
+           ],
+           "modelType": "ReferenceElement",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source/Source"
+             }
+            ]
+           },
+           "value": {
+            "type": "ModelReference",
+            "keys": [
+             {
+              "type": "Submodel",
+              "value": "https://smartproductionlab.aau.dk/aas/omronCameraSystemAAS/submodels/AssetInterfacesDescription"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "interface_mqtt"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "InteractionMetadata"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "properties"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "StationState"
+             }
+            ]
+           }
+          },
+          {
+           "idShort": "SourceId",
+           "description": [
+            {
+             "language": "en",
+             "text": "This is a unique and non-empty identifier that facilitates data access in the Lua transformation or establishes a relationship to a corresponding sink when no transformation is given. It must only be unique with respect to the Sources-list of the parent MappingConfiguration and not globally."
+            }
+           ],
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source/SourceId"
+             }
+            ]
+           },
+           "value": "StationState",
+           "valueType": "xs:string"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "idShort": "Sinks",
+       "description": [
+        {
+         "language": "en",
+         "text": "This list includes all data sinks that are used in this MappingConfiguration."
+        }
+       ],
+       "modelType": "SubmodelElementList",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sinks"
+         }
+        ]
+       },
+       "orderRelevant": true,
+       "typeValueListElement": "SubmodelElementCollection",
+       "semanticIdListElement": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink"
+         }
+        ]
+       },
+       "value": [
+        {
+         "displayName": [
+          {
+           "language": "en",
+           "text": "Live"
+          }
+         ],
+         "description": [
+          {
+           "language": "en",
+           "text": "A data sink is defined by a Sink reference and SinkId."
+          }
+         ],
+         "modelType": "SubmodelElementCollection",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink"
+           }
+          ]
+         },
+         "value": [
+          {
+           "idShort": "Sink",
+           "description": [
+            {
+             "language": "en",
+             "text": "This holds a reference to the respective SubmodelElement used as data sink for live-data."
+            }
+           ],
+           "modelType": "ReferenceElement",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink/Sink"
+             }
+            ]
+           },
+           "value": {
+            "type": "ModelReference",
+            "keys": [
+             {
+              "type": "Submodel",
+              "value": "https://smartproductionlab.aau.dk/aas/omronCameraSystemAAS/submodels/Variables"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "State"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Station"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Segments"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Live"
+             }
+            ]
+           }
+          },
+          {
+           "idShort": "SinkId",
+           "description": [
+            {
+             "language": "en",
+             "text": "This is a unique and non-empty identifier that facilitates data writing in the Lua transformation or establishes a relationship to a corresponding source when no transformation is given. It must only be unique with respect to the Sinks-list of the containing MappingConfiguration and not globally."
+            }
+           ],
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink/SinkId"
+             }
+            ]
+           },
+           "value": "Live",
+           "valueType": "xs:string"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "displayName": [
+      {
+       "language": "en",
+       "text": "Halt"
+      }
+     ],
+     "description": [
+      {
+       "language": "en",
+       "text": "A MappingConfiguration defines one logical unit of sources (inputs) and sinks (outputs) that are in relation to one another. The relation can be expressed via a transformation."
+      }
+     ],
+     "modelType": "SubmodelElementCollection",
+     "semanticId": {
+      "type": "ExternalReference",
+      "keys": [
+       {
+        "type": "GlobalReference",
+        "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration"
+       }
+      ]
+     },
+     "value": [
+      {
+       "idShort": "DefaultPollingInterval",
+       "description": [
+        {
+         "language": "en",
+         "text": "The DefaultPollingInterval defines the default time interval in seconds for fetching new data from the synchronous data sources defined in this MappingConfiguration. It must be greater than zero for synchronous protocols (e.g. HTTP) that need polling and is ignored for asynchronous protocols (e.g. MQTT)."
+        }
+       ],
+       "modelType": "Property",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/DefaultPollingInterval"
+         }
+        ]
+       },
+       "value": "0.0",
+       "valueType": "xs:double"
+      },
+      {
+       "idShort": "Transformation",
+       "description": [
+        {
+         "language": "en",
+         "text": "The transformation allows for transforming incoming data before writing it to the sinks. The transformation must contain an \"aimc_main(sources)\" entrypoint function in Lua."
+        }
+       ],
+       "modelType": "Blob",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Transformation"
+         }
+        ]
+       },
+       "contentType": "text/plain",
+       "value": "ZnVuY3Rpb24gYWltY19tYWluKHNvdXJjZXMpIHJldHVybiB7IEhhbHQgPSB7IFV1aWQgPSBzb3VyY2VzLlV1aWQgfSB9IGVuZA=="
+      },
+      {
+       "idShort": "Sources",
+       "description": [
+        {
+         "language": "en",
+         "text": "This list includes all data sources that are used in this MappingConfiguration."
+        }
+       ],
+       "modelType": "SubmodelElementList",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sources"
+         }
+        ]
+       },
+       "orderRelevant": false,
+       "typeValueListElement": "SubmodelElementCollection",
+       "semanticIdListElement": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source"
+         }
+        ]
+       },
+       "value": [
+        {
+         "displayName": [
+          {
+           "language": "en",
+           "text": "Uuid"
+          }
+         ],
+         "description": [
+          {
+           "language": "en",
+           "text": "A data source is defined by a Source reference, PollingInterval and SourceId."
+          }
+         ],
+         "modelType": "SubmodelElementCollection",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source"
+           }
+          ]
+         },
+         "value": [
+          {
+           "idShort": "Source",
+           "description": [
+            {
+             "language": "en",
+             "text": "This holds a reference to the respective SubmodelElement used as data source. A data source can be any SubmodelElement including those defined in the InteractionMetadata of AID Submodels for fetching live-data from assets."
+            }
+           ],
+           "modelType": "ReferenceElement",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source/Source"
+             }
+            ]
+           },
+           "value": {
+            "type": "ModelReference",
+            "keys": [
+             {
+              "type": "Submodel",
+              "value": "https://smartproductionlab.aau.dk/aas/omronCameraSystemAAS/submodels/ControlComponentInstance"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Skills"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Halt"
+             },
+             {
+              "type": "Operation",
+              "value": "operation"
+             },
+             {
+              "type": "Property",
+              "value": "Uuid"
+             }
+            ]
+           }
+          },
+          {
+           "idShort": "SourceId",
+           "description": [
+            {
+             "language": "en",
+             "text": "This is a unique and non-empty identifier that facilitates data access in the Lua transformation or establishes a relationship to a corresponding sink when no transformation is given. It must only be unique with respect to the Sources-list of the parent MappingConfiguration and not globally."
+            }
+           ],
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source/SourceId"
+             }
+            ]
+           },
+           "value": "Uuid",
+           "valueType": "xs:string"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "idShort": "Sinks",
+       "description": [
+        {
+         "language": "en",
+         "text": "This list includes all data sinks that are used in this MappingConfiguration."
+        }
+       ],
+       "modelType": "SubmodelElementList",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sinks"
+         }
+        ]
+       },
+       "orderRelevant": true,
+       "typeValueListElement": "SubmodelElementCollection",
+       "semanticIdListElement": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink"
+         }
+        ]
+       },
+       "value": [
+        {
+         "displayName": [
+          {
+           "language": "en",
+           "text": "Halt"
+          }
+         ],
+         "description": [
+          {
+           "language": "en",
+           "text": "A data sink is defined by a Sink reference and SinkId."
+          }
+         ],
+         "modelType": "SubmodelElementCollection",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink"
+           }
+          ]
+         },
+         "value": [
+          {
+           "idShort": "Sink",
+           "description": [
+            {
+             "language": "en",
+             "text": "This holds a reference to the respective SubmodelElement used as data sink for live-data."
+            }
+           ],
+           "modelType": "ReferenceElement",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink/Sink"
+             }
+            ]
+           },
+           "value": {
+            "type": "ModelReference",
+            "keys": [
+             {
+              "type": "Submodel",
+              "value": "https://smartproductionlab.aau.dk/aas/omronCameraSystemAAS/submodels/AssetInterfacesDescription"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "interface_mqtt"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "InteractionMetadata"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "actions"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Halt"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "input"
+             }
+            ]
+           }
+          },
+          {
+           "idShort": "SinkId",
+           "description": [
+            {
+             "language": "en",
+             "text": "This is a unique and non-empty identifier that facilitates data writing in the Lua transformation or establishes a relationship to a corresponding source when no transformation is given. It must only be unique with respect to the Sinks-list of the containing MappingConfiguration and not globally."
+            }
+           ],
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink/SinkId"
+             }
+            ]
+           },
+           "value": "Halt",
+           "valueType": "xs:string"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "displayName": [
+      {
+       "language": "en",
+       "text": "Occupy"
+      }
+     ],
+     "description": [
+      {
+       "language": "en",
+       "text": "A MappingConfiguration defines one logical unit of sources (inputs) and sinks (outputs) that are in relation to one another. The relation can be expressed via a transformation."
+      }
+     ],
+     "modelType": "SubmodelElementCollection",
+     "semanticId": {
+      "type": "ExternalReference",
+      "keys": [
+       {
+        "type": "GlobalReference",
+        "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration"
+       }
+      ]
+     },
+     "value": [
+      {
+       "idShort": "DefaultPollingInterval",
+       "description": [
+        {
+         "language": "en",
+         "text": "The DefaultPollingInterval defines the default time interval in seconds for fetching new data from the synchronous data sources defined in this MappingConfiguration. It must be greater than zero for synchronous protocols (e.g. HTTP) that need polling and is ignored for asynchronous protocols (e.g. MQTT)."
+        }
+       ],
+       "modelType": "Property",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/DefaultPollingInterval"
+         }
+        ]
+       },
+       "value": "0.0",
+       "valueType": "xs:double"
+      },
+      {
+       "idShort": "Transformation",
+       "description": [
+        {
+         "language": "en",
+         "text": "The transformation allows for transforming incoming data before writing it to the sinks. The transformation must contain an \"aimc_main(sources)\" entrypoint function in Lua."
+        }
+       ],
+       "modelType": "Blob",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Transformation"
+         }
+        ]
+       },
+       "contentType": "text/plain",
+       "value": "ZnVuY3Rpb24gYWltY19tYWluKHNvdXJjZXMpIHJldHVybiB7IE9jY3VweSA9IHsgVXVpZCA9IHNvdXJjZXMuVXVpZCB9IH0gZW5k"
+      },
+      {
+       "idShort": "Sources",
+       "description": [
+        {
+         "language": "en",
+         "text": "This list includes all data sources that are used in this MappingConfiguration."
+        }
+       ],
+       "modelType": "SubmodelElementList",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sources"
+         }
+        ]
+       },
+       "orderRelevant": false,
+       "typeValueListElement": "SubmodelElementCollection",
+       "semanticIdListElement": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source"
+         }
+        ]
+       },
+       "value": [
+        {
+         "displayName": [
+          {
+           "language": "en",
+           "text": "Uuid"
+          }
+         ],
+         "description": [
+          {
+           "language": "en",
+           "text": "A data source is defined by a Source reference, PollingInterval and SourceId."
+          }
+         ],
+         "modelType": "SubmodelElementCollection",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source"
+           }
+          ]
+         },
+         "value": [
+          {
+           "idShort": "Source",
+           "description": [
+            {
+             "language": "en",
+             "text": "This holds a reference to the respective SubmodelElement used as data source. A data source can be any SubmodelElement including those defined in the InteractionMetadata of AID Submodels for fetching live-data from assets."
+            }
+           ],
+           "modelType": "ReferenceElement",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source/Source"
+             }
+            ]
+           },
+           "value": {
+            "type": "ModelReference",
+            "keys": [
+             {
+              "type": "Submodel",
+              "value": "https://smartproductionlab.aau.dk/aas/omronCameraSystemAAS/submodels/ControlComponentInstance"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Skills"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Occupy"
+             },
+             {
+              "type": "Operation",
+              "value": "operation"
+             },
+             {
+              "type": "Property",
+              "value": "Uuid"
+             }
+            ]
+           }
+          },
+          {
+           "idShort": "SourceId",
+           "description": [
+            {
+             "language": "en",
+             "text": "This is a unique and non-empty identifier that facilitates data access in the Lua transformation or establishes a relationship to a corresponding sink when no transformation is given. It must only be unique with respect to the Sources-list of the parent MappingConfiguration and not globally."
+            }
+           ],
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source/SourceId"
+             }
+            ]
+           },
+           "value": "Uuid",
+           "valueType": "xs:string"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "idShort": "Sinks",
+       "description": [
+        {
+         "language": "en",
+         "text": "This list includes all data sinks that are used in this MappingConfiguration."
+        }
+       ],
+       "modelType": "SubmodelElementList",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sinks"
+         }
+        ]
+       },
+       "orderRelevant": true,
+       "typeValueListElement": "SubmodelElementCollection",
+       "semanticIdListElement": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink"
+         }
+        ]
+       },
+       "value": [
+        {
+         "displayName": [
+          {
+           "language": "en",
+           "text": "Occupy"
+          }
+         ],
+         "description": [
+          {
+           "language": "en",
+           "text": "A data sink is defined by a Sink reference and SinkId."
+          }
+         ],
+         "modelType": "SubmodelElementCollection",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink"
+           }
+          ]
+         },
+         "value": [
+          {
+           "idShort": "Sink",
+           "description": [
+            {
+             "language": "en",
+             "text": "This holds a reference to the respective SubmodelElement used as data sink for live-data."
+            }
+           ],
+           "modelType": "ReferenceElement",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink/Sink"
+             }
+            ]
+           },
+           "value": {
+            "type": "ModelReference",
+            "keys": [
+             {
+              "type": "Submodel",
+              "value": "https://smartproductionlab.aau.dk/aas/omronCameraSystemAAS/submodels/AssetInterfacesDescription"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "interface_mqtt"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "InteractionMetadata"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "actions"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Occupy"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "input"
+             }
+            ]
+           }
+          },
+          {
+           "idShort": "SinkId",
+           "description": [
+            {
+             "language": "en",
+             "text": "This is a unique and non-empty identifier that facilitates data writing in the Lua transformation or establishes a relationship to a corresponding source when no transformation is given. It must only be unique with respect to the Sinks-list of the containing MappingConfiguration and not globally."
+            }
+           ],
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink/SinkId"
+             }
+            ]
+           },
+           "value": "Occupy",
+           "valueType": "xs:string"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "idShort": "ResponseTransformation",
+       "description": [
+        {
+         "language": "en",
+         "text": "The response-direction transformation of an operation mapping: the action's reply, projected by the response sources, is transformed into the response sink values; the response sink selecting the Operation receives the caller's outputs. Must contain an \"aimc_main(sources)\" entrypoint function in Lua. Authored together with the response sources and sinks; without them the Operation answers with no outputs."
+        }
+       ],
+       "modelType": "Blob",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://smartproductionlab.aau.dk/aimc/ResponseTransformation/1/0"
+         }
+        ]
+       },
+       "contentType": "text/plain",
+       "value": "ZnVuY3Rpb24gYWltY19tYWluKHNvdXJjZXMsIHJlcXVlc3RTb3VyY2VzKQogICAgbG9jYWwgcmVwbHkgPSBzb3VyY2VzLlJlcGx5IG9yIHt9CiAgICBsb2NhbCBsb2cgPSB7IE91dGNvbWUgPSBtZXRhLmludm9jYXRpb24ub3V0Y29tZSwgRHVyYXRpb25NcyA9IG1ldGEuaW52b2NhdGlvbi5kdXJhdGlvbk1zLAogICAgICAgIE9wZXJhdGlvbiA9IHsgVXVpZCA9IHJlcXVlc3RTb3VyY2VzLlV1aWQsIFN0YXRlID0gcmVwbHkuU3RhdGUgfSB9CiAgICBpZiBtZXRhLmludm9jYXRpb24ub3V0Y29tZSB+PSAiU3VjY2VlZGVkIiB0aGVuIHJldHVybiB7IExvZyA9IGxvZyB9IGVuZAogICAgcmV0dXJuIHsgVXVpZCA9IHJlcGx5LlV1aWQsIFN0YXRlID0gcmVwbHkuU3RhdGUsIExvZyA9IGxvZyB9CmVuZAo="
+      },
+      {
+       "idShort": "ResponseSources",
+       "description": [
+        {
+         "language": "en",
+         "text": "Response sources selected for the correlated response transformation."
+        }
+       ],
+       "modelType": "SubmodelElementList",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://smartproductionlab.aau.dk/aimc/ResponseSources/1/0"
+         }
+        ]
+       },
+       "orderRelevant": true,
+       "typeValueListElement": "SubmodelElementCollection",
+       "value": [
+        {
+         "displayName": [
+          {
+           "language": "en",
+           "text": "Reply"
+          }
+         ],
+         "description": [
+          {
+           "language": "en",
+           "text": "A response source: the output of the invoked action, or a member of it."
+          }
+         ],
+         "modelType": "SubmodelElementCollection",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://smartproductionlab.aau.dk/aimc/ResponseSource/1/0"
+           }
+          ]
+         },
+         "value": [
+          {
+           "idShort": "Source",
+           "description": [
+            {
+             "language": "en",
+             "text": "Reference to a SubmodelElement used as a correlated response source."
+            }
+           ],
+           "modelType": "ReferenceElement",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://smartproductionlab.aau.dk/aimc/ResponseSource/Source/1/0"
+             }
+            ]
+           },
+           "value": {
+            "type": "ModelReference",
+            "keys": [
+             {
+              "type": "Submodel",
+              "value": "https://smartproductionlab.aau.dk/aas/omronCameraSystemAAS/submodels/AssetInterfacesDescription"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "interface_mqtt"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "InteractionMetadata"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "actions"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Occupy"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "output"
+             }
+            ]
+           }
+          },
+          {
+           "idShort": "SourceId",
+           "description": [
+            {
+             "language": "en",
+             "text": "This is a unique and non-empty identifier that facilitates data access in the Lua transformation or establishes a relationship to a corresponding sink when no transformation is given. It must only be unique with respect to the Sources-list of the parent MappingConfiguration and not globally."
+            }
+           ],
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://smartproductionlab.aau.dk/aimc/ResponseSource/SourceId/1/0"
+             }
+            ]
+           },
+           "value": "Reply",
+           "valueType": "xs:string"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "idShort": "ResponseSinks",
+       "description": [
+        {
+         "language": "en",
+         "text": "Response sinks written from the correlated response transformation."
+        }
+       ],
+       "modelType": "SubmodelElementList",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://smartproductionlab.aau.dk/aimc/ResponseSinks/1/0"
+         }
+        ]
+       },
+       "orderRelevant": true,
+       "typeValueListElement": "SubmodelElementCollection",
+       "value": [
+        {
+         "displayName": [
+          {
+           "language": "en",
+           "text": "Uuid"
+          }
+         ],
+         "description": [
+          {
+           "language": "en",
+           "text": "A correlated response sink reference and its transformation identifier."
+          }
+         ],
+         "modelType": "SubmodelElementCollection",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://smartproductionlab.aau.dk/aimc/ResponseSink/1/0"
+           }
+          ]
+         },
+         "value": [
+          {
+           "idShort": "Sink",
+           "description": [
+            {
+             "language": "en",
+             "text": "Reference to a SubmodelElement used as a correlated response sink."
+            }
+           ],
+           "modelType": "ReferenceElement",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://smartproductionlab.aau.dk/aimc/ResponseSink/Sink/1/0"
+             }
+            ]
+           },
+           "value": {
+            "type": "ModelReference",
+            "keys": [
+             {
+              "type": "Submodel",
+              "value": "https://smartproductionlab.aau.dk/aas/omronCameraSystemAAS/submodels/ControlComponentInstance"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Skills"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Occupy"
+             },
+             {
+              "type": "Operation",
+              "value": "operation"
+             },
+             {
+              "type": "Property",
+              "value": "Uuid"
+             }
+            ]
+           }
+          },
+          {
+           "idShort": "SinkId",
+           "description": [
+            {
+             "language": "en",
+             "text": "This is a unique and non-empty identifier that facilitates data writing in the Lua transformation or establishes a relationship to a corresponding source when no transformation is given. It must only be unique with respect to the Sinks-list of the containing MappingConfiguration and not globally."
+            }
+           ],
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://smartproductionlab.aau.dk/aimc/ResponseSink/SinkId/1/0"
+             }
+            ]
+           },
+           "value": "Uuid",
+           "valueType": "xs:string"
+          }
+         ]
+        },
+        {
+         "displayName": [
+          {
+           "language": "en",
+           "text": "State"
+          }
+         ],
+         "description": [
+          {
+           "language": "en",
+           "text": "A correlated response sink reference and its transformation identifier."
+          }
+         ],
+         "modelType": "SubmodelElementCollection",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://smartproductionlab.aau.dk/aimc/ResponseSink/1/0"
+           }
+          ]
+         },
+         "value": [
+          {
+           "idShort": "Sink",
+           "description": [
+            {
+             "language": "en",
+             "text": "Reference to a SubmodelElement used as a correlated response sink."
+            }
+           ],
+           "modelType": "ReferenceElement",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://smartproductionlab.aau.dk/aimc/ResponseSink/Sink/1/0"
+             }
+            ]
+           },
+           "value": {
+            "type": "ModelReference",
+            "keys": [
+             {
+              "type": "Submodel",
+              "value": "https://smartproductionlab.aau.dk/aas/omronCameraSystemAAS/submodels/ControlComponentInstance"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Skills"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Occupy"
+             },
+             {
+              "type": "Operation",
+              "value": "operation"
+             },
+             {
+              "type": "Property",
+              "value": "State"
+             }
+            ]
+           }
+          },
+          {
+           "idShort": "SinkId",
+           "description": [
+            {
+             "language": "en",
+             "text": "This is a unique and non-empty identifier that facilitates data writing in the Lua transformation or establishes a relationship to a corresponding source when no transformation is given. It must only be unique with respect to the Sinks-list of the containing MappingConfiguration and not globally."
+            }
+           ],
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://smartproductionlab.aau.dk/aimc/ResponseSink/SinkId/1/0"
+             }
+            ]
+           },
+           "value": "State",
+           "valueType": "xs:string"
+          }
+         ]
+        },
+        {
+         "displayName": [
+          {
+           "language": "en",
+           "text": "Log"
+          }
+         ],
+         "description": [
+          {
+           "language": "en",
+           "text": "A correlated response sink reference and its transformation identifier."
+          }
+         ],
+         "modelType": "SubmodelElementCollection",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://smartproductionlab.aau.dk/aimc/ResponseSink/1/0"
+           }
+          ]
+         },
+         "value": [
+          {
+           "idShort": "Sink",
+           "description": [
+            {
+             "language": "en",
+             "text": "Reference to a SubmodelElement used as a correlated response sink."
+            }
+           ],
+           "modelType": "ReferenceElement",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://smartproductionlab.aau.dk/aimc/ResponseSink/Sink/1/0"
+             }
+            ]
+           },
+           "value": {
+            "type": "ModelReference",
+            "keys": [
+             {
+              "type": "Submodel",
+              "value": "https://smartproductionlab.aau.dk/aas/omronCameraSystemAAS/submodels/Variables"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Log"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Occupy"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Segments"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Live"
+             }
+            ]
+           }
+          },
+          {
+           "idShort": "SinkId",
+           "description": [
+            {
+             "language": "en",
+             "text": "This is a unique and non-empty identifier that facilitates data writing in the Lua transformation or establishes a relationship to a corresponding source when no transformation is given. It must only be unique with respect to the Sinks-list of the containing MappingConfiguration and not globally."
+            }
+           ],
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://smartproductionlab.aau.dk/aimc/ResponseSink/SinkId/1/0"
+             }
+            ]
+           },
+           "value": "Log",
+           "valueType": "xs:string"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "displayName": [
+      {
+       "language": "en",
+       "text": "Release"
+      }
+     ],
+     "description": [
+      {
+       "language": "en",
+       "text": "A MappingConfiguration defines one logical unit of sources (inputs) and sinks (outputs) that are in relation to one another. The relation can be expressed via a transformation."
+      }
+     ],
+     "modelType": "SubmodelElementCollection",
+     "semanticId": {
+      "type": "ExternalReference",
+      "keys": [
+       {
+        "type": "GlobalReference",
+        "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration"
+       }
+      ]
+     },
+     "value": [
+      {
+       "idShort": "DefaultPollingInterval",
+       "description": [
+        {
+         "language": "en",
+         "text": "The DefaultPollingInterval defines the default time interval in seconds for fetching new data from the synchronous data sources defined in this MappingConfiguration. It must be greater than zero for synchronous protocols (e.g. HTTP) that need polling and is ignored for asynchronous protocols (e.g. MQTT)."
+        }
+       ],
+       "modelType": "Property",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/DefaultPollingInterval"
+         }
+        ]
+       },
+       "value": "0.0",
+       "valueType": "xs:double"
+      },
+      {
+       "idShort": "Transformation",
+       "description": [
+        {
+         "language": "en",
+         "text": "The transformation allows for transforming incoming data before writing it to the sinks. The transformation must contain an \"aimc_main(sources)\" entrypoint function in Lua."
+        }
+       ],
+       "modelType": "Blob",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Transformation"
+         }
+        ]
+       },
+       "contentType": "text/plain",
+       "value": "ZnVuY3Rpb24gYWltY19tYWluKHNvdXJjZXMpIHJldHVybiB7IFJlbGVhc2UgPSB7IFV1aWQgPSBzb3VyY2VzLlV1aWQgfSB9IGVuZA=="
+      },
+      {
+       "idShort": "Sources",
+       "description": [
+        {
+         "language": "en",
+         "text": "This list includes all data sources that are used in this MappingConfiguration."
+        }
+       ],
+       "modelType": "SubmodelElementList",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sources"
+         }
+        ]
+       },
+       "orderRelevant": false,
+       "typeValueListElement": "SubmodelElementCollection",
+       "semanticIdListElement": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source"
+         }
+        ]
+       },
+       "value": [
+        {
+         "displayName": [
+          {
+           "language": "en",
+           "text": "Uuid"
+          }
+         ],
+         "description": [
+          {
+           "language": "en",
+           "text": "A data source is defined by a Source reference, PollingInterval and SourceId."
+          }
+         ],
+         "modelType": "SubmodelElementCollection",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source"
+           }
+          ]
+         },
+         "value": [
+          {
+           "idShort": "Source",
+           "description": [
+            {
+             "language": "en",
+             "text": "This holds a reference to the respective SubmodelElement used as data source. A data source can be any SubmodelElement including those defined in the InteractionMetadata of AID Submodels for fetching live-data from assets."
+            }
+           ],
+           "modelType": "ReferenceElement",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source/Source"
+             }
+            ]
+           },
+           "value": {
+            "type": "ModelReference",
+            "keys": [
+             {
+              "type": "Submodel",
+              "value": "https://smartproductionlab.aau.dk/aas/omronCameraSystemAAS/submodels/ControlComponentInstance"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Skills"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Release"
+             },
+             {
+              "type": "Operation",
+              "value": "operation"
+             },
+             {
+              "type": "Property",
+              "value": "Uuid"
+             }
+            ]
+           }
+          },
+          {
+           "idShort": "SourceId",
+           "description": [
+            {
+             "language": "en",
+             "text": "This is a unique and non-empty identifier that facilitates data access in the Lua transformation or establishes a relationship to a corresponding sink when no transformation is given. It must only be unique with respect to the Sources-list of the parent MappingConfiguration and not globally."
+            }
+           ],
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source/SourceId"
+             }
+            ]
+           },
+           "value": "Uuid",
+           "valueType": "xs:string"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "idShort": "Sinks",
+       "description": [
+        {
+         "language": "en",
+         "text": "This list includes all data sinks that are used in this MappingConfiguration."
+        }
+       ],
+       "modelType": "SubmodelElementList",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sinks"
+         }
+        ]
+       },
+       "orderRelevant": true,
+       "typeValueListElement": "SubmodelElementCollection",
+       "semanticIdListElement": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink"
+         }
+        ]
+       },
+       "value": [
+        {
+         "displayName": [
+          {
+           "language": "en",
+           "text": "Release"
+          }
+         ],
+         "description": [
+          {
+           "language": "en",
+           "text": "A data sink is defined by a Sink reference and SinkId."
+          }
+         ],
+         "modelType": "SubmodelElementCollection",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink"
+           }
+          ]
+         },
+         "value": [
+          {
+           "idShort": "Sink",
+           "description": [
+            {
+             "language": "en",
+             "text": "This holds a reference to the respective SubmodelElement used as data sink for live-data."
+            }
+           ],
+           "modelType": "ReferenceElement",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink/Sink"
+             }
+            ]
+           },
+           "value": {
+            "type": "ModelReference",
+            "keys": [
+             {
+              "type": "Submodel",
+              "value": "https://smartproductionlab.aau.dk/aas/omronCameraSystemAAS/submodels/AssetInterfacesDescription"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "interface_mqtt"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "InteractionMetadata"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "actions"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Release"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "input"
+             }
+            ]
+           }
+          },
+          {
+           "idShort": "SinkId",
+           "description": [
+            {
+             "language": "en",
+             "text": "This is a unique and non-empty identifier that facilitates data writing in the Lua transformation or establishes a relationship to a corresponding source when no transformation is given. It must only be unique with respect to the Sinks-list of the containing MappingConfiguration and not globally."
+            }
+           ],
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink/SinkId"
+             }
+            ]
+           },
+           "value": "Release",
+           "valueType": "xs:string"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "idShort": "ResponseTransformation",
+       "description": [
+        {
+         "language": "en",
+         "text": "The response-direction transformation of an operation mapping: the action's reply, projected by the response sources, is transformed into the response sink values; the response sink selecting the Operation receives the caller's outputs. Must contain an \"aimc_main(sources)\" entrypoint function in Lua. Authored together with the response sources and sinks; without them the Operation answers with no outputs."
+        }
+       ],
+       "modelType": "Blob",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://smartproductionlab.aau.dk/aimc/ResponseTransformation/1/0"
+         }
+        ]
+       },
+       "contentType": "text/plain",
+       "value": "ZnVuY3Rpb24gYWltY19tYWluKHNvdXJjZXMsIHJlcXVlc3RTb3VyY2VzKQogICAgbG9jYWwgcmVwbHkgPSBzb3VyY2VzLlJlcGx5IG9yIHt9CiAgICBsb2NhbCBsb2cgPSB7IE91dGNvbWUgPSBtZXRhLmludm9jYXRpb24ub3V0Y29tZSwgRHVyYXRpb25NcyA9IG1ldGEuaW52b2NhdGlvbi5kdXJhdGlvbk1zLAogICAgICAgIE9wZXJhdGlvbiA9IHsgVXVpZCA9IHJlcXVlc3RTb3VyY2VzLlV1aWQsIFN0YXRlID0gcmVwbHkuU3RhdGUgfSB9CiAgICBpZiBtZXRhLmludm9jYXRpb24ub3V0Y29tZSB+PSAiU3VjY2VlZGVkIiB0aGVuIHJldHVybiB7IExvZyA9IGxvZyB9IGVuZAogICAgcmV0dXJuIHsgVXVpZCA9IHJlcGx5LlV1aWQsIFN0YXRlID0gcmVwbHkuU3RhdGUsIExvZyA9IGxvZyB9CmVuZAo="
+      },
+      {
+       "idShort": "ResponseSources",
+       "description": [
+        {
+         "language": "en",
+         "text": "Response sources selected for the correlated response transformation."
+        }
+       ],
+       "modelType": "SubmodelElementList",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://smartproductionlab.aau.dk/aimc/ResponseSources/1/0"
+         }
+        ]
+       },
+       "orderRelevant": true,
+       "typeValueListElement": "SubmodelElementCollection",
+       "value": [
+        {
+         "displayName": [
+          {
+           "language": "en",
+           "text": "Reply"
+          }
+         ],
+         "description": [
+          {
+           "language": "en",
+           "text": "A response source: the output of the invoked action, or a member of it."
+          }
+         ],
+         "modelType": "SubmodelElementCollection",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://smartproductionlab.aau.dk/aimc/ResponseSource/1/0"
+           }
+          ]
+         },
+         "value": [
+          {
+           "idShort": "Source",
+           "description": [
+            {
+             "language": "en",
+             "text": "Reference to a SubmodelElement used as a correlated response source."
+            }
+           ],
+           "modelType": "ReferenceElement",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://smartproductionlab.aau.dk/aimc/ResponseSource/Source/1/0"
+             }
+            ]
+           },
+           "value": {
+            "type": "ModelReference",
+            "keys": [
+             {
+              "type": "Submodel",
+              "value": "https://smartproductionlab.aau.dk/aas/omronCameraSystemAAS/submodels/AssetInterfacesDescription"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "interface_mqtt"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "InteractionMetadata"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "actions"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Release"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "output"
+             }
+            ]
+           }
+          },
+          {
+           "idShort": "SourceId",
+           "description": [
+            {
+             "language": "en",
+             "text": "This is a unique and non-empty identifier that facilitates data access in the Lua transformation or establishes a relationship to a corresponding sink when no transformation is given. It must only be unique with respect to the Sources-list of the parent MappingConfiguration and not globally."
+            }
+           ],
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://smartproductionlab.aau.dk/aimc/ResponseSource/SourceId/1/0"
+             }
+            ]
+           },
+           "value": "Reply",
+           "valueType": "xs:string"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "idShort": "ResponseSinks",
+       "description": [
+        {
+         "language": "en",
+         "text": "Response sinks written from the correlated response transformation."
+        }
+       ],
+       "modelType": "SubmodelElementList",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://smartproductionlab.aau.dk/aimc/ResponseSinks/1/0"
+         }
+        ]
+       },
+       "orderRelevant": true,
+       "typeValueListElement": "SubmodelElementCollection",
+       "value": [
+        {
+         "displayName": [
+          {
+           "language": "en",
+           "text": "Uuid"
+          }
+         ],
+         "description": [
+          {
+           "language": "en",
+           "text": "A correlated response sink reference and its transformation identifier."
+          }
+         ],
+         "modelType": "SubmodelElementCollection",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://smartproductionlab.aau.dk/aimc/ResponseSink/1/0"
+           }
+          ]
+         },
+         "value": [
+          {
+           "idShort": "Sink",
+           "description": [
+            {
+             "language": "en",
+             "text": "Reference to a SubmodelElement used as a correlated response sink."
+            }
+           ],
+           "modelType": "ReferenceElement",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://smartproductionlab.aau.dk/aimc/ResponseSink/Sink/1/0"
+             }
+            ]
+           },
+           "value": {
+            "type": "ModelReference",
+            "keys": [
+             {
+              "type": "Submodel",
+              "value": "https://smartproductionlab.aau.dk/aas/omronCameraSystemAAS/submodels/ControlComponentInstance"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Skills"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Release"
+             },
+             {
+              "type": "Operation",
+              "value": "operation"
+             },
+             {
+              "type": "Property",
+              "value": "Uuid"
+             }
+            ]
+           }
+          },
+          {
+           "idShort": "SinkId",
+           "description": [
+            {
+             "language": "en",
+             "text": "This is a unique and non-empty identifier that facilitates data writing in the Lua transformation or establishes a relationship to a corresponding source when no transformation is given. It must only be unique with respect to the Sinks-list of the containing MappingConfiguration and not globally."
+            }
+           ],
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://smartproductionlab.aau.dk/aimc/ResponseSink/SinkId/1/0"
+             }
+            ]
+           },
+           "value": "Uuid",
+           "valueType": "xs:string"
+          }
+         ]
+        },
+        {
+         "displayName": [
+          {
+           "language": "en",
+           "text": "State"
+          }
+         ],
+         "description": [
+          {
+           "language": "en",
+           "text": "A correlated response sink reference and its transformation identifier."
+          }
+         ],
+         "modelType": "SubmodelElementCollection",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://smartproductionlab.aau.dk/aimc/ResponseSink/1/0"
+           }
+          ]
+         },
+         "value": [
+          {
+           "idShort": "Sink",
+           "description": [
+            {
+             "language": "en",
+             "text": "Reference to a SubmodelElement used as a correlated response sink."
+            }
+           ],
+           "modelType": "ReferenceElement",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://smartproductionlab.aau.dk/aimc/ResponseSink/Sink/1/0"
+             }
+            ]
+           },
+           "value": {
+            "type": "ModelReference",
+            "keys": [
+             {
+              "type": "Submodel",
+              "value": "https://smartproductionlab.aau.dk/aas/omronCameraSystemAAS/submodels/ControlComponentInstance"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Skills"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Release"
+             },
+             {
+              "type": "Operation",
+              "value": "operation"
+             },
+             {
+              "type": "Property",
+              "value": "State"
+             }
+            ]
+           }
+          },
+          {
+           "idShort": "SinkId",
+           "description": [
+            {
+             "language": "en",
+             "text": "This is a unique and non-empty identifier that facilitates data writing in the Lua transformation or establishes a relationship to a corresponding source when no transformation is given. It must only be unique with respect to the Sinks-list of the containing MappingConfiguration and not globally."
+            }
+           ],
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://smartproductionlab.aau.dk/aimc/ResponseSink/SinkId/1/0"
+             }
+            ]
+           },
+           "value": "State",
+           "valueType": "xs:string"
+          }
+         ]
+        },
+        {
+         "displayName": [
+          {
+           "language": "en",
+           "text": "Log"
+          }
+         ],
+         "description": [
+          {
+           "language": "en",
+           "text": "A correlated response sink reference and its transformation identifier."
+          }
+         ],
+         "modelType": "SubmodelElementCollection",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://smartproductionlab.aau.dk/aimc/ResponseSink/1/0"
+           }
+          ]
+         },
+         "value": [
+          {
+           "idShort": "Sink",
+           "description": [
+            {
+             "language": "en",
+             "text": "Reference to a SubmodelElement used as a correlated response sink."
+            }
+           ],
+           "modelType": "ReferenceElement",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://smartproductionlab.aau.dk/aimc/ResponseSink/Sink/1/0"
+             }
+            ]
+           },
+           "value": {
+            "type": "ModelReference",
+            "keys": [
+             {
+              "type": "Submodel",
+              "value": "https://smartproductionlab.aau.dk/aas/omronCameraSystemAAS/submodels/Variables"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Log"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Release"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Segments"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Live"
+             }
+            ]
+           }
+          },
+          {
+           "idShort": "SinkId",
+           "description": [
+            {
+             "language": "en",
+             "text": "This is a unique and non-empty identifier that facilitates data writing in the Lua transformation or establishes a relationship to a corresponding source when no transformation is given. It must only be unique with respect to the Sinks-list of the containing MappingConfiguration and not globally."
+            }
+           ],
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://smartproductionlab.aau.dk/aimc/ResponseSink/SinkId/1/0"
+             }
+            ]
+           },
+           "value": "Log",
+           "valueType": "xs:string"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "displayName": [
+      {
+       "language": "en",
+       "text": "Capture"
+      }
+     ],
+     "description": [
+      {
+       "language": "en",
+       "text": "A MappingConfiguration defines one logical unit of sources (inputs) and sinks (outputs) that are in relation to one another. The relation can be expressed via a transformation."
+      }
+     ],
+     "modelType": "SubmodelElementCollection",
+     "semanticId": {
+      "type": "ExternalReference",
+      "keys": [
+       {
+        "type": "GlobalReference",
+        "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration"
+       }
+      ]
+     },
+     "value": [
+      {
+       "idShort": "DefaultPollingInterval",
+       "description": [
+        {
+         "language": "en",
+         "text": "The DefaultPollingInterval defines the default time interval in seconds for fetching new data from the synchronous data sources defined in this MappingConfiguration. It must be greater than zero for synchronous protocols (e.g. HTTP) that need polling and is ignored for asynchronous protocols (e.g. MQTT)."
+        }
+       ],
+       "modelType": "Property",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/DefaultPollingInterval"
+         }
+        ]
+       },
+       "value": "0.0",
+       "valueType": "xs:double"
+      },
+      {
+       "idShort": "Transformation",
+       "description": [
+        {
+         "language": "en",
+         "text": "The transformation allows for transforming incoming data before writing it to the sinks. The transformation must contain an \"aimc_main(sources)\" entrypoint function in Lua."
+        }
+       ],
+       "modelType": "Blob",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Transformation"
+         }
+        ]
+       },
+       "contentType": "text/plain",
+       "value": "ZnVuY3Rpb24gYWltY19tYWluKHNvdXJjZXMpIHJldHVybiB7IENhcHR1cmUgPSB7IFV1aWQgPSBzb3VyY2VzLlV1aWQgfSB9IGVuZA=="
+      },
+      {
+       "idShort": "Sources",
+       "description": [
+        {
+         "language": "en",
+         "text": "This list includes all data sources that are used in this MappingConfiguration."
+        }
+       ],
+       "modelType": "SubmodelElementList",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sources"
+         }
+        ]
+       },
+       "orderRelevant": false,
+       "typeValueListElement": "SubmodelElementCollection",
+       "semanticIdListElement": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source"
+         }
+        ]
+       },
+       "value": [
+        {
+         "displayName": [
+          {
+           "language": "en",
+           "text": "Uuid"
+          }
+         ],
+         "description": [
+          {
+           "language": "en",
+           "text": "A data source is defined by a Source reference, PollingInterval and SourceId."
+          }
+         ],
+         "modelType": "SubmodelElementCollection",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source"
+           }
+          ]
+         },
+         "value": [
+          {
+           "idShort": "Source",
+           "description": [
+            {
+             "language": "en",
+             "text": "This holds a reference to the respective SubmodelElement used as data source. A data source can be any SubmodelElement including those defined in the InteractionMetadata of AID Submodels for fetching live-data from assets."
+            }
+           ],
+           "modelType": "ReferenceElement",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source/Source"
+             }
+            ]
+           },
+           "value": {
+            "type": "ModelReference",
+            "keys": [
+             {
+              "type": "Submodel",
+              "value": "https://smartproductionlab.aau.dk/aas/omronCameraSystemAAS/submodels/ControlComponentInstance"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Skills"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Capture"
+             },
+             {
+              "type": "Operation",
+              "value": "operation"
+             },
+             {
+              "type": "Property",
+              "value": "Uuid"
+             }
+            ]
+           }
+          },
+          {
+           "idShort": "SourceId",
+           "description": [
+            {
+             "language": "en",
+             "text": "This is a unique and non-empty identifier that facilitates data access in the Lua transformation or establishes a relationship to a corresponding sink when no transformation is given. It must only be unique with respect to the Sources-list of the parent MappingConfiguration and not globally."
+            }
+           ],
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source/SourceId"
+             }
+            ]
+           },
+           "value": "Uuid",
+           "valueType": "xs:string"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "idShort": "Sinks",
+       "description": [
+        {
+         "language": "en",
+         "text": "This list includes all data sinks that are used in this MappingConfiguration."
+        }
+       ],
+       "modelType": "SubmodelElementList",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sinks"
+         }
+        ]
+       },
+       "orderRelevant": true,
+       "typeValueListElement": "SubmodelElementCollection",
+       "semanticIdListElement": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink"
+         }
+        ]
+       },
+       "value": [
+        {
+         "displayName": [
+          {
+           "language": "en",
+           "text": "Capture"
+          }
+         ],
+         "description": [
+          {
+           "language": "en",
+           "text": "A data sink is defined by a Sink reference and SinkId."
+          }
+         ],
+         "modelType": "SubmodelElementCollection",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink"
+           }
+          ]
+         },
+         "value": [
+          {
+           "idShort": "Sink",
+           "description": [
+            {
+             "language": "en",
+             "text": "This holds a reference to the respective SubmodelElement used as data sink for live-data."
+            }
+           ],
+           "modelType": "ReferenceElement",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink/Sink"
+             }
+            ]
+           },
+           "value": {
+            "type": "ModelReference",
+            "keys": [
+             {
+              "type": "Submodel",
+              "value": "https://smartproductionlab.aau.dk/aas/omronCameraSystemAAS/submodels/AssetInterfacesDescription"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "interface_mqtt"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "InteractionMetadata"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "actions"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Capture"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "input"
+             }
+            ]
+           }
+          },
+          {
+           "idShort": "SinkId",
+           "description": [
+            {
+             "language": "en",
+             "text": "This is a unique and non-empty identifier that facilitates data writing in the Lua transformation or establishes a relationship to a corresponding source when no transformation is given. It must only be unique with respect to the Sinks-list of the containing MappingConfiguration and not globally."
+            }
+           ],
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink/SinkId"
+             }
+            ]
+           },
+           "value": "Capture",
+           "valueType": "xs:string"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "idShort": "ResponseTransformation",
+       "description": [
+        {
+         "language": "en",
+         "text": "The response-direction transformation of an operation mapping: the action's reply, projected by the response sources, is transformed into the response sink values; the response sink selecting the Operation receives the caller's outputs. Must contain an \"aimc_main(sources)\" entrypoint function in Lua. Authored together with the response sources and sinks; without them the Operation answers with no outputs."
+        }
+       ],
+       "modelType": "Blob",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://smartproductionlab.aau.dk/aimc/ResponseTransformation/1/0"
+         }
+        ]
+       },
+       "contentType": "text/plain",
+       "value": "ZnVuY3Rpb24gYWltY19tYWluKHNvdXJjZXMpIGxvY2FsIHJlcGx5ID0gc291cmNlcy5SZXBseSByZXR1cm4geyBVdWlkID0gcmVwbHkuVXVpZCwgU3RhdGUgPSByZXBseS5TdGF0ZSwgT3V0Y29tZSA9IHJlcGx5Lk91dGNvbWUgfSBlbmQ="
+      },
+      {
+       "idShort": "ResponseSources",
+       "description": [
+        {
+         "language": "en",
+         "text": "Response sources selected for the correlated response transformation."
+        }
+       ],
+       "modelType": "SubmodelElementList",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://smartproductionlab.aau.dk/aimc/ResponseSources/1/0"
+         }
+        ]
+       },
+       "orderRelevant": true,
+       "typeValueListElement": "SubmodelElementCollection",
+       "value": [
+        {
+         "displayName": [
+          {
+           "language": "en",
+           "text": "Reply"
+          }
+         ],
+         "description": [
+          {
+           "language": "en",
+           "text": "A response source: the output of the invoked action, or a member of it."
+          }
+         ],
+         "modelType": "SubmodelElementCollection",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://smartproductionlab.aau.dk/aimc/ResponseSource/1/0"
+           }
+          ]
+         },
+         "value": [
+          {
+           "idShort": "Source",
+           "description": [
+            {
+             "language": "en",
+             "text": "Reference to a SubmodelElement used as a correlated response source."
+            }
+           ],
+           "modelType": "ReferenceElement",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://smartproductionlab.aau.dk/aimc/ResponseSource/Source/1/0"
+             }
+            ]
+           },
+           "value": {
+            "type": "ModelReference",
+            "keys": [
+             {
+              "type": "Submodel",
+              "value": "https://smartproductionlab.aau.dk/aas/omronCameraSystemAAS/submodels/AssetInterfacesDescription"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "interface_mqtt"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "InteractionMetadata"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "actions"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Capture"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "output"
+             }
+            ]
+           }
+          },
+          {
+           "idShort": "SourceId",
+           "description": [
+            {
+             "language": "en",
+             "text": "This is a unique and non-empty identifier that facilitates data access in the Lua transformation or establishes a relationship to a corresponding sink when no transformation is given. It must only be unique with respect to the Sources-list of the parent MappingConfiguration and not globally."
+            }
+           ],
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://smartproductionlab.aau.dk/aimc/ResponseSource/SourceId/1/0"
+             }
+            ]
+           },
+           "value": "Reply",
+           "valueType": "xs:string"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "idShort": "ResponseSinks",
+       "description": [
+        {
+         "language": "en",
+         "text": "Response sinks written from the correlated response transformation."
+        }
+       ],
+       "modelType": "SubmodelElementList",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://smartproductionlab.aau.dk/aimc/ResponseSinks/1/0"
+         }
+        ]
+       },
+       "orderRelevant": true,
+       "typeValueListElement": "SubmodelElementCollection",
+       "value": [
+        {
+         "displayName": [
+          {
+           "language": "en",
+           "text": "Uuid"
+          }
+         ],
+         "description": [
+          {
+           "language": "en",
+           "text": "A correlated response sink reference and its transformation identifier."
+          }
+         ],
+         "modelType": "SubmodelElementCollection",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://smartproductionlab.aau.dk/aimc/ResponseSink/1/0"
+           }
+          ]
+         },
+         "value": [
+          {
+           "idShort": "Sink",
+           "description": [
+            {
+             "language": "en",
+             "text": "Reference to a SubmodelElement used as a correlated response sink."
+            }
+           ],
+           "modelType": "ReferenceElement",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://smartproductionlab.aau.dk/aimc/ResponseSink/Sink/1/0"
+             }
+            ]
+           },
+           "value": {
+            "type": "ModelReference",
+            "keys": [
+             {
+              "type": "Submodel",
+              "value": "https://smartproductionlab.aau.dk/aas/omronCameraSystemAAS/submodels/ControlComponentInstance"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Skills"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Capture"
+             },
+             {
+              "type": "Operation",
+              "value": "operation"
+             },
+             {
+              "type": "Property",
+              "value": "Uuid"
+             }
+            ]
+           }
+          },
+          {
+           "idShort": "SinkId",
+           "description": [
+            {
+             "language": "en",
+             "text": "This is a unique and non-empty identifier that facilitates data writing in the Lua transformation or establishes a relationship to a corresponding source when no transformation is given. It must only be unique with respect to the Sinks-list of the containing MappingConfiguration and not globally."
+            }
+           ],
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://smartproductionlab.aau.dk/aimc/ResponseSink/SinkId/1/0"
+             }
+            ]
+           },
+           "value": "Uuid",
+           "valueType": "xs:string"
+          }
+         ]
+        },
+        {
+         "displayName": [
+          {
+           "language": "en",
+           "text": "State"
+          }
+         ],
+         "description": [
+          {
+           "language": "en",
+           "text": "A correlated response sink reference and its transformation identifier."
+          }
+         ],
+         "modelType": "SubmodelElementCollection",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://smartproductionlab.aau.dk/aimc/ResponseSink/1/0"
+           }
+          ]
+         },
+         "value": [
+          {
+           "idShort": "Sink",
+           "description": [
+            {
+             "language": "en",
+             "text": "Reference to a SubmodelElement used as a correlated response sink."
+            }
+           ],
+           "modelType": "ReferenceElement",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://smartproductionlab.aau.dk/aimc/ResponseSink/Sink/1/0"
+             }
+            ]
+           },
+           "value": {
+            "type": "ModelReference",
+            "keys": [
+             {
+              "type": "Submodel",
+              "value": "https://smartproductionlab.aau.dk/aas/omronCameraSystemAAS/submodels/ControlComponentInstance"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Skills"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Capture"
+             },
+             {
+              "type": "Operation",
+              "value": "operation"
+             },
+             {
+              "type": "Property",
+              "value": "State"
+             }
+            ]
+           }
+          },
+          {
+           "idShort": "SinkId",
+           "description": [
+            {
+             "language": "en",
+             "text": "This is a unique and non-empty identifier that facilitates data writing in the Lua transformation or establishes a relationship to a corresponding source when no transformation is given. It must only be unique with respect to the Sinks-list of the containing MappingConfiguration and not globally."
+            }
+           ],
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://smartproductionlab.aau.dk/aimc/ResponseSink/SinkId/1/0"
+             }
+            ]
+           },
+           "value": "State",
+           "valueType": "xs:string"
+          }
+         ]
+        },
+        {
+         "displayName": [
+          {
+           "language": "en",
+           "text": "Outcome"
+          }
+         ],
+         "description": [
+          {
+           "language": "en",
+           "text": "A correlated response sink reference and its transformation identifier."
+          }
+         ],
+         "modelType": "SubmodelElementCollection",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://smartproductionlab.aau.dk/aimc/ResponseSink/1/0"
+           }
+          ]
+         },
+         "value": [
+          {
+           "idShort": "Sink",
+           "description": [
+            {
+             "language": "en",
+             "text": "Reference to a SubmodelElement used as a correlated response sink."
+            }
+           ],
+           "modelType": "ReferenceElement",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://smartproductionlab.aau.dk/aimc/ResponseSink/Sink/1/0"
+             }
+            ]
+           },
+           "value": {
+            "type": "ModelReference",
+            "keys": [
+             {
+              "type": "Submodel",
+              "value": "https://smartproductionlab.aau.dk/aas/omronCameraSystemAAS/submodels/ControlComponentInstance"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Skills"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Capture"
+             },
+             {
+              "type": "Operation",
+              "value": "operation"
+             },
+             {
+              "type": "Property",
+              "value": "Outcome"
+             }
+            ]
+           }
+          },
+          {
+           "idShort": "SinkId",
+           "description": [
+            {
+             "language": "en",
+             "text": "This is a unique and non-empty identifier that facilitates data writing in the Lua transformation or establishes a relationship to a corresponding source when no transformation is given. It must only be unique with respect to the Sinks-list of the containing MappingConfiguration and not globally."
+            }
+           ],
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://smartproductionlab.aau.dk/aimc/ResponseSink/SinkId/1/0"
+             }
+            ]
+           },
+           "value": "Outcome",
+           "valueType": "xs:string"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "displayName": [
+      {
+       "language": "en",
+       "text": "Image"
+      }
+     ],
+     "description": [
+      {
+       "language": "en",
+       "text": "A MappingConfiguration defines one logical unit of sources (inputs) and sinks (outputs) that are in relation to one another. The relation can be expressed via a transformation."
+      }
+     ],
+     "modelType": "SubmodelElementCollection",
+     "semanticId": {
+      "type": "ExternalReference",
+      "keys": [
+       {
+        "type": "GlobalReference",
+        "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration"
+       }
+      ]
+     },
+     "value": [
+      {
+       "idShort": "DefaultPollingInterval",
+       "description": [
+        {
+         "language": "en",
+         "text": "The DefaultPollingInterval defines the default time interval in seconds for fetching new data from the synchronous data sources defined in this MappingConfiguration. It must be greater than zero for synchronous protocols (e.g. HTTP) that need polling and is ignored for asynchronous protocols (e.g. MQTT)."
+        }
+       ],
+       "modelType": "Property",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/DefaultPollingInterval"
+         }
+        ]
+       },
+       "value": "0.0",
+       "valueType": "xs:double"
+      },
+      {
+       "idShort": "Transformation",
+       "description": [
+        {
+         "language": "en",
+         "text": "The transformation allows for transforming incoming data before writing it to the sinks. The transformation must contain an \"aimc_main(sources)\" entrypoint function in Lua."
+        }
+       ],
+       "modelType": "Blob",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Transformation"
+         }
+        ]
+       },
+       "contentType": "text/plain",
+       "value": "ZnVuY3Rpb24gYWltY19tYWluKHNvdXJjZXMpIHJldHVybiB7IEltYWdlID0gc291cmNlcy5JbWFnZS5JbWFnZSB9IGVuZA=="
+      },
+      {
+       "idShort": "Sources",
+       "description": [
+        {
+         "language": "en",
+         "text": "This list includes all data sources that are used in this MappingConfiguration."
+        }
+       ],
+       "modelType": "SubmodelElementList",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sources"
+         }
+        ]
+       },
+       "orderRelevant": false,
+       "typeValueListElement": "SubmodelElementCollection",
+       "semanticIdListElement": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source"
+         }
+        ]
+       },
+       "value": [
+        {
+         "displayName": [
+          {
+           "language": "en",
+           "text": "Image"
+          }
+         ],
+         "description": [
+          {
+           "language": "en",
+           "text": "A data source is defined by a Source reference, PollingInterval and SourceId."
+          }
+         ],
+         "modelType": "SubmodelElementCollection",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source"
+           }
+          ]
+         },
+         "value": [
+          {
+           "idShort": "Source",
+           "description": [
+            {
+             "language": "en",
+             "text": "This holds a reference to the respective SubmodelElement used as data source. A data source can be any SubmodelElement including those defined in the InteractionMetadata of AID Submodels for fetching live-data from assets."
+            }
+           ],
+           "modelType": "ReferenceElement",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source/Source"
+             }
+            ]
+           },
+           "value": {
+            "type": "ModelReference",
+            "keys": [
+             {
+              "type": "Submodel",
+              "value": "https://smartproductionlab.aau.dk/aas/omronCameraSystemAAS/submodels/AssetInterfacesDescription"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "interface_mqtt"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "InteractionMetadata"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "properties"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Image"
+             }
+            ]
+           }
+          },
+          {
+           "idShort": "SourceId",
+           "description": [
+            {
+             "language": "en",
+             "text": "This is a unique and non-empty identifier that facilitates data access in the Lua transformation or establishes a relationship to a corresponding sink when no transformation is given. It must only be unique with respect to the Sources-list of the parent MappingConfiguration and not globally."
+            }
+           ],
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source/SourceId"
+             }
+            ]
+           },
+           "value": "Image",
+           "valueType": "xs:string"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "idShort": "Sinks",
+       "description": [
+        {
+         "language": "en",
+         "text": "This list includes all data sinks that are used in this MappingConfiguration."
+        }
+       ],
+       "modelType": "SubmodelElementList",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sinks"
+         }
+        ]
+       },
+       "orderRelevant": true,
+       "typeValueListElement": "SubmodelElementCollection",
+       "semanticIdListElement": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink"
+         }
+        ]
+       },
+       "value": [
+        {
+         "displayName": [
+          {
+           "language": "en",
+           "text": "Image"
+          }
+         ],
+         "description": [
+          {
+           "language": "en",
+           "text": "A data sink is defined by a Sink reference and SinkId."
+          }
+         ],
+         "modelType": "SubmodelElementCollection",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink"
+           }
+          ]
+         },
+         "value": [
+          {
+           "idShort": "Sink",
+           "description": [
+            {
+             "language": "en",
+             "text": "This holds a reference to the respective SubmodelElement used as data sink for live-data."
+            }
+           ],
+           "modelType": "ReferenceElement",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink/Sink"
+             }
+            ]
+           },
+           "value": {
+            "type": "ModelReference",
+            "keys": [
+             {
+              "type": "Submodel",
+              "value": "https://smartproductionlab.aau.dk/aas/omronCameraSystemAAS/submodels/Variables"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Measurements"
+             },
+             {
+              "type": "Property",
+              "value": "Image"
+             }
+            ]
+           }
+          },
+          {
+           "idShort": "SinkId",
+           "description": [
+            {
+             "language": "en",
+             "text": "This is a unique and non-empty identifier that facilitates data writing in the Lua transformation or establishes a relationship to a corresponding source when no transformation is given. It must only be unique with respect to the Sinks-list of the containing MappingConfiguration and not globally."
+            }
+           ],
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink/SinkId"
+             }
+            ]
+           },
+           "value": "Image",
+           "valueType": "xs:string"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "displayName": [
+      {
+       "language": "en",
+       "text": "QualityResult"
+      }
+     ],
+     "description": [
+      {
+       "language": "en",
+       "text": "A MappingConfiguration defines one logical unit of sources (inputs) and sinks (outputs) that are in relation to one another. The relation can be expressed via a transformation."
+      }
+     ],
+     "modelType": "SubmodelElementCollection",
+     "semanticId": {
+      "type": "ExternalReference",
+      "keys": [
+       {
+        "type": "GlobalReference",
+        "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration"
+       }
+      ]
+     },
+     "value": [
+      {
+       "idShort": "DefaultPollingInterval",
+       "description": [
+        {
+         "language": "en",
+         "text": "The DefaultPollingInterval defines the default time interval in seconds for fetching new data from the synchronous data sources defined in this MappingConfiguration. It must be greater than zero for synchronous protocols (e.g. HTTP) that need polling and is ignored for asynchronous protocols (e.g. MQTT)."
+        }
+       ],
+       "modelType": "Property",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/DefaultPollingInterval"
+         }
+        ]
+       },
+       "value": "0.0",
+       "valueType": "xs:double"
+      },
+      {
+       "idShort": "Transformation",
+       "description": [
+        {
+         "language": "en",
+         "text": "The transformation allows for transforming incoming data before writing it to the sinks. The transformation must contain an \"aimc_main(sources)\" entrypoint function in Lua."
+        }
+       ],
+       "modelType": "Blob",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Transformation"
+         }
+        ]
+       },
+       "contentType": "text/plain",
+       "value": "ZnVuY3Rpb24gYWltY19tYWluKHNvdXJjZXMpIGxvY2FsIHJlc3VsdCA9IHNvdXJjZXMuUXVhbGl0eVJlc3VsdCByZXR1cm4geyBMaXZlID0geyBVdWlkID0gcmVzdWx0LlV1aWQsIFJlc3VsdCA9IHJlc3VsdC5SZXN1bHQgfSB9IGVuZA=="
+      },
+      {
+       "idShort": "Sources",
+       "description": [
+        {
+         "language": "en",
+         "text": "This list includes all data sources that are used in this MappingConfiguration."
+        }
+       ],
+       "modelType": "SubmodelElementList",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sources"
+         }
+        ]
+       },
+       "orderRelevant": false,
+       "typeValueListElement": "SubmodelElementCollection",
+       "semanticIdListElement": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source"
+         }
+        ]
+       },
+       "value": [
+        {
+         "displayName": [
+          {
+           "language": "en",
+           "text": "QualityResult"
+          }
+         ],
+         "description": [
+          {
+           "language": "en",
+           "text": "A data source is defined by a Source reference, PollingInterval and SourceId."
+          }
+         ],
+         "modelType": "SubmodelElementCollection",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source"
+           }
+          ]
+         },
+         "value": [
+          {
+           "idShort": "Source",
+           "description": [
+            {
+             "language": "en",
+             "text": "This holds a reference to the respective SubmodelElement used as data source. A data source can be any SubmodelElement including those defined in the InteractionMetadata of AID Submodels for fetching live-data from assets."
+            }
+           ],
+           "modelType": "ReferenceElement",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source/Source"
+             }
+            ]
+           },
+           "value": {
+            "type": "ModelReference",
+            "keys": [
+             {
+              "type": "Submodel",
+              "value": "https://smartproductionlab.aau.dk/aas/omronCameraSystemAAS/submodels/AssetInterfacesDescription"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "interface_mqtt"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "InteractionMetadata"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "properties"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "QualityResult"
+             }
+            ]
+           }
+          },
+          {
+           "idShort": "SourceId",
+           "description": [
+            {
+             "language": "en",
+             "text": "This is a unique and non-empty identifier that facilitates data access in the Lua transformation or establishes a relationship to a corresponding sink when no transformation is given. It must only be unique with respect to the Sources-list of the parent MappingConfiguration and not globally."
+            }
+           ],
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source/SourceId"
+             }
+            ]
+           },
+           "value": "QualityResult",
+           "valueType": "xs:string"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "idShort": "Sinks",
+       "description": [
+        {
+         "language": "en",
+         "text": "This list includes all data sinks that are used in this MappingConfiguration."
+        }
+       ],
+       "modelType": "SubmodelElementList",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sinks"
+         }
+        ]
+       },
+       "orderRelevant": true,
+       "typeValueListElement": "SubmodelElementCollection",
+       "semanticIdListElement": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink"
+         }
+        ]
+       },
+       "value": [
+        {
+         "displayName": [
+          {
+           "language": "en",
+           "text": "Live"
+          }
+         ],
+         "description": [
+          {
+           "language": "en",
+           "text": "A data sink is defined by a Sink reference and SinkId."
+          }
+         ],
+         "modelType": "SubmodelElementCollection",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink"
+           }
+          ]
+         },
+         "value": [
+          {
+           "idShort": "Sink",
+           "description": [
+            {
+             "language": "en",
+             "text": "This holds a reference to the respective SubmodelElement used as data sink for live-data."
+            }
+           ],
+           "modelType": "ReferenceElement",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink/Sink"
+             }
+            ]
+           },
+           "value": {
+            "type": "ModelReference",
+            "keys": [
+             {
+              "type": "Submodel",
+              "value": "https://smartproductionlab.aau.dk/aas/omronCameraSystemAAS/submodels/Variables"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Measurements"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "QualityResult"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Segments"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Live"
+             }
+            ]
+           }
+          },
+          {
+           "idShort": "SinkId",
+           "description": [
+            {
+             "language": "en",
+             "text": "This is a unique and non-empty identifier that facilitates data writing in the Lua transformation or establishes a relationship to a corresponding source when no transformation is given. It must only be unique with respect to the Sinks-list of the containing MappingConfiguration and not globally."
+            }
+           ],
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink/SinkId"
+             }
+            ]
+           },
+           "value": "Live",
+           "valueType": "xs:string"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

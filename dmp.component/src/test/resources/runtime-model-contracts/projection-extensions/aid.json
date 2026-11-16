@@ -1,0 +1,494 @@
+{
+ "idShort": "AID",
+ "description": [
+  {
+   "language": "en",
+   "text": "Definition of the Submodel Asset Interfaces Description identified by its semanticId."
+  }
+ ],
+ "modelType": "Submodel",
+ "id": "a/submodels/AID",
+ "semanticId": {
+  "type": "ExternalReference",
+  "keys": [
+   {
+    "type": "GlobalReference",
+    "value": "https://admin-shell.io/idta/AssetInterfacesDescription/1/2/Submodel"
+   }
+  ]
+ },
+ "submodelElements": [
+  {
+   "idShort": "interface_mqtt",
+   "description": [
+    {
+     "language": "en",
+     "text": "Indicates the entry point for a particular asset interface"
+    }
+   ],
+   "modelType": "SubmodelElementCollection",
+   "semanticId": {
+    "type": "ExternalReference",
+    "keys": [
+     {
+      "type": "GlobalReference",
+      "value": "https://admin-shell.io/idta/AssetInterfacesDescription/1/0/Interface"
+     }
+    ]
+   },
+   "supplementalSemanticIds": [
+    {
+     "type": "ExternalReference",
+     "keys": [
+      {
+       "type": "GlobalReference",
+       "value": "http://www.w3.org/2011/mqtt"
+      }
+     ]
+    },
+    {
+     "type": "ExternalReference",
+     "keys": [
+      {
+       "type": "GlobalReference",
+       "value": "https://www.w3.org/2019/wot/td"
+      }
+     ]
+    }
+   ],
+   "value": [
+    {
+     "idShort": "title",
+     "description": [
+      {
+       "language": "en",
+       "text": "Provides a human-readable title to give a human-readable context of the interface."
+      }
+     ],
+     "modelType": "Property",
+     "semanticId": {
+      "type": "ExternalReference",
+      "keys": [
+       {
+        "type": "GlobalReference",
+        "value": "https://www.w3.org/2019/wot/td#title"
+       }
+      ]
+     },
+     "value": "mqtt",
+     "valueType": "xs:string"
+    },
+    {
+     "idShort": "EndpointMetadata",
+     "description": [
+      {
+       "language": "en",
+       "text": "Provides the metadata of the asset’s endpoint (base, content type that is used for interaction, etc)"
+      }
+     ],
+     "modelType": "SubmodelElementCollection",
+     "semanticId": {
+      "type": "ExternalReference",
+      "keys": [
+       {
+        "type": "GlobalReference",
+        "value": "https://admin-shell.io/idta/AssetInterfacesDescription/1/0/EndpointMetadata"
+       }
+      ]
+     },
+     "value": [
+      {
+       "idShort": "base",
+       "description": [
+        {
+         "language": "en",
+         "text": "Defines asset connection entry point. Each protocol specifies a base pattern. Please see Annex B.1 of the AID document for more details."
+        }
+       ],
+       "modelType": "Property",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://www.w3.org/2019/wot/td#baseURI"
+         }
+        ]
+       },
+       "value": "mqtt://fixture.invalid/move/",
+       "valueType": "xs:string"
+      },
+      {
+       "idShort": "contentType",
+       "description": [
+        {
+         "language": "en",
+         "text": "Defines content type based on a media type (e.g., text/plain) and potential character decoding/encoding type (e.g., charset=utf-8) for the media type (see RFC2046) of the whole interface"
+        }
+       ],
+       "modelType": "Property",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://www.w3.org/2019/wot/hypermedia#forContentType"
+         }
+        ]
+       },
+       "value": "application/json",
+       "valueType": "xs:string"
+      },
+      {
+       "idShort": "security",
+       "description": [
+        {
+         "language": "en",
+         "text": "Selects one or more of the security scheme(s) that can be applied at runtime from the collection of security schemes defines in securityDefinitions. "
+        }
+       ],
+       "modelType": "SubmodelElementList",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://www.w3.org/2019/wot/td#hasSecurityConfiguration"
+         }
+        ]
+       },
+       "orderRelevant": true,
+       "typeValueListElement": "ReferenceElement",
+       "semanticIdListElement": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://www.w3.org/2019/wot/td#definesSecurityScheme"
+         }
+        ]
+       },
+       "value": [
+        {
+         "description": [
+          {
+           "language": "en",
+           "text": "Defines the security scheme according to W3C:"
+          }
+         ],
+         "modelType": "ReferenceElement",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://www.w3.org/2019/wot/td#definesSecurityScheme"
+           }
+          ]
+         },
+         "value": {
+          "type": "ModelReference",
+          "keys": [
+           {
+            "type": "Submodel",
+            "value": "a/submodels/AID"
+           },
+           {
+            "type": "SubmodelElementCollection",
+            "value": "interface_mqtt"
+           },
+           {
+            "type": "SubmodelElementCollection",
+            "value": "EndpointMetadata"
+           },
+           {
+            "type": "SubmodelElementCollection",
+            "value": "securityDefinitions"
+           },
+           {
+            "type": "SubmodelElementCollection",
+            "value": "nosec_sc"
+           }
+          ]
+         }
+        }
+       ]
+      },
+      {
+       "idShort": "securityDefinitions",
+       "description": [
+        {
+         "language": "en",
+         "text": "Defines the security scheme according to W3C:"
+        }
+       ],
+       "modelType": "SubmodelElementCollection",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://www.w3.org/2019/wot/td#definesSecurityScheme"
+         }
+        ]
+       },
+       "value": [
+        {
+         "idShort": "nosec_sc",
+         "description": [
+          {
+           "language": "en",
+           "text": "No security scheme definition"
+          }
+         ],
+         "modelType": "SubmodelElementCollection",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://www.w3.org/2019/wot/security#NoSecurityScheme"
+           }
+          ]
+         },
+         "value": [
+          {
+           "idShort": "scheme",
+           "description": [
+            {
+             "language": "en",
+             "text": "Defines the security mechanism that used during access. Supported modes one of nosec, basic, digest, bearer, psk, oauth2, apikey, combo, auto, uav_channelsec and uav_authentication_"
+            }
+           ],
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://www.w3.org/2019/wot/security#SecurityScheme"
+             }
+            ]
+           },
+           "value": "nosec",
+           "valueType": "xs:string"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "idShort": "InteractionMetadata",
+     "description": [
+      {
+       "language": "en",
+       "text": "Provides the metadata of the actually interfaces such as which datapoints and functions are provided by the properties, actions, and events interaction abstraction. "
+      }
+     ],
+     "modelType": "SubmodelElementCollection",
+     "semanticId": {
+      "type": "ExternalReference",
+      "keys": [
+       {
+        "type": "GlobalReference",
+        "value": "https://admin-shell.io/idta/AssetInterfacesDescription/1/0/InteractionMetadata"
+       }
+      ]
+     },
+     "supplementalSemanticIds": [
+      {
+       "type": "ExternalReference",
+       "keys": [
+        {
+         "type": "GlobalReference",
+         "value": "https://www.w3.org/2019/wot/td#InteractionAffordance"
+        }
+       ]
+      }
+     ],
+     "value": [
+      {
+       "idShort": "properties",
+       "description": [
+        {
+         "language": "en",
+         "text": "Collection of asset’s datapoint definitions as property SMC "
+        }
+       ],
+       "modelType": "SubmodelElementCollection",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://www.w3.org/2019/wot/td#PropertyAffordance"
+         }
+        ]
+       }
+      },
+      {
+       "idShort": "actions",
+       "description": [
+        {
+         "language": "en",
+         "text": "Collection of functions that can be done on asset as action SMC"
+        }
+       ],
+       "modelType": "SubmodelElementCollection",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://www.w3.org/2019/wot/td#ActionAffordance"
+         }
+        ]
+       },
+       "value": [
+        {
+         "idShort": "Move",
+         "description": [
+          {
+           "language": "en",
+           "text": "An invokable function of the asset (WoT ActionAffordance)."
+          }
+         ],
+         "modelType": "SubmodelElementCollection",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://smartproductionlab.aau.dk/aid/ActionDefinition/1/0"
+           }
+          ]
+         },
+         "supplementalSemanticIds": [
+          {
+           "type": "ExternalReference",
+           "keys": [
+            {
+             "type": "GlobalReference",
+             "value": "https://www.w3.org/2019/wot/td#name"
+            }
+           ]
+          }
+         ],
+         "value": [
+          {
+           "idShort": "title",
+           "description": [
+            {
+             "language": "en",
+             "text": "Provides a human-readable title to give a human-readable context of the interface."
+            }
+           ],
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://www.w3.org/2019/wot/td#title"
+             }
+            ]
+           },
+           "value": "Move",
+           "valueType": "xs:string"
+          },
+          {
+           "idShort": "synchronous",
+           "description": [
+            {
+             "language": "en",
+             "text": "The result of the action arrives in the reply to the invocation. Absent: unknown."
+            }
+           ],
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://www.w3.org/2019/wot/td#isSynchronous"
+             }
+            ]
+           },
+           "value": "false",
+           "valueType": "xs:boolean"
+          },
+          {
+           "idShort": "forms",
+           "description": [
+            {
+             "language": "en",
+             "text": "Contains information about datapoint resource location. "
+            }
+           ],
+           "modelType": "SubmodelElementCollection",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://www.w3.org/2019/wot/td#hasForm"
+             }
+            ]
+           },
+           "value": [
+            {
+             "idShort": "href",
+             "description": [
+              {
+               "language": "en",
+               "text": "Target IRI relative path or full IRI of asset’s datapoint. The relative endpoint definition in href is always relative to base defined in EndpointMetadata"
+              }
+             ],
+             "modelType": "Property",
+             "semanticId": {
+              "type": "ExternalReference",
+              "keys": [
+               {
+                "type": "GlobalReference",
+                "value": "https://www.w3.org/2019/wot/hypermedia#hasTarget"
+               }
+              ]
+             },
+             "value": "move",
+             "valueType": "xs:string"
+            },
+            {
+             "idShort": "mqv_qos",
+             "description": [
+              {
+               "language": "en",
+               "text": "Defined the level of guarantee for message delivery between clients."
+              }
+             ],
+             "modelType": "Property",
+             "semanticId": {
+              "type": "ExternalReference",
+              "keys": [
+               {
+                "type": "GlobalReference",
+                "value": "https://www.w3.org/2019/wot/mqtt#hasQoSFlag"
+               }
+              ]
+             },
+             "value": "2",
+             "valueType": "xs:string"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

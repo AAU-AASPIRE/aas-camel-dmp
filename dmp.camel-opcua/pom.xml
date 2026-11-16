@@ -1,0 +1,65 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>dk.aau.smartproductionlab</groupId>
+		<artifactId>dmp.parent</artifactId>
+		<version>${revision}</version>
+	</parent>
+	<artifactId>dmp.camel-opcua</artifactId>
+	<name>AAS-Camel-DMP Camel OPC UA</name>
+	<description>OPC UA connector (Milo): reads, monitored items, events, writes and Method calls</description>
+
+	<packaging>jar</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
+
+
+	<dependencies>
+		<!-- Logging backend for tests only; dmp.component chooses the runtime backend. -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>dk.aau.smartproductionlab</groupId>
+			<artifactId>dmp.core</artifactId>
+			<version>${revision}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-milo</artifactId>
+		</dependency>
+
+		<!-- The Milo stack camel-milo 4.22 is built against (milo.version). -->
+		<dependency>
+			<groupId>org.eclipse.milo</groupId>
+			<artifactId>milo-stack-core</artifactId>
+		</dependency>
+
+		<!-- JSON handling for OPC UA values -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-test-junit5</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Route-level tests of OPC UA values flowing through the Lua component. -->
+		<dependency>
+			<groupId>dk.aau.smartproductionlab</groupId>
+			<artifactId>dmp.camel-lua</artifactId>
+			<version>${revision}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>

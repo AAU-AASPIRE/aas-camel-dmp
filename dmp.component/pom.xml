@@ -1,0 +1,181 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>dk.aau.smartproductionlab</groupId>
+		<artifactId>dmp.parent</artifactId>
+		<version>${revision}</version>
+	</parent>
+	<artifactId>dmp.component</artifactId>
+	<name>AAS-Camel-DMP Component</name>
+	<description>The DMP executable: settings, health and management status</description>
+
+	<packaging>jar</packaging>
+
+	<properties>
+		<dmp.executable>dk.aau.smartproductionlab.dmp.component.DmpExecutable</dmp.executable>
+		<!-- caller may override with -DargLine=... (e.g. test health-port offsets) -->
+		<argLine></argLine>
+	</properties>
+
+	<build>
+		<plugins>
+
+			<!-- the executable jar -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.3.0</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>lib/</classpathPrefix>
+							<mainClass>${dmp.executable}</mainClass>
+						</manifest>
+					</archive>
+
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<!-- ${argLine} forwards a caller-provided -DargLine (e.g. test
+					     health-port offsets). -->
+					<argLine>${argLine} --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED</argLine>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<!-- The executable's logging backend; library modules use it only in tests. -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>dk.aau.smartproductionlab</groupId>
+			<artifactId>dmp.core</artifactId>
+			<version>${revision}</version>
+		</dependency>
+		<dependency>
+			<groupId>dk.aau.smartproductionlab</groupId>
+			<artifactId>dmp.management</artifactId>
+			<version>${revision}</version>
+		</dependency>
+		<dependency>
+			<groupId>dk.aau.smartproductionlab</groupId>
+			<artifactId>dmp.management</artifactId>
+			<version>${revision}</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-jetty</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>dk.aau.smartproductionlab</groupId>
+			<artifactId>dmp.camel-mqtt</artifactId>
+			<version>${revision}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>dk.aau.smartproductionlab</groupId>
+			<artifactId>dmp.camel-aas</artifactId>
+			<version>${revision}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>dk.aau.smartproductionlab</groupId>
+			<artifactId>dmp.camel-lua</artifactId>
+			<version>${revision}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>dk.aau.smartproductionlab</groupId>
+			<artifactId>dmp.camel-http</artifactId>
+			<version>${revision}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>dk.aau.smartproductionlab</groupId>
+			<artifactId>dmp.camel-opcua</artifactId>
+			<version>${revision}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>dk.aau.smartproductionlab</groupId>
+			<artifactId>dmp.camel-modbus</artifactId>
+			<version>${revision}</version>
+		</dependency>
+		<dependency>
+			<groupId>dk.aau.smartproductionlab</groupId>
+			<artifactId>dmp.camel-snmp</artifactId>
+			<version>${revision}</version>
+		</dependency>
+		<dependency>
+			<groupId>dk.aau.smartproductionlab</groupId>
+			<artifactId>dmp.camel-influxdb2</artifactId>
+			<version>${revision}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-test-junit5</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>dk.aau.smartproductionlab</groupId>
+			<artifactId>dmp.camel-mqtt</artifactId>
+			<version>${revision}</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>dk.aau.smartproductionlab</groupId>
+			<artifactId>dmp.camel-modbus</artifactId>
+			<version>${revision}</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>dk.aau.smartproductionlab</groupId>
+			<artifactId>dmp.camel-snmp</artifactId>
+			<version>${revision}</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- The embedded KRaft test broker shares camel-kafka's Kafka line (kafka.version) with the clients. -->
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka_2.13</artifactId>
+			<version>${kafka.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka-server</artifactId>
+			<version>${kafka.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.awaitility</groupId>
+			<artifactId>awaitility</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+
+	</dependencies>
+
+</project>

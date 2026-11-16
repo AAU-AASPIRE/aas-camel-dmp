@@ -2,31 +2,30 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.eclipse.digitaltwin.basyx</groupId>
-	<artifactId>databridge.parent</artifactId>
+	<groupId>dk.aau.smartproductionlab</groupId>
+	<artifactId>dmp.parent</artifactId>
 	<version>${revision}</version>
 	<packaging>pom</packaging>
-	<name>DataBridge Parent</name>
-	<description>Parent POM for Eclipse BaSyx DataBridge</description>
+	<name>AAS-Camel-DMP</name>
+	<description>AAS-Camel-DMP: maps asset protocols to Asset Administration Shells with Apache Camel, configured by AIMC and AID submodels</description>
 
 	<modules>
-		<module>databridge.core</module>
-		<module>databridge.camel-aas</module>
-		<module>databridge.camel-activemq</module>
-		<module>databridge.camel-hono</module>
-		<module>databridge.camel-httppolling</module>
-		<module>databridge.camel-jsonata</module>
-		<module>databridge.camel-jsonjackson</module>
-		<module>databridge.camel-kafka</module>
-		<module>databridge.camel-opcua</module>
-		<module>databridge.camel-paho</module>
-		<module>databridge.camel-plc4x</module>
-		<module>databridge.camel-timer</module>
-		<module>databridge.camel-sql</module>
-		<module>databridge.examples</module>
-		<module>databridge.component</module>
+		<module>dmp.core</module>
+		<module>dmp.management</module>
+		<module>dmp.camel-aas</module>
+		<module>dmp.camel-http</module>
+		<module>dmp.camel-lua</module>
+		<module>dmp.camel-opcua</module>
+		<module>dmp.camel-mqtt</module>
+		<module>dmp.camel-modbus</module>
+		<module>dmp.camel-snmp</module>
+		<module>dmp.camel-influxdb2</module>
+		<module>dmp.component</module>
 	</modules>
 
+	<scm>
+		<url>https://github.com/tristan-schwoerer/aas-camel-dmp</url>
+	</scm>
 	<licenses>
 		<license>
 			<name>MIT</name>
@@ -34,26 +33,31 @@
 		</license>
 	</licenses>
 
+	<url>https://github.com/tristan-schwoerer/aas-camel-dmp</url>
 	<developers>
 		<developer>
-			<organization>Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e.V.</organization>
-			<id>fschnicke</id>
-			<name>Frank Schnicke</name>
-			<email>frank.schnicke@iese.fraunhofer.de</email>
+			<name>Tristan Schwörer</name>
+			<email>tristans@mp.aau.dk</email>
+			<organization>Aalborg University</organization>
 		</developer>
 	</developers>
 
 	<properties>
-		<java.version>11</java.version>
+		<java.version>25</java.version>
+		<maven.compiler.source>25</maven.compiler.source>
+		<maven.compiler.target>25</maven.compiler.target>
+		<maven.compiler.release>25</maven.compiler.release>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<revision>1.0.0-SNAPSHOT</revision>
-		<docker.provenance />
-		<docker.namespace>eclipsebasyx</docker.namespace>
-		<docker.image.name>NOT_DEFINED_IN_MODULE</docker.image.name>
-		<docker.image.tag>${revision}</docker.image.tag>
-		<docker.target.platforms>linux/amd64, linux/arm64, linux/arm/v7</docker.target.platforms>
-		<camel.version>3.21.0</camel.version>
+		<!-- JUnit tags skipped by a plain "mvn test": real Kafka/process tests (-Pintegration) and the
+		     stress test (-Pcapacity). -->
+		<dmp.test.excludedGroups>integration,capacity</dmp.test.excludedGroups>
+		<camel.version>4.22.0</camel.version>
+		<aas4j.version>2.0.1</aas4j.version>
+		<kafka.version>4.3.1</kafka.version>
+		<milo.version>1.1.6</milo.version>
+		<slf4j.version>2.0.18</slf4j.version>
 	</properties>
 
 	<build>
@@ -85,65 +89,33 @@
 		</plugins>
 		<pluginManagement>
 			<plugins>
+				<!-- camel-component-maven-plugin writes src/generated after compiling, but those files are
+				     also compiled as sources: a stale copy breaks the next build, so clean removes it. -->
 				<plugin>
-					<groupId>io.fabric8</groupId>
-					<artifactId>docker-maven-plugin</artifactId>
-					<version>0.45.1</version>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-clean-plugin</artifactId>
+					<version>3.4.1</version>
 					<configuration>
-						<images>
-							<image>
-								<name>
-									${docker.namespace}/${docker.image.name}:${docker.image.tag}</name>
-								<registry>docker.io</registry>
-								<build>
-									<contextDir>${project.basedir}</contextDir>
-									<args>
-									</args>
-									<labels>
-										<maven.version>${project.version}</maven.version>
-										<maven.build.timestamp>
-											${maven.build.timestamp}</maven.build.timestamp>
-									</labels>
-									<noCache>true</noCache>
-									<buildx>
-										<platforms>
-											${docker.target.platforms}
-										</platforms>
-									</buildx>
-								</build>
-							</image>
-						</images>
-						<verbose>true</verbose>
+						<filesets>
+							<fileset>
+								<directory>${project.basedir}/src/generated</directory>
+							</fileset>
+						</filesets>
 					</configuration>
-					<executions>
-						<execution>
-							<id>build-docker</id>
-							<phase>package</phase>
-							<goals>
-								<goal>build</goal>
-							</goals>
-						</execution>
-						<execution>
-							<id>push-docker</id>
-							<phase>deploy</phase>
-							<goals>
-								<goal>build</goal>
-								<goal>push</goal>
-							</goals>
-							<configuration>
-								<images>
-									<image>
-										<build>
-											<buildx>
-												<platforms>
-													${docker.target.platforms}</platforms>
-											</buildx>
-										</build>
-									</image>
-								</images>
-							</configuration>
-						</execution>
-					</executions>
+				</plugin>
+				<!-- The release level comes from maven.compiler.release above. -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.12.1</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>3.2.5</version>
+					<configuration>
+						<excludedGroups>${dmp.test.excludedGroups}</excludedGroups>
+					</configuration>
 				</plugin>
 			</plugins>
 		</pluginManagement>
@@ -151,6 +123,94 @@
 	
 	<dependencyManagement>
 		<dependencies>
+			<!-- One Jackson core line for the reactor: AAS4J 2.0.1 is built against 2.20.x. -->
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>2.20.1</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-core</artifactId>
+				<version>2.20.1</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-annotations</artifactId>
+				<version>2.20</version>
+			</dependency>
+			<dependency>
+				<groupId>org.eclipse.digitaltwin.aas4j</groupId>
+				<artifactId>aas4j-model</artifactId>
+				<version>${aas4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.eclipse.digitaltwin.aas4j</groupId>
+				<artifactId>aas4j-dataformat-json</artifactId>
+				<version>${aas4j.version}</version>
+			</dependency>
+			<!-- Library versions aligned with what Camel 4.22 is built and tested against. Modules that use one
+			     of them directly declare it, so a Camel upgrade cannot drop it from under their code. -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-simple</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.eclipse.milo</groupId>
+				<artifactId>milo-stack-core</artifactId>
+				<version>${milo.version}</version>
+			</dependency>
+			<!-- MQTT 5 client of dmp.camel-mqtt; its Netty modules follow the netty-bom below. -->
+			<dependency>
+				<groupId>com.hivemq</groupId>
+				<artifactId>hivemq-mqtt-client</artifactId>
+				<version>1.4.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.snmp4j</groupId>
+				<artifactId>snmp4j</artifactId>
+				<version>3.13.1</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.httpcomponents.client5</groupId>
+				<artifactId>httpclient5</artifactId>
+				<version>5.6.3</version>
+			</dependency>
+			<dependency>
+				<groupId>com.google.code.gson</groupId>
+				<artifactId>gson</artifactId>
+				<version>2.14.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.httpcomponents.core5</groupId>
+				<artifactId>httpcore5</artifactId>
+				<version>5.4.3</version>
+			</dependency>
+			<dependency>
+				<groupId>org.awaitility</groupId>
+				<artifactId>awaitility</artifactId>
+				<version>4.3.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.junit.jupiter</groupId>
+				<artifactId>junit-jupiter</artifactId>
+				<version>5.14.4</version>
+			</dependency>
+			<!-- One Netty line for Milo (built against 4.1.136), the PLC4X drivers, which bring older 4.1.x
+			     modules, and the HiveMQ MQTT client (built against 4.1.137); mixed Netty modules break at runtime. -->
+			<dependency>
+				<groupId>io.netty</groupId>
+				<artifactId>netty-bom</artifactId>
+				<version>4.1.136.Final</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
 			<dependency>
 				<groupId>org.apache.camel</groupId>
 				<artifactId>camel-bom</artifactId>
@@ -162,39 +222,33 @@
 	</dependencyManagement>
 
 	<profiles>
+		<!-- Active only inside the IDE's Maven integration (m2e, used by VS Code Java and Eclipse):
+		     the IDE compiles into target-ide/, so its incremental builds never overwrite the classes
+		     command-line Maven compiles and tests in target/. -->
 		<profile>
-			<id>docker-push</id>
+			<id>m2e</id>
+			<activation>
+				<property><name>m2e.version</name></property>
+			</activation>
 			<build>
-				<plugins>
-					<plugin>
-						<groupId>io.fabric8</groupId>
-						<artifactId>docker-maven-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>push-docker</id>
-								<phase>package</phase>
-								<goals>
-									<goal>build</goal>
-									<goal>push</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-						<groupId>org.eclipse.dash</groupId>
-						<artifactId>license-tool-plugin</artifactId>
-						<version>1.1.1-SNAPSHOT</version>
-						<executions>
-							<execution>
-								<id>license-check</id>
-								<goals>
-									<goal>license-check</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
+				<directory>${project.basedir}/target-ide</directory>
 			</build>
+		</profile>
+		<!-- Also runs the real Kafka broker, SASL/TLS and packaged-process tests (several minutes). -->
+		<profile>
+			<id>integration</id>
+			<properties>
+				<dmp.test.excludedGroups>capacity</dmp.test.excludedGroups>
+			</properties>
+		</profile>
+		<!-- Runs only the stress test; size it with -Ddmp.stress.capacity. -->
+		<profile>
+			<id>capacity</id>
+			<properties>
+				<dmp.test.excludedGroups>integration</dmp.test.excludedGroups>
+				<groups>capacity</groups>
+				<surefire.failIfNoSpecifiedTests>false</surefire.failIfNoSpecifiedTests>
+			</properties>
 		</profile>
 	</profiles>
 </project>
