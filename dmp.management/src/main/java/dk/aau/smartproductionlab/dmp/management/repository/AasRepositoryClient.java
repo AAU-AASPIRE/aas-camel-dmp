@@ -45,8 +45,10 @@ import java.util.concurrent.CompletionStage;
 import java.util.concurrent.Flow;
 import java.util.function.Function;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.JsonNode;
+import tools.jackson.databind.json.JsonMapper;
+import tools.jackson.databind.node.ObjectNode;
 import org.eclipse.digitaltwin.aas4j.v3.model.Submodel;
 import org.eclipse.digitaltwin.aas4j.v3.model.SubmodelElement;
 import dk.aau.smartproductionlab.dmp.aas.model.Aas;
@@ -57,7 +59,7 @@ import dk.aau.smartproductionlab.dmp.management.model.WireProjection;
 public final class AasRepositoryClient {
 	private static final int MAX_RESPONSE_BYTES = 16 * 1024 * 1024;
 	private static final int MAX_PAGINATED_RESULTS = 10_000;
-	private static final ObjectMapper PAGES = new ObjectMapper();
+	private static final JsonMapper PAGES = JsonMapper.builder().build();
 	public enum Status { FOUND, NOT_FOUND, UNAUTHORIZED, TRANSIENT_FAILURE, INVALID_RESPONSE }
 
 	public record Result<T>(Status status, T value, int httpStatus, String detail) {
@@ -144,7 +146,7 @@ public final class AasRepositoryClient {
 	}
 
 	private static JsonNode withoutElements(JsonNode submodel) {
-		if (submodel instanceof com.fasterxml.jackson.databind.node.ObjectNode object) object.remove("submodelElements");
+		if (submodel instanceof ObjectNode object) object.remove("submodelElements");
 		return submodel;
 	}
 
@@ -196,7 +198,7 @@ public final class AasRepositoryClient {
 			for (JsonNode item : rawResults) {
 				if (item == null || !item.isObject()) return invalid("repository page contains a non-object result entry");
 				JsonNode id = item.get("id");
-				String identifier = id != null && id.isTextual() && !id.asText().isBlank() ? id.asText() : null;
+				String identifier = id != null && id.isString() && !id.asString().isBlank() ? id.asString() : null;
 				Submodel submodel;
 				try { submodel = Aas.read(item.toString(), Submodel.class); }
 				catch (IllegalArgumentException malformed) { submodel = null; }
@@ -204,9 +206,9 @@ public final class AasRepositoryClient {
 				result.add(new Listed(identifier == null ? submodel.getId() : identifier, submodel));
 			}
 			JsonNode next = response.value().path("paging_metadata").get("cursor");
-			if (next == null || !next.isTextual() || next.asText().isBlank()) return found(List.copyOf(result));
-			if (!cursors.add(next.asText())) return invalid("repository pagination cursor repeated");
-			cursor = next.asText();
+			if (next == null || !next.isString() || next.asString().isBlank()) return found(List.copyOf(result));
+			if (!cursors.add(next.asString())) return invalid("repository pagination cursor repeated");
+			cursor = next.asString();
 		}
 		return invalid("repository pagination exceeded configured page bound");
 	}
@@ -291,7 +293,7 @@ public final class AasRepositoryClient {
 			JsonNode value = PAGES.readTree(json);
 			if (value == null || !value.isObject()) throw new IllegalArgumentException("JSON object required");
 			return value;
-		} catch (com.fasterxml.jackson.core.JsonProcessingException malformed) {
+		} catch (JacksonException malformed) {
 			throw new IllegalArgumentException("malformed JSON", malformed);
 		}
 	}
