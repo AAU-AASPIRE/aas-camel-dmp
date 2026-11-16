@@ -161,11 +161,6 @@
 				<artifactId>slf4j-simple</artifactId>
 				<version>${slf4j.version}</version>
 			</dependency>
-			<dependency>
-				<groupId>org.eclipse.milo</groupId>
-				<artifactId>milo-stack-core</artifactId>
-				<version>${milo.version}</version>
-			</dependency>
 			<!-- MQTT 5 client of dmp.camel-mqtt; its Netty modules follow the netty-bom below. -->
 			<dependency>
 				<groupId>com.hivemq</groupId>
@@ -209,6 +204,14 @@
 				<groupId>io.netty</groupId>
 				<artifactId>netty-bom</artifactId>
 				<version>4.1.140.Final</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<!-- Every Milo module on one version: camel-milo would otherwise bring its own. -->
+			<dependency>
+				<groupId>org.eclipse.milo</groupId>
+				<artifactId>milo-bom</artifactId>
+				<version>${milo.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
