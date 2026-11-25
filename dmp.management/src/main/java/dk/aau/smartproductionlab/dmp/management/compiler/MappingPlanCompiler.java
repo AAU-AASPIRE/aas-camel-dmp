@@ -30,8 +30,6 @@ import java.util.Set;
 import java.util.LinkedHashSet;
 
 import org.eclipse.digitaltwin.aas4j.v3.model.Key;
-import org.eclipse.digitaltwin.aas4j.v3.model.KeyTypes;
-import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultKey;
 import org.eclipse.digitaltwin.aas4j.v3.model.ReferenceTypes;
 import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultReference;
 import org.eclipse.digitaltwin.aas4j.v3.model.Qualifier;
@@ -183,7 +181,8 @@ public final class MappingPlanCompiler {
 				if(endpoint.target() instanceof StateTarget state) {
 					List<Key> keys=Aas.keys(endpoint.reference());
 					dependencies.add(new Dependency("series",keys.get(0).getValue(),AasReferenceResolver.idShortPath(keys)));
-					dependencies.add(new Dependency("series",keys.get(0).getValue(),AasReferenceResolver.idShortPath(targetKeys(keys))));
+					// The Knowledge itself: its semanticId and its Target's values.
+					dependencies.add(new Dependency("series",keys.get(0).getValue(),AasReferenceResolver.idShortPath(keys.subList(0,keys.size()-1))));
 					if(state.projection().subjectElement()!=null) {
 						List<Key> subject=Aas.keys(state.projection().subjectElement());
 						dependencies.add(new Dependency("submodel",subject.get(0).getValue(),AasReferenceResolver.idShortPath(subject)));
@@ -289,37 +288,28 @@ public final class MappingPlanCompiler {
 	}
 
 	/**
-	 * A StateVariable target: {@code <Variables>/Knowledge/<variable>}, its Knowledge and the Knowledge's Target read
-	 * beside it, and an element Subject checked to exist.
+	 * A StateVariable target: a variable whose parent is a Knowledge collection (by semanticId, wherever it lies), the
+	 * Knowledge's Target read beside it, and an element Subject checked to exist.
 	 */
 	private AasRepositoryClient.Result<EndpointPlan> compileState(WireModel.Endpoint endpoint,
 			AasReferenceResolver.ResolvedElement variable) {
 		List<Key> keys=Aas.keys(endpoint.reference());
-		if(keys.size()!=3)
-			return invalid("StateVariable "+AasReferenceResolver.idShortPath(keys)+": a StateVariable lies directly in a Knowledge collection of its submodel");
-		var knowledge=references.resolve(modelReference(keys.subList(0,2)));
+		if(keys.size()<3)
+			return invalid("StateVariable "+AasReferenceResolver.idShortPath(keys)+": a StateVariable lies directly in a Knowledge collection");
+		var knowledge=references.resolve(modelReference(keys.subList(0,keys.size()-1)));
 		if(!knowledge.found())return propagate(knowledge);
 		if(!(knowledge.value() instanceof AasReferenceResolver.ResolvedElement collection))
 			return invalid("the StateVariable's Knowledge is not an AAS element");
-		var target=references.resolve(modelReference(targetKeys(keys)));
-		if(!target.found())return propagate(target);
-		if(!(target.value() instanceof AasReferenceResolver.ResolvedElement declared))
-			return invalid("the Knowledge's Target is not an AAS element");
+		SubmodelElement declared=collection.element();
 		StateProjection.Variable projection;
-		try { projection=StateProjection.project(collection.element(),variable.element(),keys,declared.element()); }
+		try { projection=StateProjection.project(collection.element(),variable.element()); }
 		catch(IllegalArgumentException invalid) { return invalid("StateVariable "+AasReferenceResolver.idShortPath(keys)+": "+invalid.getMessage()); }
 		if(projection.subjectElement()!=null) {
 			var subject=references.resolve(projection.subjectElement());
 			if(!subject.found())return propagate(subject);
 		}
 		return found(new EndpointPlan(endpoint.id(),endpoint.reference(),
-				new StateTarget(variable,declared.element(),projection),endpoint.pollingInterval(),endpoint.evaluation()));
-	}
-
-	/** The keys of the Target beside a StateVariable: its submodel, its Knowledge, {@code Target}. */
-	private static List<Key> targetKeys(List<Key> variableKeys) {
-		return List.of(variableKeys.get(0),variableKeys.get(1),new DefaultKey.Builder().type(KeyTypes.SUBMODEL_ELEMENT_COLLECTION)
-				.value(StateProjection.TARGET_ID_SHORT).build());
+				new StateTarget(variable,StateProjection.target(declared),projection),endpoint.pollingInterval(),endpoint.evaluation()));
 	}
 
 	private static Reference modelReference(List<Key> keys) {

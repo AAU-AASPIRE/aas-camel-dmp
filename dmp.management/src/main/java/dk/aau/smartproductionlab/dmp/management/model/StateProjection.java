@@ -20,9 +20,10 @@ import dk.aau.smartproductionlab.dmp.sparql.StateTerms.ValueType;
 /**
  * Projects a StateVariable of an asset's Knowledge (aas-model's {@code Variables/Knowledge}, plan D36) into what a state
  * sink writes: the variable's subject and meaning as IRIs, its value type and cardinality, and the store and graph of
- * the Knowledge's {@code Target}. The Knowledge is kept as a time series is: a mapping sinks into one of its variables
- * as into a series segment. Elements are recognised by semanticId; the meaning is the variable's one supplemental
- * semanticId.
+ * the Knowledge's Target. The Knowledge is an SMC template kept as a time series is, wherever it lies in a submodel: a
+ * mapping sinks into one of its variables as into a series segment, and the store is the Knowledge's own child, as a
+ * segment's InfluxDB target is the segment's. Elements are recognised by semanticId, never by idShort or by the
+ * submodel they lie in; the meaning is the variable's one supplemental semanticId.
  * Nothing missing is filled in: a variable without a Subject, ValueType or Cardinality cannot be written.
  *
  * <p>A subject's IRI: an AAS is its id; an element is {@code <submodel id>#<idShortPath>}.
@@ -37,8 +38,6 @@ public final class StateProjection {
 	public static final String TARGET = BASE + "/state/SparqlTarget/1/0";
 	public static final String ENDPOINT = BASE + "/state/SparqlTarget/Endpoint/1/0";
 	public static final String GRAPH = BASE + "/state/SparqlTarget/Graph/1/0";
-	/** The idShort the template gives the Knowledge's Target. */
-	public static final String TARGET_ID_SHORT = "Target";
 
 	/**
 	 * What one state variable is written as. {@code subjectReference} is the variable's Subject, an element of an AAS
@@ -55,14 +54,12 @@ public final class StateProjection {
 	}
 
 	/**
-	 * Projects {@code variable}, an element of {@code knowledge} (a top-level collection of its submodel, the
-	 * Variables), with the Knowledge's {@code target}. Fails with {@link IllegalArgumentException} naming what is
-	 * missing or wrong.
+	 * Projects {@code variable}, a direct child of {@code knowledge}, with the Knowledge's Target (its one child of
+	 * semanticId {@value #TARGET}). Fails with {@link IllegalArgumentException} naming what is missing or wrong.
 	 */
-	public static Variable project(SubmodelElement knowledge, SubmodelElement variable, List<Key> variableKeys, SubmodelElement target) {
-		if (variableKeys.size() != 3) throw error("a StateVariable lies directly in a Knowledge collection of its submodel");
-		if (!(knowledge instanceof SubmodelElementCollection) || !Aas.hasSemantic(knowledge, KNOWLEDGE))
-			throw error("the variable's collection is not a Knowledge (" + KNOWLEDGE + ")");
+	public static Variable project(SubmodelElement knowledge, SubmodelElement variable) {
+		if (!isKnowledge(knowledge)) throw error("a StateVariable lies directly in a Knowledge (" + KNOWLEDGE + ")");
+		SubmodelElement target = target(knowledge);
 		if (!isVariable(variable)) throw error("the target is not a StateVariable (" + VARIABLE + ")");
 		List<Reference> meanings = Aas.nonNull(variable.getSupplementalSemanticIds());
 		if (meanings.size() != 1 || Aas.keys(meanings.get(0)).size() != 1)
@@ -80,7 +77,7 @@ public final class StateProjection {
 		Cardinality cardinality = Cardinality.of(value(only(members, CARDINALITY, "Cardinality"), "Cardinality"));
 
 		if (!(target instanceof SubmodelElementCollection) || !Aas.hasSemantic(target, TARGET))
-			throw error("the Knowledge's " + TARGET_ID_SHORT + " is not a SparqlTarget (" + TARGET + ")");
+			throw error("the Knowledge's Target is not a SparqlTarget collection (" + TARGET + ")");
 		List<SubmodelElement> store = Aas.children(target);
 		URI endpoint;
 		try { endpoint = URI.create(value(only(store, ENDPOINT, "Endpoint"), "Target Endpoint")); }
@@ -89,6 +86,16 @@ public final class StateProjection {
 		if (!StateTerms.isIri(graph)) throw error("the Target's Graph is not an IRI: " + graph);
 		boolean element = "Submodel".equals(Aas.keyType(Aas.keys(subject).get(0)));
 		return new Variable(endpoint, graph, subjectIri, property, valueType, cardinality, element ? subject : null);
+	}
+
+	/** Whether an element is a Knowledge collection. */
+	public static boolean isKnowledge(SubmodelElement element) {
+		return element instanceof SubmodelElementCollection && Aas.hasSemantic(element, KNOWLEDGE);
+	}
+
+	/** The Knowledge's one Target (its child of semanticId {@value #TARGET}). */
+	public static SubmodelElement target(SubmodelElement knowledge) {
+		return only(Aas.children(knowledge), TARGET, "the Knowledge's Target");
 	}
 
 	/** The IRI of a subject reference: an AAS's id, or {@code <submodel id>#<idShortPath>} for an element. */

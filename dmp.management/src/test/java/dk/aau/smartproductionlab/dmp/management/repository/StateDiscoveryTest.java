@@ -57,8 +57,8 @@ class StateDiscoveryTest {
 			assertTrue(target.uri(null).startsWith("dmp-sparql:state?"));
 			var dependencies = bundle.desired().dependencies();
 			assertTrue(dependencies.contains(new MappingPlanCompiler.Dependency("series", STATION_VARIABLES, "Knowledge.OccupiedBy")), dependencies.toString());
-			assertTrue(dependencies.contains(new MappingPlanCompiler.Dependency("series", STATION_VARIABLES, "Knowledge.Target")),
-					"the store and graph are the Knowledge's Target: " + dependencies);
+			assertTrue(dependencies.contains(new MappingPlanCompiler.Dependency("series", STATION_VARIABLES, "Knowledge")),
+					"the Knowledge and its Target: " + dependencies);
 		}
 	}
 
@@ -87,6 +87,22 @@ class StateDiscoveryTest {
 			assertEquals(java.util.List.of("TransferPointX", "TransferPointY"),
 					route.sinks().stream().map(Sink::sinkId).toList());
 			assertTrue(route.sinks().stream().allMatch(sink -> sink.endpoint() instanceof StateEndpoint));
+		}
+	}
+
+	@Test
+	void theKnowledgeAndItsTargetAreFoundBySemanticIdNotByName() throws Exception {
+		// The Knowledge and its Target under other idShorts: both are found by semanticId, not by name.
+		String elsewhere = resource("station-variables")
+				.replace("\"idShort\": \"Target\"", "\"idShort\": \"Store\"")
+				.replace("\"idShort\": \"Knowledge\"", "\"idShort\": \"Facts\"");
+		String nested = "{\"type\":\"ModelReference\",\"keys\":[" + key("Submodel", STATION_VARIABLES) + ","
+				+ key("SubmodelElementCollection", "Facts") + "," + key("SubmodelElementCollection", "OccupiedBy") + "]}";
+		try (var repository = new FakeAasRepository().put(elsewhere).put(data())
+				.put(aimc(refProperty(DATA_ID, "Value"), nested, "OccupiedBy"))) {
+			DesiredBundle bundle = only(discovery(repository, STORE).scan());
+			assertTrue(bundle.valid(), issues(bundle));
+			assertEquals(LAB + "OccupiedBy", ((StateEndpoint) stateSink(bundle).endpoint()).property());
 		}
 	}
 
