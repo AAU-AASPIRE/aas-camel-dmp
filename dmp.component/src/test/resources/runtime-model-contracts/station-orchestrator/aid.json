@@ -3637,7 +3637,7 @@
          }
         ]
        },
-       "value": "mqtt://192.168.0.104:1883/NN/Nybrovej/InnoLab/Orchestrator/",
+       "value": "mqtt://hivemq-broker:1883/NN/Nybrovej/InnoLab/Orchestrator/",
        "valueType": "xs:string"
       },
       {
