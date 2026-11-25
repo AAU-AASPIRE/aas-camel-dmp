@@ -152,7 +152,7 @@ public final class ConnectorConfigurationFactory {
 	 * The DMP's deployment as compilation input: the repository, the InfluxDB TimeSeries segments must name
 	 * ({@code null} when none is configured), the credentials AID schemes need, whether the repository's change
 	 * events reach the DMP ({@code repositoryEvents}; without them, AAS element sources are polled), and the state
-	 * store StateDeclarations must name ({@code null} when none is configured).
+	 * store every Knowledge's Target must name ({@code null} when none is configured).
 	 */
 	public record RuntimeSettings(URI aasRepositoryBaseUri, InfluxSettings influx, DmpCredentials credentials,
 			boolean repositoryEvents, StateStoreSettings stateStore) {
@@ -1292,7 +1292,7 @@ public final class ConnectorConfigurationFactory {
 			issue(issues,mapping,path,"state variables need a configured state store ("+StateStoreSettings.UPDATE_URL+")");return null;
 		}
 		if(!runtime.stateStore().serves(variable.endpoint())) {
-			issue(issues,mapping,path,"the StateDeclaration's Target Endpoint "+variable.endpoint()+" does not name the configured state store");return null;
+			issue(issues,mapping,path,"the Knowledge's Target Endpoint "+variable.endpoint()+" does not name the configured state store");return null;
 		}
 		return new Sink(entityId(mapping,"sink",position),endpoint.id(),new StateEndpoint(variable.graph(),variable.subject(),
 				variable.property(),variable.valueType(),variable.cardinality(),mapping.identity()));

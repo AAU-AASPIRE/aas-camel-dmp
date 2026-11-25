@@ -70,7 +70,7 @@ Port 8080 serves delegated Operation calls, `/health` and `/management/status`.
 | `DMP_MANAGED_MQTT_CLIENT_ID`, `…_USERNAME`, `…_PASSWORD`, `…_REPOSITORY_ID`, `…_SESSION_EXPIRY_SECONDS` | MQTT session (defaults `dmp-control`, none, `+`, 86400) |
 | `DMP_MANAGED_AIMC_IDS` | JSON array of AIMC ids to adopt; default: every AIMC in the repository |
 | `DMP_INFLUX_URL`, `DMP_INFLUX_ORG`, `DMP_INFLUX_TOKEN` | InfluxDB 2 for TimeSeries segments; without them segment mappings are blocked |
-| `DMP_STATE_STORE_UPDATE_URL` | SPARQL 1.1 Update endpoint of the state store for StateVariable sinks (e.g. `http://state-store:7878/update`); a StateDeclaration's `Target/Endpoint` must name its origin; without it state mappings are blocked |
+| `DMP_STATE_STORE_UPDATE_URL` | SPARQL 1.1 Update endpoint of the state store for StateVariable sinks (e.g. `http://state-store:7878/update`); the `Target/Endpoint` of an asset's `Variables/Knowledge` must name its origin; without it state mappings are blocked |
 | `DMP_HTTP_PORT` | Listener port, default 8080 |
 | `DMP_AFFORDANCE_VALIDATION` | `OFF` (default), `ON` or `REPORT` |
 

@@ -397,7 +397,11 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/FillingModuleAAS/submodels/StateDeclaration"
+              "value": "https://smartproductionlab.aau.dk/aas/FillingModuleAAS/submodels/Variables"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Knowledge"
              },
              {
               "type": "SubmodelElementCollection",
@@ -476,7 +480,11 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/FillingModuleAAS/submodels/StateDeclaration"
+              "value": "https://smartproductionlab.aau.dk/aas/FillingModuleAAS/submodels/Variables"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Knowledge"
              },
              {
               "type": "SubmodelElementCollection",

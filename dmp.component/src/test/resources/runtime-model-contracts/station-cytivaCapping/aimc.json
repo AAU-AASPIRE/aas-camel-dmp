@@ -405,7 +405,11 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/cytivaCappingSystemAAS/submodels/StateDeclaration"
+              "value": "https://smartproductionlab.aau.dk/aas/cytivaCappingSystemAAS/submodels/Variables"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Knowledge"
              },
              {
               "type": "SubmodelElementCollection",

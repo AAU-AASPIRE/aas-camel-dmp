@@ -52,7 +52,7 @@ public final class ManagedDmpRuntime implements AutoCloseable {
 		this(settings, influx, null, credentials);
 	}
 
-	/** {@code stateStore} is the state store of StateDeclarations, or {@code null} when none is configured. */
+	/** {@code stateStore} is the state store the assets' Knowledge names, or {@code null} when none is configured. */
 	public ManagedDmpRuntime(ManagedRuntimeSettings settings, InfluxSettings influx, StateStoreSettings stateStore,
 			DmpCredentials credentials) {
 		this(settings, influx, stateStore, new DmpComponent(), discovery(settings, influx, stateStore, credentials),

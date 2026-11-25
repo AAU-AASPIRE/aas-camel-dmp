@@ -405,7 +405,11 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/optimaUnloadingSystemAAS/submodels/StateDeclaration"
+              "value": "https://smartproductionlab.aau.dk/aas/optimaUnloadingSystemAAS/submodels/Variables"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Knowledge"
              },
              {
               "type": "SubmodelElementCollection",

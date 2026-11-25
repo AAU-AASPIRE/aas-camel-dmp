@@ -142,7 +142,7 @@ public class RawModelContractFixtureTest {
 		JsonObject context = context(fixture);
 		var settings = influx && context.has("influx_url") ? new dk.aau.smartproductionlab.dmp.influxdb2.InfluxSettings(
 				URI.create(context.get("influx_url").getAsString()), context.get("influx_org").getAsString(), "fixture-token") : null;
-		// The workspace's state store, which StateDeclarations name; its update endpoint is the deployment's.
+		// The workspace's state store, which every Knowledge's Target names; its update endpoint is the deployment's.
 		var store = influx && context.has("state_store_url") ? new dk.aau.smartproductionlab.dmp.sparql.StateStoreSettings(
 				URI.create(context.get("state_store_url").getAsString() + "/update")) : null;
 		return new ConnectorConfigurationFactory().createBundles(plan,

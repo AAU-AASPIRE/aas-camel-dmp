@@ -405,7 +405,11 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/StateDeclaration"
+              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/Variables"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Knowledge"
              },
              {
               "type": "SubmodelElementCollection",
@@ -3830,7 +3834,11 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/StateDeclaration"
+              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/Variables"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Knowledge"
              },
              {
               "type": "SubmodelElementCollection",
@@ -3909,7 +3917,11 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/StateDeclaration"
+              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/Variables"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Knowledge"
              },
              {
               "type": "SubmodelElementCollection",

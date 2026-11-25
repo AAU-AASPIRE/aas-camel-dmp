@@ -9,7 +9,6 @@ import org.eclipse.digitaltwin.aas4j.v3.model.Key;
 import org.eclipse.digitaltwin.aas4j.v3.model.Property;
 import org.eclipse.digitaltwin.aas4j.v3.model.Reference;
 import org.eclipse.digitaltwin.aas4j.v3.model.ReferenceElement;
-import org.eclipse.digitaltwin.aas4j.v3.model.Submodel;
 import org.eclipse.digitaltwin.aas4j.v3.model.SubmodelElement;
 import org.eclipse.digitaltwin.aas4j.v3.model.SubmodelElementCollection;
 import dk.aau.smartproductionlab.dmp.aas.model.Aas;
@@ -19,16 +18,18 @@ import dk.aau.smartproductionlab.dmp.sparql.StateTerms.Cardinality;
 import dk.aau.smartproductionlab.dmp.sparql.StateTerms.ValueType;
 
 /**
- * Projects a StateVariable of a StateDeclaration (aas-model, plan D36) into what a state sink writes: the variable's
- * subject and meaning as IRIs, its value type and cardinality, and the store and graph of its declaration's
- * {@code Target}. Elements are recognised by semanticId; the meaning is the variable's one supplemental semanticId.
+ * Projects a StateVariable of an asset's Knowledge (aas-model's {@code Variables/Knowledge}, plan D36) into what a state
+ * sink writes: the variable's subject and meaning as IRIs, its value type and cardinality, and the store and graph of
+ * the Knowledge's {@code Target}. The Knowledge is kept as a time series is: a mapping sinks into one of its variables
+ * as into a series segment. Elements are recognised by semanticId; the meaning is the variable's one supplemental
+ * semanticId.
  * Nothing missing is filled in: a variable without a Subject, ValueType or Cardinality cannot be written.
  *
  * <p>A subject's IRI: an AAS is its id; an element is {@code <submodel id>#<idShortPath>}.
  */
 public final class StateProjection {
 	private static final String BASE = "https://smartproductionlab.aau.dk";
-	public static final String DECLARATION = BASE + "/submodels/StateDeclaration/1/0";
+	public static final String KNOWLEDGE = BASE + "/variables/Knowledge/1/0";
 	public static final String VARIABLE = BASE + "/state/StateVariable/1/0";
 	public static final String SUBJECT = BASE + "/state/StateVariable/Subject/1/0";
 	public static final String VALUE_TYPE = BASE + "/state/StateVariable/ValueType/1/0";
@@ -36,7 +37,7 @@ public final class StateProjection {
 	public static final String TARGET = BASE + "/state/SparqlTarget/1/0";
 	public static final String ENDPOINT = BASE + "/state/SparqlTarget/Endpoint/1/0";
 	public static final String GRAPH = BASE + "/state/SparqlTarget/Graph/1/0";
-	/** The idShort the template gives a declaration's Target. */
+	/** The idShort the template gives the Knowledge's Target. */
 	public static final String TARGET_ID_SHORT = "Target";
 
 	/**
@@ -54,13 +55,14 @@ public final class StateProjection {
 	}
 
 	/**
-	 * Projects {@code variable}, an element of {@code declaration} at the top level, with the declaration's
-	 * {@code target}. Fails with {@link IllegalArgumentException} naming what is missing or wrong.
+	 * Projects {@code variable}, an element of {@code knowledge} (a top-level collection of its submodel, the
+	 * Variables), with the Knowledge's {@code target}. Fails with {@link IllegalArgumentException} naming what is
+	 * missing or wrong.
 	 */
-	public static Variable project(Submodel declaration, SubmodelElement variable, List<Key> variableKeys, SubmodelElement target) {
-		if (declaration.getSemanticId() != null && !Aas.hasSemantic(declaration, DECLARATION))
-			throw error("the variable's submodel is not a StateDeclaration (" + DECLARATION + ")");
-		if (variableKeys.size() != 2) throw error("a StateVariable lies directly in its StateDeclaration");
+	public static Variable project(SubmodelElement knowledge, SubmodelElement variable, List<Key> variableKeys, SubmodelElement target) {
+		if (variableKeys.size() != 3) throw error("a StateVariable lies directly in a Knowledge collection of its submodel");
+		if (!(knowledge instanceof SubmodelElementCollection) || !Aas.hasSemantic(knowledge, KNOWLEDGE))
+			throw error("the variable's collection is not a Knowledge (" + KNOWLEDGE + ")");
 		if (!isVariable(variable)) throw error("the target is not a StateVariable (" + VARIABLE + ")");
 		List<Reference> meanings = Aas.nonNull(variable.getSupplementalSemanticIds());
 		if (meanings.size() != 1 || Aas.keys(meanings.get(0)).size() != 1)
@@ -78,7 +80,7 @@ public final class StateProjection {
 		Cardinality cardinality = Cardinality.of(value(only(members, CARDINALITY, "Cardinality"), "Cardinality"));
 
 		if (!(target instanceof SubmodelElementCollection) || !Aas.hasSemantic(target, TARGET))
-			throw error("the StateDeclaration's " + TARGET_ID_SHORT + " is not a SparqlTarget (" + TARGET + ")");
+			throw error("the Knowledge's " + TARGET_ID_SHORT + " is not a SparqlTarget (" + TARGET + ")");
 		List<SubmodelElement> store = Aas.children(target);
 		URI endpoint;
 		try { endpoint = URI.create(value(only(store, ENDPOINT, "Endpoint"), "Target Endpoint")); }

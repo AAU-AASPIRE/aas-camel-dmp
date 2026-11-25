@@ -54,7 +54,7 @@ public final class MappingPlanCompiler {
 	/** A TimeSeries LinkedSegment; its series container (at {@code seriesPath}) holds the Record, the row shape. */
 	public record SeriesTarget(AasReferenceResolver.ResolvedElement segment, SubmodelElement series, String seriesPath,
 			TimeSeriesProjection.Series projection) implements Target { }
-	/** A StateVariable of a StateDeclaration: the state store is one more sink (plan D36); {@code target} its declaration's Target. */
+	/** A StateVariable of a Knowledge: the state store is one more sink (plan D36); {@code target} the Knowledge's Target. */
 	public record StateTarget(AasReferenceResolver.ResolvedElement variable, SubmodelElement target,
 			StateProjection.Variable projection) implements Target { }
 	/** An endpoint with its target; a Source also with its {@code PollingInterval} and {@code Evaluation/Mode}. */
@@ -179,11 +179,11 @@ public final class MappingPlanCompiler {
 			if(responseSinksResult.found() && responseSinksResult.value().value()!=null)resolved.addAll(responseSinksResult.value().value());
 			for(EndpointPlan endpoint:resolved) {
 				if(endpoint.target() instanceof DirectTarget target) metadataDependencies(target.resolved().element(),dependencies);
-				// A state variable's values count (its type, its subject) and so do its declaration's Target's.
+				// A state variable's values count (its type, its subject) and so do its Knowledge's Target's.
 				if(endpoint.target() instanceof StateTarget state) {
 					List<Key> keys=Aas.keys(endpoint.reference());
 					dependencies.add(new Dependency("series",keys.get(0).getValue(),AasReferenceResolver.idShortPath(keys)));
-					dependencies.add(new Dependency("series",keys.get(0).getValue(),StateProjection.TARGET_ID_SHORT));
+					dependencies.add(new Dependency("series",keys.get(0).getValue(),AasReferenceResolver.idShortPath(targetKeys(keys))));
 					if(state.projection().subjectElement()!=null) {
 						List<Key> subject=Aas.keys(state.projection().subjectElement());
 						dependencies.add(new Dependency("submodel",subject.get(0).getValue(),AasReferenceResolver.idShortPath(subject)));
@@ -289,20 +289,24 @@ public final class MappingPlanCompiler {
 	}
 
 	/**
-	 * A StateVariable target: {@code <StateDeclaration>/<variable>}, its declaration's Target read beside it, and an
-	 * element Subject checked to exist.
+	 * A StateVariable target: {@code <Variables>/Knowledge/<variable>}, its Knowledge and the Knowledge's Target read
+	 * beside it, and an element Subject checked to exist.
 	 */
 	private AasRepositoryClient.Result<EndpointPlan> compileState(WireModel.Endpoint endpoint,
 			AasReferenceResolver.ResolvedElement variable) {
 		List<Key> keys=Aas.keys(endpoint.reference());
-		var target=references.resolve(new DefaultReference.Builder().type(ReferenceTypes.MODEL_REFERENCE)
-				.keys(List.of(keys.get(0),new DefaultKey.Builder().type(KeyTypes.SUBMODEL_ELEMENT_COLLECTION)
-						.value(StateProjection.TARGET_ID_SHORT).build())).build());
+		if(keys.size()!=3)
+			return invalid("StateVariable "+AasReferenceResolver.idShortPath(keys)+": a StateVariable lies directly in a Knowledge collection of its submodel");
+		var knowledge=references.resolve(modelReference(keys.subList(0,2)));
+		if(!knowledge.found())return propagate(knowledge);
+		if(!(knowledge.value() instanceof AasReferenceResolver.ResolvedElement collection))
+			return invalid("the StateVariable's Knowledge is not an AAS element");
+		var target=references.resolve(modelReference(targetKeys(keys)));
 		if(!target.found())return propagate(target);
 		if(!(target.value() instanceof AasReferenceResolver.ResolvedElement declared))
-			return invalid("the StateDeclaration's Target is not an AAS element");
+			return invalid("the Knowledge's Target is not an AAS element");
 		StateProjection.Variable projection;
-		try { projection=StateProjection.project(variable.submodel(),variable.element(),keys,declared.element()); }
+		try { projection=StateProjection.project(collection.element(),variable.element(),keys,declared.element()); }
 		catch(IllegalArgumentException invalid) { return invalid("StateVariable "+AasReferenceResolver.idShortPath(keys)+": "+invalid.getMessage()); }
 		if(projection.subjectElement()!=null) {
 			var subject=references.resolve(projection.subjectElement());
@@ -310,6 +314,16 @@ public final class MappingPlanCompiler {
 		}
 		return found(new EndpointPlan(endpoint.id(),endpoint.reference(),
 				new StateTarget(variable,declared.element(),projection),endpoint.pollingInterval(),endpoint.evaluation()));
+	}
+
+	/** The keys of the Target beside a StateVariable: its submodel, its Knowledge, {@code Target}. */
+	private static List<Key> targetKeys(List<Key> variableKeys) {
+		return List.of(variableKeys.get(0),variableKeys.get(1),new DefaultKey.Builder().type(KeyTypes.SUBMODEL_ELEMENT_COLLECTION)
+				.value(StateProjection.TARGET_ID_SHORT).build());
+	}
+
+	private static Reference modelReference(List<Key> keys) {
+		return new DefaultReference.Builder().type(ReferenceTypes.MODEL_REFERENCE).keys(List.copyOf(keys)).build();
 	}
 
 	/** A Record's reference resolved like a mapping endpoint; a repository failure keeps its status for retries. */

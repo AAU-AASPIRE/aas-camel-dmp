@@ -3,7 +3,7 @@
  "description": [
   {
    "language": "en",
-   "text": "An asset's runtime data: time series of its state, measurements and logs."
+   "text": "An asset's runtime data: time series of its state, measurements and logs, and its state as the knowledge graph keeps it."
   }
  ],
  "modelType": "Submodel",

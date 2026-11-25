@@ -555,7 +555,7 @@ def generate(root: Path) -> None:
                     "aas_base_url": "http://aas-server:8081",
                     "influx_url": INFLUX_ORIGIN,
                     "influx_org": INFLUX_ORG,
-                    # The workspace's state store, which every StateDeclaration's Target names.
+                    # The workspace's state store, which every Knowledge's Target names.
                     "state_store_url": STATE_STORE_ORIGIN,
                 },
                 "authoredMappings": _authored_mappings(aimc),

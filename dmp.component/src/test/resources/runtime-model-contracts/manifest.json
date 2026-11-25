@@ -226,12 +226,8 @@
      "path": "dependencies/0.json"
     },
     {
-     "id": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/StateDeclaration",
-     "path": "dependencies/1.json"
-    },
-    {
      "id": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/ControlComponentInstance",
-     "path": "dependencies/2.json"
+     "path": "dependencies/1.json"
     }
    ],
    "compiles": true
@@ -248,12 +244,8 @@
      "path": "dependencies/0.json"
     },
     {
-     "id": "https://smartproductionlab.aau.dk/aas/cytivaCappingSystemAAS/submodels/StateDeclaration",
-     "path": "dependencies/1.json"
-    },
-    {
      "id": "https://smartproductionlab.aau.dk/aas/cytivaCappingSystemAAS/submodels/ControlComponentInstance",
-     "path": "dependencies/2.json"
+     "path": "dependencies/1.json"
     }
    ],
    "compiles": true
@@ -270,12 +262,8 @@
      "path": "dependencies/0.json"
     },
     {
-     "id": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/StateDeclaration",
-     "path": "dependencies/1.json"
-    },
-    {
      "id": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/ControlComponentInstance",
-     "path": "dependencies/2.json"
+     "path": "dependencies/1.json"
     }
    ],
    "compiles": true
@@ -292,12 +280,8 @@
      "path": "dependencies/0.json"
     },
     {
-     "id": "https://smartproductionlab.aau.dk/aas/imaLoadingSystemAAS/submodels/StateDeclaration",
-     "path": "dependencies/1.json"
-    },
-    {
      "id": "https://smartproductionlab.aau.dk/aas/imaLoadingSystemAAS/submodels/ControlComponentInstance",
-     "path": "dependencies/2.json"
+     "path": "dependencies/1.json"
     }
    ],
    "compiles": true
@@ -314,12 +298,8 @@
      "path": "dependencies/0.json"
     },
     {
-     "id": "https://smartproductionlab.aau.dk/aas/optimaUnloadingSystemAAS/submodels/StateDeclaration",
-     "path": "dependencies/1.json"
-    },
-    {
      "id": "https://smartproductionlab.aau.dk/aas/optimaUnloadingSystemAAS/submodels/ControlComponentInstance",
-     "path": "dependencies/2.json"
+     "path": "dependencies/1.json"
     }
    ],
    "compiles": true
@@ -336,12 +316,8 @@
      "path": "dependencies/0.json"
     },
     {
-     "id": "https://smartproductionlab.aau.dk/aas/omronCameraSystemAAS/submodels/StateDeclaration",
-     "path": "dependencies/1.json"
-    },
-    {
      "id": "https://smartproductionlab.aau.dk/aas/omronCameraSystemAAS/submodels/ControlComponentInstance",
-     "path": "dependencies/2.json"
+     "path": "dependencies/1.json"
     }
    ],
    "compiles": true
@@ -358,12 +334,8 @@
      "path": "dependencies/0.json"
     },
     {
-     "id": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/StateDeclaration",
-     "path": "dependencies/1.json"
-    },
-    {
      "id": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/ControlComponentInstance",
-     "path": "dependencies/2.json"
+     "path": "dependencies/1.json"
     }
    ],
    "compiles": true
@@ -653,18 +625,14 @@
    "sha256": "7166a0e622b0fd6c6514b409bf2bb1bf2bbf8a62654e3c41789f11ee7c9839d6"
   },
   "station-cytivaCapping/aimc.json": {
-   "byteLength": 97960,
-   "sha256": "50c6aea44434d6a7d4aa9970bd7ab1d5c27e6321680127277d657909d8f2235b"
+   "byteLength": 98070,
+   "sha256": "614260e01654beb9c59f9cbbeaf43ba0ec60ccacc090de918c9f89c464de9f09"
   },
   "station-cytivaCapping/dependencies/0.json": {
-   "byteLength": 27868,
-   "sha256": "d9e5e4b5fed863fee57ec25c070365ce9df434b2db925860897924353a83f3d7"
+   "byteLength": 31701,
+   "sha256": "415c9c72a134e5168d56c68c67f84bf734ccfc8a3621716231c1994343e62bfb"
   },
   "station-cytivaCapping/dependencies/1.json": {
-   "byteLength": 3580,
-   "sha256": "62002641f9d7ce0492e59eee2ac19ee348c9b67f7d4237eaff1175d02e32a558"
-  },
-  "station-cytivaCapping/dependencies/2.json": {
    "byteLength": 32083,
    "sha256": "711e2c1c5b4ee526cbf3f2d89bf63fbfea3c7f93582dc9398c77a7fc4a918b33"
   },
@@ -677,18 +645,14 @@
    "sha256": "44cd49df486326365a59fa1e055115399749323494ffd6a6c6e51068f68111ce"
   },
   "station-imaDispensing/aimc.json": {
-   "byteLength": 125639,
-   "sha256": "eec0a0ab311dfb7e40ea8c4fb376b4fd22ad86815aa021a8ecde3ef2017bfb56"
+   "byteLength": 125749,
+   "sha256": "d8e581f139e2bb46c390c475069340931105bd40394697d9dc53df7ac54a21ad"
   },
   "station-imaDispensing/dependencies/0.json": {
-   "byteLength": 35888,
-   "sha256": "cb85f7823f1a8fe4d4bf12aba3a7bc15bf2992255da0f0f6d69f72e6e7c04cb3"
+   "byteLength": 39721,
+   "sha256": "3eff54bdae341004362f449f7925cb205a973d39f194123e1a8c5751027d470f"
   },
   "station-imaDispensing/dependencies/1.json": {
-   "byteLength": 3580,
-   "sha256": "4197ae920784bdaa6364cf546c963cbca77ae168a181c7e7474a4576a40e469e"
-  },
-  "station-imaDispensing/dependencies/2.json": {
    "byteLength": 33560,
    "sha256": "9db3de6fc7dafe78c1bc53e1934bf14f1f6f518b5e868509af1ae89126729a05"
   },
@@ -701,18 +665,14 @@
    "sha256": "22055cf80fdf12dccb2c68fc36f07f79cdb51efaee474cad90f4d227a996a839"
   },
   "station-imaLoadingSystem/aimc.json": {
-   "byteLength": 97888,
-   "sha256": "5f822a5bec5824db2b274a3145175c969d75d6a74331322c9ed75c9ed446b2a9"
+   "byteLength": 97998,
+   "sha256": "4d3f310f8c89596c109140acd36e2fba6aec3d7e11b8f66adc3ea7c330edf1ba"
   },
   "station-imaLoadingSystem/dependencies/0.json": {
-   "byteLength": 27841,
-   "sha256": "38b43a265fe8d5cf6b553f3337e3ada40685be0f4ded1bae6e8f60999f506c14"
+   "byteLength": 31671,
+   "sha256": "fb9a0160e0e1493441314c4e0f0edfd7ccf057e93d2090ae0ec2d5510604516a"
   },
   "station-imaLoadingSystem/dependencies/1.json": {
-   "byteLength": 3574,
-   "sha256": "f3e091d970f45b93b34d195d5a5b4075e219e72f4c5400339b9b634749943b1e"
-  },
-  "station-imaLoadingSystem/dependencies/2.json": {
    "byteLength": 32025,
    "sha256": "e041a9f8fa4026eca069ab0001c3dc96e31d8061030c1c19a0912b2fc01a0ea8"
   },
@@ -725,18 +685,14 @@
    "sha256": "30b1399f306985daac93f1229d7c5812b5fe3cb446bbb3516b57c9a2f38184f2"
   },
   "station-omronCamera/aimc.json": {
-   "byteLength": 118347,
-   "sha256": "e878485708c9c18e5245961c31ba978249e60bf7e67d614a0150f737591c2338"
+   "byteLength": 118457,
+   "sha256": "92e2378a5ea41d33388879ae4fcccf2436602ebd5226d662e3141e5cfa8c6feb"
   },
   "station-omronCamera/dependencies/0.json": {
-   "byteLength": 37170,
-   "sha256": "abd9ff7a316f19c7cefcedb4165303522af92910b403d4cb7b4daf7a2589b6e5"
+   "byteLength": 41001,
+   "sha256": "123d9796b9f11b3b3944d09eb087fda905eb45d89b589c0afc132c1355502f5a"
   },
   "station-omronCamera/dependencies/1.json": {
-   "byteLength": 3576,
-   "sha256": "2bedc4b11b60da90e51d9c667d884da83b163f52cdd80954246ce217169606c1"
-  },
-  "station-omronCamera/dependencies/2.json": {
    "byteLength": 32043,
    "sha256": "890a9191feff7b212f255020b59d5147a1219f8ea08058c18590c020e12cc5c6"
   },
@@ -749,18 +705,14 @@
    "sha256": "078cf5c0efea6fd61be94d11b54ae365895b5a91ad1710f473ed8c14860c3f5f"
   },
   "station-optimaUnloading/aimc.json": {
-   "byteLength": 122090,
-   "sha256": "41fe2041281300efe20e1e4cdad947a3ff073cc1d353c94470423f4fe1389bfb"
+   "byteLength": 122200,
+   "sha256": "937aec3521b8760579a20ffe9c0698f2df1283031887ade94279a061b8ff3f63"
   },
   "station-optimaUnloading/dependencies/0.json": {
-   "byteLength": 27886,
-   "sha256": "00e393d7f07aecde5cf072803b3800318e9851f937da9f9d82e597eceef2cc6f"
+   "byteLength": 31721,
+   "sha256": "823a7fc5c0939bcb430233bf47a65e54f08486a3752fe7c83dcc66de7ab55b8e"
   },
   "station-optimaUnloading/dependencies/1.json": {
-   "byteLength": 3584,
-   "sha256": "7559655fca526dc1a92daf6ec213fb57d4d1abfbdb15253a43977f0645b5274f"
-  },
-  "station-optimaUnloading/dependencies/2.json": {
    "byteLength": 40241,
    "sha256": "6bb7e944ca6afdfc45831d39bfce2634df677118959116223a4233704ee8e49c"
   },
@@ -781,8 +733,8 @@
    "sha256": "b5a664fd10f8b58987761cdbb4463517122039c3aa923b526135663beade356f"
   },
   "station-orchestrator/dependencies/1.json": {
-   "byteLength": 8350,
-   "sha256": "be30eb2f70fa5446952f0716b2a0a7b065fa73986c76adccc436dd5dba7a36c1"
+   "byteLength": 8397,
+   "sha256": "6b8c06b0a25d038a75aeef0b9066e19139cd8b07a8ed73d74bf1141806d432e4"
   },
   "station-orchestrator/expected.json": {
    "byteLength": 1025,
@@ -793,18 +745,14 @@
    "sha256": "9158d4bc1a1ebaf9bfe095b3b41ed501c3a0c4a54e3e52c42a3fb2f712add934"
   },
   "station-planarShuttle1/aimc.json": {
-   "byteLength": 128994,
-   "sha256": "8887f56f58e4c4373143e5d7d224e23277da54250bc01baf4dc498e89a6277f2"
+   "byteLength": 129324,
+   "sha256": "494496ddc3448110660fb05c23f60dc158a26bdae8fe2aa106e872be2549e8e8"
   },
   "station-planarShuttle1/dependencies/0.json": {
-   "byteLength": 36250,
-   "sha256": "6c041d574ba6817c615e21c68cc5418ced3abc431131ad6c293f2515ca258f3a"
+   "byteLength": 46584,
+   "sha256": "84f29f0acccb04616e38447a6fcb774c1617401c4777046fbedd02bd49d177d3"
   },
   "station-planarShuttle1/dependencies/1.json": {
-   "byteLength": 9577,
-   "sha256": "6d8bd682d73d2821adb5920e8f0379fbdf8719cc2a59105223ffc0df2e7ed7f6"
-  },
-  "station-planarShuttle1/dependencies/2.json": {
    "byteLength": 34748,
    "sha256": "acd3f4d3a62659f49f7c51d6e6baca7f19b48832ddbcfaff3c3562a7235422f4"
   },
@@ -841,8 +789,8 @@
    "sha256": "d0445b66ce90c9e7481e09f7bd2d160fc1eebb3283415cf303623860f41c7594"
   },
   "station-productionPlanner/dependencies/1.json": {
-   "byteLength": 8365,
-   "sha256": "e2c3779972c7c18e9c263715cc56450845efc530de4917f72633343ca0ca733f"
+   "byteLength": 8412,
+   "sha256": "28c41bec6cbdc5a55792e94a0d62d03f8fad4845e59ac77e6a734a8d24c8705b"
   },
   "station-productionPlanner/expected.json": {
    "byteLength": 585,
@@ -853,18 +801,14 @@
    "sha256": "fff39b0edc4dba5a6bd6bf909cb0b90a7a32d40500d86dd6d6b69258f711f7cf"
   },
   "stoppering/aimc.json": {
-   "byteLength": 98111,
-   "sha256": "52d35099207479997b4fa824832e621f1b8f7f5a6aae886ab004b8b3817fe162"
+   "byteLength": 98221,
+   "sha256": "64db58074150432ae0c9bdab939b3d3da27a7720aa7dfe2eac8d7a57716cf9b7"
   },
   "stoppering/dependencies/0.json": {
-   "byteLength": 27913,
-   "sha256": "1ca1773b759eed6b42bf2aeb9402199c2bb4eac3be02f400f16117f0288fd22c"
+   "byteLength": 31751,
+   "sha256": "1ec55ed185656235518244180a909ee2e372786afbec79e77d00712031179bfa"
   },
   "stoppering/dependencies/1.json": {
-   "byteLength": 3590,
-   "sha256": "4067b10213acf8f1adb3c992d1d30d785b8dc5908b4ed1c13252610f1fbe9805"
-  },
-  "stoppering/dependencies/2.json": {
    "byteLength": 32199,
    "sha256": "226592eadf15d8696dc185998309793f77b3f80d3955a3a92107bb2b9bdac808"
   },

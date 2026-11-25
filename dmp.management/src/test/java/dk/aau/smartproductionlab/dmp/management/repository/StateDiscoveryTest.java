@@ -25,14 +25,15 @@ import org.junit.jupiter.api.Test;
 
 /**
  * A Sink on a StateVariable (plan D36: the state store is one more sink), compiled through discovery from the
- * StateDeclarations aas-model generates ({@code state/*.json}): the IMA dispensing station's {@code OccupiedBy},
- * about its own AAS, and the filling module's {@code TransferPointX}, about its transfer point.
+ * Variables aas-model generates ({@code state/*.json}), whose Knowledge declares the state variables: the IMA
+ * dispensing station's {@code OccupiedBy}, about its own AAS, and the filling module's {@code TransferPointX}, about
+ * its transfer point.
  */
 class StateDiscoveryTest {
 	private static final String STATION = "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS";
-	private static final String STATION_STATE = STATION + "/submodels/StateDeclaration";
+	private static final String STATION_VARIABLES = STATION + "/submodels/Variables";
 	private static final String MODULE = "https://smartproductionlab.aau.dk/aas/FillingModuleAAS";
-	private static final String MODULE_STATE = MODULE + "/submodels/StateDeclaration";
+	private static final String MODULE_VARIABLES = MODULE + "/submodels/Variables";
 	private static final String LAB = "https://smartproductionlab.aau.dk/semantics/";
 	private static final String AIMC_ID = "urn:fixture/submodels/AIMC";
 	private static final String DATA_ID = "urn:fixture/submodels/Data";
@@ -40,8 +41,8 @@ class StateDiscoveryTest {
 
 	@Test
 	void aStationsOccupiedByIsWrittenAsAReferenceAboutItsOwnAas() throws Exception {
-		try (var repository = new FakeAasRepository().put(resource("station-state")).put(data())
-				.put(aimc(refProperty(DATA_ID, "Value"), variable(STATION_STATE, "OccupiedBy"), "OccupiedBy"))) {
+		try (var repository = new FakeAasRepository().put(resource("station-variables")).put(data())
+				.put(aimc(refProperty(DATA_ID, "Value"), variable(STATION_VARIABLES, "OccupiedBy"), "OccupiedBy"))) {
 			DesiredBundle bundle = only(discovery(repository, STORE).scan());
 			assertTrue(bundle.valid(), issues(bundle));
 			Sink sink = stateSink(bundle);
@@ -55,16 +56,16 @@ class StateDiscoveryTest {
 			assertTrue(target.acceptsAbsentValue(), "an evaluation without a value clears the variable");
 			assertTrue(target.uri(null).startsWith("dmp-sparql:state?"));
 			var dependencies = bundle.desired().dependencies();
-			assertTrue(dependencies.contains(new MappingPlanCompiler.Dependency("series", STATION_STATE, "OccupiedBy")), dependencies.toString());
-			assertTrue(dependencies.contains(new MappingPlanCompiler.Dependency("series", STATION_STATE, "Target")),
-					"the store and graph are the declaration's Target: " + dependencies);
+			assertTrue(dependencies.contains(new MappingPlanCompiler.Dependency("series", STATION_VARIABLES, "Knowledge.OccupiedBy")), dependencies.toString());
+			assertTrue(dependencies.contains(new MappingPlanCompiler.Dependency("series", STATION_VARIABLES, "Knowledge.Target")),
+					"the store and graph are the Knowledge's Target: " + dependencies);
 		}
 	}
 
 	@Test
 	void aPlacesPositionIsAboutTheCoordinateItIs() throws Exception {
-		try (var repository = new FakeAasRepository().put(resource("module-state")).put(resource("module-variables")).put(data())
-				.put(aimc(refProperty(DATA_ID, "Value"), variable(MODULE_STATE, "TransferPointX"), "TransferPointX"))) {
+		try (var repository = new FakeAasRepository().put(resource("module-variables")).put(data())
+				.put(aimc(refProperty(DATA_ID, "Value"), variable(MODULE_VARIABLES, "TransferPointX"), "TransferPointX"))) {
 			DesiredBundle bundle = only(discovery(repository, STORE).scan());
 			assertTrue(bundle.valid(), issues(bundle));
 			var target = (StateEndpoint) stateSink(bundle).endpoint();
@@ -77,7 +78,7 @@ class StateDiscoveryTest {
 
 	@Test
 	void theFillingModulesTransferPointMappingComposesItsCoordinatesIntoTheStore() throws Exception {
-		try (var repository = new FakeAasRepository().put(resource("module-state")).put(resource("module-variables"))
+		try (var repository = new FakeAasRepository().put(resource("module-variables"))
 				.put(resource("module-aimc"))) {
 			DesiredBundle bundle = only(discovery(repository, STORE).scan());
 			assertTrue(bundle.valid(), issues(bundle));
@@ -91,16 +92,19 @@ class StateDiscoveryTest {
 
 	@Test
 	void aSubjectElementThatDoesNotExistBlocksTheMapping() throws Exception {
-		try (var repository = new FakeAasRepository().put(resource("module-state")).put(data())
-				.put(aimc(refProperty(DATA_ID, "Value"), variable(MODULE_STATE, "TransferPointX"), "TransferPointX"))) {
+		// The variables' Subject names a coordinate the Variables do not have (a key value, not the coordinate's idShort).
+		String elsewhere = resource("module-variables").replace("\"value\": \"TransferPoint\"", "\"value\": \"Nowhere\"");
+		assertTrue(elsewhere.contains("Nowhere"));
+		try (var repository = new FakeAasRepository().put(elsewhere).put(data())
+				.put(aimc(refProperty(DATA_ID, "Value"), variable(MODULE_VARIABLES, "TransferPointX"), "TransferPointX"))) {
 			assertFalse(only(discovery(repository, STORE).scan()).valid());
 		}
 	}
 
 	@Test
 	void withoutAConfiguredStateStoreTheMappingIsBlocked() throws Exception {
-		try (var repository = new FakeAasRepository().put(resource("station-state")).put(data())
-				.put(aimc(refProperty(DATA_ID, "Value"), variable(STATION_STATE, "OccupiedBy"), "OccupiedBy"))) {
+		try (var repository = new FakeAasRepository().put(resource("station-variables")).put(data())
+				.put(aimc(refProperty(DATA_ID, "Value"), variable(STATION_VARIABLES, "OccupiedBy"), "OccupiedBy"))) {
 			DesiredBundle bundle = only(discovery(repository, null).scan());
 			assertFalse(bundle.valid());
 			assertTrue(issues(bundle).contains(StateStoreSettings.UPDATE_URL), issues(bundle));
@@ -109,8 +113,8 @@ class StateDiscoveryTest {
 
 	@Test
 	void aDeclarationNamingAnotherStoreIsBlocked() throws Exception {
-		try (var repository = new FakeAasRepository().put(resource("station-state")).put(data())
-				.put(aimc(refProperty(DATA_ID, "Value"), variable(STATION_STATE, "OccupiedBy"), "OccupiedBy"))) {
+		try (var repository = new FakeAasRepository().put(resource("station-variables")).put(data())
+				.put(aimc(refProperty(DATA_ID, "Value"), variable(STATION_VARIABLES, "OccupiedBy"), "OccupiedBy"))) {
 			var elsewhere = new StateStoreSettings(URI.create("http://other-store:7878/update"));
 			DesiredBundle bundle = only(discovery(repository, elsewhere).scan());
 			assertFalse(bundle.valid());
@@ -120,8 +124,8 @@ class StateDiscoveryTest {
 
 	@Test
 	void aStateVariableIsNeverASource() throws Exception {
-		try (var repository = new FakeAasRepository().put(resource("station-state")).put(data())
-				.put(aimc(variable(STATION_STATE, "OccupiedBy"), refProperty(DATA_ID, "Value"), "Value"))) {
+		try (var repository = new FakeAasRepository().put(resource("station-variables")).put(data())
+				.put(aimc(variable(STATION_VARIABLES, "OccupiedBy"), refProperty(DATA_ID, "Value"), "Value"))) {
 			DesiredBundle bundle = only(discovery(repository, STORE).scan());
 			assertFalse(bundle.valid());
 			assertTrue(issues(bundle).contains("a StateVariable is a sink"), issues(bundle));
@@ -130,10 +134,10 @@ class StateDiscoveryTest {
 
 	@Test
 	void aVariableWithoutItsValueTypeCannotBeWritten() throws Exception {
-		String untyped = resource("station-state").replace("\"idShort\": \"ValueType\"", "\"idShort\": \"Untyped\"")
+		String untyped = resource("station-variables").replace("\"idShort\": \"ValueType\"", "\"idShort\": \"Untyped\"")
 				.replace("https://smartproductionlab.aau.dk/state/StateVariable/ValueType/1/0", "urn:not-a-value-type");
 		try (var repository = new FakeAasRepository().put(untyped).put(data())
-				.put(aimc(refProperty(DATA_ID, "Value"), variable(STATION_STATE, "OccupiedBy"), "OccupiedBy"))) {
+				.put(aimc(refProperty(DATA_ID, "Value"), variable(STATION_VARIABLES, "OccupiedBy"), "OccupiedBy"))) {
 			DesiredBundle bundle = only(discovery(repository, STORE).scan());
 			assertFalse(bundle.valid());
 			assertTrue(issues(bundle).contains("ValueType"), issues(bundle));
@@ -165,8 +169,9 @@ class StateDiscoveryTest {
 		}
 	}
 
-	private static String variable(String declaration, String name) {
-		return "{\"type\":\"ModelReference\",\"keys\":[" + key("Submodel", declaration) + "," + key("SubmodelElementCollection", name) + "]}";
+	private static String variable(String variables, String name) {
+		return "{\"type\":\"ModelReference\",\"keys\":[" + key("Submodel", variables) + "," + key("SubmodelElementCollection", "Knowledge")
+				+ "," + key("SubmodelElementCollection", name) + "]}";
 	}
 
 	private static String refProperty(String submodel, String property) {

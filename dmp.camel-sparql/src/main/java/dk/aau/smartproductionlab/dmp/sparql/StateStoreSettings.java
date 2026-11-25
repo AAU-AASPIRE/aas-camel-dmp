@@ -11,7 +11,7 @@ import java.util.Optional;
 
 /**
  * The one state store the DMP writes observed state to: a SPARQL 1.1 Update endpoint ({@value #UPDATE_URL}). A
- * StateDeclaration's {@code Target/Endpoint} names the store by its origin, which must be this endpoint's (scheme,
+ * Knowledge's {@code Target/Endpoint} names the store by its origin, which must be this endpoint's (scheme,
  * host and port); the update path is the deployment's (Oxigraph {@code /update}, Fuseki {@code /<dataset>/update}).
  * {@code timeout} bounds one update request.
  */
@@ -44,7 +44,7 @@ public record StateStoreSettings(URI update, Duration timeout) {
 		return Optional.of(new StateStoreSettings(URI.create(url.strip()), bound));
 	}
 
-	/** Whether a StateDeclaration's {@code Target/Endpoint} names this store: the same scheme, host and port. */
+	/** Whether a Knowledge's {@code Target/Endpoint} names this store: the same scheme, host and port. */
 	public boolean serves(URI endpoint) {
 		if (endpoint == null || endpoint.getHost() == null || endpoint.getScheme() == null) return false;
 		return endpoint.getScheme().equalsIgnoreCase(update.getScheme()) && endpoint.getHost().equalsIgnoreCase(update.getHost())

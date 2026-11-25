@@ -405,7 +405,11 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaLoadingSystemAAS/submodels/StateDeclaration"
+              "value": "https://smartproductionlab.aau.dk/aas/imaLoadingSystemAAS/submodels/Variables"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "Knowledge"
              },
              {
               "type": "SubmodelElementCollection",

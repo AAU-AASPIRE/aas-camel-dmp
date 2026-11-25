@@ -3,7 +3,7 @@
  "description": [
   {
    "language": "en",
-   "text": "An asset's runtime data: time series of its state, measurements and logs."
+   "text": "An asset's runtime data: time series of its state, measurements and logs, and its state as the knowledge graph keeps it."
   }
  ],
  "modelType": "Submodel",
@@ -976,6 +976,156 @@
          ]
         }
        ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "idShort": "Knowledge",
+   "description": [
+    {
+     "language": "en",
+     "text": "The state kept about this asset in the knowledge graph: its variables, and the store they are kept in."
+    }
+   ],
+   "modelType": "SubmodelElementCollection",
+   "semanticId": {
+    "type": "ExternalReference",
+    "keys": [
+     {
+      "type": "GlobalReference",
+      "value": "https://smartproductionlab.aau.dk/variables/Knowledge/1/0"
+     }
+    ]
+   },
+   "value": [
+    {
+     "idShort": "OccupiedBy",
+     "modelType": "SubmodelElementCollection",
+     "semanticId": {
+      "type": "ExternalReference",
+      "keys": [
+       {
+        "type": "GlobalReference",
+        "value": "https://smartproductionlab.aau.dk/state/StateVariable/1/0"
+       }
+      ]
+     },
+     "supplementalSemanticIds": [
+      {
+       "type": "ExternalReference",
+       "keys": [
+        {
+         "type": "GlobalReference",
+         "value": "https://smartproductionlab.aau.dk/semantics/OccupiedBy"
+        }
+       ]
+      }
+     ],
+     "value": [
+      {
+       "idShort": "Subject",
+       "description": [
+        {
+         "language": "en",
+         "text": "Who the variable is about: the resource's own AAS, or an element of it (a place). A product type's variables are about each of its units and have none."
+        }
+       ],
+       "modelType": "ReferenceElement",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://smartproductionlab.aau.dk/state/StateVariable/Subject/1/0"
+         }
+        ]
+       },
+       "value": {
+        "type": "ModelReference",
+        "keys": [
+         {
+          "type": "AssetAdministrationShell",
+          "value": "https://smartproductionlab.aau.dk/aas/cytivaCappingSystemAAS"
+         }
+        ]
+       }
+      },
+      {
+       "idShort": "ValueType",
+       "modelType": "Property",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://smartproductionlab.aau.dk/state/StateVariable/ValueType/1/0"
+         }
+        ]
+       },
+       "value": "reference",
+       "valueType": "xs:string"
+      },
+      {
+       "idShort": "Cardinality",
+       "modelType": "Property",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://smartproductionlab.aau.dk/state/StateVariable/Cardinality/1/0"
+         }
+        ]
+       },
+       "value": "single",
+       "valueType": "xs:string"
+      }
+     ]
+    },
+    {
+     "idShort": "Target",
+     "modelType": "SubmodelElementCollection",
+     "semanticId": {
+      "type": "ExternalReference",
+      "keys": [
+       {
+        "type": "GlobalReference",
+        "value": "https://smartproductionlab.aau.dk/state/SparqlTarget/1/0"
+       }
+      ]
+     },
+     "value": [
+      {
+       "idShort": "Endpoint",
+       "modelType": "Property",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://smartproductionlab.aau.dk/state/SparqlTarget/Endpoint/1/0"
+         }
+        ]
+       },
+       "value": "http://state-store:7878",
+       "valueType": "xs:string"
+      },
+      {
+       "idShort": "Graph",
+       "modelType": "Property",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://smartproductionlab.aau.dk/state/SparqlTarget/Graph/1/0"
+         }
+        ]
+       },
+       "value": "https://smartproductionlab.aau.dk/state",
+       "valueType": "xs:string"
       }
      ]
     }
