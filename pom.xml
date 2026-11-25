@@ -20,6 +20,7 @@
 		<module>dmp.camel-modbus</module>
 		<module>dmp.camel-snmp</module>
 		<module>dmp.camel-influxdb2</module>
+		<module>dmp.camel-sparql</module>
 		<module>dmp.component</module>
 	</modules>
 

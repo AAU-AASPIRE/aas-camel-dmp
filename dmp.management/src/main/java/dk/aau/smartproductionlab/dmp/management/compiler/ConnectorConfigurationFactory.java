@@ -55,6 +55,10 @@ import dk.aau.smartproductionlab.dmp.management.compiler.MappingPlanCompiler.End
 import dk.aau.smartproductionlab.dmp.management.compiler.MappingPlanCompiler.MappingPlan;
 import dk.aau.smartproductionlab.dmp.management.compiler.MappingPlanCompiler.Plan;
 import dk.aau.smartproductionlab.dmp.management.compiler.MappingPlanCompiler.SeriesTarget;
+import dk.aau.smartproductionlab.dmp.management.compiler.MappingPlanCompiler.StateTarget;
+import dk.aau.smartproductionlab.dmp.management.model.StateProjection;
+import dk.aau.smartproductionlab.dmp.sparql.StateStoreSettings;
+import dk.aau.smartproductionlab.dmp.sparql.configuration.StateEndpoint;
 import org.eclipse.digitaltwin.aas4j.v3.model.AasSubmodelElements;
 import org.eclipse.digitaltwin.aas4j.v3.model.Key;
 import org.eclipse.digitaltwin.aas4j.v3.model.Operation;
@@ -146,15 +150,20 @@ public final class ConnectorConfigurationFactory {
 	}
 	/**
 	 * The DMP's deployment as compilation input: the repository, the InfluxDB TimeSeries segments must name
-	 * ({@code null} when none is configured), the credentials AID schemes need, and whether the repository's change
-	 * events reach the DMP ({@code repositoryEvents}; without them, AAS element sources are polled).
+	 * ({@code null} when none is configured), the credentials AID schemes need, whether the repository's change
+	 * events reach the DMP ({@code repositoryEvents}; without them, AAS element sources are polled), and the state
+	 * store StateDeclarations must name ({@code null} when none is configured).
 	 */
 	public record RuntimeSettings(URI aasRepositoryBaseUri, InfluxSettings influx, DmpCredentials credentials,
-			boolean repositoryEvents) {
+			boolean repositoryEvents, StateStoreSettings stateStore) {
 		public RuntimeSettings(URI aasRepositoryBaseUri) { this(aasRepositoryBaseUri, null, null); }
 		public RuntimeSettings(URI aasRepositoryBaseUri, InfluxSettings influx) { this(aasRepositoryBaseUri, influx, null); }
 		public RuntimeSettings(URI aasRepositoryBaseUri, InfluxSettings influx, DmpCredentials credentials) {
 			this(aasRepositoryBaseUri, influx, credentials, true);
+		}
+		public RuntimeSettings(URI aasRepositoryBaseUri, InfluxSettings influx, DmpCredentials credentials,
+				boolean repositoryEvents) {
+			this(aasRepositoryBaseUri, influx, credentials, repositoryEvents, null);
 		}
 		public RuntimeSettings {
 			Objects.requireNonNull(aasRepositoryBaseUri,"aasRepositoryBaseUri");
@@ -719,6 +728,12 @@ public final class ConnectorConfigurationFactory {
 	/** A ResponseSink written by the DMP (an AAS element, a TimeSeries segment, a device property), or null. */
 	private Sink responseSink(EndpointPlan endpoint,MappingPlan mapping,int position,Plan plan,
 			String routeId,RuntimeSettings runtime,List<Issue> issues) {
+		if(endpoint.target() instanceof StateTarget) {
+			// A response omits SinkIds it does not answer; a state variable is set by every evaluation of its mapping.
+			issue(issues,mapping,endpointPath(mapping,"ResponseSinks",position),
+					"a StateVariable is a Sink of the mapping that observes it, not a ResponseSink");
+			return null;
+		}
 		Sink sink=sink(endpoint,mapping,RESPONSE_SINK_POSITION+position,plan,routeId,runtime,issues);
 		return sink==null?null:payloadBinding(sink,endpoint,mapping,issues);
 	}
@@ -845,6 +860,7 @@ public final class ConnectorConfigurationFactory {
 		String path=endpointPath(mapping,"Sources",position);
 		if(polled(endpoint)) { issue(issues,mapping,path+"/PollingInterval","a source read at evaluation is not polled; remove its PollingInterval");return null; }
 		if(endpoint.target() instanceof SeriesTarget series)return seriesSource(endpoint,mapping,position,series,runtime,true,issues);
+		if(endpoint.target() instanceof StateTarget)return stateSource(mapping,position,issues);
 		if(endpoint.target() instanceof DirectTarget direct) {
 			if(direct.resolved().element() instanceof Operation)return source(endpoint,mapping,position,plan,routeId,runtime,issues);
 			return aasReadSource(endpoint,mapping,position,direct,runtime,issues);
@@ -1103,6 +1119,7 @@ public final class ConnectorConfigurationFactory {
 			Plan plan, String routeId, RuntimeSettings runtime, List<Issue> issues) {
 		String path = endpointPath(mapping, "Sources", position);
 		if (endpoint.target() instanceof SeriesTarget series) return seriesSource(endpoint,mapping,position,series,runtime,false,issues);
+		if (endpoint.target() instanceof StateTarget) return stateSource(mapping,position,issues);
 		if (endpoint.target() instanceof DirectTarget) {
 			if(((DirectTarget)endpoint.target()).resolved().element() instanceof Operation) {
 				issue(issues,mapping,path,"AAS Operation targets require a ProtocolBridge route and declared ingress contract");
@@ -1198,6 +1215,7 @@ public final class ConnectorConfigurationFactory {
 			Plan plan, String routeId, RuntimeSettings runtime, List<Issue> issues) {
 		String path = endpointPath(mapping, "Sinks", position);
 		if (endpoint.target() instanceof SeriesTarget series) return seriesSink(endpoint,mapping,position,series,runtime,issues);
+		if (endpoint.target() instanceof StateTarget state) return stateSink(endpoint,mapping,position,state,runtime,issues);
 		if (endpoint.target() instanceof DirectTarget) {
 			if(operationModel(endpoint)!=null) {
 				issue(issues,mapping,path,"AAS Operation sinks are not supported (chained actions are unsafe); an Operation is answered through its ResponseSinks");
@@ -1260,6 +1278,31 @@ public final class ConnectorConfigurationFactory {
 		}
 		return new Sink(entityId(mapping,"sink",position),endpoint.id(),new InfluxDb2Endpoint(series.measurement(),
 				series.bucket(),series.timePath(),series.tags(),series.columns(),series.start(),series.end(),series.asynchronous()));
+	}
+
+	/**
+	 * A StateVariable written in the configured state store: each evaluation sets it to the value under the sink's
+	 * SinkId, and a result without one clears it. Its source in the provenance is the mapping.
+	 */
+	private static Sink stateSink(EndpointPlan endpoint,MappingPlan mapping,int position,
+			StateTarget target,RuntimeSettings runtime,List<Issue> issues) {
+		String path=endpointPath(mapping,"Sinks",position);
+		StateProjection.Variable variable=target.projection();
+		if(runtime==null || runtime.stateStore()==null) {
+			issue(issues,mapping,path,"state variables need a configured state store ("+StateStoreSettings.UPDATE_URL+")");return null;
+		}
+		if(!runtime.stateStore().serves(variable.endpoint())) {
+			issue(issues,mapping,path,"the StateDeclaration's Target Endpoint "+variable.endpoint()+" does not name the configured state store");return null;
+		}
+		return new Sink(entityId(mapping,"sink",position),endpoint.id(),new StateEndpoint(variable.graph(),variable.subject(),
+				variable.property(),variable.valueType(),variable.cardinality(),mapping.identity()));
+	}
+
+	/** A state variable is written by the mapping that owns it; mappings do not read the state store. */
+	private static Source stateSource(MappingPlan mapping,int position,List<Issue> issues) {
+		issue(issues,mapping,endpointPath(mapping,"Sources",position),
+				"a StateVariable is a sink: the state store is written by mappings and read by the planner and the behaviour tree");
+		return null;
 	}
 
 	/**
@@ -1398,6 +1441,9 @@ public final class ConnectorConfigurationFactory {
 			if(Aas.children(element).isEmpty()) { issue(issues,mapping,path,"AAS list schema has no typed member");return Map.of(); }
 			return Map.of("type","array","items",schemaFromAasElement(Aas.children(element).get(0),mapping,path+"/items",issues));
 		}
+		case "ReferenceElement":
+			// Its ValueOnly form: the reference, {type, keys} (a coordinate's RelativeTo).
+			return Map.of("type","object","properties",Map.of("type",Map.of("type","string"),"keys",Map.of("type","array")));
 		default:
 			issue(issues,mapping,path,"AAS element type cannot be represented as a JSON schema: "+Aas.modelType(element));
 			return Map.of();

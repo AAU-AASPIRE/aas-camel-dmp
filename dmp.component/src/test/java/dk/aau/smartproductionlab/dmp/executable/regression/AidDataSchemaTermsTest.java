@@ -129,8 +129,11 @@ class AidDataSchemaTermsTest {
 			// The station's history and skill logs name the workspace's InfluxDB.
 			var influx = context.has("influx_url") ? new dk.aau.smartproductionlab.dmp.influxdb2.InfluxSettings(
 					URI.create(context.get("influx_url").getAsString()), context.get("influx_org").getAsString(), "fixture-token") : null;
+			// Who it serves goes to the workspace's state store.
+			var store = context.has("state_store_url") ? new dk.aau.smartproductionlab.dmp.sparql.StateStoreSettings(
+					URI.create(context.get("state_store_url").getAsString() + "/update")) : null;
 			var compiled = new ConnectorConfigurationFactory().createBundles(plan.value(),
-					new ConnectorConfigurationFactory.RuntimeSettings(URI.create("http://127.0.0.1:1"), influx));
+					new ConnectorConfigurationFactory.RuntimeSettings(URI.create("http://127.0.0.1:1"), influx, null, true, store));
 			assertTrue(compiled.issues().isEmpty(), String.valueOf(compiled.issues()));
 			return compiled.bundles().stream().map(ConnectorConfigurationFactory.CompiledBundle::route).toList();
 		}

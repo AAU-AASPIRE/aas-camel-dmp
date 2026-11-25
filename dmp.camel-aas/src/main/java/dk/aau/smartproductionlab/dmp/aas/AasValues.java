@@ -12,7 +12,8 @@ import dk.aau.smartproductionlab.dmp.aas.operation.OperationPayloads;
 /**
  * The one form in which AAS elements reach Lua, whether polled, read for fan-in or
  * carried by a change event: a Property is its value typed by its
- * {@code valueType}, a collection an object keyed by idShort, a list an array.
+ * {@code valueType}, a collection an object keyed by idShort, a list an array, a ReferenceElement its reference
+ * ({@code {type, keys}}, its ValueOnly form: a coordinate's {@code RelativeTo}).
  */
 public final class AasValues {
 	private AasValues() {
@@ -39,6 +40,8 @@ public final class AasValues {
 			if (map.get("value") instanceof List<?> children) for (Object child : children) values.add(elementValue(child));
 			return values;
 		}
+		case "ReferenceElement":
+			return map.get("value");
 		default:
 			return element;
 		}

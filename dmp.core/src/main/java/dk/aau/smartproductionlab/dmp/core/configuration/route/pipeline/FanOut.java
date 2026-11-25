@@ -417,6 +417,7 @@ public final class FanOut {
 	private static Object selectedValue(KeyedSnapshot result, Sink config) {
 		if (config.sinkId() != null && !config.sinkId().isBlank()) {
 			if (!result.has(config.sinkId())) {
+				if (config.endpoint().acceptsAbsentValue()) return JsonPointer.JSON_NULL;
 				throw new IllegalArgumentException("Sink '" + config.id()
 						+ "': SinkId '" + config.sinkId() + "' not present in the transform result");
 			}

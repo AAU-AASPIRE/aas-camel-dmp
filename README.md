@@ -12,7 +12,8 @@ events (Kafka or MQTT).
 - **Protocols** (AID bindings): MQTT 5, OPC UA, HTTP (polling, long-poll, SSE),
   Modbus TCP, SNMP v1/v2c
 - **AAS**: element sources and sinks, event-sourced Properties and collections,
-  Operations delegated by BaSyx, TimeSeries segments on InfluxDB 2
+  Operations delegated by BaSyx, TimeSeries segments on InfluxDB 2, StateVariables
+  in a SPARQL state store
 - **Transformations**: Lua blobs in the AIMC, compiled in memory, with a CPU
   budget and no I/O
 
@@ -69,13 +70,14 @@ Port 8080 serves delegated Operation calls, `/health` and `/management/status`.
 | `DMP_MANAGED_MQTT_CLIENT_ID`, `…_USERNAME`, `…_PASSWORD`, `…_REPOSITORY_ID`, `…_SESSION_EXPIRY_SECONDS` | MQTT session (defaults `dmp-control`, none, `+`, 86400) |
 | `DMP_MANAGED_AIMC_IDS` | JSON array of AIMC ids to adopt; default: every AIMC in the repository |
 | `DMP_INFLUX_URL`, `DMP_INFLUX_ORG`, `DMP_INFLUX_TOKEN` | InfluxDB 2 for TimeSeries segments; without them segment mappings are blocked |
+| `DMP_STATE_STORE_UPDATE_URL` | SPARQL 1.1 Update endpoint of the state store for StateVariable sinks (e.g. `http://state-store:7878/update`); a StateDeclaration's `Target/Endpoint` must name its origin; without it state mappings are blocked |
 | `DMP_HTTP_PORT` | Listener port, default 8080 |
 | `DMP_AFFORDANCE_VALIDATION` | `OFF` (default), `ON` or `REPORT` |
 
 Limits and timeouts: `DMP_MANAGED_MAX_MAPPINGS`, `…_MAX_INVALIDATIONS`,
 `…_MAX_PARALLEL_READS`, `…_RETRY_INTERVAL_MS`, `…_CONNECT_TIMEOUT_MS`,
 `…_REQUEST_TIMEOUT_MS`, `…_PAGE_SIZE`, `…_MAX_PAGES`, `DMP_INFLUX_LOOKBACK`,
-`DMP_INFLUX_FLUSH_INTERVAL`, `DMP_INFLUX_BUFFER_LIMIT`.
+`DMP_INFLUX_FLUSH_INTERVAL`, `DMP_INFLUX_BUFFER_LIMIT`, `DMP_STATE_STORE_TIMEOUT` (ISO-8601, default `PT5S`).
 </details>
 
 ## Modules
@@ -89,6 +91,7 @@ Limits and timeouts: `DMP_MANAGED_MAX_MAPPINGS`, `…_MAX_INVALIDATIONS`,
 | `dmp.camel-aas` | AAS element sources and sinks, Operation delegation |
 | `dmp.camel-mqtt`, `-opcua`, `-http`, `-modbus`, `-snmp` | Protocol connectors |
 | `dmp.camel-influxdb2` | TimeSeries segments on InfluxDB 2 |
+| `dmp.camel-sparql` | StateVariable sinks: the latest value of a state variable in a SPARQL 1.1 state store, with its provenance; a result without a value for the SinkId clears it |
 
 ## Evaluation
 

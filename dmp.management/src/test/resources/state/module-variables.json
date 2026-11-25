@@ -1,0 +1,1056 @@
+{
+ "idShort": "Variables",
+ "description": [
+  {
+   "language": "en",
+   "text": "An asset's runtime data: time series of its state, measurements and logs."
+  }
+ ],
+ "modelType": "Submodel",
+ "id": "https://smartproductionlab.aau.dk/aas/FillingModuleAAS/submodels/Variables",
+ "semanticId": {
+  "type": "ExternalReference",
+  "keys": [
+   {
+    "type": "GlobalReference",
+    "value": "https://smartproductionlab.aau.dk/submodels/Variables/1/0"
+   }
+  ]
+ },
+ "submodelElements": [
+  {
+   "idShort": "Measurements",
+   "modelType": "SubmodelElementCollection",
+   "semanticId": {
+    "type": "ExternalReference",
+    "keys": [
+     {
+      "type": "GlobalReference",
+      "value": "https://smartproductionlab.aau.dk/variables/Measurements/1/0"
+     }
+    ]
+   },
+   "value": [
+    {
+     "idShort": "Coordinates",
+     "description": [
+      {
+       "language": "en",
+       "text": "Where the asset and its points are: one coordinate each, relative to another by reference."
+      }
+     ],
+     "modelType": "SubmodelElementCollection",
+     "semanticId": {
+      "type": "ExternalReference",
+      "keys": [
+       {
+        "type": "GlobalReference",
+        "value": "https://smartproductionlab.aau.dk/variables/Coordinates/1/0"
+       }
+      ]
+     },
+     "value": [
+      {
+       "idShort": "ModuleBase",
+       "description": [
+        {
+         "language": "en",
+         "text": "A pose relative to the coordinate RelativeTo names: X, Y, Z in mm and Roll, Pitch, Yaw in degrees about the parent's fixed X, then Y, then Z axis."
+        }
+       ],
+       "modelType": "SubmodelElementCollection",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://smartproductionlab.aau.dk/variables/Coordinate/1/0"
+         }
+        ]
+       },
+       "supplementalSemanticIds": [
+        {
+         "type": "ExternalReference",
+         "keys": [
+          {
+           "type": "GlobalReference",
+           "value": "https://smartproductionlab.aau.dk/semantics/ModuleBase"
+          }
+         ]
+        }
+       ],
+       "value": [
+        {
+         "idShort": "X",
+         "description": [
+          {
+           "language": "en",
+           "text": "The translation along the parent's X axis, in mm."
+          }
+         ],
+         "modelType": "Property",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/cds/xframe/1"
+           }
+          ]
+         },
+         "qualifiers": [
+          {
+           "value": "mm",
+           "kind": "ConceptQualifier",
+           "valueType": "xs:string",
+           "type": "Unit"
+          }
+         ],
+         "value": "240.0",
+         "valueType": "xs:double"
+        },
+        {
+         "idShort": "Y",
+         "description": [
+          {
+           "language": "en",
+           "text": "The translation along the parent's Y axis, in mm."
+          }
+         ],
+         "modelType": "Property",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/cds/yframe/1"
+           }
+          ]
+         },
+         "qualifiers": [
+          {
+           "value": "mm",
+           "kind": "ConceptQualifier",
+           "valueType": "xs:string",
+           "type": "Unit"
+          }
+         ],
+         "value": "720.0",
+         "valueType": "xs:double"
+        },
+        {
+         "idShort": "Z",
+         "description": [
+          {
+           "language": "en",
+           "text": "The translation along the parent's Z axis, in mm."
+          }
+         ],
+         "modelType": "Property",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/cds/zframe/1"
+           }
+          ]
+         },
+         "qualifiers": [
+          {
+           "value": "mm",
+           "kind": "ConceptQualifier",
+           "valueType": "xs:string",
+           "type": "Unit"
+          }
+         ],
+         "value": "0.0",
+         "valueType": "xs:double"
+        },
+        {
+         "idShort": "Roll",
+         "description": [
+          {
+           "language": "en",
+           "text": "The rotation about the parent's X axis, applied first, in degrees."
+          }
+         ],
+         "modelType": "Property",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/cds/rxframe/1"
+           }
+          ]
+         },
+         "qualifiers": [
+          {
+           "value": "deg",
+           "kind": "ConceptQualifier",
+           "valueType": "xs:string",
+           "type": "Unit"
+          }
+         ],
+         "value": "0.0",
+         "valueType": "xs:double"
+        },
+        {
+         "idShort": "Pitch",
+         "description": [
+          {
+           "language": "en",
+           "text": "The rotation about the parent's Y axis, applied second, in degrees."
+          }
+         ],
+         "modelType": "Property",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/cds/ryframe/1"
+           }
+          ]
+         },
+         "qualifiers": [
+          {
+           "value": "deg",
+           "kind": "ConceptQualifier",
+           "valueType": "xs:string",
+           "type": "Unit"
+          }
+         ],
+         "value": "0.0",
+         "valueType": "xs:double"
+        },
+        {
+         "idShort": "Yaw",
+         "description": [
+          {
+           "language": "en",
+           "text": "The rotation about the parent's Z axis, applied last, in degrees."
+          }
+         ],
+         "modelType": "Property",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/cds/rzframe/1"
+           }
+          ]
+         },
+         "qualifiers": [
+          {
+           "value": "deg",
+           "kind": "ConceptQualifier",
+           "valueType": "xs:string",
+           "type": "Unit"
+          }
+         ],
+         "value": "180.0",
+         "valueType": "xs:double"
+        }
+       ]
+      },
+      {
+       "idShort": "TransferPoint",
+       "displayName": [
+        {
+         "language": "en",
+         "text": "Filling module transfer point"
+        }
+       ],
+       "description": [
+        {
+         "language": "en",
+         "text": "A pose relative to the coordinate RelativeTo names: X, Y, Z in mm and Roll, Pitch, Yaw in degrees about the parent's fixed X, then Y, then Z axis."
+        }
+       ],
+       "modelType": "SubmodelElementCollection",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://smartproductionlab.aau.dk/variables/Coordinate/1/0"
+         }
+        ]
+       },
+       "supplementalSemanticIds": [
+        {
+         "type": "ExternalReference",
+         "keys": [
+          {
+           "type": "GlobalReference",
+           "value": "https://smartproductionlab.aau.dk/semantics/TransferPoint"
+          }
+         ]
+        }
+       ],
+       "value": [
+        {
+         "idShort": "RelativeTo",
+         "description": [
+          {
+           "language": "en",
+           "text": "The coordinate this one is relative to (a ModelReference to its SMC, in this AAS or another)."
+          }
+         ],
+         "modelType": "ReferenceElement",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://smartproductionlab.aau.dk/variables/Coordinate/RelativeTo/1/0"
+           }
+          ]
+         },
+         "value": {
+          "type": "ModelReference",
+          "keys": [
+           {
+            "type": "Submodel",
+            "value": "https://smartproductionlab.aau.dk/aas/FillingModuleAAS/submodels/Variables"
+           },
+           {
+            "type": "SubmodelElementCollection",
+            "value": "Measurements"
+           },
+           {
+            "type": "SubmodelElementCollection",
+            "value": "Coordinates"
+           },
+           {
+            "type": "SubmodelElementCollection",
+            "value": "ModuleBase"
+           }
+          ]
+         }
+        },
+        {
+         "idShort": "X",
+         "description": [
+          {
+           "language": "en",
+           "text": "The translation along the parent's X axis, in mm."
+          }
+         ],
+         "modelType": "Property",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/cds/xframe/1"
+           }
+          ]
+         },
+         "qualifiers": [
+          {
+           "value": "mm",
+           "kind": "ConceptQualifier",
+           "valueType": "xs:string",
+           "type": "Unit"
+          }
+         ],
+         "value": "0.0",
+         "valueType": "xs:double"
+        },
+        {
+         "idShort": "Y",
+         "description": [
+          {
+           "language": "en",
+           "text": "The translation along the parent's Y axis, in mm."
+          }
+         ],
+         "modelType": "Property",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/cds/yframe/1"
+           }
+          ]
+         },
+         "qualifiers": [
+          {
+           "value": "mm",
+           "kind": "ConceptQualifier",
+           "valueType": "xs:string",
+           "type": "Unit"
+          }
+         ],
+         "value": "60.0",
+         "valueType": "xs:double"
+        },
+        {
+         "idShort": "Z",
+         "description": [
+          {
+           "language": "en",
+           "text": "The translation along the parent's Z axis, in mm."
+          }
+         ],
+         "modelType": "Property",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/cds/zframe/1"
+           }
+          ]
+         },
+         "qualifiers": [
+          {
+           "value": "mm",
+           "kind": "ConceptQualifier",
+           "valueType": "xs:string",
+           "type": "Unit"
+          }
+         ],
+         "value": "0.0",
+         "valueType": "xs:double"
+        },
+        {
+         "idShort": "Roll",
+         "description": [
+          {
+           "language": "en",
+           "text": "The rotation about the parent's X axis, applied first, in degrees."
+          }
+         ],
+         "modelType": "Property",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/cds/rxframe/1"
+           }
+          ]
+         },
+         "qualifiers": [
+          {
+           "value": "deg",
+           "kind": "ConceptQualifier",
+           "valueType": "xs:string",
+           "type": "Unit"
+          }
+         ],
+         "value": "0.0",
+         "valueType": "xs:double"
+        },
+        {
+         "idShort": "Pitch",
+         "description": [
+          {
+           "language": "en",
+           "text": "The rotation about the parent's Y axis, applied second, in degrees."
+          }
+         ],
+         "modelType": "Property",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/cds/ryframe/1"
+           }
+          ]
+         },
+         "qualifiers": [
+          {
+           "value": "deg",
+           "kind": "ConceptQualifier",
+           "valueType": "xs:string",
+           "type": "Unit"
+          }
+         ],
+         "value": "0.0",
+         "valueType": "xs:double"
+        },
+        {
+         "idShort": "Yaw",
+         "description": [
+          {
+           "language": "en",
+           "text": "The rotation about the parent's Z axis, applied last, in degrees."
+          }
+         ],
+         "modelType": "Property",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/cds/rzframe/1"
+           }
+          ]
+         },
+         "qualifiers": [
+          {
+           "value": "deg",
+           "kind": "ConceptQualifier",
+           "valueType": "xs:string",
+           "type": "Unit"
+          }
+         ],
+         "value": "0.0",
+         "valueType": "xs:double"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "idShort": "LinearAxis",
+     "modelType": "SubmodelElementCollection",
+     "semanticId": {
+      "type": "ExternalReference",
+      "keys": [
+       {
+        "type": "GlobalReference",
+        "value": "https://smartproductionlab.aau.dk/variables/TimeSeries/1/0"
+       }
+      ]
+     },
+     "supplementalSemanticIds": [
+      {
+       "type": "ExternalReference",
+       "keys": [
+        {
+         "type": "GlobalReference",
+         "value": "https://admin-shell.io/idta/TimeSeries/1/1"
+        }
+       ]
+      }
+     ],
+     "value": [
+      {
+       "idShort": "Metadata",
+       "modelType": "SubmodelElementCollection",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/TimeSeries/Metadata/1/1"
+         }
+        ]
+       },
+       "value": [
+        {
+         "idShort": "Name",
+         "modelType": "MultiLanguageProperty",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/TimeSeries/Metadata/Name/1/1"
+           }
+          ]
+         },
+         "value": [
+          {
+           "language": "en",
+           "text": "Needle position"
+          }
+         ]
+        },
+        {
+         "idShort": "Record",
+         "modelType": "SubmodelElementCollection",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/TimeSeries/Record/1/1"
+           }
+          ]
+         },
+         "value": [
+          {
+           "idShort": "Time",
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/TimeSeries/UtcTime/1/1"
+             }
+            ]
+           },
+           "valueType": "xs:dateTime"
+          },
+          {
+           "idShort": "Position",
+           "description": [
+            {
+             "language": "en",
+             "text": "mm down from the limit switch"
+            }
+           ],
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://smartproductionlab.aau.dk/timeseries/RecordField/1/0"
+             }
+            ]
+           },
+           "supplementalSemanticIds": [
+            {
+             "type": "ExternalReference",
+             "keys": [
+              {
+               "type": "GlobalReference",
+               "value": "https://smartproductionlab.aau.dk/semantics/Position"
+              }
+             ]
+            }
+           ],
+           "valueType": "xs:double"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "idShort": "Segments",
+       "modelType": "SubmodelElementCollection",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/TimeSeries/Segments/1/1"
+         }
+        ]
+       },
+       "value": [
+        {
+         "idShort": "Live",
+         "modelType": "SubmodelElementCollection",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/TimeSeries/Segments/LinkedSegment/1/1"
+           }
+          ]
+         },
+         "value": [
+          {
+           "idShort": "State",
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/TimeSeries/Segment/State/1/1"
+             }
+            ]
+           },
+           "value": "InProgress",
+           "valueType": "xs:string"
+          },
+          {
+           "idShort": "Endpoint",
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/TimeSeries/Endpoint/1/1"
+             }
+            ]
+           },
+           "value": "http://influxdb:8086/api/v2/query?org=ap2030",
+           "valueType": "xs:string"
+          },
+          {
+           "idShort": "Query",
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/TimeSeries/Query/1/1"
+             }
+            ]
+           },
+           "value": "from(bucket: \"ap2030\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"filling_axis\")\n  |> filter(fn: (r) => r[\"asset\"] == \"FillingModuleAAS\")\n  |> filter(fn: (r) => r[\"_field\"] == \"{{y-value}}\")",
+           "valueType": "xs:string"
+          },
+          {
+           "idShort": "InfluxDb2Target",
+           "modelType": "SubmodelElementCollection",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://smartproductionlab.aau.dk/timeseries/InfluxDb2Target/1/0"
+             }
+            ]
+           },
+           "value": [
+            {
+             "idShort": "Bucket",
+             "modelType": "Property",
+             "semanticId": {
+              "type": "ExternalReference",
+              "keys": [
+               {
+                "type": "GlobalReference",
+                "value": "https://smartproductionlab.aau.dk/timeseries/InfluxDb2Target/Bucket/1/0"
+               }
+              ]
+             },
+             "value": "ap2030",
+             "valueType": "xs:string"
+            },
+            {
+             "idShort": "Measurement",
+             "modelType": "Property",
+             "semanticId": {
+              "type": "ExternalReference",
+              "keys": [
+               {
+                "type": "GlobalReference",
+                "value": "https://smartproductionlab.aau.dk/timeseries/InfluxDb2Target/Measurement/1/0"
+               }
+              ]
+             },
+             "value": "filling_axis",
+             "valueType": "xs:string"
+            },
+            {
+             "idShort": "Tags",
+             "modelType": "SubmodelElementCollection",
+             "semanticId": {
+              "type": "ExternalReference",
+              "keys": [
+               {
+                "type": "GlobalReference",
+                "value": "https://smartproductionlab.aau.dk/timeseries/InfluxDb2Target/Tags/1/0"
+               }
+              ]
+             },
+             "value": [
+              {
+               "idShort": "asset",
+               "modelType": "Property",
+               "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                 {
+                  "type": "GlobalReference",
+                  "value": "https://smartproductionlab.aau.dk/timeseries/InfluxDb2Target/Tag/1/0"
+                 }
+                ]
+               },
+               "value": "FillingModuleAAS",
+               "valueType": "xs:string"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "idShort": "Scale",
+     "modelType": "SubmodelElementCollection",
+     "semanticId": {
+      "type": "ExternalReference",
+      "keys": [
+       {
+        "type": "GlobalReference",
+        "value": "https://smartproductionlab.aau.dk/variables/TimeSeries/1/0"
+       }
+      ]
+     },
+     "supplementalSemanticIds": [
+      {
+       "type": "ExternalReference",
+       "keys": [
+        {
+         "type": "GlobalReference",
+         "value": "https://admin-shell.io/idta/TimeSeries/1/1"
+        }
+       ]
+      }
+     ],
+     "value": [
+      {
+       "idShort": "Metadata",
+       "modelType": "SubmodelElementCollection",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/TimeSeries/Metadata/1/1"
+         }
+        ]
+       },
+       "value": [
+        {
+         "idShort": "Name",
+         "modelType": "MultiLanguageProperty",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/TimeSeries/Metadata/Name/1/1"
+           }
+          ]
+         },
+         "value": [
+          {
+           "language": "en",
+           "text": "Weight"
+          }
+         ]
+        },
+        {
+         "idShort": "Record",
+         "modelType": "SubmodelElementCollection",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/TimeSeries/Record/1/1"
+           }
+          ]
+         },
+         "value": [
+          {
+           "idShort": "Time",
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/TimeSeries/UtcTime/1/1"
+             }
+            ]
+           },
+           "valueType": "xs:dateTime"
+          },
+          {
+           "idShort": "Weight",
+           "description": [
+            {
+             "language": "en",
+             "text": "g"
+            }
+           ],
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://smartproductionlab.aau.dk/timeseries/RecordField/1/0"
+             }
+            ]
+           },
+           "supplementalSemanticIds": [
+            {
+             "type": "ExternalReference",
+             "keys": [
+              {
+               "type": "GlobalReference",
+               "value": "https://smartproductionlab.aau.dk/semantics/Weight"
+              }
+             ]
+            }
+           ],
+           "valueType": "xs:double"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "idShort": "Segments",
+       "modelType": "SubmodelElementCollection",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://admin-shell.io/idta/TimeSeries/Segments/1/1"
+         }
+        ]
+       },
+       "value": [
+        {
+         "idShort": "Live",
+         "modelType": "SubmodelElementCollection",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/TimeSeries/Segments/LinkedSegment/1/1"
+           }
+          ]
+         },
+         "value": [
+          {
+           "idShort": "State",
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/TimeSeries/Segment/State/1/1"
+             }
+            ]
+           },
+           "value": "InProgress",
+           "valueType": "xs:string"
+          },
+          {
+           "idShort": "Endpoint",
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/TimeSeries/Endpoint/1/1"
+             }
+            ]
+           },
+           "value": "http://influxdb:8086/api/v2/query?org=ap2030",
+           "valueType": "xs:string"
+          },
+          {
+           "idShort": "Query",
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/TimeSeries/Query/1/1"
+             }
+            ]
+           },
+           "value": "from(bucket: \"ap2030\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"filling_weight\")\n  |> filter(fn: (r) => r[\"asset\"] == \"FillingModuleAAS\")\n  |> filter(fn: (r) => r[\"_field\"] == \"{{y-value}}\")",
+           "valueType": "xs:string"
+          },
+          {
+           "idShort": "InfluxDb2Target",
+           "modelType": "SubmodelElementCollection",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://smartproductionlab.aau.dk/timeseries/InfluxDb2Target/1/0"
+             }
+            ]
+           },
+           "value": [
+            {
+             "idShort": "Bucket",
+             "modelType": "Property",
+             "semanticId": {
+              "type": "ExternalReference",
+              "keys": [
+               {
+                "type": "GlobalReference",
+                "value": "https://smartproductionlab.aau.dk/timeseries/InfluxDb2Target/Bucket/1/0"
+               }
+              ]
+             },
+             "value": "ap2030",
+             "valueType": "xs:string"
+            },
+            {
+             "idShort": "Measurement",
+             "modelType": "Property",
+             "semanticId": {
+              "type": "ExternalReference",
+              "keys": [
+               {
+                "type": "GlobalReference",
+                "value": "https://smartproductionlab.aau.dk/timeseries/InfluxDb2Target/Measurement/1/0"
+               }
+              ]
+             },
+             "value": "filling_weight",
+             "valueType": "xs:string"
+            },
+            {
+             "idShort": "Tags",
+             "modelType": "SubmodelElementCollection",
+             "semanticId": {
+              "type": "ExternalReference",
+              "keys": [
+               {
+                "type": "GlobalReference",
+                "value": "https://smartproductionlab.aau.dk/timeseries/InfluxDb2Target/Tags/1/0"
+               }
+              ]
+             },
+             "value": [
+              {
+               "idShort": "asset",
+               "modelType": "Property",
+               "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                 {
+                  "type": "GlobalReference",
+                  "value": "https://smartproductionlab.aau.dk/timeseries/InfluxDb2Target/Tag/1/0"
+                 }
+                ]
+               },
+               "value": "FillingModuleAAS",
+               "valueType": "xs:string"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

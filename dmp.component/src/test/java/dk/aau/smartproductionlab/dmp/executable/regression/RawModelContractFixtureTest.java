@@ -142,8 +142,12 @@ public class RawModelContractFixtureTest {
 		JsonObject context = context(fixture);
 		var settings = influx && context.has("influx_url") ? new dk.aau.smartproductionlab.dmp.influxdb2.InfluxSettings(
 				URI.create(context.get("influx_url").getAsString()), context.get("influx_org").getAsString(), "fixture-token") : null;
+		// The workspace's state store, which StateDeclarations name; its update endpoint is the deployment's.
+		var store = influx && context.has("state_store_url") ? new dk.aau.smartproductionlab.dmp.sparql.StateStoreSettings(
+				URI.create(context.get("state_store_url").getAsString() + "/update")) : null;
 		return new ConnectorConfigurationFactory().createBundles(plan,
-				new ConnectorConfigurationFactory.RuntimeSettings(URI.create(context.get("aas_base_url").getAsString()), settings));
+				new ConnectorConfigurationFactory.RuntimeSettings(URI.create(context.get("aas_base_url").getAsString()), settings,
+						null, true, store));
 	}
 
 	private JsonObject context(JsonObject fixture) throws Exception {

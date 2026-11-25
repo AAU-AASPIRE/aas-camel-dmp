@@ -29,6 +29,13 @@ public interface Endpoint {
 	/** Whether the connector sends JSON text: a value whose schema describes JSON is then encoded as JSON. */
 	default boolean jsonWire() { return false; }
 
+	/**
+	 * Whether a sink on this endpoint is written when the mapping's result has no value for its SinkId: it then
+	 * receives {@code null} (a state variable, which each evaluation sets, is cleared). Otherwise such a result fails
+	 * the sink.
+	 */
+	default boolean acceptsAbsentValue() { return false; }
+
 	/** An endpoint whose URI binds nothing. */
 	static Endpoint of(String uri) {
 		return new Fixed(uri);

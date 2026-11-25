@@ -4,7 +4,8 @@
   "aas_id_short": "syntegonStopperingSystemAAS",
   "aas_base_url": "http://aas-server:8081",
   "influx_url": "http://influxdb:8086",
-  "influx_org": "ap2030"
+  "influx_org": "ap2030",
+  "state_store_url": "http://state-store:7878"
  },
  "authoredMappings": [
   {
@@ -14,7 +15,8 @@
     "StationState"
    ],
    "sinkIds": [
-    "Live"
+    "Live",
+    "OccupiedBy"
    ]
   },
   {

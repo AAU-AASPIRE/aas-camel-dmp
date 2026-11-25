@@ -112,7 +112,7 @@
         ]
        },
        "contentType": "text/plain",
-       "value": "ZnVuY3Rpb24gYWltY19tYWluKHNvdXJjZXMpCiAgICBsb2NhbCBxdWV1ZSA9IHNvdXJjZXMuUHJvY2Vzc1F1ZXVlIG9yIHt9CiAgICByZXR1cm4geyBMaXZlID0gewogICAgICAgIFBhY2tNTFN0YXRlID0gc291cmNlcy5TdGF0ZSwKICAgICAgICBPY2N1cGF0aW9uU3RhdGUgPSAoI3F1ZXVlID09IDApIGFuZCAiW10iIG9yIGpzb24uZW5jb2RlKHF1ZXVlKSwKICAgIH0gfQplbmQK"
+       "value": "ZnVuY3Rpb24gYWltY19tYWluKHNvdXJjZXMpCiAgICBsb2NhbCBxdWV1ZSA9IHNvdXJjZXMuUHJvY2Vzc1F1ZXVlIG9yIHt9CiAgICByZXR1cm4gewogICAgICAgIExpdmUgPSB7CiAgICAgICAgICAgIFBhY2tNTFN0YXRlID0gc291cmNlcy5TdGF0ZSwKICAgICAgICAgICAgT2NjdXBhdGlvblN0YXRlID0gKCNxdWV1ZSA9PSAwKSBhbmQgIltdIiBvciBqc29uLmVuY29kZShxdWV1ZSksCiAgICAgICAgfSwKICAgICAgICBPY2N1cGllZEJ5ID0gcXVldWVbMV0gYW5kICgidXJuOnV1aWQ6IiAuLiBxdWV1ZVsxXSkgb3IgbmlsLAogICAgfQplbmQK"
       },
       {
        "idShort": "Sources",
@@ -445,6 +445,85 @@
             ]
            },
            "value": "Live",
+           "valueType": "xs:string"
+          }
+         ]
+        },
+        {
+         "displayName": [
+          {
+           "language": "en",
+           "text": "OccupiedBy"
+          }
+         ],
+         "description": [
+          {
+           "language": "en",
+           "text": "A data sink is defined by a Sink reference and SinkId."
+          }
+         ],
+         "modelType": "SubmodelElementCollection",
+         "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+           {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink"
+           }
+          ]
+         },
+         "value": [
+          {
+           "idShort": "Sink",
+           "description": [
+            {
+             "language": "en",
+             "text": "This holds a reference to the respective SubmodelElement used as data sink for live-data."
+            }
+           ],
+           "modelType": "ReferenceElement",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink/Sink"
+             }
+            ]
+           },
+           "value": {
+            "type": "ModelReference",
+            "keys": [
+             {
+              "type": "Submodel",
+              "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/StateDeclaration"
+             },
+             {
+              "type": "SubmodelElementCollection",
+              "value": "OccupiedBy"
+             }
+            ]
+           }
+          },
+          {
+           "idShort": "SinkId",
+           "description": [
+            {
+             "language": "en",
+             "text": "This is a unique and non-empty identifier that facilitates data writing in the Lua transformation or establishes a relationship to a corresponding source when no transformation is given. It must only be unique with respect to the Sinks-list of the containing MappingConfiguration and not globally."
+            }
+           ],
+           "modelType": "Property",
+           "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink/SinkId"
+             }
+            ]
+           },
+           "value": "OccupiedBy",
            "valueType": "xs:string"
           }
          ]

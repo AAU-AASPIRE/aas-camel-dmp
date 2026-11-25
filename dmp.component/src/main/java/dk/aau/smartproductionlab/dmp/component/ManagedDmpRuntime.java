@@ -9,6 +9,8 @@ import dk.aau.smartproductionlab.dmp.aas.http.AasHttp;
 import dk.aau.smartproductionlab.dmp.core.component.DmpComponent;
 import dk.aau.smartproductionlab.dmp.influxdb2.InfluxSettings;
 import dk.aau.smartproductionlab.dmp.influxdb2.component.DmpInfluxDb2Component;
+import dk.aau.smartproductionlab.dmp.sparql.StateStoreSettings;
+import dk.aau.smartproductionlab.dmp.sparql.component.DmpSparqlComponent;
 import dk.aau.smartproductionlab.dmp.management.compiler.ConnectorConfigurationFactory.RuntimeSettings;
 import dk.aau.smartproductionlab.dmp.management.compiler.DmpCredentials;
 import dk.aau.smartproductionlab.dmp.management.repository.AasRepositoryClient;
@@ -29,6 +31,7 @@ public final class ManagedDmpRuntime implements AutoCloseable {
 	}
 	private final ManagedRuntimeSettings settings;
 	private final InfluxSettings influx;
+	private final StateStoreSettings stateStore;
 	private final DmpComponent component;
 	private final RepositoryDiscovery discovery;
 	private final ControlRouteFactory controlRoutes;
@@ -46,7 +49,13 @@ public final class ManagedDmpRuntime implements AutoCloseable {
 
 	/** {@code credentials} answer the AIDs' security schemes; {@link DmpCredentials#none()} for nosec only. */
 	public ManagedDmpRuntime(ManagedRuntimeSettings settings, InfluxSettings influx, DmpCredentials credentials) {
-		this(settings, influx, new DmpComponent(), discovery(settings, influx, credentials),
+		this(settings, influx, null, credentials);
+	}
+
+	/** {@code stateStore} is the state store of StateDeclarations, or {@code null} when none is configured. */
+	public ManagedDmpRuntime(ManagedRuntimeSettings settings, InfluxSettings influx, StateStoreSettings stateStore,
+			DmpCredentials credentials) {
+		this(settings, influx, stateStore, new DmpComponent(), discovery(settings, influx, stateStore, credentials),
 				(managedSettings, service) -> managedSettings.mqtt() != null
 						? new MqttControlEventRouteBuilder(managedSettings.mqtt(), service)
 						: managedSettings.polling() != null ? new PollingControlRouteBuilder(managedSettings.polling(), service)
@@ -60,8 +69,14 @@ public final class ManagedDmpRuntime implements AutoCloseable {
 
 	ManagedDmpRuntime(ManagedRuntimeSettings settings, InfluxSettings influx, DmpComponent component,
 			RepositoryDiscovery discovery, ControlRouteFactory controlRoutes) {
+		this(settings, influx, null, component, discovery, controlRoutes);
+	}
+
+	ManagedDmpRuntime(ManagedRuntimeSettings settings, InfluxSettings influx, StateStoreSettings stateStore,
+			DmpComponent component, RepositoryDiscovery discovery, ControlRouteFactory controlRoutes) {
 		this.settings = java.util.Objects.requireNonNull(settings);
 		this.influx = influx;
+		this.stateStore = stateStore;
 		this.component = java.util.Objects.requireNonNull(component);
 		this.discovery = java.util.Objects.requireNonNull(discovery);
 		this.controlRoutes = java.util.Objects.requireNonNull(controlRoutes);
@@ -81,6 +96,8 @@ public final class ManagedDmpRuntime implements AutoCloseable {
 				series.configure(influx);
 				ManagedRuntimeStatus.trackInflux(series);
 			}
+			if (stateStore != null) component.runtimeContext()
+					.getComponent(DmpSparqlComponent.SCHEME, DmpSparqlComponent.class).configure(stateStore);
 			reconciliation = new MappingReconciliationService(component, discovery,
 					settings.maxMappings(), settings.maxQueuedInvalidations(), settings.retryMillis());
 			MappingStateLog mappingStateLog = new MappingStateLog();
@@ -150,11 +167,12 @@ public final class ManagedDmpRuntime implements AutoCloseable {
 		catch (RuntimeException | LinkageError ignored) { }
 	}
 
-	private static RepositoryDiscovery discovery(ManagedRuntimeSettings settings, InfluxSettings influx, DmpCredentials credentials) {
+	private static RepositoryDiscovery discovery(ManagedRuntimeSettings settings, InfluxSettings influx,
+			StateStoreSettings stateStore, DmpCredentials credentials) {
 		var repository = new AasRepositoryClient(settings.repositoryUri(), settings.connectTimeout(),
 				settings.requestTimeout(), settings.pageSize(), settings.maxPages(), settings.authorization());
 		return new RepositoryDiscovery(repository,
-				new RuntimeSettings(settings.repositoryUri(), influx, credentials, settings.repositoryEvents()),
+				new RuntimeSettings(settings.repositoryUri(), influx, credentials, settings.repositoryEvents(), stateStore),
 				settings.maxParallelReads(), settings.aimcIds());
 	}
 }

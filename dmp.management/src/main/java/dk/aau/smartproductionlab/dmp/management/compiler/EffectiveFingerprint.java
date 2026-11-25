@@ -22,6 +22,7 @@ import org.eclipse.digitaltwin.aas4j.v3.model.Qualifier;
 import org.eclipse.digitaltwin.aas4j.v3.model.Reference;
 import org.eclipse.digitaltwin.aas4j.v3.model.SubmodelElement;
 import dk.aau.smartproductionlab.dmp.aas.model.Aas;
+import dk.aau.smartproductionlab.dmp.management.model.StateProjection;
 import dk.aau.smartproductionlab.dmp.management.model.TimeSeriesProjection;
 import dk.aau.smartproductionlab.dmp.management.model.WireModel;
 
@@ -45,6 +46,7 @@ public final class EffectiveFingerprint {
 		}
 	}
 	private record SeriesValue(DirectValue container, TimeSeriesProjection.Series projection) { }
+	private record StateValue(DirectValue variable, StateProjection.Variable projection) { }
 	private record EndpointValue(String id, Reference reference, WireModel.Presence<String> pollingInterval,
 			WireModel.Presence<String> evaluation, Object target) { }
 	private record PlanValue(String identity, int listIndex, List<EndpointValue> sources, List<EndpointValue> sinks,
@@ -116,7 +118,8 @@ public final class EffectiveFingerprint {
 		if (runtime == null) return null;
 		// The InfluxDB a TimeSeries segment must name; its token is no compilation input.
 		String influx = runtime.influx() == null ? "" : " influx=" + runtime.influx().url() + "?org=" + runtime.influx().org();
-		return runtime.aasRepositoryBaseUri() + influx;
+		String state = runtime.stateStore() == null ? "" : " state=" + runtime.stateStore().update();
+		return runtime.aasRepositoryBaseUri() + influx + state;
 	}
 
 	private static String validation() {
@@ -156,6 +159,12 @@ public final class EffectiveFingerprint {
 			// The projection carries the resolved columns, so a change of a referenced element changes it, too.
 			return new SeriesValue(new DirectValue(segment.submodel().getId(), segment.submodel().getIdShort(),
 					segment.submodel().getSemanticId(), series.series()), series.projection());
+		}
+		if (target instanceof MappingPlanCompiler.StateTarget state) {
+			var variable = state.variable();
+			// The projection carries the values that shape the write: subject, meaning, type, store and graph.
+			return new StateValue(new DirectValue(variable.submodel().getId(), variable.submodel().getIdShort(),
+					variable.submodel().getSemanticId(), Aas.withoutValues(variable.element()), null), state.projection());
 		}
 		return ((MappingPlanCompiler.AidTarget) target).resolved();
 	}

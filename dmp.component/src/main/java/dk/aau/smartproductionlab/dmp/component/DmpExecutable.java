@@ -26,6 +26,7 @@ package dk.aau.smartproductionlab.dmp.component;
 
 import dk.aau.smartproductionlab.dmp.core.component.DmpComponent;
 import dk.aau.smartproductionlab.dmp.influxdb2.InfluxSettings;
+import dk.aau.smartproductionlab.dmp.sparql.StateStoreSettings;
 
 /**
  * Starts the DMP. All routes are built at runtime from the AAS repository and
@@ -42,7 +43,8 @@ public class DmpExecutable {
 	public static void main(String[] args) throws IllegalArgumentException, SecurityException {
 		if (args.length != 0) throw new IllegalArgumentException("the DMP takes no arguments; configure it through DMP_MANAGED_* environment variables");
 		ManagedDmpRuntime runtime = new ManagedDmpRuntime(ManagedRuntimeSettings.fromEnvironment(System.getenv()),
-				InfluxSettings.fromEnvironment(System.getenv()).orElse(null), credentials(System.getenv()));
+				InfluxSettings.fromEnvironment(System.getenv()).orElse(null),
+				StateStoreSettings.fromEnvironment(System.getenv()).orElse(null), credentials(System.getenv()));
 		runtime.start();
 		managedRuntime = runtime;
 		component = runtime.component();

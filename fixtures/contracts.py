@@ -29,7 +29,7 @@ from pathlib import Path
 from basyx.aas import model
 
 from aas_model.builder import build_from_model
-from aas_model.constants import INFLUX_ORG, INFLUX_ORIGIN
+from aas_model.constants import INFLUX_ORG, INFLUX_ORIGIN, STATE_STORE_ORIGIN
 from aas_model.json_schema_aid import datapoint_from_schema
 from aas_model.resource_instances import RESOURCE_FACTORIES
 from aas_model.resource_template.references import operation_ref
@@ -555,6 +555,8 @@ def generate(root: Path) -> None:
                     "aas_base_url": "http://aas-server:8081",
                     "influx_url": INFLUX_ORIGIN,
                     "influx_org": INFLUX_ORG,
+                    # The workspace's state store, which every StateDeclaration's Target names.
+                    "state_store_url": STATE_STORE_ORIGIN,
                 },
                 "authoredMappings": _authored_mappings(aimc),
             },

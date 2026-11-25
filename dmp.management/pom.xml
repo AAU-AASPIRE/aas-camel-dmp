@@ -66,6 +66,11 @@
 		</dependency>
 		<dependency>
 			<groupId>dk.aau.smartproductionlab</groupId>
+			<artifactId>dmp.camel-sparql</artifactId>
+			<version>${revision}</version>
+		</dependency>
+		<dependency>
+			<groupId>dk.aau.smartproductionlab</groupId>
 			<artifactId>dmp.camel-aas</artifactId>
 			<version>${revision}</version>
 		</dependency>

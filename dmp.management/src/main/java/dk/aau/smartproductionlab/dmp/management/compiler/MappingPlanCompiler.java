@@ -30,6 +30,8 @@ import java.util.Set;
 import java.util.LinkedHashSet;
 
 import org.eclipse.digitaltwin.aas4j.v3.model.Key;
+import org.eclipse.digitaltwin.aas4j.v3.model.KeyTypes;
+import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultKey;
 import org.eclipse.digitaltwin.aas4j.v3.model.ReferenceTypes;
 import org.eclipse.digitaltwin.aas4j.v3.model.impl.DefaultReference;
 import org.eclipse.digitaltwin.aas4j.v3.model.Qualifier;
@@ -38,6 +40,7 @@ import org.eclipse.digitaltwin.aas4j.v3.model.Reference;
 import org.eclipse.digitaltwin.aas4j.v3.model.SubmodelElement;
 import org.eclipse.digitaltwin.aas4j.v3.model.ReferenceElement;
 import dk.aau.smartproductionlab.dmp.aas.model.Aas;
+import dk.aau.smartproductionlab.dmp.management.model.StateProjection;
 import dk.aau.smartproductionlab.dmp.management.model.TimeSeriesProjection;
 import dk.aau.smartproductionlab.dmp.management.model.WireModel;
 import dk.aau.smartproductionlab.dmp.management.repository.AasReferenceResolver;
@@ -45,12 +48,15 @@ import dk.aau.smartproductionlab.dmp.management.repository.AasRepositoryClient;
 
 /** Resolves immutable repository inputs into an ordered, connector-neutral mapping plan. */
 public final class MappingPlanCompiler {
-	public sealed interface Target permits DirectTarget, AidTarget, SeriesTarget { }
+	public sealed interface Target permits DirectTarget, AidTarget, SeriesTarget, StateTarget { }
 	public record DirectTarget(AasReferenceResolver.ResolvedElement resolved) implements Target { }
 	public record AidTarget(AasReferenceResolver.AidTarget resolved) implements Target { }
 	/** A TimeSeries LinkedSegment; its series container (at {@code seriesPath}) holds the Record, the row shape. */
 	public record SeriesTarget(AasReferenceResolver.ResolvedElement segment, SubmodelElement series, String seriesPath,
 			TimeSeriesProjection.Series projection) implements Target { }
+	/** A StateVariable of a StateDeclaration: the state store is one more sink (plan D36); {@code target} its declaration's Target. */
+	public record StateTarget(AasReferenceResolver.ResolvedElement variable, SubmodelElement target,
+			StateProjection.Variable projection) implements Target { }
 	/** An endpoint with its target; a Source also with its {@code PollingInterval} and {@code Evaluation/Mode}. */
 	public record EndpointPlan(String id, Reference reference, Target target,
 			WireModel.Presence<String> pollingInterval, WireModel.Presence<String> evaluation) {
@@ -173,6 +179,16 @@ public final class MappingPlanCompiler {
 			if(responseSinksResult.found() && responseSinksResult.value().value()!=null)resolved.addAll(responseSinksResult.value().value());
 			for(EndpointPlan endpoint:resolved) {
 				if(endpoint.target() instanceof DirectTarget target) metadataDependencies(target.resolved().element(),dependencies);
+				// A state variable's values count (its type, its subject) and so do its declaration's Target's.
+				if(endpoint.target() instanceof StateTarget state) {
+					List<Key> keys=Aas.keys(endpoint.reference());
+					dependencies.add(new Dependency("series",keys.get(0).getValue(),AasReferenceResolver.idShortPath(keys)));
+					dependencies.add(new Dependency("series",keys.get(0).getValue(),StateProjection.TARGET_ID_SHORT));
+					if(state.projection().subjectElement()!=null) {
+						List<Key> subject=Aas.keys(state.projection().subjectElement());
+						dependencies.add(new Dependency("submodel",subject.get(0).getValue(),AasReferenceResolver.idShortPath(subject)));
+					}
+				}
 				// The Record and InfluxDb2Target lie beside the referenced segment: the series container is read, too.
 				if(endpoint.target() instanceof SeriesTarget series) {
 					// Its values count, too: the segments' StartTime, EndTime and State are the period.
@@ -239,6 +255,9 @@ public final class MappingPlanCompiler {
 		if(resolved.value() instanceof AasReferenceResolver.ResolvedElement element
 				&& TimeSeriesProjection.isLinkedSegment(element.element()))
 			return compileSeries(endpoint,element);
+		if(resolved.value() instanceof AasReferenceResolver.ResolvedElement element
+				&& StateProjection.isVariable(element.element()))
+			return compileState(endpoint,element);
 		Target target=switch(resolved.value()) {
 			case AasReferenceResolver.ResolvedElement element -> new DirectTarget(element);
 			case AasReferenceResolver.AidTarget aid -> new AidTarget(aid);
@@ -267,6 +286,30 @@ public final class MappingPlanCompiler {
 		return found(new EndpointPlan(endpoint.id(),endpoint.reference(),
 				new SeriesTarget(segment,container.element(),AasReferenceResolver.idShortPath(seriesKeys),projection),
 				endpoint.pollingInterval(),endpoint.evaluation()));
+	}
+
+	/**
+	 * A StateVariable target: {@code <StateDeclaration>/<variable>}, its declaration's Target read beside it, and an
+	 * element Subject checked to exist.
+	 */
+	private AasRepositoryClient.Result<EndpointPlan> compileState(WireModel.Endpoint endpoint,
+			AasReferenceResolver.ResolvedElement variable) {
+		List<Key> keys=Aas.keys(endpoint.reference());
+		var target=references.resolve(new DefaultReference.Builder().type(ReferenceTypes.MODEL_REFERENCE)
+				.keys(List.of(keys.get(0),new DefaultKey.Builder().type(KeyTypes.SUBMODEL_ELEMENT_COLLECTION)
+						.value(StateProjection.TARGET_ID_SHORT).build())).build());
+		if(!target.found())return propagate(target);
+		if(!(target.value() instanceof AasReferenceResolver.ResolvedElement declared))
+			return invalid("the StateDeclaration's Target is not an AAS element");
+		StateProjection.Variable projection;
+		try { projection=StateProjection.project(variable.submodel(),variable.element(),keys,declared.element()); }
+		catch(IllegalArgumentException invalid) { return invalid("StateVariable "+AasReferenceResolver.idShortPath(keys)+": "+invalid.getMessage()); }
+		if(projection.subjectElement()!=null) {
+			var subject=references.resolve(projection.subjectElement());
+			if(!subject.found())return propagate(subject);
+		}
+		return found(new EndpointPlan(endpoint.id(),endpoint.reference(),
+				new StateTarget(variable,declared.element(),projection),endpoint.pollingInterval(),endpoint.evaluation()));
 	}
 
 	/** A Record's reference resolved like a mapping endpoint; a repository failure keeps its status for retries. */

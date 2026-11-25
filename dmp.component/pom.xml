@@ -126,6 +126,11 @@
 			<artifactId>dmp.camel-influxdb2</artifactId>
 			<version>${revision}</version>
 		</dependency>
+		<dependency>
+			<groupId>dk.aau.smartproductionlab</groupId>
+			<artifactId>dmp.camel-sparql</artifactId>
+			<version>${revision}</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.apache.camel</groupId>
