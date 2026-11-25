@@ -305,7 +305,7 @@ class ManagedBridgeLifecycleTest {
 				var installedBundle=dmp.installBundle(bundle.bundleId(),bundle.route());
 				assertTrue(installedBundle.restReservations().stream().anyMatch(reservation ->
 						reservation.path().startsWith("/submodels/")
-								&& reservation.path().endsWith("/submodel-elements/Skills."+action+".operation/invoke")),name);
+								&& reservation.path().endsWith("/submodel-elements/"+action+".Start.Start/invoke")),name);
 				Set<String> installedRouteIds=installedBundle.routeIds();
 				dmp.removeBundle(installedBundle);
 

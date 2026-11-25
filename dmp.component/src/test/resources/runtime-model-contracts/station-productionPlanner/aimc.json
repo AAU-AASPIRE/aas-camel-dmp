@@ -191,19 +191,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/productionPlannerAAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/productionPlannerAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Plan"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -282,19 +282,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/productionPlannerAAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/productionPlannerAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Plan"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -373,19 +373,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/productionPlannerAAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/productionPlannerAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Plan"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -753,19 +753,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/productionPlannerAAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/productionPlannerAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Plan"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -844,19 +844,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/productionPlannerAAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/productionPlannerAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Plan"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -935,19 +935,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/productionPlannerAAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/productionPlannerAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Plan"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -1026,19 +1026,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/productionPlannerAAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/productionPlannerAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Plan"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -1117,19 +1117,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/productionPlannerAAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/productionPlannerAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Plan"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",

@@ -170,19 +170,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "{aas_id}/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "{aas_id}/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Inspect"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              }
             ]
            }

@@ -233,7 +233,7 @@ public class ManagedKafkaSaslIntegrationTest {
 			assertFalse(projection.contains(sensitive), "health/status must contain only safe fixed categories");
 	}
 	private void call(int port) throws Exception {
-		var response = caller.send(HttpRequest.newBuilder(URI.create("http://127.0.0.1:" + port + OperationCalls.path("a/submodels/ControlComponentInstance", "Restart")))
+		var response = caller.send(HttpRequest.newBuilder(URI.create("http://127.0.0.1:" + port + OperationCalls.path("a/submodels/Skills", "Restart")))
 				.timeout(Duration.ofSeconds(5)).header("Content-Type", "application/json")
 				.POST(HttpRequest.BodyPublishers.ofString(OperationCalls.of("{\"Restart\":{\"x\":7}}"))).build(), HttpResponse.BodyHandlers.ofString());
 		assertEquals(200, response.statusCode());

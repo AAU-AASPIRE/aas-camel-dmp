@@ -1,27 +1,27 @@
 {
- "idShort": "ControlComponentInstance",
+ "idShort": "Skills",
  "modelType": "Submodel",
- "id": "contractAAS/submodels/ControlComponentInstance",
+ "id": "contractAAS/submodels/Skills",
  "semanticId": {
   "type": "ExternalReference",
   "keys": [
    {
     "type": "GlobalReference",
-    "value": "https://admin-shell.io/idta/ControlComponent/Instance/2/0"
+    "value": "https://smartproductionlab.aau.dk/ARSO/Skills/1/0/Submodel"
    }
   ]
  },
  "submodelElements": [
   {
-   "idShort": "Skills",
+   "idShort": "Inspect",
    "modelType": "SubmodelElementCollection",
    "value": [
     {
-     "idShort": "Inspect",
+     "idShort": "Start",
      "modelType": "SubmodelElementCollection",
      "value": [
       {
-       "idShort": "operation",
+       "idShort": "Start",
        "modelType": "Operation"
       }
      ]

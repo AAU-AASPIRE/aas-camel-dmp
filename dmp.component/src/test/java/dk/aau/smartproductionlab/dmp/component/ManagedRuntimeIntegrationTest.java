@@ -64,17 +64,17 @@ class ManagedRuntimeIntegrationTest {
 		device.start();
 		// Two assets, each with its own AIMC and CCI; BaSyx delegates each Operation to its own DMP path.
 		var repository = new FakeAasRepository();
-		String cci = "a/submodels/ControlComponentInstance";
+		String cci = "a/submodels/Skills";
 		String baseAimc = resource("http-operation/aimc.json");
 		JsonObject aimcBObject = JsonParser.parseString(baseAimc.replace("contractAAS", "contractBAS")
-				.replace(cci, "b/submodels/ControlComponentInstance")).getAsJsonObject();
+				.replace(cci, "b/submodels/Skills")).getAsJsonObject();
 		addMalformedSibling(aimcBObject);
 		repository.put(baseAimc).put(aimcBObject.toString());
 		repository.put(resource("http-operation/aid.json").replace("http://192.168.0.60:8080/plc/api",
 				"http://127.0.0.1:" + device.getAddress().getPort() + "/plc/api"));
 		repository.put(PublishedModels.publish(resource("http-operation/dependencies/0.json"), "contractAAS", "contract"));
 		repository.put(PublishedModels.publish(resource("http-operation/dependencies/0.json")
-				.replace(cci, "b/submodels/ControlComponentInstance"), "contractBAS", "contractB"));
+				.replace(cci, "b/submodels/Skills"), "contractBAS", "contractB"));
 		var settings = new ManagedRuntimeSettings(repository.uri(),
 				null, new KafkaControlEventRouteBuilder.Settings("127.0.0.1:9092", "control", "dmp-control"), Set.of(), 16, 16, 4, 30_000, Duration.ofSeconds(2), Duration.ofSeconds(2), 50, 4);
 		var client = new AasRepositoryClient(settings.repositoryUri(), settings.connectTimeout(), settings.requestTimeout(),
@@ -93,7 +93,7 @@ class ManagedRuntimeIntegrationTest {
 			HttpClient caller = HttpClient.newBuilder().connectTimeout(Duration.ofSeconds(2)).build();
 			for (String idShort : List.of("contract", "contractB")) {
 				var response = caller.send(HttpRequest.newBuilder(URI.create("http://127.0.0.1:" + port
-						+ OperationCalls.path(("contractB".equals(idShort) ? "b" : "a") + "/submodels/ControlComponentInstance", "Restart")))
+						+ OperationCalls.path(("contractB".equals(idShort) ? "b" : "a") + "/submodels/Skills", "Restart")))
 						.timeout(Duration.ofSeconds(5))
 						.header("Content-Type", "application/json")
 						.POST(HttpRequest.BodyPublishers.ofString(OperationCalls.of("{\"Restart\":{\"x\":1}}"))).build(),
@@ -117,7 +117,7 @@ class ManagedRuntimeIntegrationTest {
 				HttpClient restartedCaller = HttpClient.newBuilder().connectTimeout(Duration.ofSeconds(2)).build();
 				for (String idShort : List.of("contract", "contractB")) {
 					var response = restartedCaller.send(HttpRequest.newBuilder(URI.create("http://127.0.0.1:" + port
-							+ OperationCalls.path(("contractB".equals(idShort) ? "b" : "a") + "/submodels/ControlComponentInstance", "Restart")))
+							+ OperationCalls.path(("contractB".equals(idShort) ? "b" : "a") + "/submodels/Skills", "Restart")))
 						.timeout(Duration.ofSeconds(5))
 							.header("Content-Type", "application/json")
 							.POST(HttpRequest.BodyPublishers.ofString(OperationCalls.of("{\"Restart\":{\"x\":1}}"))).build(),

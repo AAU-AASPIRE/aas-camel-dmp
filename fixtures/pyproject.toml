@@ -13,4 +13,4 @@ dependencies = ["aas-model"]
 package = false
 
 [tool.uv.sources]
-aas-model = { git = "https://github.com/tristan-schwoerer/aas-model", rev = "059ed560d73f84d5c3e503694d746a0fe1071c17" }
+aas-model = { git = "https://github.com/tristan-schwoerer/aas-model", rev = "81eea86bebfc12b92fac3abdfb536d34b5719e7d" }

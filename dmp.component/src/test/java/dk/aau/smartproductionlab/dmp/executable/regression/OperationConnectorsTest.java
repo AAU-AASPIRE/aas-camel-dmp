@@ -76,7 +76,7 @@ class OperationConnectorsTest {
 		runtime.startComponent();
 		int port = freePort();
 		runtime.listener(port);
-		operationUri = "http://127.0.0.1:" + port + OperationCalls.path("a/submodels/ControlComponentInstance", "Calibrate");
+		operationUri = "http://127.0.0.1:" + port + OperationCalls.path("a/submodels/Skills", "Calibrate");
 	}
 
 	@AfterEach
@@ -311,7 +311,7 @@ class OperationConnectorsTest {
 	private RoutePlan compile(JsonObject aid, String interfaceId, String container, String affordance, String sinkId,
 			Consumer<JsonObject> operation, String lua, String responseLua) throws Exception {
 		JsonObject cci = json(resource("opcua-method/dependencies/0.json")).getAsJsonObject();
-		operation.accept(child(child(child(cci, "Skills"), "Calibrate"), "operation"));
+		operation.accept(child(child(child(cci, "Calibrate"), "Start"), "Start"));
 		JsonObject aimc = json(resource("opcua-method/aimc.json")).getAsJsonObject();
 		JsonObject mapping = child(aimc, "MappingConfigurations").getAsJsonArray("value").get(0).getAsJsonObject();
 		child(mapping, "Transformation").addProperty("value", Base64.getEncoder().encodeToString(lua.getBytes(StandardCharsets.UTF_8)));

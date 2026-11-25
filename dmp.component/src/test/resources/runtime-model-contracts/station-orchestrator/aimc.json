@@ -191,11 +191,11 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/ControlComponentInstance"
+              "value": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "Start"
              },
              {
               "type": "SubmodelElementCollection",
@@ -203,7 +203,7 @@
              },
              {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -282,11 +282,11 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/ControlComponentInstance"
+              "value": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "Start"
              },
              {
               "type": "SubmodelElementCollection",
@@ -294,7 +294,7 @@
              },
              {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -662,11 +662,11 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/ControlComponentInstance"
+              "value": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "Start"
              },
              {
               "type": "SubmodelElementCollection",
@@ -674,7 +674,7 @@
              },
              {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -753,11 +753,11 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/ControlComponentInstance"
+              "value": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "Start"
              },
              {
               "type": "SubmodelElementCollection",
@@ -765,7 +765,7 @@
              },
              {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -944,19 +944,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Stop"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -1324,19 +1324,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Stop"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -1415,19 +1415,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Stop"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -1606,19 +1606,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Suspend"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -1986,19 +1986,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Suspend"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -2077,19 +2077,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Suspend"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -2268,19 +2268,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Unsuspend"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -2359,19 +2359,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Unsuspend"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -2739,19 +2739,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Unsuspend"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -2830,19 +2830,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Unsuspend"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -3021,19 +3021,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Reset"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -3401,19 +3401,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Reset"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -3492,19 +3492,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Reset"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",

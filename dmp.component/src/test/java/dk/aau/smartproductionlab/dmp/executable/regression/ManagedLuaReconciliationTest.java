@@ -414,7 +414,7 @@ class ManagedLuaReconciliationTest {
 
 		/** A second asset with its own AIMC and CCI, whose Operation has a path of its own. */
 		void sibling(String version) throws Exception {
-			String cci = "a/submodels/ControlComponentInstance", siblingCci = "b/submodels/ControlComponentInstance";
+			String cci = "a/submodels/Skills", siblingCci = "b/submodels/Skills";
 			put(PublishedModels.publish(cci().replace(cci, siblingCci), "contractBAS", "contractB"));
 			String body = models.get(AIMC).replace("contractAAS", "contractBAS").replace(cci, siblingCci);
 			body = body.replace(Base64.getEncoder().encodeToString(requestScript("old").getBytes(StandardCharsets.UTF_8)),
@@ -453,7 +453,7 @@ class ManagedLuaReconciliationTest {
 
 		HttpRequest request(String owner) {
 			// Each asset's CCI submodel: contract's a/…, the sibling contractB's b/….
-			String cci = ("contractB".equals(owner) ? "b" : "a") + "/submodels/ControlComponentInstance";
+			String cci = ("contractB".equals(owner) ? "b" : "a") + "/submodels/Skills";
 			return HttpRequest.newBuilder(URI.create("http://127.0.0.1:" + port + OperationCalls.path(cci, "Restart")))
 					.timeout(Duration.ofSeconds(10)).header("Content-Type", "application/json")
 					.POST(HttpRequest.BodyPublishers.ofString(OperationCalls.of("{\"x\":7}"))).build();

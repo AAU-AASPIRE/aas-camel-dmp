@@ -110,9 +110,9 @@ class ManagedProtocolOutcomeParityTest {
                     + "return { Calibrate = { Calibrate = reply.Calibrate, State = reply.State, Label = reply.Label, "
                     + "Count = reply.Count } } end");
             RoutePlan plan = repository.compile();
-            JsonObject fullCci = json(repository.models.get("a/submodels/ControlComponentInstance")).getAsJsonObject();
-            child(child(child(fullCci, "Skills"), "Calibrate"), "operation").remove("outputVariables");
-            repository.models.put("a/submodels/ControlComponentInstance", fullCci.toString());
+            JsonObject fullCci = json(repository.models.get("a/submodels/Skills")).getAsJsonObject();
+            child(child(child(fullCci, "Calibrate"), "Start"), "Start").remove("outputVariables");
+            repository.models.put("a/submodels/Skills", fullCci.toString());
             repository.withoutResponse();
             RoutePlan nativePlan = repository.compile();
             runtime.startComponent();
@@ -124,7 +124,7 @@ class ManagedProtocolOutcomeParityTest {
             var nativeOwner = runtime.installBundle("exclusive-opcua-native-output", nativePlan);
             try {
                 var nativeReply = caller.send(HttpRequest.newBuilder(URI.create("http://127.0.0.1:" + port
-                        + OperationCalls.path("a/submodels/ControlComponentInstance", "Calibrate"))).timeout(Duration.ofSeconds(10))
+                        + OperationCalls.path("a/submodels/Skills", "Calibrate"))).timeout(Duration.ofSeconds(10))
                         .header("Content-Type", "application/json").POST(HttpRequest.BodyPublishers.ofString("[]"))
                         .build(), HttpResponse.BodyHandlers.ofString());
                 assertEquals(200, nativeReply.statusCode(), nativeReply.body());
@@ -140,7 +140,7 @@ class ManagedProtocolOutcomeParityTest {
             try {
                 assertEquals(1, device.sends.get(), "compile/install must not call or replay the Method");
                 var direct = caller.send(HttpRequest.newBuilder(URI.create("http://127.0.0.1:" + port
-                        + OperationCalls.path("a/submodels/ControlComponentInstance", "Calibrate"))).timeout(Duration.ofSeconds(10))
+                        + OperationCalls.path("a/submodels/Skills", "Calibrate"))).timeout(Duration.ofSeconds(10))
                         .header("Content-Type", "application/json")
                         .POST(HttpRequest.BodyPublishers.ofString("[]")).build(), HttpResponse.BodyHandlers.ofString());
                 assertEquals(200, direct.statusCode(), direct.body());
@@ -152,7 +152,7 @@ class ManagedProtocolOutcomeParityTest {
                         directReply.getAsJsonObject().keySet().stream().toList(), "caller declaration order, not UA argument order");
 
                 var basyx = caller.send(HttpRequest.newBuilder(URI.create("http://127.0.0.1:" + port
-                        + OperationCalls.path("a/submodels/ControlComponentInstance", "Calibrate"))).timeout(Duration.ofSeconds(10))
+                        + OperationCalls.path("a/submodels/Skills", "Calibrate"))).timeout(Duration.ofSeconds(10))
                         .header("Content-Type", "application/json")
                         .POST(HttpRequest.BodyPublishers.ofString("[]"))
                         .build(), HttpResponse.BodyHandlers.ofString());
@@ -167,7 +167,7 @@ class ManagedProtocolOutcomeParityTest {
 
                 device.failNext.set("status");
                 var badStatus = caller.send(HttpRequest.newBuilder(URI.create("http://127.0.0.1:" + port
-                        + OperationCalls.path("a/submodels/ControlComponentInstance", "Calibrate"))).timeout(Duration.ofSeconds(10))
+                        + OperationCalls.path("a/submodels/Skills", "Calibrate"))).timeout(Duration.ofSeconds(10))
                         .header("Content-Type", "application/json")
                         .POST(HttpRequest.BodyPublishers.ofString("[]")).build(), HttpResponse.BodyHandlers.ofString());
                 assertEquals(502, badStatus.statusCode(), badStatus.body());
@@ -176,7 +176,7 @@ class ManagedProtocolOutcomeParityTest {
 
                 device.failNext.set("type");
                 var incompatible = caller.send(HttpRequest.newBuilder(URI.create("http://127.0.0.1:" + port
-                        + OperationCalls.path("a/submodels/ControlComponentInstance", "Calibrate"))).timeout(Duration.ofSeconds(10))
+                        + OperationCalls.path("a/submodels/Skills", "Calibrate"))).timeout(Duration.ofSeconds(10))
                         .header("Content-Type", "application/json")
                         .POST(HttpRequest.BodyPublishers.ofString("[]")).build(), HttpResponse.BodyHandlers.ofString());
                 assertEquals(502, incompatible.statusCode(), incompatible.body());
@@ -217,7 +217,7 @@ class ManagedProtocolOutcomeParityTest {
         try {
             JsonObject cci = json(resource("http-operation/dependencies/0.json")).getAsJsonObject();
             String cciId = cci.get("id").getAsString();
-            JsonObject operation = child(child(child(cci, "Skills"), "Restart"), "operation");
+            JsonObject operation = child(child(child(cci, "Restart"), "Start"), "Start");
             operation.add("inoutputVariables", json("[{\"value\":{\"modelType\":\"Property\",\"idShort\":\"Uuid\",\"valueType\":\"xs:string\"}}]"));
             operation.add("outputVariables", json("[{\"value\":{\"modelType\":\"Property\",\"idShort\":\"State\",\"valueType\":\"xs:string\"}},"
                     + "{\"value\":{\"modelType\":\"Property\",\"idShort\":\"Count\",\"valueType\":\"xs:integer\"}}]"));
@@ -238,7 +238,7 @@ class ManagedProtocolOutcomeParityTest {
                             + "\"valueType\":\"xs:string\",\"value\":\"" + uuid + "\"}}]";
                     var response = HttpClient.newBuilder().connectTimeout(Duration.ofSeconds(2)).build().send(
                             HttpRequest.newBuilder(URI.create("http://127.0.0.1:" + port
-                                    + OperationCalls.path("a/submodels/ControlComponentInstance", "Restart"))).timeout(Duration.ofSeconds(8))
+                                    + OperationCalls.path("a/submodels/Skills", "Restart"))).timeout(Duration.ofSeconds(8))
                                     .header("Content-Type", "application/json")
                                     .POST(HttpRequest.BodyPublishers.ofString(requestBody)).build(),
                             HttpResponse.BodyHandlers.ofString());
@@ -363,7 +363,7 @@ class ManagedProtocolOutcomeParityTest {
                         deviceStatus.set(scenario == 2 ? 503 : 200);
                         deviceReply.set(scenario == 3 ? "not-json" : payload);
                         var reply = caller.send(HttpRequest.newBuilder(URI.create("http://127.0.0.1:" + port
-                                + OperationCalls.path("a/submodels/ControlComponentInstance", "Restart"))).timeout(Duration.ofSeconds(6))
+                                + OperationCalls.path("a/submodels/Skills", "Restart"))).timeout(Duration.ofSeconds(6))
                                 .header("Content-Type", "application/json")
                                 .POST(HttpRequest.BodyPublishers.ofString(OperationCalls.of(payload))).build(), HttpResponse.BodyHandlers.ofString());
                         assertEquals(before + scenario + 1, sends.get(), "exactly one send even on remote/response failure");
@@ -472,12 +472,12 @@ class ManagedProtocolOutcomeParityTest {
         output.getAsJsonArray("value").add(properties);
         action.getAsJsonArray("value").add(output);
         JsonObject cci = JsonParser.parseString(resource("opcua-method/dependencies/0.json")).getAsJsonObject();
-        JsonObject operation = child(child(child(cci, "Skills"), "Calibrate"), "operation");
+        JsonObject operation = child(child(child(cci, "Calibrate"), "Start"), "Start");
         operation.add("outputVariables", json("[{\"idShort\":\"Calibrate\",\"value\":{\"modelType\":\"Property\",\"idShort\":\"Calibrate\",\"valueType\":\"xs:boolean\"}},"
                 + "{\"idShort\":\"State\",\"value\":{\"modelType\":\"Property\",\"idShort\":\"State\",\"valueType\":\"xs:string\"}},"
                 + "{\"idShort\":\"Label\",\"value\":{\"modelType\":\"Property\",\"idShort\":\"Label\",\"valueType\":\"xs:string\"}},"
                 + "{\"idShort\":\"Count\",\"value\":{\"modelType\":\"Property\",\"idShort\":\"Count\",\"valueType\":\"xs:integer\"}}]"));
-        return Map.of("a/submodels/AID", aid.toString(), "a/submodels/ControlComponentInstance", cci.toString());
+        return Map.of("a/submodels/AID", aid.toString(), "a/submodels/Skills", cci.toString());
     }
     private static JsonObject child(JsonObject parent, String name) {
         for (var entry : parent.getAsJsonArray(parent.has("submodelElements") ? "submodelElements" : "value")) {

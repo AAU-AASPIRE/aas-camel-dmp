@@ -487,19 +487,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Occupy"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              }
             ]
            }
@@ -806,19 +806,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Release"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              }
             ]
            }

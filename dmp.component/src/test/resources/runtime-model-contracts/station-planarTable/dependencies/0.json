@@ -1,29 +1,29 @@
 {
- "idShort": "ControlComponentInstance",
+ "idShort": "Skills",
  "description": [
   {
    "language": "en",
-   "text": "A ControlComponentInstance Submodel."
+   "text": "The Skills submodel (ARSO): a resource's skills with their commands and steps, and the errors they report."
   }
  ],
  "modelType": "Submodel",
- "id": "https://smartproductionlab.aau.dk/aas/planarTableAAS/submodels/ControlComponentInstance",
+ "id": "https://smartproductionlab.aau.dk/aas/planarTableAAS/submodels/Skills",
  "semanticId": {
   "type": "ExternalReference",
   "keys": [
    {
     "type": "GlobalReference",
-    "value": "https://admin-shell.io/idta/ControlComponent/Instance/2/0"
+    "value": "https://smartproductionlab.aau.dk/ARSO/Skills/1/0/Submodel"
    }
   ]
  },
  "submodelElements": [
   {
-   "idShort": "Endpoints",
+   "idShort": "Halt",
    "description": [
     {
      "language": "en",
-     "text": "Collection of references to control endpoints supported by the instance of the component"
+     "text": "A named skill, an element of the Skills submodel itself, recognised by its semanticId (no idShort — the skill name is user-defined)."
     }
    ],
    "modelType": "SubmodelElementCollection",
@@ -32,99 +32,40 @@
     "keys": [
      {
       "type": "GlobalReference",
-      "value": "https://admin-shell.io/idta/ControlComponent/Instance/Endpoints/2/0"
+      "value": "https://smartproductionlab.aau.dk/skill"
      }
     ]
    },
+   "supplementalSemanticIds": [
+    {
+     "type": "ExternalReference",
+     "keys": [
+      {
+       "type": "GlobalReference",
+       "value": "https://smartproductionlab.aau.dk/skill/ModuleControl"
+      }
+     ]
+    }
+   ],
    "value": [
     {
-     "idShort": "Halt",
+     "idShort": "SemanticId",
      "description": [
       {
        "language": "en",
-       "text": "This skill has this native interface in the AID submodel."
+       "text": "What the skill does, as the short form of older AASs states it."
       }
      ],
-     "modelType": "RelationshipElement",
-     "semanticId": {
-      "type": "ExternalReference",
-      "keys": [
-       {
-        "type": "GlobalReference",
-        "value": "https://smartproductionlab.aau.dk/ControlComponent/Skill/NativeInterface/1/0"
-       }
-      ]
-     },
-     "first": {
-      "type": "ModelReference",
-      "keys": [
-       {
-        "type": "Submodel",
-        "value": "https://smartproductionlab.aau.dk/aas/planarTableAAS/submodels/ControlComponentInstance"
-       },
-       {
-        "type": "SubmodelElementCollection",
-        "value": "Skills"
-       },
-       {
-        "type": "SubmodelElementCollection",
-        "value": "Halt"
-       }
-      ]
-     },
-     "second": {
-      "type": "ModelReference",
-      "keys": [
-       {
-        "type": "Submodel",
-        "value": "https://smartproductionlab.aau.dk/aas/planarTableAAS/submodels/AssetInterfacesDescription"
-       },
-       {
-        "type": "SubmodelElementCollection",
-        "value": "interface_mqtt"
-       },
-       {
-        "type": "SubmodelElementCollection",
-        "value": "InteractionMetadata"
-       },
-       {
-        "type": "SubmodelElementCollection",
-        "value": "actions"
-       },
-       {
-        "type": "SubmodelElementCollection",
-        "value": "Halt"
-       }
-      ]
-     }
-    }
-   ]
-  },
-  {
-   "idShort": "Skills",
-   "description": [
+     "modelType": "Property",
+     "value": "https://smartproductionlab.aau.dk/skills/Halt",
+     "valueType": "xs:string"
+    },
     {
-     "language": "en",
-     "text": "Collection of skills offered by the component instance"
-    }
-   ],
-   "modelType": "SubmodelElementCollection",
-   "semanticId": {
-    "type": "ExternalReference",
-    "keys": [
-     {
-      "type": "GlobalReference",
-      "value": "https://smartproductionlab.aau.dk/ControlComponent/Skills/2/0"
-     }
-    ]
-   },
-   "value": [
-    {
-     "idShort": "Halt",
+     "idShort": "Start",
      "description": [
       {
        "language": "en",
-       "text": "Contains the basic information to call (request the execution of) a skill, e.g. its signature"
+       "text": "One command of a skill: the action that calls it, its Operation, and what it runs."
       }
      ],
      "modelType": "SubmodelElementCollection",
@@ -133,126 +74,20 @@
       "keys": [
        {
         "type": "GlobalReference",
-        "value": "https://smartproductionlab.aau.dk/ControlComponent/Skill/2/0"
+        "value": "https://smartproductionlab.aau.dk/skill/Start"
        }
       ]
      },
      "value": [
       {
-       "idShort": "Disabled",
+       "idShort": "InterfaceReference",
        "description": [
         {
          "language": "en",
-         "text": "Boolean property that defines if the skill is (currently) disabled, e.g. not licensed, tested, suitable."
-        }
-       ],
-       "modelType": "Property",
-       "semanticId": {
-        "type": "ExternalReference",
-        "keys": [
-         {
-          "type": "GlobalReference",
-          "value": "https://admin-shell.io/idta/ControlComponent/Skill/Disabled/2/0"
-         }
-        ]
-       },
-       "value": "false",
-       "valueType": "xs:boolean"
-      },
-      {
-       "idShort": "Modes",
-       "description": [
-        {
-         "language": "en",
-         "text": "Collection of operation, operating, operational or execution modes (depending on the standard), in which the skill is available/allowed to execute."
-        }
-       ],
-       "modelType": "SubmodelElementCollection",
-       "semanticId": {
-        "type": "ExternalReference",
-        "keys": [
-         {
-          "type": "GlobalReference",
-          "value": "https://admin-shell.io/idta/ControlComponent/Skill/Modes/2/0"
-         }
-        ]
-       }
-      },
-      {
-       "idShort": "Parameters",
-       "description": [
-        {
-         "language": "en",
-         "text": "Collection of parameters used for the configuration of the skill."
-        }
-       ],
-       "modelType": "SubmodelElementCollection",
-       "semanticId": {
-        "type": "ExternalReference",
-        "keys": [
-         {
-          "type": "GlobalReference",
-          "value": "https://admin-shell.io/idta/ControlComponent/Skill/Parameters/2/0"
-         }
-        ]
-       }
-      },
-      {
-       "idShort": "Errors",
-       "description": [
-        {
-         "language": "en",
-         "text": "Collection of references to the error codes of the component that may be raised by this skill."
-        }
-       ],
-       "modelType": "SubmodelElementCollection",
-       "semanticId": {
-        "type": "ExternalReference",
-        "keys": [
-         {
-          "type": "GlobalReference",
-          "value": "https://admin-shell.io/idta/ControlComponent/Skill/Errors/2/0"
-         }
-        ]
-       }
-      },
-      {
-       "idShort": "Uses",
-       "description": [
-        {
-         "language": "en",
-         "text": "Collection of references to other skills, that this skill uses."
-        }
-       ],
-       "modelType": "SubmodelElementCollection",
-       "semanticId": {
-        "type": "ExternalReference",
-        "keys": [
-         {
-          "type": "GlobalReference",
-          "value": "https://admin-shell.io/idta/ControlComponent/Skill/Uses/2/0"
-         }
-        ]
-       }
-      },
-      {
-       "idShort": "interface_reference",
-       "description": [
-        {
-         "language": "en",
-         "text": "Reference to the AID action that natively implements this skill."
+         "text": "The AID action (arso:InterfaceSMC/InteractionMetadata/actions/{action}) that calls the command; in the short form, the action that starts the skill."
         }
        ],
        "modelType": "ReferenceElement",
-       "semanticId": {
-        "type": "ExternalReference",
-        "keys": [
-         {
-          "type": "GlobalReference",
-          "value": "https://smartproductionlab.aau.dk/ControlComponent/Skill/1/0"
-         }
-        ]
-       },
        "value": {
         "type": "ModelReference",
         "keys": [
@@ -280,7 +115,7 @@
        }
       },
       {
-       "idShort": "operation",
+       "idShort": "Start",
        "description": [
         {
          "language": "en",
@@ -293,13 +128,13 @@
         "keys": [
          {
           "type": "GlobalReference",
-          "value": "https://smartproductionlab.aau.dk/ControlComponent/Skill/Operation/2/0"
+          "value": "https://smartproductionlab.aau.dk/skill/Start"
          }
         ]
        },
        "qualifiers": [
         {
-         "value": "http://dmp:8080/submodels/aHR0cHM6Ly9zbWFydHByb2R1Y3Rpb25sYWIuYWF1LmRrL2Fhcy9wbGFuYXJUYWJsZUFBUy9zdWJtb2RlbHMvQ29udHJvbENvbXBvbmVudEluc3RhbmNl/submodel-elements/Skills.Halt.operation/invoke",
+         "value": "http://dmp:8080/submodels/aHR0cHM6Ly9zbWFydHByb2R1Y3Rpb25sYWIuYWF1LmRrL2Fhcy9wbGFuYXJUYWJsZUFBUy9zdWJtb2RlbHMvU2tpbGxz/submodel-elements/Halt.Start.Start/invoke",
          "kind": "ConceptQualifier",
          "valueType": "xs:string",
          "type": "invocationDelegation"
@@ -326,32 +161,14 @@
    ]
   },
   {
-   "idShort": "Type",
+   "idShort": "Errors",
    "description": [
     {
      "language": "en",
-     "text": "Reference between the component instance and its respective ControlComponentType Submodel."
+     "text": "What the ErrorID in the answer of an Operation can be: one property per error."
     }
    ],
-   "modelType": "ReferenceElement",
-   "semanticId": {
-    "type": "ExternalReference",
-    "keys": [
-     {
-      "type": "GlobalReference",
-      "value": "https://admin-shell.io/idta/ControlComponent/Instance/Type/2/0"
-     }
-    ]
-   },
-   "value": {
-    "type": "ModelReference",
-    "keys": [
-     {
-      "type": "Submodel",
-      "value": "https://smartproductionlab.aau.dk/aas/planarTableAAS/submodels/ControlComponentType"
-     }
-    ]
-   }
+   "modelType": "SubmodelElementCollection"
   }
  ]
 }

@@ -127,7 +127,7 @@ class OperationPropertyWriteTest {
 		runtime.startComponent();
 		int port = freePort();
 		runtime.listener(port);
-		operationUri = "http://127.0.0.1:" + port + OperationCalls.path("a/submodels/ControlComponentInstance", "Calibrate");
+		operationUri = "http://127.0.0.1:" + port + OperationCalls.path("a/submodels/Skills", "Calibrate");
 	}
 
 	private static final class Runtime extends DmpComponent {
@@ -255,7 +255,7 @@ class OperationPropertyWriteTest {
 		properties.getAsJsonArray("value").add(variable);
 
 		JsonObject cci = json(resource("opcua-method/dependencies/0.json")).getAsJsonObject();
-		child(child(child(cci, "Skills"), "Calibrate"), "operation").add("inputVariables",
+		child(child(child(cci, "Calibrate"), "Start"), "Start").add("inputVariables",
 				json("[{\"value\":{\"modelType\":\"Property\",\"idShort\":\"Setpoint\",\"valueType\":\"xs:int\"}}]"));
 		cci.getAsJsonArray("submodelElements").add(json(
 				"{\"modelType\":\"Property\",\"idShort\":\"Offset\",\"valueType\":\"xs:int\",\"value\":\"5\"}"));
@@ -271,7 +271,7 @@ class OperationPropertyWriteTest {
 		sinkKeys.get(4).getAsJsonObject().addProperty("value", "Setpoint");
 		child(sink, "SinkId").addProperty("value", "Setpoint");
 		child(mapping, "Sources").getAsJsonArray("value").add(endpoint("Source", "Offset",
-				key("Submodel", "a/submodels/ControlComponentInstance"), key("Property", "Offset")));
+				key("Submodel", "a/submodels/Skills"), key("Property", "Offset")));
 		mapping.getAsJsonArray("value").add(list("ResponseSources", endpoint("Source", "Written",
 				key("Submodel", "a/submodels/AID"), key("SubmodelElementCollection", "interface_opcua"),
 				key("SubmodelElementCollection", "InteractionMetadata"), key("SubmodelElementCollection", "properties"),
@@ -279,7 +279,7 @@ class OperationPropertyWriteTest {
 		mapping.getAsJsonArray("value").add(json("{\"modelType\":\"Blob\",\"idShort\":\"ResponseTransformation\","
 				+ "\"contentType\":\"text/plain\",\"value\":\"" + base64(RESPONSE_LUA) + "\"}"));
 		mapping.getAsJsonArray("value").add(list("ResponseSinks", endpoint("Sink", "LastSetpoint",
-				key("Submodel", "a/submodels/ControlComponentInstance"), key("Property", "LastSetpoint"))));
+				key("Submodel", "a/submodels/Skills"), key("Property", "LastSetpoint"))));
 
 		if (repository != null) repository.close();
 		repository = new FakeAasRepository();

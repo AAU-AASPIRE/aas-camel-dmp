@@ -149,7 +149,7 @@ class ManagedPackagedRuntimeIntegrationTest {
 
 	static final class Fixture implements AutoCloseable {
 		static final String AIMC = "contractAAS/submodels/AIMC";
-		static final String CCI = "a/submodels/ControlComponentInstance";
+		static final String CCI = "a/submodels/Skills";
 		final EmbeddedBroker broker = new EmbeddedBroker(false);
 		final org.apache.kafka.clients.admin.AdminClient admin = broker.admin();
 		final String topic = "executable-control", group = "executable-control-group";
@@ -206,7 +206,7 @@ class ManagedPackagedRuntimeIntegrationTest {
 		 * delegates to the Operation's own AAS API path. Returns the AIMC, added to the repository.
 		 */
 		String unit(String id, String idShort) throws Exception {
-			String cci = id + "/submodels/ControlComponentInstance";
+			String cci = id + "/submodels/Skills";
 			put(PublishedModels.publish(cci().replace(CCI, cci), id, idShort));
 			String aimc = models.get(AIMC).replace("contractAAS", id).replace(CCI, cci);
 			put(aimc);
@@ -276,7 +276,7 @@ class ManagedPackagedRuntimeIntegrationTest {
 			throw new AssertionError("installed scope disappeared");
 		}
 		void call(String owner, String version) throws Exception {
-			String cci = "contractB".equals(owner) ? "contractBAS/submodels/ControlComponentInstance" : CCI;
+			String cci = "contractB".equals(owner) ? "contractBAS/submodels/Skills" : CCI;
 			var response = caller.send(HttpRequest.newBuilder(URI.create("http://127.0.0.1:" + port + OperationCalls.path(cci, "Restart")))
 					.timeout(Duration.ofSeconds(8)).header("Content-Type", "application/json")
 					.POST(HttpRequest.BodyPublishers.ofString(OperationCalls.of("{\"x\":7}"))).build(), HttpResponse.BodyHandlers.ofString());

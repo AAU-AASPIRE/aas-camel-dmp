@@ -331,7 +331,7 @@ public final class ConnectorConfigurationFactory {
 		for(EndpointPlan endpoint:mapping.sources()) if(operationModel(endpoint)!=null)
 			operationAnchors.putIfAbsent(operationIdentity(endpoint),endpoint);
 		if(operationAnchors.size()!=1) {
-			issue(issues,mapping,root+"/Sources","bridge mappings require Sources from exactly one declared CCI Operation");
+			issue(issues,mapping,root+"/Sources","bridge mappings require Sources from exactly one declared skill Operation");
 			return null;
 		}
 		EndpointPlan operation=operationAnchors.values().iterator().next();
@@ -341,8 +341,6 @@ public final class ConnectorConfigurationFactory {
 		for(EndpointPlan extra:fanIn)
 			if(!(extra.target() instanceof DirectTarget))
 				issue(issues,mapping,root+"/Sources/"+extra.id(),"an operation mapping fans in AAS elements only; the device is reached through its Sinks");
-		String action=operationAction(operation.reference());
-		if(action==null || action.isBlank()) { issue(issues,mapping,root+"/Sources","Operation reference does not identify an exact parent skill/action");return null; }
 		if(mapping.sinks().isEmpty()) { issue(issues,mapping,root+"/Sinks","bridge Operation requires at least one declared command binding");return null; }
 		if(mapping.qualifiers().stream().anyMatch(ConnectorConfigurationFactory::behaviorQualifier)) issue(issues,mapping,root+"/qualifiers","mapping qualifiers are not represented by the bridge route schema");
 		// The Operation is its mapping's only trigger; its further sources are read at the call.
@@ -352,7 +350,8 @@ public final class ConnectorConfigurationFactory {
 			if(operationModel(source)==null && evaluation(source,Evaluation.READ_AT_EVALUATION)!=Evaluation.READ_AT_EVALUATION)
 				issue(issues,mapping,root+"/Sources/"+source.id()+"/Evaluation","an Operation mapping reads its further sources at the call (ReadAtEvaluation)");
 		}
-		// The Operation is bound 1:1 to the AID action of its skill, or to one property affordance it writes.
+		// The Operation is bound 1:1 to one AID action, or to one property affordance it writes: the mapping's Sinks say
+		// which. Nothing is matched by name (the Operation lies in Skills/<skill>/<command>, the action is the AID's).
 		AidTarget actionTarget=null,propertyTarget=null;
 		for(EndpointPlan sink:mapping.sinks()) {
 			if(sink.target() instanceof AidTarget target && "property".equalsIgnoreCase(target.resolved().affordance().kind())) {
@@ -361,9 +360,8 @@ public final class ConnectorConfigurationFactory {
 				else propertyTarget=target;
 				continue;
 			}
-			if(!(sink.target() instanceof AidTarget target) || !"action".equalsIgnoreCase(target.resolved().affordance().kind())
-					|| !action.equals(target.resolved().affordance().idShort().value())) {
-				issue(issues,mapping,root+"/Sinks/"+sink.id(),"command binding must address the same exact AID action as the CCI Operation");
+			if(!(sink.target() instanceof AidTarget target) || !"action".equalsIgnoreCase(target.resolved().affordance().kind())) {
+				issue(issues,mapping,root+"/Sinks/"+sink.id(),"a command binding addresses an AID action, or the one property the Operation writes");
 				continue;
 			}
 			// The request writes the action's input; its output is the reply, named by the ResponseSources.
@@ -378,6 +376,8 @@ public final class ConnectorConfigurationFactory {
 		if(actionTarget==null && propertyTarget==null || issues.size()!=issueStart) return null;
 		boolean write=propertyTarget!=null;
 		AidTarget commandTarget=write?propertyTarget:actionTarget;
+		// What the Operation is bound to: the action (or property) of its command Sinks.
+		String action=commandTarget.resolved().affordance().idShort().value();
 		if(write && mapping.invocationTimeout().present()) {
 			issue(issues,mapping,root+"/InvocationTimeout","InvocationTimeout bounds an action's terminal reply;"
 					+" an Operation bound to a property writes it within its connector's own timeout");return null;
@@ -408,7 +408,7 @@ public final class ConnectorConfigurationFactory {
 		List<String> parameterRequired=schemaRequired(input);
 		List<String> responseRequired=schemaRequired(response);
 		String restPath=delegationPath(cci);
-		if(restPath==null) { issue(issues,mapping,root+"/Sources","CCI Operation needs an invocationDelegation qualifier whose URL names the DMP path");return null; }
+		if(restPath==null) { issue(issues,mapping,root+"/Sources","a skill Operation needs an invocationDelegation qualifier whose URL names the DMP path");return null; }
 		// The Operation's AAS identity (submodel ID, idShort path), passed to Lua as meta.invocation. The delegation
 		// path is the Operation's path in the AAS API, so no two Operations can share it.
 		List<Key> operationKeys=operationKeys(operation);
@@ -626,12 +626,6 @@ public final class ConnectorConfigurationFactory {
 					|| uri.getRawQuery()!=null || uri.getRawFragment()!=null || path.contains("{"))return null;
 			return path;
 		} catch(java.net.URISyntaxException invalid) { return null; }
-	}
-
-	private static String operationAction(Reference reference) {
-		List<Key> keys=Aas.keys(reference);
-		for(int i=keys.size()-1;i>0;i--)if("Operation".equals(Aas.keyType(keys.get(i))))return keys.get(i-1).getValue();
-		return null;
 	}
 
 	private static boolean sameAction(AidTarget left,AidTarget right) {

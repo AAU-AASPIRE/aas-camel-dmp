@@ -588,19 +588,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Halt"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -906,19 +906,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Occupy"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -1286,19 +1286,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Occupy"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -1377,19 +1377,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Occupy"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -1659,19 +1659,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Release"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -2039,19 +2039,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Release"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -2130,19 +2130,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Release"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -2412,19 +2412,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "MoveToPosition"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -2503,19 +2503,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "MoveToPosition"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -2594,19 +2594,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "MoveToPosition"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -2685,19 +2685,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "MoveToPosition"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -2776,19 +2776,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "MoveToPosition"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -3156,19 +3156,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "MoveToPosition"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -3247,19 +3247,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "MoveToPosition"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -3338,19 +3338,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "MoveToPosition"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -3429,19 +3429,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "MoveToPosition"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",

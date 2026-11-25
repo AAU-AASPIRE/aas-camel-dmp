@@ -588,19 +588,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaLoadingSystemAAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/imaLoadingSystemAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Halt"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -906,19 +906,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaLoadingSystemAAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/imaLoadingSystemAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Occupy"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -1286,19 +1286,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaLoadingSystemAAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/imaLoadingSystemAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Occupy"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -1377,19 +1377,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaLoadingSystemAAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/imaLoadingSystemAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Occupy"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -1659,19 +1659,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaLoadingSystemAAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/imaLoadingSystemAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Release"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -2039,19 +2039,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaLoadingSystemAAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/imaLoadingSystemAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Release"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -2130,19 +2130,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaLoadingSystemAAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/imaLoadingSystemAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Release"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -2412,19 +2412,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaLoadingSystemAAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/imaLoadingSystemAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Loading"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -2792,19 +2792,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaLoadingSystemAAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/imaLoadingSystemAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Loading"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -2883,19 +2883,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaLoadingSystemAAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/imaLoadingSystemAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Loading"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",
@@ -2974,19 +2974,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaLoadingSystemAAS/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/imaLoadingSystemAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Loading"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              },
              {
               "type": "Property",

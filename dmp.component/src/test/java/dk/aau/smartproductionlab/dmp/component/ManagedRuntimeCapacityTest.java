@@ -38,7 +38,7 @@ class ManagedRuntimeCapacityTest {
 		try (var fixture = new ManagedPackagedRuntimeIntegrationTest.Fixture()) {
 			System.setProperty("dmp.http.port", Integer.toString(fixture.port));
 			fixture.models.remove("contractBAS/submodels/AIMC");
-			fixture.models.remove("contractBAS/submodels/ControlComponentInstance");
+			fixture.models.remove("contractBAS/submodels/Skills");
 			for (int i = 1; i < desired; i++) fixture.unit("unit-" + i, "unit-" + i);
 			System.out.println("DMP_STRESS_INPUT " + dk.aau.smartproductionlab.dmp.core.util.JsonCodec.toJson(Map.of(
 					"desiredMappings", desired, "capacity", capacity, "modelPayloadBytes", fixture.models.values().stream()

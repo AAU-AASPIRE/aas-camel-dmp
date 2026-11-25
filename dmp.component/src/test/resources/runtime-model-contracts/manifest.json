@@ -148,7 +148,7 @@
    "expected": "opcua-method/expected.json",
    "dependencies": [
     {
-     "id": "a/submodels/ControlComponentInstance",
+     "id": "a/submodels/Skills",
      "path": "dependencies/0.json"
     }
    ],
@@ -162,7 +162,7 @@
    "expected": "http-operation/expected.json",
    "dependencies": [
     {
-     "id": "a/submodels/ControlComponentInstance",
+     "id": "a/submodels/Skills",
      "path": "dependencies/0.json"
     }
    ],
@@ -176,7 +176,7 @@
    "expected": "grouped-action/expected.json",
    "dependencies": [
     {
-     "id": "contractAAS/submodels/ControlComponentInstance",
+     "id": "contractAAS/submodels/Skills",
      "path": "dependencies/0.json"
     }
    ],
@@ -190,7 +190,7 @@
    "expected": "td-data-schemas/expected.json",
    "dependencies": [
     {
-     "id": "contractAAS/submodels/ControlComponentInstance",
+     "id": "contractAAS/submodels/Skills",
      "path": "dependencies/0.json"
     }
    ],
@@ -204,7 +204,7 @@
    "expected": "projection-extensions/expected.json",
    "dependencies": [
     {
-     "id": "a/submodels/ControlComponentInstance",
+     "id": "a/submodels/Skills",
      "path": "dependencies/0.json"
     },
     {
@@ -226,7 +226,7 @@
      "path": "dependencies/0.json"
     },
     {
-     "id": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/ControlComponentInstance",
+     "id": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/Skills",
      "path": "dependencies/1.json"
     }
    ],
@@ -244,7 +244,7 @@
      "path": "dependencies/0.json"
     },
     {
-     "id": "https://smartproductionlab.aau.dk/aas/cytivaCappingSystemAAS/submodels/ControlComponentInstance",
+     "id": "https://smartproductionlab.aau.dk/aas/cytivaCappingSystemAAS/submodels/Skills",
      "path": "dependencies/1.json"
     }
    ],
@@ -262,7 +262,7 @@
      "path": "dependencies/0.json"
     },
     {
-     "id": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/ControlComponentInstance",
+     "id": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/Skills",
      "path": "dependencies/1.json"
     }
    ],
@@ -280,7 +280,7 @@
      "path": "dependencies/0.json"
     },
     {
-     "id": "https://smartproductionlab.aau.dk/aas/imaLoadingSystemAAS/submodels/ControlComponentInstance",
+     "id": "https://smartproductionlab.aau.dk/aas/imaLoadingSystemAAS/submodels/Skills",
      "path": "dependencies/1.json"
     }
    ],
@@ -298,7 +298,7 @@
      "path": "dependencies/0.json"
     },
     {
-     "id": "https://smartproductionlab.aau.dk/aas/optimaUnloadingSystemAAS/submodels/ControlComponentInstance",
+     "id": "https://smartproductionlab.aau.dk/aas/optimaUnloadingSystemAAS/submodels/Skills",
      "path": "dependencies/1.json"
     }
    ],
@@ -316,7 +316,7 @@
      "path": "dependencies/0.json"
     },
     {
-     "id": "https://smartproductionlab.aau.dk/aas/omronCameraSystemAAS/submodels/ControlComponentInstance",
+     "id": "https://smartproductionlab.aau.dk/aas/omronCameraSystemAAS/submodels/Skills",
      "path": "dependencies/1.json"
     }
    ],
@@ -334,7 +334,7 @@
      "path": "dependencies/0.json"
     },
     {
-     "id": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/ControlComponentInstance",
+     "id": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/Skills",
      "path": "dependencies/1.json"
     }
    ],
@@ -348,7 +348,7 @@
    "expected": "station-planarTable/expected.json",
    "dependencies": [
     {
-     "id": "https://smartproductionlab.aau.dk/aas/planarTableAAS/submodels/ControlComponentInstance",
+     "id": "https://smartproductionlab.aau.dk/aas/planarTableAAS/submodels/Skills",
      "path": "dependencies/0.json"
     }
    ],
@@ -362,7 +362,7 @@
    "expected": "station-orchestrator/expected.json",
    "dependencies": [
     {
-     "id": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/ControlComponentInstance",
+     "id": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/Skills",
      "path": "dependencies/0.json"
     },
     {
@@ -380,7 +380,7 @@
    "expected": "station-productionPlanner/expected.json",
    "dependencies": [
     {
-     "id": "https://smartproductionlab.aau.dk/aas/productionPlannerAAS/submodels/ControlComponentInstance",
+     "id": "https://smartproductionlab.aau.dk/aas/productionPlannerAAS/submodels/Skills",
      "path": "dependencies/0.json"
     },
     {
@@ -497,12 +497,12 @@
    "sha256": "c33124d0a999652393820ab379da4223627a602c065d1c9650243f14673695c6"
   },
   "grouped-action/aimc.json": {
-   "byteLength": 13777,
-   "sha256": "edb02434d7575dec03eda4e688939d2b762aa14df5a86569ac0c3a8d45bb5270"
+   "byteLength": 13754,
+   "sha256": "cdf11ca6001cb9bf5b6ab0134b0a2137f181c6f5614e6a50efaa496c4c4524c8"
   },
   "grouped-action/dependencies/0.json": {
-   "byteLength": 616,
-   "sha256": "681a87b6eaa0da876ff6881a03803794a70c5cf3986859fe81f0a57b230b7e83"
+   "byteLength": 576,
+   "sha256": "b619ddf86b09739539fb91b471f1f5223f51cde9792ce147f257a98780c687f9"
   },
   "grouped-action/expected.json": {
    "byteLength": 388,
@@ -513,12 +513,12 @@
    "sha256": "112e88c7a22b9477d07aa4c657c803c179b4f5739b525fda8492267a339e04c8"
   },
   "http-operation/aimc.json": {
-   "byteLength": 10603,
-   "sha256": "ace91a9826b03bd1c0ed645af66cf8d2af0f41d6a5a484f420bd8574932905a1"
+   "byteLength": 10580,
+   "sha256": "703948e9e14d08193886270f2e69a094cc5af5136bfdaed50ed2f943cc9e1bb0"
   },
   "http-operation/dependencies/0.json": {
-   "byteLength": 609,
-   "sha256": "5eeffaed2a933efb776b03e1579e519795826d9e8415015aa33dbf9a611bf8d6"
+   "byteLength": 569,
+   "sha256": "3713caaea4a1682c863f6028372e84e7a25c0159681b854d68722a2552b0913f"
   },
   "http-operation/expected.json": {
    "byteLength": 386,
@@ -545,12 +545,12 @@
    "sha256": "e920f47a98beb8b8ca4f39e8744c6f5984c4c7ed48017c3cffec524ef6fed58c"
   },
   "opcua-method/aimc.json": {
-   "byteLength": 10622,
-   "sha256": "358966841de5524f384da2d99c2655e3b7d23d019f3bba48c982b2a06402f9ac"
+   "byteLength": 10599,
+   "sha256": "f5a742b484e8ad81c4d61109486a3b7a2705bedeb2a42d29240a34b3d414e9c5"
   },
   "opcua-method/dependencies/0.json": {
-   "byteLength": 611,
-   "sha256": "e2abe08c1406da9f872867323f4006aa28a286676726629cf16d1ca02d7d83c1"
+   "byteLength": 571,
+   "sha256": "77c3914744400f479495205414cae537bda515fb63316519ccfee9e3864d330c"
   },
   "opcua-method/expected.json": {
    "byteLength": 390,
@@ -589,12 +589,12 @@
    "sha256": "97cf082f1e41064ddab4a7d72497bf87e90db3c338483b010452e3fd253b199c"
   },
   "projection-extensions/aimc.json": {
-   "byteLength": 11135,
-   "sha256": "da749a87739ace03c5a1a5b771be26a2b29c962d86d0b01dbf14f54e0a13917b"
+   "byteLength": 11112,
+   "sha256": "a71a63905719a427aa49ea9e9629da4574e44b30ce6c4451d709117150da23fb"
   },
   "projection-extensions/dependencies/0.json": {
-   "byteLength": 606,
-   "sha256": "4a1610509f8573b5a4fab0044cf789912f119737cc8f8159a4ec8a985ed7cf5a"
+   "byteLength": 566,
+   "sha256": "150c5161b3658e6da1b1ad8e2bbcfea30f8f1d06c656e316d4ed864bd9dd21db"
   },
   "projection-extensions/dependencies/1.json": {
    "byteLength": 196,
@@ -625,16 +625,16 @@
    "sha256": "7166a0e622b0fd6c6514b409bf2bb1bf2bbf8a62654e3c41789f11ee7c9839d6"
   },
   "station-cytivaCapping/aimc.json": {
-   "byteLength": 98070,
-   "sha256": "614260e01654beb9c59f9cbbeaf43ba0ec60ccacc090de918c9f89c464de9f09"
+   "byteLength": 97817,
+   "sha256": "2a42a9e7281210da822a02fe6803dda94eb6a86cc66b2eeda3a6bbeebcf6c331"
   },
   "station-cytivaCapping/dependencies/0.json": {
-   "byteLength": 31701,
-   "sha256": "415c9c72a134e5168d56c68c67f84bf734ccfc8a3621716231c1994343e62bfb"
+   "byteLength": 31655,
+   "sha256": "1739b1c7f3226f53a3e85cd5d76b70b0c9d3327522df537a14631efa96c89ddd"
   },
   "station-cytivaCapping/dependencies/1.json": {
-   "byteLength": 32083,
-   "sha256": "711e2c1c5b4ee526cbf3f2d89bf63fbfea3c7f93582dc9398c77a7fc4a918b33"
+   "byteLength": 17268,
+   "sha256": "2dc411af5fd1da7ba1f4688be904c7be26cc5559a895846c39018fc711d7f797"
   },
   "station-cytivaCapping/expected.json": {
    "byteLength": 921,
@@ -645,16 +645,16 @@
    "sha256": "44cd49df486326365a59fa1e055115399749323494ffd6a6c6e51068f68111ce"
   },
   "station-imaDispensing/aimc.json": {
-   "byteLength": 125749,
-   "sha256": "d8e581f139e2bb46c390c475069340931105bd40394697d9dc53df7ac54a21ad"
+   "byteLength": 125473,
+   "sha256": "8ac0ecdec7615e222a1f2f383da1e2559016b434583ddd2e5333a3fe3436d087"
   },
   "station-imaDispensing/dependencies/0.json": {
-   "byteLength": 39721,
-   "sha256": "3eff54bdae341004362f449f7925cb205a973d39f194123e1a8c5751027d470f"
+   "byteLength": 39675,
+   "sha256": "dc2b9c85ad69252ca1ce377cc627bfe4ce734ee2c4487ac37ce8affdd6e9abd7"
   },
   "station-imaDispensing/dependencies/1.json": {
-   "byteLength": 33560,
-   "sha256": "9db3de6fc7dafe78c1bc53e1934bf14f1f6f518b5e868509af1ae89126729a05"
+   "byteLength": 18735,
+   "sha256": "659c761485582372cebfbea8fa03df41cf7203a2d36ef8031a65077ca81d1a48"
   },
   "station-imaDispensing/expected.json": {
    "byteLength": 1072,
@@ -665,16 +665,16 @@
    "sha256": "22055cf80fdf12dccb2c68fc36f07f79cdb51efaee474cad90f4d227a996a839"
   },
   "station-imaLoadingSystem/aimc.json": {
-   "byteLength": 97998,
-   "sha256": "4d3f310f8c89596c109140acd36e2fba6aec3d7e11b8f66adc3ea7c330edf1ba"
+   "byteLength": 97745,
+   "sha256": "4d43aa53d222a463a4dba0fbf97cbaded70604195d42d33eb1f5765dc66202cc"
   },
   "station-imaLoadingSystem/dependencies/0.json": {
-   "byteLength": 31671,
-   "sha256": "fb9a0160e0e1493441314c4e0f0edfd7ccf057e93d2090ae0ec2d5510604516a"
+   "byteLength": 31625,
+   "sha256": "b43094c617c61926bb4472a3c4e2d742908338d186cb6d8440a82b933b6aa8ae"
   },
   "station-imaLoadingSystem/dependencies/1.json": {
-   "byteLength": 32025,
-   "sha256": "e041a9f8fa4026eca069ab0001c3dc96e31d8061030c1c19a0912b2fc01a0ea8"
+   "byteLength": 17237,
+   "sha256": "0770fcc64c135634de5d18c009451f51754bef018b6dc16f2a6f09439a785a32"
   },
   "station-imaLoadingSystem/expected.json": {
    "byteLength": 915,
@@ -685,16 +685,16 @@
    "sha256": "30b1399f306985daac93f1229d7c5812b5fe3cb446bbb3516b57c9a2f38184f2"
   },
   "station-omronCamera/aimc.json": {
-   "byteLength": 118457,
-   "sha256": "92e2378a5ea41d33388879ae4fcccf2436602ebd5226d662e3141e5cfa8c6feb"
+   "byteLength": 118204,
+   "sha256": "c22a57926f7dcc8cf8772b05a6822eb7c12988f8fc3e4d72e6dcf809abc963a4"
   },
   "station-omronCamera/dependencies/0.json": {
-   "byteLength": 41001,
-   "sha256": "123d9796b9f11b3b3944d09eb087fda905eb45d89b589c0afc132c1355502f5a"
+   "byteLength": 40955,
+   "sha256": "90c21b6288594fa77fbf07e3a84b3582936f9893716287c2b25d59dfc9e18218"
   },
   "station-omronCamera/dependencies/1.json": {
-   "byteLength": 32043,
-   "sha256": "890a9191feff7b212f255020b59d5147a1219f8ea08058c18590c020e12cc5c6"
+   "byteLength": 17246,
+   "sha256": "f5946e41edcd9c3adc32b993fc7d93df6b8d620b64e17e4be67086833cff3386"
   },
   "station-omronCamera/expected.json": {
    "byteLength": 1150,
@@ -705,16 +705,16 @@
    "sha256": "078cf5c0efea6fd61be94d11b54ae365895b5a91ad1710f473ed8c14860c3f5f"
   },
   "station-optimaUnloading/aimc.json": {
-   "byteLength": 122200,
-   "sha256": "937aec3521b8760579a20ffe9c0698f2df1283031887ade94279a061b8ff3f63"
+   "byteLength": 121855,
+   "sha256": "947a19e286fe6d5f748630bbde1f11111b5d748e6f21503f191be98a5f14709a"
   },
   "station-optimaUnloading/dependencies/0.json": {
-   "byteLength": 31721,
-   "sha256": "823a7fc5c0939bcb430233bf47a65e54f08486a3752fe7c83dcc66de7ab55b8e"
+   "byteLength": 31675,
+   "sha256": "96f3ba4f589814ce320838aa76766072fbc870c0cf36d6887fb68ce62a43bf1f"
   },
   "station-optimaUnloading/dependencies/1.json": {
-   "byteLength": 40241,
-   "sha256": "6bb7e944ca6afdfc45831d39bfce2634df677118959116223a4233704ee8e49c"
+   "byteLength": 22019,
+   "sha256": "cf8410415b56805fd81e0ae9d181b5e590a59fea34f88ce53548ebb244bace99"
   },
   "station-optimaUnloading/expected.json": {
    "byteLength": 1039,
@@ -725,12 +725,12 @@
    "sha256": "96ffde3dcaab86f746ae466e0458d70d2efc4edeb686f635491256c185c8f7d9"
   },
   "station-orchestrator/aimc.json": {
-   "byteLength": 123895,
-   "sha256": "27ef6a435b4d7c544d0d1eecbacc55b3bc4a80dbe3a23e10755f2177502b7c62"
+   "byteLength": 123504,
+   "sha256": "5469f0aad1ba52e77f59cb0c596359f8e7dc8630f9f61322dbbb3fea17236628"
   },
   "station-orchestrator/dependencies/0.json": {
-   "byteLength": 39527,
-   "sha256": "b5a664fd10f8b58987761cdbb4463517122039c3aa923b526135663beade356f"
+   "byteLength": 21289,
+   "sha256": "163f8682b1c45079b8a25091a26569e9c47af50bddfd00e4f7615f210d0c9996"
   },
   "station-orchestrator/dependencies/1.json": {
    "byteLength": 8397,
@@ -745,16 +745,16 @@
    "sha256": "9158d4bc1a1ebaf9bfe095b3b41ed501c3a0c4a54e3e52c42a3fb2f712add934"
   },
   "station-planarShuttle1/aimc.json": {
-   "byteLength": 129324,
-   "sha256": "494496ddc3448110660fb05c23f60dc158a26bdae8fe2aa106e872be2549e8e8"
+   "byteLength": 128956,
+   "sha256": "a5458fdcc8f354198d02118bf1658697fb0530d6dab4f47d1c447ab8ec97ba00"
   },
   "station-planarShuttle1/dependencies/0.json": {
-   "byteLength": 46584,
-   "sha256": "84f29f0acccb04616e38447a6fcb774c1617401c4777046fbedd02bd49d177d3"
+   "byteLength": 46538,
+   "sha256": "c061834e4f3b1b898fc1e7a3af9cf9849c75d23344e10d0582b8b952893e6a5a"
   },
   "station-planarShuttle1/dependencies/1.json": {
-   "byteLength": 34748,
-   "sha256": "acd3f4d3a62659f49f7c51d6e6baca7f19b48832ddbcfaff3c3562a7235422f4"
+   "byteLength": 19919,
+   "sha256": "0e3f44d7b2eea2557b0aa7f5740a8d1eed2859d4de58f42218a442b281349b8f"
   },
   "station-planarShuttle1/expected.json": {
    "byteLength": 1109,
@@ -765,12 +765,12 @@
    "sha256": "2124b72133d50529c446d34c53942a6f20fdd1722a2c3ee25947da2ef42568b1"
   },
   "station-planarTable/aimc.json": {
-   "byteLength": 11757,
-   "sha256": "fe90dcd693bfe3dd86b951f625c07a7844ac498067b224f8c1a9a2243afdec50"
+   "byteLength": 11734,
+   "sha256": "ec89bba5fe90f26576b09608686d66378fdbceb6b8066bd2dc22b5ae5dd1b206"
   },
   "station-planarTable/dependencies/0.json": {
-   "byteLength": 9086,
-   "sha256": "b93f170f2cf9a799226df478de69b9351e6fa4754bc3c96551ecf997893a661e"
+   "byteLength": 4415,
+   "sha256": "bf44b0abccb672747ee0386d637e3df13e8079ecbfadcfc884ea44394c97b91e"
   },
   "station-planarTable/expected.json": {
    "byteLength": 427,
@@ -781,12 +781,12 @@
    "sha256": "043232d92458adf674e17321ec9bdab90838caabff550d52c9aedc77ede09f05"
   },
   "station-productionPlanner/aimc.json": {
-   "byteLength": 47773,
-   "sha256": "6222f68c8c796d6e1f8d7694790dcce7dce8bc87b0868c6474789772b9ce5679"
+   "byteLength": 47589,
+   "sha256": "89045954ea0f05c7e94b12aa274d10b6197975f31a26877b50102fd3a969e985"
   },
   "station-productionPlanner/dependencies/0.json": {
-   "byteLength": 11963,
-   "sha256": "d0445b66ce90c9e7481e09f7bd2d160fc1eebb3283415cf303623860f41c7594"
+   "byteLength": 7270,
+   "sha256": "7478eb9570698572649d087c9ffe20c8fd77362b21bbf68456606160befeee65"
   },
   "station-productionPlanner/dependencies/1.json": {
    "byteLength": 8412,
@@ -801,16 +801,16 @@
    "sha256": "fff39b0edc4dba5a6bd6bf909cb0b90a7a32d40500d86dd6d6b69258f711f7cf"
   },
   "stoppering/aimc.json": {
-   "byteLength": 98221,
-   "sha256": "64db58074150432ae0c9bdab939b3d3da27a7720aa7dfe2eac8d7a57716cf9b7"
+   "byteLength": 97968,
+   "sha256": "3f8187c82abe97a7227b12dad91df207eb6027291d2af82c96f36f19e9333121"
   },
   "stoppering/dependencies/0.json": {
-   "byteLength": 31751,
-   "sha256": "1ec55ed185656235518244180a909ee2e372786afbec79e77d00712031179bfa"
+   "byteLength": 31705,
+   "sha256": "5130fd05adfb4e7f9e8855bea3c5545b85094fec96f34cbdd9677af8501c3e1a"
   },
   "stoppering/dependencies/1.json": {
-   "byteLength": 32199,
-   "sha256": "226592eadf15d8696dc185998309793f77b3f80d3955a3a92107bb2b9bdac808"
+   "byteLength": 17333,
+   "sha256": "7e396e0de48b0dc88cbf965da0a3cfae6bb455a2f43cce773cce1a9e18426733"
   },
   "stoppering/expected.json": {
    "byteLength": 934,
@@ -821,12 +821,12 @@
    "sha256": "9d3baeeb4fc680f0514641e7fb18a6cb5ae6f6cd2f4fd5198df144f5d217d762"
   },
   "td-data-schemas/aimc.json": {
-   "byteLength": 10610,
-   "sha256": "d81ed2470331cb03c8d9908838a018ddd865849cc242eb3216ede48f59890839"
+   "byteLength": 10587,
+   "sha256": "6a1532e0f7ef417333ccb5a3dc0e910f610a507b9d08a834f391ce882b9d1f28"
   },
   "td-data-schemas/dependencies/0.json": {
-   "byteLength": 619,
-   "sha256": "aa33932e06297fae091e568b898b71abea84af89b9ad9d7ac1f9d26a2648187d"
+   "byteLength": 579,
+   "sha256": "cae5e7b28da0bdd9d0a9002c3082f4104e8bfe0f716df30a637de43c59bcd7c6"
   },
   "td-data-schemas/expected.json": {
    "byteLength": 386,

@@ -54,7 +54,7 @@ AIMC_ID = "contractAAS/submodels/AIMC"
 CONTEXT = {"aas_id": "contractAAS", "aas_id_short": "contract"}
 AIMC_SEMANTIC = "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/Submodel"
 AID_SEMANTIC_PREFIX = "https://admin-shell.io/idta/AssetInterfacesDescription/"
-CCI_SEMANTIC = "https://admin-shell.io/idta/ControlComponent/Instance/2/0"
+SKILLS_SEMANTIC = "https://smartproductionlab.aau.dk/ARSO/Skills/1/0/Submodel"
 
 
 def _submodel_json(submodel: model.Submodel) -> dict:
@@ -83,18 +83,19 @@ def _kpi(identifier: str, *names: str, collections: bool = True) -> dict:
     return _submodel(identifier, "KPI", *[_collection(n) if collections else _string(n) for n in names])
 
 
-def _cci(identifier: str, *skills: str) -> dict:
-    return _submodel(identifier, "ControlComponentInstance",
-                     _collection("Skills", *[_collection(s, model.Operation("operation")) for s in skills]),
-                     semantic_id=CCI_SEMANTIC)
+def _skills(identifier: str, *skills: str) -> dict:
+    """A Skills submodel (ARSO) whose skills each have a Start command with its Operation."""
+    return _submodel(identifier, "Skills",
+                     *[_collection(s, _collection("Start", model.Operation("Start"))) for s in skills],
+                     semantic_id=SKILLS_SEMANTIC)
 
 
-def _operation(cci_id: str, skill: str) -> ModelReference:
+def _operation(skills_id: str, skill: str) -> ModelReference:
     return ModelReference(key=(
-        Key(type_="Submodel", value=cci_id),
-        Key(type_="SubmodelElementCollection", value="Skills"),
+        Key(type_="Submodel", value=skills_id),
         Key(type_="SubmodelElementCollection", value=skill),
-        Key(type_="Operation", value="operation"),
+        Key(type_="SubmodelElementCollection", value="Start"),
+        Key(type_="Operation", value="Start"),
     ))
 
 
@@ -337,7 +338,7 @@ def synthetic_cases():
         "two MQTT sources into two AAS sinks",
     )
 
-    cci = "a/submodels/ControlComponentInstance"
+    skills = "a/submodels/Skills"
     yield (
         "opcua-method",
         Aimc(
@@ -345,7 +346,7 @@ def synthetic_cases():
             MappingConfigurations=[
                 AimcMappingConfiguration(
                     id_short="Calibrate",
-                    Sources=[SourcesItem(SourceId="Calibrate", Source=_operation(cci, "Calibrate"))],
+                    Sources=[SourcesItem(SourceId="Calibrate", Source=_operation(skills, "Calibrate"))],
                     Sinks=[
                         SinksItem(SinkId="Calibrate", Sink=_aid_ref("interface_opcua", "actions", "Calibrate", "input"))
                     ],
@@ -359,7 +360,7 @@ def synthetic_cases():
                 actions={"Calibrate": ("/?id=ns=2;s=RunCalibration", "POST", "ns=1;s=CalibrationObject")},
             )
         ),
-        [_cci(cci, "Calibrate")],
+        [_skills(skills, "Calibrate")],
         True,
         "an Operation bound to an OPC UA Method",
     )
@@ -371,7 +372,7 @@ def synthetic_cases():
             MappingConfigurations=[
                 AimcMappingConfiguration(
                     id_short="Restart",
-                    Sources=[SourcesItem(SourceId="Restart", Source=_operation(cci, "Restart"))],
+                    Sources=[SourcesItem(SourceId="Restart", Source=_operation(skills, "Restart"))],
                     Sinks=[SinksItem(SinkId="Restart", Sink=_aid_ref("interface_http", "actions", "Restart", "input"))],
                     Transformation="function aimc_main(sources) return { Restart = sources.Restart } end",
                 )
@@ -382,7 +383,7 @@ def synthetic_cases():
                 "http://192.168.0.60:8080/plc/api/", actions={"Restart": ("actions/Restart?mode=quick", "POST")}
             )
         ),
-        [_cci(cci, "Restart")],
+        [_skills(skills, "Restart")],
         True,
         "an Operation bound to an HTTP action",
     )
@@ -410,7 +411,7 @@ def synthetic_cases():
             ],
         ),
         build_aid(mqtt=grouped),
-        [_cci("contractAAS/submodels/ControlComponentInstance", "Move")],
+        [_skills("contractAAS/submodels/Skills", "Move")],
         True,
         "an Operation whose sinks fill members of one MQTT 5 request/reply action",
     )
@@ -438,7 +439,7 @@ def synthetic_cases():
             ],
         ),
         build_aid(mqtt=inspect),
-        [_cci("contractAAS/submodels/ControlComponentInstance", "Inspect")],
+        [_skills("contractAAS/submodels/Skills", "Inspect")],
         True,
         "an Operation whose action schemas use the TD DataSchema terms AID marks EXTERNAL",
     )
@@ -450,7 +451,7 @@ def synthetic_cases():
             MappingConfigurations=[
                 AimcMappingConfiguration(
                     id_short="Extensions",
-                    Sources=[SourcesItem(SourceId="invoke", Source=_operation(cci, "Move"))],
+                    Sources=[SourcesItem(SourceId="invoke", Source=_operation(skills, "Move"))],
                     Sinks=[SinksItem(SinkId="command", Sink=_element("contractAAS/submodels/KPI", "Property", "Out"))],
                     ResponseTransformation="function aimc_main(sources) return sources end",
                     DefaultPollingInterval="2.5",
@@ -458,7 +459,7 @@ def synthetic_cases():
             ],
         ),
         build_aid(mqtt=mqtt_interface("mqtt://fixture.invalid/move/", actions={"Move": "move"})),
-        [_cci(cci, "Move"), _kpi("contractAAS/submodels/KPI", "Out", collections=False)],
+        [_skills(skills, "Move"), _kpi("contractAAS/submodels/KPI", "Out", collections=False)],
         False,
         "the AIMC extensions project; an Operation sinking into an AAS Property is not a bridge the DMP compiles",
     )

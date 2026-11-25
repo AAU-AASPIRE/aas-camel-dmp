@@ -161,7 +161,7 @@ class ManagedModelBehaviorTest {
 							"{\"Restart\":{\"x\":1},\"other\":\"001\"}")) {
 						int before = sends.get();
 						var response = caller.send(HttpRequest.newBuilder(URI.create("http://127.0.0.1:" + port
-								+ OperationCalls.path("a/submodels/ControlComponentInstance", "Restart"))).timeout(Duration.ofSeconds(5))
+								+ OperationCalls.path("a/submodels/Skills", "Restart"))).timeout(Duration.ofSeconds(5))
 								.header("Content-Type", "application/json").POST(HttpRequest.BodyPublishers.ofString(OperationCalls.of(payload))).build(),
 								HttpResponse.BodyHandlers.ofString());
 						assertEquals(before + 1, sends.get(), "one device invocation, including response failure");

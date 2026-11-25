@@ -18,9 +18,9 @@ import dk.aau.smartproductionlab.dmp.management.compiler.OperationPaths;
 public final class OperationCalls {
 	private OperationCalls() { }
 
-	/** The path of the skill Operation {@code Skills.<skill>.operation} in the CCI submodel {@code submodelId}. */
+	/** The path of the Operation of a skill's Start command, {@code <skill>.Start.Start}, in the Skills submodel {@code submodelId}. */
 	public static String path(String submodelId, String skill) {
-		return OperationPaths.invokePath(submodelId, "Skills." + skill + ".operation");
+		return OperationPaths.invokePath(submodelId, skill + ".Start.Start");
 	}
 
 	/** A JSON object of variables (idShort → value) as a delegation body; an array (already one) as it is. */

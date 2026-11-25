@@ -170,19 +170,19 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "a/submodels/ControlComponentInstance"
-             },
-             {
-              "type": "SubmodelElementCollection",
-              "value": "Skills"
+              "value": "a/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
               "value": "Restart"
              },
              {
+              "type": "SubmodelElementCollection",
+              "value": "Start"
+             },
+             {
               "type": "Operation",
-              "value": "operation"
+              "value": "Start"
              }
             ]
            }

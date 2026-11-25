@@ -59,7 +59,7 @@ public final class ResponseMappings {
 
 	/** The {@code skill}'s Operation in a CCI submodel. */
 	public static JsonObject operation(JsonObject cci, String skill) {
-		return child(child(child(cci, "Skills"), skill), "operation");
+		return child(child(child(cci, skill), "Start"), "Start");
 	}
 
 	private static JsonArray keys(JsonObject endpoint, String role) {
