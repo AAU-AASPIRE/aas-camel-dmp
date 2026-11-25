@@ -35,8 +35,12 @@ import com.google.gson.JsonParser;
 /**
  * The models aas-model authors, as the DMP reads and compiles them. The fixtures are generated
  * by {@code fixtures/contracts.py} with aas-model: synthetic cases, one protocol or mapping
- * form each, and every resource of aas-model's catalog as registration builds it. A changed
- * outcome after regenerating is a change in aas-model or in the DMP, to be reviewed.
+ * form each, and two of the lab's stations as examples. A changed outcome after regenerating is a
+ * change in aas-model or in the DMP, to be reviewed.
+ *
+ * <p>With {@code -Ddmp.contracts.dir=DIR} the cases are read from that directory instead: the
+ * repository that pins aas-model and the DMP writes aas-model's whole catalog there
+ * ({@code contracts.py --catalog --out DIR}) and runs this test to check that the DMP compiles it.
  */
 public class RawModelContractFixtureTest {
 	private static final String AIMC_SEMANTIC = "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/Submodel";
@@ -161,7 +165,15 @@ public class RawModelContractFixtureTest {
 		return cases;
 	}
 
+	/** The directory {@code -Ddmp.contracts.dir} names, or {@code null}: the checked-in fixtures. */
+	private static final String DIRECTORY = System.getProperty("dmp.contracts.dir");
+
 	private byte[] resource(String path) throws Exception {
+		if (DIRECTORY != null && !DIRECTORY.isBlank()) {
+			java.nio.file.Path file = java.nio.file.Path.of(DIRECTORY).resolve(path);
+			assertTrue(java.nio.file.Files.isRegularFile(file), "fixture missing: " + file);
+			return java.nio.file.Files.readAllBytes(file);
+		}
 		try (var stream = getClass().getClassLoader().getResourceAsStream("runtime-model-contracts/" + path)) {
 			assertNotNull(stream, "fixture missing: " + path);
 			return stream.readAllBytes();

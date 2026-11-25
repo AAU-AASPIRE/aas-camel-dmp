@@ -1,26 +1,33 @@
-"""The DMP's model contract fixtures, authored with aas-model.
+"""The DMP's model contract fixtures, authored with aas-model, and the check that the DMP compiles aas-model's catalog.
 
 The output is test input for the DMP's model contract tests (``RawModelContractFixtureTest``,
 ``WireFixtureCompatibilityTest``); nothing at runtime reads it. Every fixture is authored here with aas-model and
 serialized the way registration publishes it; the JSON files are never edited by hand (the contract test checks
-their hashes). Regenerate from fixtures/ after changing aas-model or a case, and review every changed compile
-outcome in the DMP:
+their hashes).
+
+The checked-in fixtures are the DMP's own regression inputs: the synthetic cases (one protocol or mapping form each)
+and two of the lab's resources as examples of a whole station (``stoppering``, ``station-imaDispensing``, which
+the DMP's feature tests read). They follow the aas-model commit pinned in pyproject.toml and are regenerated only
+when the DMP's reading of the models changes, not with every aas-model change:
 
     uv run python -m contracts
+
+Whether the DMP compiles every resource of the current aas-model is not a fixture: the repository that pins both
+(AP2030-UNS, ``scripts/check_dmp_compiles_models.sh``) writes the whole catalog to a temporary directory and runs
+``RawModelContractFixtureTest`` on it (``-Ddmp.contracts.dir``):
+
+    python -m contracts --catalog --out DIR
 
 Each case directory holds ``aimc.json``, ``aid.json``, ``dependencies/N.json``
 (the further submodels the AIMC references) and ``expected.json`` (the authored
 mappings and the identities the DMP resolves ``{aas_id}`` macros with).
 ``manifest.json`` lists the cases, whether each is expected to compile in the
 DMP, and the SHA-256 of every file.
-
-Synthetic cases cover one protocol or mapping form each; ``stoppering`` and
-``station-*`` are the resources of ``RESOURCE_FACTORIES`` as registration
-builds them.
 """
 
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
 import shutil
@@ -55,6 +62,8 @@ CONTEXT = {"aas_id": "contractAAS", "aas_id_short": "contract"}
 AIMC_SEMANTIC = "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/Submodel"
 AID_SEMANTIC_PREFIX = "https://admin-shell.io/idta/AssetInterfacesDescription/"
 SKILLS_SEMANTIC = "https://smartproductionlab.aau.dk/ARSO/Skills/1/0/Submodel"
+# The resources the checked-in fixtures carry as examples of a whole station; --catalog writes every one.
+EXAMPLE_STATIONS = ("syntegonStoppering", "imaDispensing")
 
 
 def _submodel_json(submodel: model.Submodel) -> dict:
@@ -491,8 +500,12 @@ def _referenced_submodels(aimc: dict) -> list[str]:
     return ids
 
 
-def station_cases():
+def station_cases(catalog: bool = False):
+    """The resources of aas-model's catalog as registration builds them: every one with ``catalog``, else the
+    examples (EXAMPLE_STATIONS)."""
     for factory_name, factory in RESOURCE_FACTORIES.items():
+        if not catalog and factory_name not in EXAMPLE_STATIONS:
+            continue
         if factory_name in ("planarShuttle2", "planarShuttle3"):
             continue  # the same model as planarShuttle1
         name = "stoppering" if factory_name == "syntegonStoppering" else f"station-{factory_name}"
@@ -534,7 +547,7 @@ def _write(path: Path, document: dict, resources: dict, root: Path) -> None:
     resources[path.relative_to(root).as_posix()] = {"byteLength": len(data), "sha256": hashlib.sha256(data).hexdigest()}
 
 
-def generate(root: Path) -> None:
+def generate(root: Path, catalog: bool = False) -> None:
     for child in root.iterdir():
         if child.is_dir():
             shutil.rmtree(child)
@@ -570,17 +583,22 @@ def generate(root: Path) -> None:
     for name, aimc, aid, dependencies, compiles, description in synthetic_cases():
         emit(name, _submodel_json(authored(aimc, AIMC_ID)), _submodel_json(authored(aid, AID_ID)), dependencies,
              CONTEXT, compiles, description)
-    for name, aimc, aid, dependencies, context, description in station_cases():
+    for name, aimc, aid, dependencies, context, description in station_cases(catalog):
         emit(name, aimc, aid, dependencies, context, True, description)
 
     manifest = {"formatVersion": 2,
                 "generator": "aas-camel-dmp/fixtures/contracts.py",
-                "note": "generated; do not edit. Regenerate from aas-model and review every changed compile outcome.",
+                "note": "generated; do not edit. Regenerate when the DMP's reading of the models changes and review every"
+                        " changed compile outcome.",
                 "cases": cases, "resources": dict(sorted(resources.items()))}
     (root / "manifest.json").write_text(json.dumps(manifest, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":
-    OUTPUT.mkdir(parents=True, exist_ok=True)
-    generate(OUTPUT)
-    print(f"wrote {OUTPUT}")
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument("--catalog", action="store_true", help="every resource of aas-model's catalog, not the examples")
+    parser.add_argument("--out", type=Path, default=OUTPUT, help="the directory to write (default: the checked-in fixtures)")
+    arguments = parser.parse_args()
+    arguments.out.mkdir(parents=True, exist_ok=True)
+    generate(arguments.out, catalog=arguments.catalog)
+    print(f"wrote {arguments.out}")

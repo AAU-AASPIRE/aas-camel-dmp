@@ -1,7 +1,7 @@
 {
  "formatVersion": 2,
  "generator": "aas-camel-dmp/fixtures/contracts.py",
- "note": "generated; do not edit. Regenerate from aas-model and review every changed compile outcome.",
+ "note": "generated; do not edit. Regenerate when the DMP's reading of the models changes and review every changed compile outcome.",
  "cases": [
   {
    "name": "aas-property-event",
@@ -233,24 +233,6 @@
    "compiles": true
   },
   {
-   "name": "station-cytivaCapping",
-   "description": "the cytivaCapping resource of aas-model",
-   "aimc": "station-cytivaCapping/aimc.json",
-   "aid": "station-cytivaCapping/aid.json",
-   "expected": "station-cytivaCapping/expected.json",
-   "dependencies": [
-    {
-     "id": "https://smartproductionlab.aau.dk/aas/cytivaCappingSystemAAS/submodels/Variables",
-     "path": "dependencies/0.json"
-    },
-    {
-     "id": "https://smartproductionlab.aau.dk/aas/cytivaCappingSystemAAS/submodels/Skills",
-     "path": "dependencies/1.json"
-    }
-   ],
-   "compiles": true
-  },
-  {
    "name": "station-imaDispensing",
    "description": "the imaDispensing resource of aas-model",
    "aimc": "station-imaDispensing/aimc.json",
@@ -263,128 +245,6 @@
     },
     {
      "id": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/Skills",
-     "path": "dependencies/1.json"
-    }
-   ],
-   "compiles": true
-  },
-  {
-   "name": "station-imaLoadingSystem",
-   "description": "the imaLoadingSystem resource of aas-model",
-   "aimc": "station-imaLoadingSystem/aimc.json",
-   "aid": "station-imaLoadingSystem/aid.json",
-   "expected": "station-imaLoadingSystem/expected.json",
-   "dependencies": [
-    {
-     "id": "https://smartproductionlab.aau.dk/aas/imaLoadingSystemAAS/submodels/Variables",
-     "path": "dependencies/0.json"
-    },
-    {
-     "id": "https://smartproductionlab.aau.dk/aas/imaLoadingSystemAAS/submodels/Skills",
-     "path": "dependencies/1.json"
-    }
-   ],
-   "compiles": true
-  },
-  {
-   "name": "station-optimaUnloading",
-   "description": "the optimaUnloading resource of aas-model",
-   "aimc": "station-optimaUnloading/aimc.json",
-   "aid": "station-optimaUnloading/aid.json",
-   "expected": "station-optimaUnloading/expected.json",
-   "dependencies": [
-    {
-     "id": "https://smartproductionlab.aau.dk/aas/optimaUnloadingSystemAAS/submodels/Variables",
-     "path": "dependencies/0.json"
-    },
-    {
-     "id": "https://smartproductionlab.aau.dk/aas/optimaUnloadingSystemAAS/submodels/Skills",
-     "path": "dependencies/1.json"
-    }
-   ],
-   "compiles": true
-  },
-  {
-   "name": "station-omronCamera",
-   "description": "the omronCamera resource of aas-model",
-   "aimc": "station-omronCamera/aimc.json",
-   "aid": "station-omronCamera/aid.json",
-   "expected": "station-omronCamera/expected.json",
-   "dependencies": [
-    {
-     "id": "https://smartproductionlab.aau.dk/aas/omronCameraSystemAAS/submodels/Variables",
-     "path": "dependencies/0.json"
-    },
-    {
-     "id": "https://smartproductionlab.aau.dk/aas/omronCameraSystemAAS/submodels/Skills",
-     "path": "dependencies/1.json"
-    }
-   ],
-   "compiles": true
-  },
-  {
-   "name": "station-planarShuttle1",
-   "description": "the planarShuttle1 resource of aas-model",
-   "aimc": "station-planarShuttle1/aimc.json",
-   "aid": "station-planarShuttle1/aid.json",
-   "expected": "station-planarShuttle1/expected.json",
-   "dependencies": [
-    {
-     "id": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/Variables",
-     "path": "dependencies/0.json"
-    },
-    {
-     "id": "https://smartproductionlab.aau.dk/aas/planarTableShuttle1AAS/submodels/Skills",
-     "path": "dependencies/1.json"
-    }
-   ],
-   "compiles": true
-  },
-  {
-   "name": "station-planarTable",
-   "description": "the planarTable resource of aas-model",
-   "aimc": "station-planarTable/aimc.json",
-   "aid": "station-planarTable/aid.json",
-   "expected": "station-planarTable/expected.json",
-   "dependencies": [
-    {
-     "id": "https://smartproductionlab.aau.dk/aas/planarTableAAS/submodels/Skills",
-     "path": "dependencies/0.json"
-    }
-   ],
-   "compiles": true
-  },
-  {
-   "name": "station-orchestrator",
-   "description": "the orchestrator resource of aas-model",
-   "aimc": "station-orchestrator/aimc.json",
-   "aid": "station-orchestrator/aid.json",
-   "expected": "station-orchestrator/expected.json",
-   "dependencies": [
-    {
-     "id": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/Skills",
-     "path": "dependencies/0.json"
-    },
-    {
-     "id": "https://smartproductionlab.aau.dk/aas/orchestratorAAS/submodels/Variables",
-     "path": "dependencies/1.json"
-    }
-   ],
-   "compiles": true
-  },
-  {
-   "name": "station-productionPlanner",
-   "description": "the productionPlanner resource of aas-model",
-   "aimc": "station-productionPlanner/aimc.json",
-   "aid": "station-productionPlanner/aid.json",
-   "expected": "station-productionPlanner/expected.json",
-   "dependencies": [
-    {
-     "id": "https://smartproductionlab.aau.dk/aas/productionPlannerAAS/submodels/Skills",
-     "path": "dependencies/0.json"
-    },
-    {
-     "id": "https://smartproductionlab.aau.dk/aas/productionPlannerAAS/submodels/Variables",
      "path": "dependencies/1.json"
     }
    ],
@@ -620,26 +480,6 @@
    "byteLength": 396,
    "sha256": "fe13710f7f83220928e1799665cf5857192c2c27c93ec8ccb751379943073b2d"
   },
-  "station-cytivaCapping/aid.json": {
-   "byteLength": 129584,
-   "sha256": "ceb56e1d3f338da539372723c3a2311ec1d5058982fcf98670f6ab7b4c5f144f"
-  },
-  "station-cytivaCapping/aimc.json": {
-   "byteLength": 97817,
-   "sha256": "2a42a9e7281210da822a02fe6803dda94eb6a86cc66b2eeda3a6bbeebcf6c331"
-  },
-  "station-cytivaCapping/dependencies/0.json": {
-   "byteLength": 31655,
-   "sha256": "1739b1c7f3226f53a3e85cd5d76b70b0c9d3327522df537a14631efa96c89ddd"
-  },
-  "station-cytivaCapping/dependencies/1.json": {
-   "byteLength": 17268,
-   "sha256": "2dc411af5fd1da7ba1f4688be904c7be26cc5559a895846c39018fc711d7f797"
-  },
-  "station-cytivaCapping/expected.json": {
-   "byteLength": 921,
-   "sha256": "59f97f3b651cccc8437093c5cfccb83a0b582f9e79b42e4e13e1bdf0e91794f9"
-  },
   "station-imaDispensing/aid.json": {
    "byteLength": 131704,
    "sha256": "44cd49df486326365a59fa1e055115399749323494ffd6a6c6e51068f68111ce"
@@ -659,142 +499,6 @@
   "station-imaDispensing/expected.json": {
    "byteLength": 1072,
    "sha256": "018c978f94ee898ab7089e76e337750dcb40f8d0e3d64504759613bf60ab906f"
-  },
-  "station-imaLoadingSystem/aid.json": {
-   "byteLength": 129576,
-   "sha256": "7580ee1a34978635337577371693f71335da15874a76309e21d5867d6824eb2f"
-  },
-  "station-imaLoadingSystem/aimc.json": {
-   "byteLength": 97745,
-   "sha256": "4d43aa53d222a463a4dba0fbf97cbaded70604195d42d33eb1f5765dc66202cc"
-  },
-  "station-imaLoadingSystem/dependencies/0.json": {
-   "byteLength": 31625,
-   "sha256": "b43094c617c61926bb4472a3c4e2d742908338d186cb6d8440a82b933b6aa8ae"
-  },
-  "station-imaLoadingSystem/dependencies/1.json": {
-   "byteLength": 17237,
-   "sha256": "0770fcc64c135634de5d18c009451f51754bef018b6dc16f2a6f09439a785a32"
-  },
-  "station-imaLoadingSystem/expected.json": {
-   "byteLength": 915,
-   "sha256": "41a12a4c8f2c2f29566037c95d5dd870e75f0e56c9663cbc0ae315c9191352ef"
-  },
-  "station-omronCamera/aid.json": {
-   "byteLength": 168032,
-   "sha256": "ff06fccd0382aec3462eece1a2420a29aeff75f0d3a70fb9cfe01c07b2c6e5bd"
-  },
-  "station-omronCamera/aimc.json": {
-   "byteLength": 118204,
-   "sha256": "c22a57926f7dcc8cf8772b05a6822eb7c12988f8fc3e4d72e6dcf809abc963a4"
-  },
-  "station-omronCamera/dependencies/0.json": {
-   "byteLength": 40955,
-   "sha256": "90c21b6288594fa77fbf07e3a84b3582936f9893716287c2b25d59dfc9e18218"
-  },
-  "station-omronCamera/dependencies/1.json": {
-   "byteLength": 17246,
-   "sha256": "f5946e41edcd9c3adc32b993fc7d93df6b8d620b64e17e4be67086833cff3386"
-  },
-  "station-omronCamera/expected.json": {
-   "byteLength": 1150,
-   "sha256": "5e72f4ad05628b1a373656f3dcb9c6cad13dff42062e3226e65441666a559be4"
-  },
-  "station-optimaUnloading/aid.json": {
-   "byteLength": 158811,
-   "sha256": "29a9deaf73960b0460480a0949308728abe4ad1331d708601313c5c485f8f805"
-  },
-  "station-optimaUnloading/aimc.json": {
-   "byteLength": 121855,
-   "sha256": "947a19e286fe6d5f748630bbde1f11111b5d748e6f21503f191be98a5f14709a"
-  },
-  "station-optimaUnloading/dependencies/0.json": {
-   "byteLength": 31675,
-   "sha256": "96f3ba4f589814ce320838aa76766072fbc870c0cf36d6887fb68ce62a43bf1f"
-  },
-  "station-optimaUnloading/dependencies/1.json": {
-   "byteLength": 22019,
-   "sha256": "cf8410415b56805fd81e0ae9d181b5e590a59fea34f88ce53548ebb244bace99"
-  },
-  "station-optimaUnloading/expected.json": {
-   "byteLength": 1039,
-   "sha256": "8d0fde139ec429fc99c08b9436cb215713b51ca3c3c889d1c3a0ee463bcf0b05"
-  },
-  "station-orchestrator/aid.json": {
-   "byteLength": 299408,
-   "sha256": "2223de7adfc3f974050ffa21acec55c441f06f1f91367420ff60f819f082672d"
-  },
-  "station-orchestrator/aimc.json": {
-   "byteLength": 123504,
-   "sha256": "5469f0aad1ba52e77f59cb0c596359f8e7dc8630f9f61322dbbb3fea17236628"
-  },
-  "station-orchestrator/dependencies/0.json": {
-   "byteLength": 21289,
-   "sha256": "163f8682b1c45079b8a25091a26569e9c47af50bddfd00e4f7615f210d0c9996"
-  },
-  "station-orchestrator/dependencies/1.json": {
-   "byteLength": 8397,
-   "sha256": "6b8c06b0a25d038a75aeef0b9066e19139cd8b07a8ed73d74bf1141806d432e4"
-  },
-  "station-orchestrator/expected.json": {
-   "byteLength": 1025,
-   "sha256": "ac90b347efc9aea02a29912eb3672bc5395fe532cc82b42fe2c97798d7a00cf0"
-  },
-  "station-planarShuttle1/aid.json": {
-   "byteLength": 152630,
-   "sha256": "a8ff522ae36bf26ec662c636bb1eecf4519b71173eedd3e38523366bce73a917"
-  },
-  "station-planarShuttle1/aimc.json": {
-   "byteLength": 128956,
-   "sha256": "a5458fdcc8f354198d02118bf1658697fb0530d6dab4f47d1c447ab8ec97ba00"
-  },
-  "station-planarShuttle1/dependencies/0.json": {
-   "byteLength": 46538,
-   "sha256": "c061834e4f3b1b898fc1e7a3af9cf9849c75d23344e10d0582b8b952893e6a5a"
-  },
-  "station-planarShuttle1/dependencies/1.json": {
-   "byteLength": 19919,
-   "sha256": "0e3f44d7b2eea2557b0aa7f5740a8d1eed2859d4de58f42218a442b281349b8f"
-  },
-  "station-planarShuttle1/expected.json": {
-   "byteLength": 1109,
-   "sha256": "5d2f0ccbc8683de77f2801a077049cbe71bf4048f1954a7128b814648c16c2d0"
-  },
-  "station-planarTable/aid.json": {
-   "byteLength": 19849,
-   "sha256": "66ea544ae2f4c1d9c76fd039d5282325601bbd49d59b6d7b95b1da6cbcf3e4af"
-  },
-  "station-planarTable/aimc.json": {
-   "byteLength": 11734,
-   "sha256": "ec89bba5fe90f26576b09608686d66378fdbceb6b8066bd2dc22b5ae5dd1b206"
-  },
-  "station-planarTable/dependencies/0.json": {
-   "byteLength": 4415,
-   "sha256": "bf44b0abccb672747ee0386d637e3df13e8079ecbfadcfc884ea44394c97b91e"
-  },
-  "station-planarTable/expected.json": {
-   "byteLength": 427,
-   "sha256": "6d3b2dcabaa364284087fdaa07712cdf55d03b2778f5118922e7b4027ea2814e"
-  },
-  "station-productionPlanner/aid.json": {
-   "byteLength": 114236,
-   "sha256": "15377a0c400ad7c1d24a8fbe6d5b9fe7417c10bb4f609e961909c9da75fd916b"
-  },
-  "station-productionPlanner/aimc.json": {
-   "byteLength": 47589,
-   "sha256": "89045954ea0f05c7e94b12aa274d10b6197975f31a26877b50102fd3a969e985"
-  },
-  "station-productionPlanner/dependencies/0.json": {
-   "byteLength": 7270,
-   "sha256": "7478eb9570698572649d087c9ffe20c8fd77362b21bbf68456606160befeee65"
-  },
-  "station-productionPlanner/dependencies/1.json": {
-   "byteLength": 8412,
-   "sha256": "28c41bec6cbdc5a55792e94a0d62d03f8fad4845e59ac77e6a734a8d24c8705b"
-  },
-  "station-productionPlanner/expected.json": {
-   "byteLength": 585,
-   "sha256": "c0720391f06acc91f1a6c9b7a1ac2f3d949417b86a21c565b49a3820a950e801"
   },
   "stoppering/aid.json": {
    "byteLength": 129615,
