@@ -58,7 +58,7 @@
 		<aas4j.version>3.0.1</aas4j.version>
 		<kafka.version>4.3.1</kafka.version>
 		<milo.version>1.1.8</milo.version>
-		<slf4j.version>2.0.18</slf4j.version>
+		<slf4j.version>2.0.20</slf4j.version>
 	</properties>
 
 	<build>
