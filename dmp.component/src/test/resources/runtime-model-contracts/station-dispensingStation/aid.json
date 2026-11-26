@@ -7,7 +7,7 @@
   }
  ],
  "modelType": "Submodel",
- "id": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/AssetInterfacesDescription",
+ "id": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/AssetInterfacesDescription",
  "semanticId": {
   "type": "ExternalReference",
   "keys": [
@@ -75,7 +75,7 @@
        }
       ]
      },
-     "value": "IMA Dispensing System",
+     "value": "Dispensing station",
      "valueType": "xs:string"
     },
     {
@@ -191,7 +191,7 @@
           "keys": [
            {
             "type": "Submodel",
-            "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/AssetInterfacesDescription"
+            "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/AssetInterfacesDescription"
            },
            {
             "type": "SubmodelElementCollection",

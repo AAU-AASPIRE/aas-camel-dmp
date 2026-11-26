@@ -6,7 +6,7 @@
     "keys": [
      {
       "type": "GlobalReference",
-      "value": "https://smartproductionlab.aau.dk/aas/imaDispensing/submodels/Parameters"
+      "value": "https://smartproductionlab.aau.dk/aas/dispensingStation/submodels/Parameters"
      }
     ]
    },
@@ -30,7 +30,7 @@
   }
  ],
  "modelType": "Submodel",
- "id": "https://smartproductionlab.aau.dk/aas/imaDispensing/submodels/Parameters",
+ "id": "https://smartproductionlab.aau.dk/aas/dispensingStation/submodels/Parameters",
  "semanticId": {
   "type": "ExternalReference",
   "keys": [

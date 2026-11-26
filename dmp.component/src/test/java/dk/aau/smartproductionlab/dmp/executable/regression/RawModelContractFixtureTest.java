@@ -115,7 +115,7 @@ public class RawModelContractFixtureTest {
 	public void issuesNameTheirEndpointIncludingResponseSinks() throws Exception {
 		try (var repository = new FakeAasRepository("")) {
 			var client = new AasRepositoryClient(repository.uri(), Duration.ofSeconds(1), Duration.ofSeconds(1), 10, 2, null);
-			JsonObject fixture = cases().stream().filter(c -> c.get("name").getAsString().equals("station-imaDispensing"))
+			JsonObject fixture = cases().stream().filter(c -> c.get("name").getAsString().equals("station-dispensingStation"))
 					.findFirst().orElseThrow();
 			var plan = plan(fixture, repository, client);
 			assertEquals(AasRepositoryClient.Status.FOUND, plan.status());

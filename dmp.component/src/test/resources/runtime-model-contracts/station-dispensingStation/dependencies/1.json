@@ -7,7 +7,7 @@
   }
  ],
  "modelType": "Submodel",
- "id": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/Skills",
+ "id": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/Skills",
  "semanticId": {
   "type": "ExternalReference",
   "keys": [
@@ -93,7 +93,7 @@
         "keys": [
          {
           "type": "Submodel",
-          "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/AssetInterfacesDescription"
+          "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/AssetInterfacesDescription"
          },
          {
           "type": "SubmodelElementCollection",
@@ -134,7 +134,7 @@
        },
        "qualifiers": [
         {
-         "value": "http://dmp:8080/submodels/aHR0cHM6Ly9zbWFydHByb2R1Y3Rpb25sYWIuYWF1LmRrL2Fhcy9pbWFEaXNwZW5zaW5nU3lzdGVtQUFTL3N1Ym1vZGVscy9Ta2lsbHM/submodel-elements/Halt.Start.Start/invoke",
+         "value": "http://dmp:8080/submodels/aHR0cHM6Ly9zbWFydHByb2R1Y3Rpb25sYWIuYWF1LmRrL2Fhcy9EaXNwZW5zaW5nU3RhdGlvbkFBUy9zdWJtb2RlbHMvU2tpbGxz/submodel-elements/Halt.Start.Start/invoke",
          "kind": "ConceptQualifier",
          "valueType": "xs:string",
          "type": "invocationDelegation"
@@ -235,7 +235,7 @@
         "keys": [
          {
           "type": "Submodel",
-          "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/AssetInterfacesDescription"
+          "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/AssetInterfacesDescription"
          },
          {
           "type": "SubmodelElementCollection",
@@ -276,7 +276,7 @@
        },
        "qualifiers": [
         {
-         "value": "http://dmp:8080/submodels/aHR0cHM6Ly9zbWFydHByb2R1Y3Rpb25sYWIuYWF1LmRrL2Fhcy9pbWFEaXNwZW5zaW5nU3lzdGVtQUFTL3N1Ym1vZGVscy9Ta2lsbHM/submodel-elements/Occupy.Start.Start/invoke",
+         "value": "http://dmp:8080/submodels/aHR0cHM6Ly9zbWFydHByb2R1Y3Rpb25sYWIuYWF1LmRrL2Fhcy9EaXNwZW5zaW5nU3RhdGlvbkFBUy9zdWJtb2RlbHMvU2tpbGxz/submodel-elements/Occupy.Start.Start/invoke",
          "kind": "ConceptQualifier",
          "valueType": "xs:string",
          "type": "invocationDelegation"
@@ -392,7 +392,7 @@
         "keys": [
          {
           "type": "Submodel",
-          "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/AssetInterfacesDescription"
+          "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/AssetInterfacesDescription"
          },
          {
           "type": "SubmodelElementCollection",
@@ -433,7 +433,7 @@
        },
        "qualifiers": [
         {
-         "value": "http://dmp:8080/submodels/aHR0cHM6Ly9zbWFydHByb2R1Y3Rpb25sYWIuYWF1LmRrL2Fhcy9pbWFEaXNwZW5zaW5nU3lzdGVtQUFTL3N1Ym1vZGVscy9Ta2lsbHM/submodel-elements/Release.Start.Start/invoke",
+         "value": "http://dmp:8080/submodels/aHR0cHM6Ly9zbWFydHByb2R1Y3Rpb25sYWIuYWF1LmRrL2Fhcy9EaXNwZW5zaW5nU3RhdGlvbkFBUy9zdWJtb2RlbHMvU2tpbGxz/submodel-elements/Release.Start.Start/invoke",
          "kind": "ConceptQualifier",
          "valueType": "xs:string",
          "type": "invocationDelegation"
@@ -549,7 +549,7 @@
         "keys": [
          {
           "type": "Submodel",
-          "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/AssetInterfacesDescription"
+          "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/AssetInterfacesDescription"
          },
          {
           "type": "SubmodelElementCollection",
@@ -590,7 +590,7 @@
        },
        "qualifiers": [
         {
-         "value": "http://dmp:8080/submodels/aHR0cHM6Ly9zbWFydHByb2R1Y3Rpb25sYWIuYWF1LmRrL2Fhcy9pbWFEaXNwZW5zaW5nU3lzdGVtQUFTL3N1Ym1vZGVscy9Ta2lsbHM/submodel-elements/Dispensing.Start.Start/invoke",
+         "value": "http://dmp:8080/submodels/aHR0cHM6Ly9zbWFydHByb2R1Y3Rpb25sYWIuYWF1LmRrL2Fhcy9EaXNwZW5zaW5nU3RhdGlvbkFBUy9zdWJtb2RlbHMvU2tpbGxz/submodel-elements/Dispensing.Start.Start/invoke",
          "kind": "ConceptQualifier",
          "valueType": "xs:string",
          "type": "invocationDelegation"

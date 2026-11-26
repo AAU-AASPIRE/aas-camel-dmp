@@ -7,7 +7,7 @@
   }
  ],
  "modelType": "Submodel",
- "id": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/AssetInterfacesMappingConfiguration",
+ "id": "https://smartproductionlab.aau.dk/aas/StopperingStationAAS/submodels/AssetInterfacesMappingConfiguration",
  "semanticId": {
   "type": "ExternalReference",
   "keys": [
@@ -191,7 +191,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/AssetInterfacesDescription"
+              "value": "https://smartproductionlab.aau.dk/aas/StopperingStationAAS/submodels/AssetInterfacesDescription"
              },
              {
               "type": "SubmodelElementCollection",
@@ -314,7 +314,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/Variables"
+              "value": "https://smartproductionlab.aau.dk/aas/StopperingStationAAS/submodels/Variables"
              },
              {
               "type": "SubmodelElementCollection",
@@ -405,7 +405,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/Variables"
+              "value": "https://smartproductionlab.aau.dk/aas/StopperingStationAAS/submodels/Variables"
              },
              {
               "type": "SubmodelElementCollection",
@@ -588,7 +588,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/StopperingStationAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
@@ -711,7 +711,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/AssetInterfacesDescription"
+              "value": "https://smartproductionlab.aau.dk/aas/StopperingStationAAS/submodels/AssetInterfacesDescription"
              },
              {
               "type": "SubmodelElementCollection",
@@ -906,7 +906,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/StopperingStationAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
@@ -1029,7 +1029,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/AssetInterfacesDescription"
+              "value": "https://smartproductionlab.aau.dk/aas/StopperingStationAAS/submodels/AssetInterfacesDescription"
              },
              {
               "type": "SubmodelElementCollection",
@@ -1168,7 +1168,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/AssetInterfacesDescription"
+              "value": "https://smartproductionlab.aau.dk/aas/StopperingStationAAS/submodels/AssetInterfacesDescription"
              },
              {
               "type": "SubmodelElementCollection",
@@ -1286,7 +1286,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/StopperingStationAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
@@ -1377,7 +1377,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/StopperingStationAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
@@ -1468,7 +1468,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/Variables"
+              "value": "https://smartproductionlab.aau.dk/aas/StopperingStationAAS/submodels/Variables"
              },
              {
               "type": "SubmodelElementCollection",
@@ -1659,7 +1659,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/StopperingStationAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
@@ -1782,7 +1782,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/AssetInterfacesDescription"
+              "value": "https://smartproductionlab.aau.dk/aas/StopperingStationAAS/submodels/AssetInterfacesDescription"
              },
              {
               "type": "SubmodelElementCollection",
@@ -1921,7 +1921,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/AssetInterfacesDescription"
+              "value": "https://smartproductionlab.aau.dk/aas/StopperingStationAAS/submodels/AssetInterfacesDescription"
              },
              {
               "type": "SubmodelElementCollection",
@@ -2039,7 +2039,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/StopperingStationAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
@@ -2130,7 +2130,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/StopperingStationAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
@@ -2221,7 +2221,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/Variables"
+              "value": "https://smartproductionlab.aau.dk/aas/StopperingStationAAS/submodels/Variables"
              },
              {
               "type": "SubmodelElementCollection",
@@ -2412,7 +2412,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/StopperingStationAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
@@ -2535,7 +2535,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/AssetInterfacesDescription"
+              "value": "https://smartproductionlab.aau.dk/aas/StopperingStationAAS/submodels/AssetInterfacesDescription"
              },
              {
               "type": "SubmodelElementCollection",
@@ -2674,7 +2674,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/AssetInterfacesDescription"
+              "value": "https://smartproductionlab.aau.dk/aas/StopperingStationAAS/submodels/AssetInterfacesDescription"
              },
              {
               "type": "SubmodelElementCollection",
@@ -2792,7 +2792,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/StopperingStationAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
@@ -2883,7 +2883,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/StopperingStationAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
@@ -2974,7 +2974,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/StopperingStationAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",

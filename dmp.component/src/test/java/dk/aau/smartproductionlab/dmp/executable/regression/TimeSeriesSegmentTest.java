@@ -37,7 +37,7 @@ import com.sun.net.httpserver.HttpServer;
  * Source: the segment's latest row reaches Lua as a table keyed by Record idShort.
  */
 class TimeSeriesSegmentTest {
-	private static final String VARIABLES = "https://smartproductionlab.aau.dk/aas/imaDispensing/submodels/Variables";
+	private static final String VARIABLES = "https://smartproductionlab.aau.dk/aas/dispensingStation/submodels/Variables";
 	private static final String DATA_ID = "urn:fixture/submodels/Data";
 	private static final String LUA = "function aimc_main(sources)\n"
 			+ "  local row = { PackMLState = sources.State, Count = 2, Position = {} }\n"
@@ -96,7 +96,7 @@ class TimeSeriesSegmentTest {
 		runtime.installBundle("series", compile(aimc(LUA, value())));
 		await().atMost(Duration.ofSeconds(10)).until(() -> !lines.isEmpty());
 		String line = lines.get(0).strip();
-		assertTrue(line.startsWith("station_state,asset=imaDispensing "), line);
+		assertTrue(line.startsWith("station_state,asset=dispensingStation "), line);
 		assertTrue(line.contains("PackMLState=\"IDLE\"") && line.contains("Count=2i") && line.contains("Position.X=1.5"), line);
 	}
 
@@ -125,7 +125,7 @@ class TimeSeriesSegmentTest {
 				+ "#group,false,false,true,true,false,false,true,true,true\n"
 				+ "#default,_result,,,,,,,,\n"
 				+ ",result,table,_start,_stop,_time,_value,_field,_measurement,asset\n"
-				+ ",,0,2026-09-21T00:00:00Z,2026-10-21T13:00:00Z,2026-10-21T12:00:00Z," + value + "," + field + ",station_state,imaDispensing\n\n";
+				+ ",,0,2026-09-21T00:00:00Z,2026-10-21T13:00:00Z,2026-10-21T12:00:00Z," + value + "," + field + ",station_state,dispensingStation\n\n";
 	}
 
 	private InfluxSettings settings() {

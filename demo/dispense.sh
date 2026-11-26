@@ -5,7 +5,7 @@ set -euo pipefail
 
 VOLUME="${1:-5}"
 AAS="${AAS:-http://localhost:8081}"
-CCI="https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/ControlComponentInstance"
+CCI="https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/ControlComponentInstance"
 SKILLS="$AAS/submodels/$(printf '%s' "$CCI" | base64 | tr -d '\n=' | tr '+/' '-_')/submodel-elements/Skills"
 UUID="$(cat /proc/sys/kernel/random/uuid 2>/dev/null || uuidgen)"
 UUID_ARG='{"value":{"modelType":"Property","idShort":"Uuid","valueType":"xs:string","value":"'"$UUID"'"}}'

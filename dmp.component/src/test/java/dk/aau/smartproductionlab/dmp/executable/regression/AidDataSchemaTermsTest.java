@@ -41,7 +41,7 @@ class AidDataSchemaTermsTest {
 	@Test
 	void requiredListsOfActionInputAndOutputAreEnforced() throws Exception {
 		// Before, required was an AID template qualifier the compiler skipped: nothing was required.
-		OperationRoute dispensing = bridge(compile("station-imaDispensing"), "Dispensing");
+		OperationRoute dispensing = bridge(compile("station-dispensingStation"), "Dispensing");
 		assertEquals(List.of("Uuid", "Volume"), dispensing.command().parameterRequired());
 		assertTrue(dispensing.command().responseRequired().containsAll(List.of("Uuid", "State")),
 				String.valueOf(dispensing.command().responseRequired()));

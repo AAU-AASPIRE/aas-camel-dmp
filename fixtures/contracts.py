@@ -6,7 +6,7 @@ serialized the way registration publishes it; the JSON files are never edited by
 their hashes).
 
 The checked-in fixtures are the DMP's own regression inputs: the synthetic cases (one protocol or mapping form each)
-and two of the lab's resources as examples of a whole station (``stoppering``, ``station-imaDispensing``, which
+and two of the lab's resources as examples of a whole station (``stoppering``, ``station-dispensingStation``, which
 the DMP's feature tests read). They follow the aas-model commit pinned in pyproject.toml and are regenerated only
 when the DMP's reading of the models changes, not with every aas-model change:
 
@@ -63,7 +63,7 @@ AIMC_SEMANTIC = "https://admin-shell.io/idta/AssetInterfacesMappingConfiguration
 AID_SEMANTIC_PREFIX = "https://admin-shell.io/idta/AssetInterfacesDescription/"
 SKILLS_SEMANTIC = "https://smartproductionlab.aau.dk/ARSO/Skills/1/0/Submodel"
 # The resources the checked-in fixtures carry as examples of a whole station; --catalog writes every one.
-EXAMPLE_STATIONS = ("syntegonStoppering", "imaDispensing")
+EXAMPLE_STATIONS = ("stopperingStation", "dispensingStation")
 
 
 def _submodel_json(submodel: model.Submodel) -> dict:
@@ -508,7 +508,7 @@ def station_cases(catalog: bool = False):
             continue
         if factory_name in ("planarShuttle2", "planarShuttle3"):
             continue  # the same model as planarShuttle1
-        name = "stoppering" if factory_name == "syntegonStoppering" else f"station-{factory_name}"
+        name = "stoppering" if factory_name == "stopperingStation" else f"station-{factory_name}"
         resource = factory()
         submodels = store_json(*build_from_model(resource))["submodels"]
         aimc = next((s for s in submodels if _semantic(s) == AIMC_SEMANTIC), None)

@@ -16,7 +16,7 @@ import org.junit.jupiter.api.Test;
 
 class StateUpdateTest {
 	private static final String GRAPH = "https://smartproductionlab.aau.dk/state";
-	private static final String STATION = "https://smartproductionlab.aau.dk/aas/imaDispensing";
+	private static final String STATION = "https://smartproductionlab.aau.dk/aas/dispensingStation";
 	private static final String LAB = "https://smartproductionlab.aau.dk/semantics/";
 	private static final Instant NOW = Instant.parse("2026-11-24T12:00:00Z");
 

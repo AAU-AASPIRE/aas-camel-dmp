@@ -7,7 +7,7 @@
   }
  ],
  "modelType": "Submodel",
- "id": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/Variables",
+ "id": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/Variables",
  "semanticId": {
   "type": "ExternalReference",
   "keys": [
@@ -242,7 +242,7 @@
              }
             ]
            },
-           "value": "from(bucket: \"ap2030\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"station_state\")\n  |> filter(fn: (r) => r[\"asset\"] == \"imaDispensingSystemAAS\")\n  |> filter(fn: (r) => r[\"_field\"] == \"{{y-value}}\")",
+           "value": "from(bucket: \"ap2030\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"station_state\")\n  |> filter(fn: (r) => r[\"asset\"] == \"DispensingStationAAS\")\n  |> filter(fn: (r) => r[\"_field\"] == \"{{y-value}}\")",
            "valueType": "xs:string"
           },
           {
@@ -313,7 +313,7 @@
                  }
                 ]
                },
-               "value": "imaDispensingSystemAAS",
+               "value": "DispensingStationAAS",
                "valueType": "xs:string"
               }
              ]
@@ -527,7 +527,7 @@
              }
             ]
            },
-           "value": "from(bucket: \"ap2030\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"dispensing_weight\")\n  |> filter(fn: (r) => r[\"asset\"] == \"imaDispensingSystemAAS\")\n  |> filter(fn: (r) => r[\"_field\"] == \"{{y-value}}\")",
+           "value": "from(bucket: \"ap2030\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"dispensing_weight\")\n  |> filter(fn: (r) => r[\"asset\"] == \"DispensingStationAAS\")\n  |> filter(fn: (r) => r[\"_field\"] == \"{{y-value}}\")",
            "valueType": "xs:string"
           },
           {
@@ -598,7 +598,7 @@
                  }
                 ]
                },
-               "value": "imaDispensingSystemAAS",
+               "value": "DispensingStationAAS",
                "valueType": "xs:string"
               }
              ]
@@ -772,7 +772,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
@@ -861,7 +861,7 @@
              }
             ]
            },
-           "value": "from(bucket: \"ap2030\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"operation_occupy\")\n  |> filter(fn: (r) => r[\"asset\"] == \"imaDispensingSystemAAS\")\n  |> filter(fn: (r) => r[\"_field\"] == \"{{y-value}}\")",
+           "value": "from(bucket: \"ap2030\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"operation_occupy\")\n  |> filter(fn: (r) => r[\"asset\"] == \"DispensingStationAAS\")\n  |> filter(fn: (r) => r[\"_field\"] == \"{{y-value}}\")",
            "valueType": "xs:string"
           },
           {
@@ -932,7 +932,7 @@
                  }
                 ]
                },
-               "value": "imaDispensingSystemAAS",
+               "value": "DispensingStationAAS",
                "valueType": "xs:string"
               }
              ]
@@ -1091,7 +1091,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
@@ -1180,7 +1180,7 @@
              }
             ]
            },
-           "value": "from(bucket: \"ap2030\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"operation_release\")\n  |> filter(fn: (r) => r[\"asset\"] == \"imaDispensingSystemAAS\")\n  |> filter(fn: (r) => r[\"_field\"] == \"{{y-value}}\")",
+           "value": "from(bucket: \"ap2030\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"operation_release\")\n  |> filter(fn: (r) => r[\"asset\"] == \"DispensingStationAAS\")\n  |> filter(fn: (r) => r[\"_field\"] == \"{{y-value}}\")",
            "valueType": "xs:string"
           },
           {
@@ -1251,7 +1251,7 @@
                  }
                 ]
                },
-               "value": "imaDispensingSystemAAS",
+               "value": "DispensingStationAAS",
                "valueType": "xs:string"
               }
              ]
@@ -1332,7 +1332,7 @@
         "keys": [
          {
           "type": "AssetAdministrationShell",
-          "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS"
+          "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS"
          }
         ]
        }

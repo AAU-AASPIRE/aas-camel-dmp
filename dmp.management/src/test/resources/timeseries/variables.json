@@ -6,7 +6,7 @@
     "keys": [
      {
       "type": "GlobalReference",
-      "value": "https://smartproductionlab.aau.dk/aas/imaDispensing/submodels/Variables"
+      "value": "https://smartproductionlab.aau.dk/aas/dispensingStation/submodels/Variables"
      }
     ]
    },
@@ -93,7 +93,7 @@
   }
  ],
  "modelType": "Submodel",
- "id": "https://smartproductionlab.aau.dk/aas/imaDispensing/submodels/Variables",
+ "id": "https://smartproductionlab.aau.dk/aas/dispensingStation/submodels/Variables",
  "semanticId": {
   "type": "ExternalReference",
   "keys": [
@@ -547,7 +547,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaDispensing/submodels/Parameters"
+              "value": "https://smartproductionlab.aau.dk/aas/dispensingStation/submodels/Parameters"
              },
              {
               "type": "SubmodelElementCollection",
@@ -947,7 +947,7 @@
              }
             ]
            },
-           "value": "from(bucket: \"ap2030\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"station_state\")\n  |> filter(fn: (r) => r[\"asset\"] == \"imaDispensing\")\n  |> filter(fn: (r) => r[\"_field\"] == \"{{y-value}}\")",
+           "value": "from(bucket: \"ap2030\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"station_state\")\n  |> filter(fn: (r) => r[\"asset\"] == \"dispensingStation\")\n  |> filter(fn: (r) => r[\"_field\"] == \"{{y-value}}\")",
            "valueType": "xs:string"
           },
           {
@@ -1127,7 +1127,7 @@
                  }
                 ]
                },
-               "value": "imaDispensing",
+               "value": "dispensingStation",
                "valueType": "xs:string"
               }
              ]

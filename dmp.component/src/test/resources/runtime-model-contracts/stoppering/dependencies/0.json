@@ -7,7 +7,7 @@
   }
  ],
  "modelType": "Submodel",
- "id": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/Variables",
+ "id": "https://smartproductionlab.aau.dk/aas/StopperingStationAAS/submodels/Variables",
  "semanticId": {
   "type": "ExternalReference",
   "keys": [
@@ -242,7 +242,7 @@
              }
             ]
            },
-           "value": "from(bucket: \"ap2030\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"station_state\")\n  |> filter(fn: (r) => r[\"asset\"] == \"syntegonStopperingSystemAAS\")\n  |> filter(fn: (r) => r[\"_field\"] == \"{{y-value}}\")",
+           "value": "from(bucket: \"ap2030\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"station_state\")\n  |> filter(fn: (r) => r[\"asset\"] == \"StopperingStationAAS\")\n  |> filter(fn: (r) => r[\"_field\"] == \"{{y-value}}\")",
            "valueType": "xs:string"
           },
           {
@@ -313,7 +313,7 @@
                  }
                 ]
                },
-               "value": "syntegonStopperingSystemAAS",
+               "value": "StopperingStationAAS",
                "valueType": "xs:string"
               }
              ]
@@ -487,7 +487,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/StopperingStationAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
@@ -576,7 +576,7 @@
              }
             ]
            },
-           "value": "from(bucket: \"ap2030\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"operation_occupy\")\n  |> filter(fn: (r) => r[\"asset\"] == \"syntegonStopperingSystemAAS\")\n  |> filter(fn: (r) => r[\"_field\"] == \"{{y-value}}\")",
+           "value": "from(bucket: \"ap2030\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"operation_occupy\")\n  |> filter(fn: (r) => r[\"asset\"] == \"StopperingStationAAS\")\n  |> filter(fn: (r) => r[\"_field\"] == \"{{y-value}}\")",
            "valueType": "xs:string"
           },
           {
@@ -647,7 +647,7 @@
                  }
                 ]
                },
-               "value": "syntegonStopperingSystemAAS",
+               "value": "StopperingStationAAS",
                "valueType": "xs:string"
               }
              ]
@@ -806,7 +806,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/StopperingStationAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
@@ -895,7 +895,7 @@
              }
             ]
            },
-           "value": "from(bucket: \"ap2030\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"operation_release\")\n  |> filter(fn: (r) => r[\"asset\"] == \"syntegonStopperingSystemAAS\")\n  |> filter(fn: (r) => r[\"_field\"] == \"{{y-value}}\")",
+           "value": "from(bucket: \"ap2030\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"operation_release\")\n  |> filter(fn: (r) => r[\"asset\"] == \"StopperingStationAAS\")\n  |> filter(fn: (r) => r[\"_field\"] == \"{{y-value}}\")",
            "valueType": "xs:string"
           },
           {
@@ -966,7 +966,7 @@
                  }
                 ]
                },
-               "value": "syntegonStopperingSystemAAS",
+               "value": "StopperingStationAAS",
                "valueType": "xs:string"
               }
              ]
@@ -1047,7 +1047,7 @@
         "keys": [
          {
           "type": "AssetAdministrationShell",
-          "value": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS"
+          "value": "https://smartproductionlab.aau.dk/aas/StopperingStationAAS"
          }
         ]
        }

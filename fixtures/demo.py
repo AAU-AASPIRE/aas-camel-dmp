@@ -1,9 +1,9 @@
 """The demo's filling station (demo/), authored with aas-model.
 
-The station is aas-model's ``imaDispensing`` resource: an IMA dispensing station with an OPC UA interface. This
+The station is aas-model's ``dispensingStation`` resource: an IMA dispensing station with an OPC UA interface. This
 module writes two files from it, both generated, never edited by hand:
 
-- ``demo/station/imaDispensingSystemAAS.json``: the Resource the station publishes when it registers, as the station
+- ``demo/station/DispensingStationAAS.json``: the Resource the station publishes when it registers, as the station
   simulators of the AP2030 lab export it (``model_dump_json``), with its OPC UA base set to the demo's station;
 - ``demo/aas/filling-station.json``: the AAS environment that registration builds from it
   (``build_from_model``, serialized as BaSyx JSON), which BaSyx loads at startup in place of a registration
@@ -29,7 +29,7 @@ OPCUA_BASE = "opc.tcp://filling-station:4840/dispensing/"
 
 
 def resource() -> Resource:
-    station = RESOURCE_FACTORIES["imaDispensing"]()
+    station = RESOURCE_FACTORIES["dispensingStation"]()
     export = json.loads(station.model_dump_json())
     for description in export["asset_interfaces_description"]["InterfaceTemplateForOPCUA"].values():
         description["EndpointMetadata"]["base"]["value"] = OPCUA_BASE

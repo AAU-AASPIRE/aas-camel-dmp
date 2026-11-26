@@ -1,7 +1,7 @@
 {
  "compilerContext": {
-  "aas_id": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS",
-  "aas_id_short": "syntegonStopperingSystemAAS",
+  "aas_id": "https://smartproductionlab.aau.dk/aas/StopperingStationAAS",
+  "aas_id_short": "StopperingStationAAS",
   "aas_base_url": "http://aas-server:8081",
   "influx_url": "http://influxdb:8086",
   "influx_org": "ap2030",

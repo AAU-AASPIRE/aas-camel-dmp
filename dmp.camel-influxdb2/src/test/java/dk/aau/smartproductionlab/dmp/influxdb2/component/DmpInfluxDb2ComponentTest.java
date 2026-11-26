@@ -41,13 +41,13 @@ class DmpInfluxDb2ComponentTest {
 			new RecordColumn("Waypoints[0].x", "xs:double"),
 			new RecordColumn("Waypoints[1].x", "xs:double"));
 	private static final String URI_ = DmpInfluxDb2Component.uri("station_state", "ap2030", "Time",
-			Map.of("asset", "imaDispensing"), COLUMNS, null, null);
+			Map.of("asset", "dispensingStation"), COLUMNS, null, null);
 	/** The same segment, written asynchronously. */
 	private static final String ASYNC = DmpInfluxDb2Component.uri("station_state", "ap2030", "Time",
-			Map.of("asset", "imaDispensing"), COLUMNS, null, null, true);
+			Map.of("asset", "dispensingStation"), COLUMNS, null, null, true);
 	/** A completed segment: 2026-10-20, 06:00 to 14:00 UTC. */
 	private static final String BATCH = DmpInfluxDb2Component.uri("station_state", "ap2030", "Time",
-			Map.of("asset", "imaDispensing"), COLUMNS, Instant.parse("2026-10-20T06:00:00Z"), Instant.parse("2026-10-20T14:00:00Z"));
+			Map.of("asset", "dispensingStation"), COLUMNS, Instant.parse("2026-10-20T06:00:00Z"), Instant.parse("2026-10-20T14:00:00Z"));
 
 	private final List<Write> writes = new CopyOnWriteArrayList<>();
 	private final List<String> queries = new CopyOnWriteArrayList<>();
@@ -105,7 +105,7 @@ class DmpInfluxDb2ComponentTest {
 				&& write.query().contains("precision=ns"), write.query());
 		assertEquals("Token secret-token", write.authorization());
 		String line = write.body().strip();
-		assertTrue(line.startsWith("station_state,asset=imaDispensing "), line);
+		assertTrue(line.startsWith("station_state,asset=dispensingStation "), line);
 		assertTrue(line.contains("PackMLState=\"EXECUTE\"") && line.contains("Count=3i")
 				&& line.contains("Position.X=1.5") && line.contains("Ready=true"), line);
 		assertTrue(line.endsWith(" " + Instant.parse("2026-10-21T12:00:00Z").getEpochSecond() + "000000000"), line);
@@ -241,7 +241,7 @@ class DmpInfluxDb2ComponentTest {
 		String query = queries.get(0);
 		assertTrue(query.contains("range(start: -2592000s)"), query);
 		assertTrue(query.contains("r._measurement == \"station_state\""), query);
-		assertTrue(query.contains("r[\"asset\"] == \"imaDispensing\""), query);
+		assertTrue(query.contains("r[\"asset\"] == \"dispensingStation\""), query);
 		assertTrue(query.contains("r._field == \"Count\" or"), query);
 		assertTrue(query.contains("last()"), query);
 	}
@@ -287,7 +287,7 @@ class DmpInfluxDb2ComponentTest {
 				+ "#group,false,false,true,true,false,false,true,true,true\n"
 				+ "#default,_result,,,,,,,,\n"
 				+ ",result,table,_start,_stop,_time,_value,_field,_measurement,asset\n"
-				+ ",,0,2026-09-21T00:00:00Z,2026-10-21T13:00:00Z," + time + "," + value + "," + field + ",station_state,imaDispensing\n\n";
+				+ ",,0,2026-09-21T00:00:00Z,2026-10-21T13:00:00Z," + time + "," + value + "," + field + ",station_state,dispensingStation\n\n";
 	}
 
 	private ConnectorInvocationException failure(Object row) {

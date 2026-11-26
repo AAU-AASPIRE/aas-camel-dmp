@@ -30,7 +30,7 @@ import org.junit.jupiter.api.Test;
  * its transfer point.
  */
 class StateDiscoveryTest {
-	private static final String STATION = "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS";
+	private static final String STATION = "https://smartproductionlab.aau.dk/aas/DispensingStationAAS";
 	private static final String STATION_VARIABLES = STATION + "/submodels/Variables";
 	private static final String MODULE = "https://smartproductionlab.aau.dk/aas/FillingModuleAAS";
 	private static final String MODULE_VARIABLES = MODULE + "/submodels/Variables";

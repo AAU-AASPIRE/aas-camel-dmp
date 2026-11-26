@@ -1,6 +1,6 @@
 """Simulated IMA dispensing station — OPC UA only.
 
-Its native interface is the OPC UA server that aas-model's ``ima_dispensing``
+Its native interface is the OPC UA server that aas-model's ``dispensing_station``
 AID describes (``ns=2;s=Station``):
 
 ==================  =================  ================================
@@ -18,7 +18,7 @@ Dispensing runs. A Method returns when its skill has finished. As over MQTT,
 Dispensing runs for the Uuid that occupies the station.
 
 MQTT is used only to publish the station's description to the registration
-service: the ``ima_dispensing`` Resource, with the AID base set to where this
+service: the ``dispensing_station`` Resource, with the AID base set to where this
 server is reachable (``OPCUA_ADVERTISED_ENDPOINT``).
 """
 
@@ -93,7 +93,7 @@ def main():
     server.start()
     signal.signal(signal.SIGUSR2, lambda signum, frame: server.request_task_stack_dump())
 
-    resource = load_resource("imaDispensingSystemAAS", "InterfaceTemplateForOPCUA", OPCUA_ADVERTISED_ENDPOINT)
+    resource = load_resource("DispensingStationAAS", "InterfaceTemplateForOPCUA", OPCUA_ADVERTISED_ENDPOINT)
 
     proxy = Proxy(BROKER_ADDRESS, BROKER_PORT, "DispensingProxy", [])
     machine = PackMLStateMachine(None, proxy, None, state_sink=server, resource=resource)

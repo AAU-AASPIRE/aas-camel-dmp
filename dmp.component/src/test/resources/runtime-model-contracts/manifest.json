@@ -216,35 +216,35 @@
   },
   {
    "name": "stoppering",
-   "description": "the syntegonStoppering resource of aas-model",
+   "description": "the stopperingStation resource of aas-model",
    "aimc": "stoppering/aimc.json",
    "aid": "stoppering/aid.json",
    "expected": "stoppering/expected.json",
    "dependencies": [
     {
-     "id": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/Variables",
+     "id": "https://smartproductionlab.aau.dk/aas/StopperingStationAAS/submodels/Variables",
      "path": "dependencies/0.json"
     },
     {
-     "id": "https://smartproductionlab.aau.dk/aas/syntegonStopperingSystemAAS/submodels/Skills",
+     "id": "https://smartproductionlab.aau.dk/aas/StopperingStationAAS/submodels/Skills",
      "path": "dependencies/1.json"
     }
    ],
    "compiles": true
   },
   {
-   "name": "station-imaDispensing",
-   "description": "the imaDispensing resource of aas-model",
-   "aimc": "station-imaDispensing/aimc.json",
-   "aid": "station-imaDispensing/aid.json",
-   "expected": "station-imaDispensing/expected.json",
+   "name": "station-dispensingStation",
+   "description": "the dispensingStation resource of aas-model",
+   "aimc": "station-dispensingStation/aimc.json",
+   "aid": "station-dispensingStation/aid.json",
+   "expected": "station-dispensingStation/expected.json",
    "dependencies": [
     {
-     "id": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/Variables",
+     "id": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/Variables",
      "path": "dependencies/0.json"
     },
     {
-     "id": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/Skills",
+     "id": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/Skills",
      "path": "dependencies/1.json"
     }
    ],
@@ -480,45 +480,45 @@
    "byteLength": 396,
    "sha256": "fe13710f7f83220928e1799665cf5857192c2c27c93ec8ccb751379943073b2d"
   },
-  "station-imaDispensing/aid.json": {
-   "byteLength": 131704,
-   "sha256": "44cd49df486326365a59fa1e055115399749323494ffd6a6c6e51068f68111ce"
+  "station-dispensingStation/aid.json": {
+   "byteLength": 131697,
+   "sha256": "34a9b9697ae4985dade25ed6cac1921f76832552b94796828507b66979e648ce"
   },
-  "station-imaDispensing/aimc.json": {
-   "byteLength": 125473,
-   "sha256": "8ac0ecdec7615e222a1f2f383da1e2559016b434583ddd2e5333a3fe3436d087"
+  "station-dispensingStation/aimc.json": {
+   "byteLength": 125411,
+   "sha256": "8ccec77f210330d5de12dc6b9be66bcfae5034ac1778ded057d46529d0e46e25"
   },
-  "station-imaDispensing/dependencies/0.json": {
-   "byteLength": 39675,
-   "sha256": "dc2b9c85ad69252ca1ce377cc627bfe4ce734ee2c4487ac37ce8affdd6e9abd7"
+  "station-dispensingStation/dependencies/0.json": {
+   "byteLength": 39651,
+   "sha256": "0296ce5917d24a71302f34643dbfcbec97049de8ba12df05a8a29ed64b1125a6"
   },
-  "station-imaDispensing/dependencies/1.json": {
-   "byteLength": 18735,
-   "sha256": "659c761485582372cebfbea8fa03df41cf7203a2d36ef8031a65077ca81d1a48"
+  "station-dispensingStation/dependencies/1.json": {
+   "byteLength": 18713,
+   "sha256": "6499ba3e1435d9b9ae494a6429f4d5df2baaa5ccbc9614f44234e2f96bdde988"
   },
-  "station-imaDispensing/expected.json": {
-   "byteLength": 1072,
-   "sha256": "018c978f94ee898ab7089e76e337750dcb40f8d0e3d64504759613bf60ab906f"
+  "station-dispensingStation/expected.json": {
+   "byteLength": 1068,
+   "sha256": "4327147a7e3b8825fbf26603c9a1bbc4a1df7a525055913088a192359ad0f67a"
   },
   "stoppering/aid.json": {
-   "byteLength": 129615,
-   "sha256": "71c044b6e9a82b11f1fd902dc15fe3818281aadb1a7525f1b843bfb8004f5633"
+   "byteLength": 129593,
+   "sha256": "113fae3ef516e73bd8a53a3a02ae4c4210ed5119c71efb4e9a0ce1a52c73116a"
   },
   "stoppering/aimc.json": {
-   "byteLength": 97968,
-   "sha256": "3f8187c82abe97a7227b12dad91df207eb6027291d2af82c96f36f19e9333121"
+   "byteLength": 97800,
+   "sha256": "a5c9b9d5686072b63a0f123c3cbff63be4434caae243e6e90627e0f032929593"
   },
   "stoppering/dependencies/0.json": {
-   "byteLength": 31705,
-   "sha256": "5130fd05adfb4e7f9e8855bea3c5545b85094fec96f34cbdd9677af8501c3e1a"
+   "byteLength": 31635,
+   "sha256": "e6e860d9f46491916b1b0cc84b725345f43cb3f8f1e06d6202ea680c65f91b3c"
   },
   "stoppering/dependencies/1.json": {
-   "byteLength": 17333,
-   "sha256": "7e396e0de48b0dc88cbf965da0a3cfae6bb455a2f43cce773cce1a9e18426733"
+   "byteLength": 17258,
+   "sha256": "ca3f327df1c25783f1df59e4a7f977ddc5b8ecd9c2132c8b9f834e94d0fa7fd7"
   },
   "stoppering/expected.json": {
-   "byteLength": 934,
-   "sha256": "0d9902eda0f6ac3803d44419687408eab9eb7f2e7628f9d1fbb108b40eb89ee3"
+   "byteLength": 920,
+   "sha256": "6e6fd45ef4555ff3fcd4f06d9f88e6ab36cd8ea80e2248f1f85268472f70e9d8"
   },
   "td-data-schemas/aid.json": {
    "byteLength": 63754,

@@ -31,11 +31,11 @@ import org.junit.jupiter.api.Test;
 /**
  * A Sink on a TimeSeries LinkedSegment, compiled through discovery from the Variables and Parameters submodels
  * aas-model generates ({@code timeseries/*.json}): one series {@code State.Station} with fields PackMLState, Count,
- * Position.X and a reference to {@code Parameters/Location} (x, y), owned by {@code imaDispensing}.
+ * Position.X and a reference to {@code Parameters/Location} (x, y), owned by {@code dispensingStation}.
  */
 class TimeSeriesDiscoveryTest {
-	private static final String VARIABLES = "https://smartproductionlab.aau.dk/aas/imaDispensing/submodels/Variables";
-	private static final String PARAMETERS = "https://smartproductionlab.aau.dk/aas/imaDispensing/submodels/Parameters";
+	private static final String VARIABLES = "https://smartproductionlab.aau.dk/aas/dispensingStation/submodels/Variables";
+	private static final String PARAMETERS = "https://smartproductionlab.aau.dk/aas/dispensingStation/submodels/Parameters";
 	private static final String SKILLS = "urn:fixture/submodels/Skills";
 	private static final String AIMC_ID = "urn:fixture/submodels/AIMC";
 	private static final String DATA_ID = "urn:fixture/submodels/Data";
@@ -56,7 +56,7 @@ class TimeSeriesDiscoveryTest {
 			assertEquals("Live", sink.sinkId());
 			assertEquals("station_state", target.measurement());
 			assertEquals("ap2030", target.bucket());
-			assertEquals(Map.of("asset", "imaDispensing"), target.tags());
+			assertEquals(Map.of("asset", "dispensingStation"), target.tags());
 			assertEquals(List.of(new RecordColumn("PackMLState", "xs:string"), new RecordColumn("Count", "xs:long"),
 					new RecordColumn("Position.X", "xs:double"), new RecordColumn("Location.x", "xs:double"),
 					new RecordColumn("Location.y", "xs:double")), target.columns(), "a reference counts as if declared inline");
@@ -170,7 +170,7 @@ class TimeSeriesDiscoveryTest {
 			assertEquals(2000, source.pollingIntervalMs());
 			assertTrue(source.read());
 			assertEquals("station_state", ((InfluxDb2Endpoint) source.endpoint()).measurement());
-			assertEquals(Map.of("asset", "imaDispensing"), ((InfluxDb2Endpoint) source.endpoint()).tags());
+			assertEquals(Map.of("asset", "dispensingStation"), ((InfluxDb2Endpoint) source.endpoint()).tags());
 		}
 	}
 

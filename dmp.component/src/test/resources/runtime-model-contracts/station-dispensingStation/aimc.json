@@ -7,7 +7,7 @@
   }
  ],
  "modelType": "Submodel",
- "id": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/AssetInterfacesMappingConfiguration",
+ "id": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/AssetInterfacesMappingConfiguration",
  "semanticId": {
   "type": "ExternalReference",
   "keys": [
@@ -191,7 +191,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/AssetInterfacesDescription"
+              "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/AssetInterfacesDescription"
              },
              {
               "type": "SubmodelElementCollection",
@@ -282,7 +282,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/AssetInterfacesDescription"
+              "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/AssetInterfacesDescription"
              },
              {
               "type": "SubmodelElementCollection",
@@ -405,7 +405,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/Variables"
+              "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/Variables"
              },
              {
               "type": "SubmodelElementCollection",
@@ -496,7 +496,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/Variables"
+              "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/Variables"
              },
              {
               "type": "SubmodelElementCollection",
@@ -679,7 +679,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
@@ -802,7 +802,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/AssetInterfacesDescription"
+              "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/AssetInterfacesDescription"
              },
              {
               "type": "SubmodelElementCollection",
@@ -997,7 +997,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
@@ -1120,7 +1120,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/AssetInterfacesDescription"
+              "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/AssetInterfacesDescription"
              },
              {
               "type": "SubmodelElementCollection",
@@ -1259,7 +1259,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/AssetInterfacesDescription"
+              "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/AssetInterfacesDescription"
              },
              {
               "type": "SubmodelElementCollection",
@@ -1377,7 +1377,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
@@ -1468,7 +1468,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
@@ -1559,7 +1559,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/Variables"
+              "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/Variables"
              },
              {
               "type": "SubmodelElementCollection",
@@ -1750,7 +1750,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
@@ -1873,7 +1873,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/AssetInterfacesDescription"
+              "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/AssetInterfacesDescription"
              },
              {
               "type": "SubmodelElementCollection",
@@ -2012,7 +2012,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/AssetInterfacesDescription"
+              "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/AssetInterfacesDescription"
              },
              {
               "type": "SubmodelElementCollection",
@@ -2130,7 +2130,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
@@ -2221,7 +2221,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
@@ -2312,7 +2312,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/Variables"
+              "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/Variables"
              },
              {
               "type": "SubmodelElementCollection",
@@ -2503,7 +2503,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
@@ -2594,7 +2594,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
@@ -2717,7 +2717,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/AssetInterfacesDescription"
+              "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/AssetInterfacesDescription"
              },
              {
               "type": "SubmodelElementCollection",
@@ -2820,7 +2820,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/AssetInterfacesDescription"
+              "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/AssetInterfacesDescription"
              },
              {
               "type": "SubmodelElementCollection",
@@ -2967,7 +2967,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/AssetInterfacesDescription"
+              "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/AssetInterfacesDescription"
              },
              {
               "type": "SubmodelElementCollection",
@@ -3070,7 +3070,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/AssetInterfacesDescription"
+              "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/AssetInterfacesDescription"
              },
              {
               "type": "SubmodelElementCollection",
@@ -3173,7 +3173,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/AssetInterfacesDescription"
+              "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/AssetInterfacesDescription"
              },
              {
               "type": "SubmodelElementCollection",
@@ -3299,7 +3299,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
@@ -3390,7 +3390,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
@@ -3481,7 +3481,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/Skills"
+              "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/Skills"
              },
              {
               "type": "SubmodelElementCollection",
@@ -3672,7 +3672,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/AssetInterfacesDescription"
+              "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/AssetInterfacesDescription"
              },
              {
               "type": "SubmodelElementCollection",
@@ -3816,7 +3816,7 @@
             "keys": [
              {
               "type": "Submodel",
-              "value": "https://smartproductionlab.aau.dk/aas/imaDispensingSystemAAS/submodels/Variables"
+              "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/Variables"
              },
              {
               "type": "SubmodelElementCollection",
