@@ -54,7 +54,7 @@
 		<!-- JUnit tags skipped by a plain "mvn test": real Kafka/process tests (-Pintegration) and the
 		     stress test (-Pcapacity). -->
 		<dmp.test.excludedGroups>integration,capacity</dmp.test.excludedGroups>
-		<camel.version>4.22.0</camel.version>
+		<camel.version>4.23.0</camel.version>
 		<aas4j.version>3.0.1</aas4j.version>
 		<kafka.version>4.3.1</kafka.version>
 		<milo.version>1.1.8</milo.version>
