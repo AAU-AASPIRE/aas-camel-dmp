@@ -1,0 +1,32 @@
+{
+ "idShort": "Skills",
+ "modelType": "Submodel",
+ "id": "contractAAS/submodels/Skills",
+ "semanticId": {
+  "type": "ExternalReference",
+  "keys": [
+   {
+    "type": "GlobalReference",
+    "value": "https://smartproductionlab.aau.dk/ARSO/Skills/1/0/Submodel"
+   }
+  ]
+ },
+ "submodelElements": [
+  {
+   "idShort": "Inspect",
+   "modelType": "SubmodelElementCollection",
+   "value": [
+    {
+     "idShort": "Start",
+     "modelType": "SubmodelElementCollection",
+     "value": [
+      {
+       "idShort": "Start",
+       "modelType": "Operation"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

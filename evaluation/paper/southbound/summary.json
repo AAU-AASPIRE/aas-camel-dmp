@@ -1,0 +1,1086 @@
+{
+  "experiment": "southbound",
+  "run": "20261030T093039Z",
+  "points": {
+    "native-invoke-opcua-256B": {
+      "status": "ok",
+      "point": {
+        "name": "native-invoke-opcua-256B",
+        "system": "native",
+        "scenario": "invoke-opcua",
+        "payload_bytes": 256,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 30,
+        "capture": false,
+        "variant": null
+      },
+      "system": "native",
+      "timeline": {
+        "down": 1793352664014051368,
+        "infrastructure": 1793352664071402630,
+        "device": 1793352682486919845,
+        "system": 1793352684737468246,
+        "deploy": 1793352684737491773,
+        "ready": 1793352686393602724,
+        "load": 1793352686393620385,
+        "drain": 1793352767267550468,
+        "drained": 1793352772270116714,
+        "teardown": 1793352775053778017
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.000029707433828,
+          "invoke": {
+            "failed": 0,
+            "statuses": {
+              "reply": 600
+            },
+            "rtt_ms": {
+              "n": 600,
+              "min": 0.767596,
+              "p25": 1.07209225,
+              "p50": 1.1383535,
+              "p75": 1.211956,
+              "p99": 1.57111042,
+              "max": 1.856486
+            }
+          }
+        }
+      }
+    },
+    "native-invoke-http-256B": {
+      "status": "ok",
+      "point": {
+        "name": "native-invoke-http-256B",
+        "system": "native",
+        "scenario": "invoke-http",
+        "payload_bytes": 256,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 30,
+        "capture": false,
+        "variant": null
+      },
+      "system": "native",
+      "timeline": {
+        "down": 1793352775058391810,
+        "infrastructure": 1793352775114008702,
+        "device": 1793352793388324458,
+        "system": 1793352795524980405,
+        "deploy": 1793352795525004339,
+        "ready": 1793352796743309142,
+        "load": 1793352796743330643,
+        "drain": 1793352877146100814,
+        "drained": 1793352882147766855,
+        "teardown": 1793352884717655871
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.000018841437837,
+          "invoke": {
+            "failed": 0,
+            "statuses": {
+              "200": 600
+            },
+            "rtt_ms": {
+              "n": 600,
+              "min": 0.402058,
+              "p25": 0.5256495,
+              "p50": 0.5464765,
+              "p75": 0.593993,
+              "p99": 0.75720902,
+              "max": 0.793421
+            }
+          }
+        }
+      }
+    },
+    "native-write-mqtt-256B": {
+      "status": "ok",
+      "point": {
+        "name": "native-write-mqtt-256B",
+        "system": "native",
+        "scenario": "write-mqtt",
+        "payload_bytes": 256,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 30,
+        "capture": false,
+        "variant": null
+      },
+      "system": "native",
+      "timeline": {
+        "down": 1793352884720475367,
+        "infrastructure": 1793352884785786877,
+        "device": 1793352903110045605,
+        "system": 1793352906254626254,
+        "deploy": 1793352906254651735,
+        "ready": 1793352908403371590,
+        "load": 1793352908403397011,
+        "drain": 1793352989801127273,
+        "drained": 1793352994802799934,
+        "teardown": 1793352997175037114
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.000000023038398,
+          "write": {
+            "lost": 0,
+            "latency_ms": {
+              "n": 600,
+              "min": 0.442555,
+              "p25": 0.57696475,
+              "p50": 0.628489,
+              "p75": 0.67896275,
+              "p99": 0.8580217999999997,
+              "max": 1.12363
+            },
+            "event_ms": {
+              "n": 0
+            }
+          }
+        }
+      }
+    },
+    "dmp-invoke-http-aas-256B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-invoke-http-aas-256B",
+        "system": "dmp",
+        "scenario": "invoke-http",
+        "payload_bytes": 256,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 30,
+        "capture": false,
+        "variant": "aas"
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793352997179523470,
+        "infrastructure": 1793352997238839850,
+        "device": 1793353015627789984,
+        "system": 1793353018777242820,
+        "deploy": 1793353025464558216,
+        "ready": 1793353029101282011,
+        "load": 1793353029101299933,
+        "drain": 1793353109484272881,
+        "drained": 1793353114485723570,
+        "teardown": 1793353120172556638
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999983005538063,
+          "invoke": {
+            "failed": 0,
+            "statuses": {
+              "200": 600
+            },
+            "rtt_ms": {
+              "n": 600,
+              "min": 5.77949,
+              "p25": 6.8862155,
+              "p50": 7.413031999999999,
+              "p75": 8.282149,
+              "p99": 10.767479279999995,
+              "max": 14.145248
+            }
+          }
+        }
+      }
+    },
+    "dmp-write-mqtt-mqtt-256B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-write-mqtt-mqtt-256B",
+        "system": "dmp",
+        "scenario": "write-mqtt",
+        "payload_bytes": 256,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 30,
+        "capture": false,
+        "variant": "mqtt"
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793353120175722485,
+        "infrastructure": 1793353120242936282,
+        "device": 1793353138454455452,
+        "system": 1793353141592046873,
+        "deploy": 1793353144296089455,
+        "ready": 1793353147147106909,
+        "load": 1793353148279220252,
+        "drain": 1793353228669065523,
+        "drained": 1793353233671024347,
+        "teardown": 1793353243340719599
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.000001765442715,
+          "write": {
+            "lost": 0,
+            "latency_ms": {
+              "n": 600,
+              "min": 3.597715,
+              "p25": 4.3278680000000005,
+              "p50": 4.669646999999999,
+              "p75": 5.257088,
+              "p99": 6.52269338,
+              "max": 14.286921
+            },
+            "event_ms": {
+              "n": 600,
+              "min": 2.853008,
+              "p25": 3.42777075,
+              "p50": 3.7144785000000002,
+              "p75": 4.21252475,
+              "p99": 5.440102469999999,
+              "max": 13.174215
+            }
+          }
+        }
+      }
+    },
+    "dmp-write-opcua-kafka-256B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-write-opcua-kafka-256B",
+        "system": "dmp",
+        "scenario": "write-opcua",
+        "payload_bytes": 256,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 30,
+        "capture": false,
+        "variant": "kafka"
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793353243345343830,
+        "infrastructure": 1793353243403959486,
+        "device": 1793353261561395840,
+        "system": 1793353263679959364,
+        "deploy": 1793353270354302065,
+        "ready": 1793353277906235031,
+        "load": 1793353279029021683,
+        "drain": 1793353359397441174,
+        "drained": 1793353364398919798,
+        "teardown": 1793353373316155033
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.99998792188437,
+          "write": {
+            "lost": 0,
+            "latency_ms": {
+              "n": 600,
+              "min": 4.163761,
+              "p25": 4.801303750000001,
+              "p50": 5.2390855,
+              "p75": 5.8499185,
+              "p99": 7.651226189999999,
+              "max": 13.745985
+            },
+            "event_ms": {
+              "n": 600,
+              "min": 3.162485,
+              "p25": 3.646214,
+              "p50": 4.0042290000000005,
+              "p75": 4.5762615,
+              "p99": 5.970429909999997,
+              "max": 12.516753
+            }
+          }
+        }
+      }
+    },
+    "dmp-invoke-mqtt-dmp-256B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-invoke-mqtt-dmp-256B",
+        "system": "dmp",
+        "scenario": "invoke-mqtt",
+        "payload_bytes": 256,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 30,
+        "capture": false,
+        "variant": "dmp"
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793353373321017869,
+        "infrastructure": 1793353373378421497,
+        "device": 1793353391560655782,
+        "system": 1793353393695482563,
+        "deploy": 1793353400372489145,
+        "ready": 1793353403605436637,
+        "load": 1793353403605457169,
+        "drain": 1793353483952688391,
+        "drained": 1793353488954659853,
+        "teardown": 1793353492366012993
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999996493323433,
+          "invoke": {
+            "failed": 0,
+            "statuses": {
+              "200": 600
+            },
+            "rtt_ms": {
+              "n": 600,
+              "min": 2.268789,
+              "p25": 2.82481575,
+              "p50": 3.020969,
+              "p75": 3.18334425,
+              "p99": 3.7742515599999984,
+              "max": 4.406156
+            }
+          }
+        }
+      }
+    },
+    "dmp-invoke-http-dmp-256B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-invoke-http-dmp-256B",
+        "system": "dmp",
+        "scenario": "invoke-http",
+        "payload_bytes": 256,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 30,
+        "capture": false,
+        "variant": "dmp"
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793353492368799499,
+        "infrastructure": 1793353492432653740,
+        "device": 1793353510595116667,
+        "system": 1793353512730405052,
+        "deploy": 1793353519412093349,
+        "ready": 1793353522594699848,
+        "load": 1793353522594716923,
+        "drain": 1793353602966360703,
+        "drained": 1793353607968692813,
+        "teardown": 1793353611816001652
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999981816727553,
+          "invoke": {
+            "failed": 0,
+            "statuses": {
+              "200": 600
+            },
+            "rtt_ms": {
+              "n": 600,
+              "min": 1.913979,
+              "p25": 2.4640285,
+              "p50": 2.680306,
+              "p75": 2.8879449999999998,
+              "p99": 3.4597535499999994,
+              "max": 9.189564
+            }
+          }
+        }
+      }
+    },
+    "dmp-invoke-opcua-dmp-256B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-invoke-opcua-dmp-256B",
+        "system": "dmp",
+        "scenario": "invoke-opcua",
+        "payload_bytes": 256,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 30,
+        "capture": false,
+        "variant": "dmp"
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793353611818940905,
+        "infrastructure": 1793353611882760971,
+        "device": 1793353630071983721,
+        "system": 1793353632215886770,
+        "deploy": 1793353638889275897,
+        "ready": 1793353642947067415,
+        "load": 1793353642947081769,
+        "drain": 1793353723287866242,
+        "drained": 1793353728289543205,
+        "teardown": 1793353736663708726
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.000018057461656,
+          "invoke": {
+            "failed": 0,
+            "statuses": {
+              "200": 600
+            },
+            "rtt_ms": {
+              "n": 600,
+              "min": 2.119341,
+              "p25": 2.62394575,
+              "p50": 2.8756880000000002,
+              "p75": 3.101942,
+              "p99": 3.69800322,
+              "max": 4.190991
+            }
+          }
+        }
+      }
+    },
+    "native-invoke-mqtt-256B": {
+      "status": "ok",
+      "point": {
+        "name": "native-invoke-mqtt-256B",
+        "system": "native",
+        "scenario": "invoke-mqtt",
+        "payload_bytes": 256,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 30,
+        "capture": false,
+        "variant": null
+      },
+      "system": "native",
+      "timeline": {
+        "down": 1793353736666433006,
+        "infrastructure": 1793353736722365768,
+        "device": 1793353754939461462,
+        "system": 1793353757064628647,
+        "deploy": 1793353757064647994,
+        "ready": 1793353758264307942,
+        "load": 1793353758264331850,
+        "drain": 1793353838642527926,
+        "drained": 1793353843644383035,
+        "teardown": 1793353845932647679
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.000019882343372,
+          "invoke": {
+            "failed": 0,
+            "statuses": {
+              "reply": 600
+            },
+            "rtt_ms": {
+              "n": 600,
+              "min": 0.695566,
+              "p25": 0.96985475,
+              "p50": 1.0822525,
+              "p75": 1.1833825,
+              "p99": 1.46317478,
+              "max": 1.546957
+            }
+          }
+        }
+      }
+    },
+    "native-write-http-256B": {
+      "status": "ok",
+      "point": {
+        "name": "native-write-http-256B",
+        "system": "native",
+        "scenario": "write-http",
+        "payload_bytes": 256,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 30,
+        "capture": false,
+        "variant": null
+      },
+      "system": "native",
+      "timeline": {
+        "down": 1793353845937223543,
+        "infrastructure": 1793353845996410542,
+        "device": 1793353864227408855,
+        "system": 1793353866376756532,
+        "deploy": 1793353866376797100,
+        "ready": 1793353867505902517,
+        "load": 1793353867505923898,
+        "drain": 1793353947863795399,
+        "drained": 1793353952865903483,
+        "teardown": 1793353955606071487
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999985982991268,
+          "write": {
+            "lost": 0,
+            "latency_ms": {
+              "n": 600,
+              "min": 0.198716,
+              "p25": 0.2821845,
+              "p50": 0.291918,
+              "p75": 0.30544325,
+              "p99": 0.40317454999999996,
+              "max": 0.4579
+            },
+            "event_ms": {
+              "n": 0
+            }
+          }
+        }
+      }
+    },
+    "dmp-invoke-mqtt-aas-256B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-invoke-mqtt-aas-256B",
+        "system": "dmp",
+        "scenario": "invoke-mqtt",
+        "payload_bytes": 256,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 30,
+        "capture": false,
+        "variant": "aas"
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793353955610598063,
+        "infrastructure": 1793353955670930814,
+        "device": 1793353973829475958,
+        "system": 1793353975955805545,
+        "deploy": 1793353982633518541,
+        "ready": 1793353986108347324,
+        "load": 1793353986108361415,
+        "drain": 1793354066507557033,
+        "drained": 1793354071509561897,
+        "teardown": 1793354076671268328
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999960983624682,
+          "invoke": {
+            "failed": 0,
+            "statuses": {
+              "200": 600
+            },
+            "rtt_ms": {
+              "n": 600,
+              "min": 5.380666,
+              "p25": 6.3490839999999995,
+              "p50": 6.7495294999999995,
+              "p75": 7.32473975,
+              "p99": 8.810187410000001,
+              "max": 9.674924
+            }
+          }
+        }
+      }
+    },
+    "dmp-write-opcua-mqtt-256B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-write-opcua-mqtt-256B",
+        "system": "dmp",
+        "scenario": "write-opcua",
+        "payload_bytes": 256,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 30,
+        "capture": false,
+        "variant": "mqtt"
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793354076675304396,
+        "infrastructure": 1793354076740966948,
+        "device": 1793354094919794604,
+        "system": 1793354097045132529,
+        "deploy": 1793354099732714682,
+        "ready": 1793354103991285780,
+        "load": 1793354105112433664,
+        "drain": 1793354185473403670,
+        "drained": 1793354190475492646,
+        "teardown": 1793354200146590241
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.000008127886407,
+          "write": {
+            "lost": 0,
+            "latency_ms": {
+              "n": 600,
+              "min": 3.643847,
+              "p25": 4.3483195,
+              "p50": 4.76288,
+              "p75": 5.31809825,
+              "p99": 6.63664675,
+              "max": 12.058997
+            },
+            "event_ms": {
+              "n": 600,
+              "min": 2.776253,
+              "p25": 3.3263559999999996,
+              "p50": 3.647042,
+              "p75": 4.13212475,
+              "p99": 5.2065343,
+              "max": 10.850929
+            }
+          }
+        }
+      }
+    },
+    "dmp-invoke-opcua-aas-256B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-invoke-opcua-aas-256B",
+        "system": "dmp",
+        "scenario": "invoke-opcua",
+        "payload_bytes": 256,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 30,
+        "capture": false,
+        "variant": "aas"
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793354200152690665,
+        "infrastructure": 1793354200205917254,
+        "device": 1793354218406707065,
+        "system": 1793354220543937787,
+        "deploy": 1793354227217459721,
+        "ready": 1793354231436205777,
+        "load": 1793354231436227444,
+        "drain": 1793354311781130268,
+        "drained": 1793354316783074947,
+        "teardown": 1793354326970588482
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.000007944914493,
+          "invoke": {
+            "failed": 0,
+            "statuses": {
+              "200": 600
+            },
+            "rtt_ms": {
+              "n": 600,
+              "min": 5.449548,
+              "p25": 6.185211499999999,
+              "p50": 6.541983999999999,
+              "p75": 7.252819000000001,
+              "p99": 8.682338529999996,
+              "max": 14.679996
+            }
+          }
+        }
+      }
+    },
+    "dmp-write-mqtt-kafka-256B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-write-mqtt-kafka-256B",
+        "system": "dmp",
+        "scenario": "write-mqtt",
+        "payload_bytes": 256,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 30,
+        "capture": false,
+        "variant": "kafka"
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793354326973309476,
+        "infrastructure": 1793354327030280991,
+        "device": 1793354345283443971,
+        "system": 1793354347413023483,
+        "deploy": 1793354354077445858,
+        "ready": 1793354360048210210,
+        "load": 1793354361170085525,
+        "drain": 1793354441526992522,
+        "drained": 1793354446529048930,
+        "teardown": 1793354454433699144
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.000007774463473,
+          "write": {
+            "lost": 0,
+            "latency_ms": {
+              "n": 600,
+              "min": 4.24289,
+              "p25": 4.835499,
+              "p50": 5.2534045,
+              "p75": 5.90269325,
+              "p99": 8.29736872,
+              "max": 22.924238
+            },
+            "event_ms": {
+              "n": 600,
+              "min": 3.171566,
+              "p25": 3.7936405,
+              "p50": 4.1173424999999995,
+              "p75": 4.68387525,
+              "p99": 6.997672249999998,
+              "max": 21.649546
+            }
+          }
+        }
+      }
+    },
+    "dmp-write-http-kafka-256B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-write-http-kafka-256B",
+        "system": "dmp",
+        "scenario": "write-http",
+        "payload_bytes": 256,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 30,
+        "capture": false,
+        "variant": "kafka"
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793354454437293544,
+        "infrastructure": 1793354454491091492,
+        "device": 1793354472721541185,
+        "system": 1793354474867924853,
+        "deploy": 1793354481569086515,
+        "ready": 1793354487625988586,
+        "load": 1793354488746265369,
+        "drain": 1793354569098917913,
+        "drained": 1793354574101129398,
+        "teardown": 1793354582528260428
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.000033845523566,
+          "write": {
+            "lost": 0,
+            "latency_ms": {
+              "n": 600,
+              "min": 4.156066,
+              "p25": 4.74035425,
+              "p50": 5.206552500000001,
+              "p75": 5.836997500000001,
+              "p99": 7.393792869999999,
+              "max": 14.164646
+            },
+            "event_ms": {
+              "n": 600,
+              "min": 3.105356,
+              "p25": 3.5782127499999996,
+              "p50": 4.0833315,
+              "p75": 4.59144475,
+              "p99": 5.819289599999999,
+              "max": 12.539746
+            }
+          }
+        }
+      }
+    },
+    "native-write-opcua-256B": {
+      "status": "ok",
+      "point": {
+        "name": "native-write-opcua-256B",
+        "system": "native",
+        "scenario": "write-opcua",
+        "payload_bytes": 256,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 30,
+        "capture": false,
+        "variant": null
+      },
+      "system": "native",
+      "timeline": {
+        "down": 1793354582531871723,
+        "infrastructure": 1793354582581668034,
+        "device": 1793354600713324173,
+        "system": 1793354602838989451,
+        "deploy": 1793354602839015953,
+        "ready": 1793354604437570119,
+        "load": 1793354604437589648,
+        "drain": 1793354685293063605,
+        "drained": 1793354690295675028,
+        "teardown": 1793354693129736909
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 9.999981676494343,
+          "write": {
+            "lost": 0,
+            "latency_ms": {
+              "n": 600,
+              "min": 0.404598,
+              "p25": 0.6623555,
+              "p50": 0.6829244999999999,
+              "p75": 0.700016,
+              "p99": 0.9264617399999998,
+              "max": 1.077826
+            },
+            "event_ms": {
+              "n": 0
+            }
+          }
+        }
+      }
+    },
+    "dmp-write-http-mqtt-256B": {
+      "status": "ok",
+      "point": {
+        "name": "dmp-write-http-mqtt-256B",
+        "system": "dmp",
+        "scenario": "write-http",
+        "payload_bytes": 256,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "rate": 10,
+            "seconds": 20
+          },
+          {
+            "phase": "measure",
+            "rate": 10,
+            "seconds": 60
+          }
+        ],
+        "cooldown_s": 30,
+        "capture": false,
+        "variant": "mqtt"
+      },
+      "system": "dmp",
+      "timeline": {
+        "down": 1793354693132801009,
+        "infrastructure": 1793354693183925327,
+        "device": 1793354711376215284,
+        "system": 1793354713501723507,
+        "deploy": 1793354716175186464,
+        "ready": 1793354718956391321,
+        "load": 1793354720079761672,
+        "drain": 1793354800439916627,
+        "drained": 1793354805441852513,
+        "teardown": 1793354815259554889
+      },
+      "phases": {
+        "measure": {
+          "sent": 600,
+          "achieved_rate_hz": 10.000006451256247,
+          "write": {
+            "lost": 0,
+            "latency_ms": {
+              "n": 600,
+              "min": 3.614399,
+              "p25": 4.4748335,
+              "p50": 4.9411235,
+              "p75": 5.5331395,
+              "p99": 8.106112149999992,
+              "max": 17.807331
+            },
+            "event_ms": {
+              "n": 600,
+              "min": 2.590722,
+              "p25": 3.345924,
+              "p50": 3.7618400000000003,
+              "p75": 4.2524982499999995,
+              "p99": 5.867338449999997,
+              "max": 16.285541
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+# The AASs the DMP is tested and evaluated with, authored with aas-model. Not a package: run its modules from
+# this directory with `uv run python -m contracts` (the DMP's contract fixtures), `-m scenarios` (the
+# evaluation's scenarios) or `-m demo` (the demo's station); uv.lock pins every dependency. Set MQTT_SCHEMAS_DIR to the MQTTSchemas folder of an
+# aas-model checkout at the rev below: without it aas-model fetches the published schemas, which may differ.
+[project]
+name = "dmp-fixtures"
+version = "0.1.0"
+description = "The DMP's model contract fixtures and the evaluation's scenarios, authored with aas-model"
+requires-python = ">=3.11"
+dependencies = ["aas-model"]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+aas-model = { git = "https://github.com/tristan-schwoerer/aas-model", rev = "84eba3e675e1856c9a94e86b23183ae007d965df" }

@@ -1,0 +1,723 @@
+{
+ "idShort": "Skills",
+ "description": [
+  {
+   "language": "en",
+   "text": "The Skills submodel (ARSO): a resource's skills with their commands and steps, and the errors they report."
+  }
+ ],
+ "modelType": "Submodel",
+ "id": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/Skills",
+ "semanticId": {
+  "type": "ExternalReference",
+  "keys": [
+   {
+    "type": "GlobalReference",
+    "value": "https://smartproductionlab.aau.dk/ARSO/Skills/1/0/Submodel"
+   }
+  ]
+ },
+ "submodelElements": [
+  {
+   "idShort": "Halt",
+   "description": [
+    {
+     "language": "en",
+     "text": "A named skill, an element of the Skills submodel itself, recognised by its semanticId (no idShort — the skill name is user-defined)."
+    }
+   ],
+   "modelType": "SubmodelElementCollection",
+   "semanticId": {
+    "type": "ExternalReference",
+    "keys": [
+     {
+      "type": "GlobalReference",
+      "value": "https://smartproductionlab.aau.dk/skill"
+     }
+    ]
+   },
+   "supplementalSemanticIds": [
+    {
+     "type": "ExternalReference",
+     "keys": [
+      {
+       "type": "GlobalReference",
+       "value": "https://smartproductionlab.aau.dk/skill/ModuleControl"
+      }
+     ]
+    }
+   ],
+   "value": [
+    {
+     "idShort": "SemanticId",
+     "description": [
+      {
+       "language": "en",
+       "text": "What the skill does, as the short form of older AASs states it."
+      }
+     ],
+     "modelType": "Property",
+     "value": "https://smartproductionlab.aau.dk/skills/Halt",
+     "valueType": "xs:string"
+    },
+    {
+     "idShort": "Start",
+     "description": [
+      {
+       "language": "en",
+       "text": "One command of a skill: the action that calls it, its Operation, and what it runs."
+      }
+     ],
+     "modelType": "SubmodelElementCollection",
+     "semanticId": {
+      "type": "ExternalReference",
+      "keys": [
+       {
+        "type": "GlobalReference",
+        "value": "https://smartproductionlab.aau.dk/skill/Start"
+       }
+      ]
+     },
+     "value": [
+      {
+       "idShort": "InterfaceReference",
+       "description": [
+        {
+         "language": "en",
+         "text": "The AID action (arso:InterfaceSMC/InteractionMetadata/actions/{action}) that calls the command; in the short form, the action that starts the skill."
+        }
+       ],
+       "modelType": "ReferenceElement",
+       "value": {
+        "type": "ModelReference",
+        "keys": [
+         {
+          "type": "Submodel",
+          "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/AssetInterfacesDescription"
+         },
+         {
+          "type": "SubmodelElementCollection",
+          "value": "interface_opcua"
+         },
+         {
+          "type": "SubmodelElementCollection",
+          "value": "InteractionMetadata"
+         },
+         {
+          "type": "SubmodelElementCollection",
+          "value": "actions"
+         },
+         {
+          "type": "SubmodelElementCollection",
+          "value": "Halt"
+         }
+        ]
+       }
+      },
+      {
+       "idShort": "Start",
+       "description": [
+        {
+         "language": "en",
+         "text": "Operation to invoke this skill (delegated via operation delegation)."
+        }
+       ],
+       "modelType": "Operation",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://smartproductionlab.aau.dk/skill/Start"
+         }
+        ]
+       },
+       "qualifiers": [
+        {
+         "value": "http://dmp:8080/submodels/aHR0cHM6Ly9zbWFydHByb2R1Y3Rpb25sYWIuYWF1LmRrL2Fhcy9EaXNwZW5zaW5nU3RhdGlvbkFBUy9zdWJtb2RlbHMvU2tpbGxz/submodel-elements/Halt.Start.Start/invoke",
+         "kind": "ConceptQualifier",
+         "valueType": "xs:string",
+         "type": "invocationDelegation"
+        }
+       ],
+       "inputVariables": [
+        {
+         "value": {
+          "idShort": "Uuid",
+          "description": [
+           {
+            "language": "en",
+            "text": "The UUID of the command"
+           }
+          ],
+          "modelType": "Property",
+          "valueType": "xs:string"
+         }
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "idShort": "Occupy",
+   "description": [
+    {
+     "language": "en",
+     "text": "A named skill, an element of the Skills submodel itself, recognised by its semanticId (no idShort — the skill name is user-defined)."
+    }
+   ],
+   "modelType": "SubmodelElementCollection",
+   "semanticId": {
+    "type": "ExternalReference",
+    "keys": [
+     {
+      "type": "GlobalReference",
+      "value": "https://smartproductionlab.aau.dk/skill"
+     }
+    ]
+   },
+   "supplementalSemanticIds": [
+    {
+     "type": "ExternalReference",
+     "keys": [
+      {
+       "type": "GlobalReference",
+       "value": "https://smartproductionlab.aau.dk/skill/ModuleControl"
+      }
+     ]
+    }
+   ],
+   "value": [
+    {
+     "idShort": "SemanticId",
+     "description": [
+      {
+       "language": "en",
+       "text": "What the skill does, as the short form of older AASs states it."
+      }
+     ],
+     "modelType": "Property",
+     "value": "https://smartproductionlab.aau.dk/skills/Occupy",
+     "valueType": "xs:string"
+    },
+    {
+     "idShort": "Start",
+     "description": [
+      {
+       "language": "en",
+       "text": "One command of a skill: the action that calls it, its Operation, and what it runs."
+      }
+     ],
+     "modelType": "SubmodelElementCollection",
+     "semanticId": {
+      "type": "ExternalReference",
+      "keys": [
+       {
+        "type": "GlobalReference",
+        "value": "https://smartproductionlab.aau.dk/skill/Start"
+       }
+      ]
+     },
+     "value": [
+      {
+       "idShort": "InterfaceReference",
+       "description": [
+        {
+         "language": "en",
+         "text": "The AID action (arso:InterfaceSMC/InteractionMetadata/actions/{action}) that calls the command; in the short form, the action that starts the skill."
+        }
+       ],
+       "modelType": "ReferenceElement",
+       "value": {
+        "type": "ModelReference",
+        "keys": [
+         {
+          "type": "Submodel",
+          "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/AssetInterfacesDescription"
+         },
+         {
+          "type": "SubmodelElementCollection",
+          "value": "interface_opcua"
+         },
+         {
+          "type": "SubmodelElementCollection",
+          "value": "InteractionMetadata"
+         },
+         {
+          "type": "SubmodelElementCollection",
+          "value": "actions"
+         },
+         {
+          "type": "SubmodelElementCollection",
+          "value": "Occupy"
+         }
+        ]
+       }
+      },
+      {
+       "idShort": "Start",
+       "description": [
+        {
+         "language": "en",
+         "text": "Operation to invoke this skill (delegated via operation delegation)."
+        }
+       ],
+       "modelType": "Operation",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://smartproductionlab.aau.dk/skill/Start"
+         }
+        ]
+       },
+       "qualifiers": [
+        {
+         "value": "http://dmp:8080/submodels/aHR0cHM6Ly9zbWFydHByb2R1Y3Rpb25sYWIuYWF1LmRrL2Fhcy9EaXNwZW5zaW5nU3RhdGlvbkFBUy9zdWJtb2RlbHMvU2tpbGxz/submodel-elements/Occupy.Start.Start/invoke",
+         "kind": "ConceptQualifier",
+         "valueType": "xs:string",
+         "type": "invocationDelegation"
+        }
+       ],
+       "outputVariables": [
+        {
+         "value": {
+          "idShort": "State",
+          "description": [
+           {
+            "language": "en",
+            "text": "The state of the command being executed"
+           }
+          ],
+          "modelType": "Property",
+          "valueType": "xs:string"
+         }
+        }
+       ],
+       "inoutputVariables": [
+        {
+         "value": {
+          "idShort": "Uuid",
+          "description": [
+           {
+            "language": "en",
+            "text": "The UUID of the command"
+           }
+          ],
+          "modelType": "Property",
+          "valueType": "xs:string"
+         }
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "idShort": "Release",
+   "description": [
+    {
+     "language": "en",
+     "text": "A named skill, an element of the Skills submodel itself, recognised by its semanticId (no idShort — the skill name is user-defined)."
+    }
+   ],
+   "modelType": "SubmodelElementCollection",
+   "semanticId": {
+    "type": "ExternalReference",
+    "keys": [
+     {
+      "type": "GlobalReference",
+      "value": "https://smartproductionlab.aau.dk/skill"
+     }
+    ]
+   },
+   "supplementalSemanticIds": [
+    {
+     "type": "ExternalReference",
+     "keys": [
+      {
+       "type": "GlobalReference",
+       "value": "https://smartproductionlab.aau.dk/skill/ModuleControl"
+      }
+     ]
+    }
+   ],
+   "value": [
+    {
+     "idShort": "SemanticId",
+     "description": [
+      {
+       "language": "en",
+       "text": "What the skill does, as the short form of older AASs states it."
+      }
+     ],
+     "modelType": "Property",
+     "value": "https://smartproductionlab.aau.dk/skills/Release",
+     "valueType": "xs:string"
+    },
+    {
+     "idShort": "Start",
+     "description": [
+      {
+       "language": "en",
+       "text": "One command of a skill: the action that calls it, its Operation, and what it runs."
+      }
+     ],
+     "modelType": "SubmodelElementCollection",
+     "semanticId": {
+      "type": "ExternalReference",
+      "keys": [
+       {
+        "type": "GlobalReference",
+        "value": "https://smartproductionlab.aau.dk/skill/Start"
+       }
+      ]
+     },
+     "value": [
+      {
+       "idShort": "InterfaceReference",
+       "description": [
+        {
+         "language": "en",
+         "text": "The AID action (arso:InterfaceSMC/InteractionMetadata/actions/{action}) that calls the command; in the short form, the action that starts the skill."
+        }
+       ],
+       "modelType": "ReferenceElement",
+       "value": {
+        "type": "ModelReference",
+        "keys": [
+         {
+          "type": "Submodel",
+          "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/AssetInterfacesDescription"
+         },
+         {
+          "type": "SubmodelElementCollection",
+          "value": "interface_opcua"
+         },
+         {
+          "type": "SubmodelElementCollection",
+          "value": "InteractionMetadata"
+         },
+         {
+          "type": "SubmodelElementCollection",
+          "value": "actions"
+         },
+         {
+          "type": "SubmodelElementCollection",
+          "value": "Release"
+         }
+        ]
+       }
+      },
+      {
+       "idShort": "Start",
+       "description": [
+        {
+         "language": "en",
+         "text": "Operation to invoke this skill (delegated via operation delegation)."
+        }
+       ],
+       "modelType": "Operation",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://smartproductionlab.aau.dk/skill/Start"
+         }
+        ]
+       },
+       "qualifiers": [
+        {
+         "value": "http://dmp:8080/submodels/aHR0cHM6Ly9zbWFydHByb2R1Y3Rpb25sYWIuYWF1LmRrL2Fhcy9EaXNwZW5zaW5nU3RhdGlvbkFBUy9zdWJtb2RlbHMvU2tpbGxz/submodel-elements/Release.Start.Start/invoke",
+         "kind": "ConceptQualifier",
+         "valueType": "xs:string",
+         "type": "invocationDelegation"
+        }
+       ],
+       "outputVariables": [
+        {
+         "value": {
+          "idShort": "State",
+          "description": [
+           {
+            "language": "en",
+            "text": "The state of the command being executed"
+           }
+          ],
+          "modelType": "Property",
+          "valueType": "xs:string"
+         }
+        }
+       ],
+       "inoutputVariables": [
+        {
+         "value": {
+          "idShort": "Uuid",
+          "description": [
+           {
+            "language": "en",
+            "text": "The UUID of the command"
+           }
+          ],
+          "modelType": "Property",
+          "valueType": "xs:string"
+         }
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "idShort": "Dispensing",
+   "description": [
+    {
+     "language": "en",
+     "text": "A named skill, an element of the Skills submodel itself, recognised by its semanticId (no idShort — the skill name is user-defined)."
+    }
+   ],
+   "modelType": "SubmodelElementCollection",
+   "semanticId": {
+    "type": "ExternalReference",
+    "keys": [
+     {
+      "type": "GlobalReference",
+      "value": "https://smartproductionlab.aau.dk/skill"
+     }
+    ]
+   },
+   "supplementalSemanticIds": [
+    {
+     "type": "ExternalReference",
+     "keys": [
+      {
+       "type": "GlobalReference",
+       "value": "https://smartproductionlab.aau.dk/skill/Primitive"
+      }
+     ]
+    }
+   ],
+   "value": [
+    {
+     "idShort": "SemanticId",
+     "description": [
+      {
+       "language": "en",
+       "text": "What the skill does, as the short form of older AASs states it."
+      }
+     ],
+     "modelType": "Property",
+     "value": "https://smartproductionlab.aau.dk/skills/Dispensing",
+     "valueType": "xs:string"
+    },
+    {
+     "idShort": "Start",
+     "description": [
+      {
+       "language": "en",
+       "text": "One command of a skill: the action that calls it, its Operation, and what it runs."
+      }
+     ],
+     "modelType": "SubmodelElementCollection",
+     "semanticId": {
+      "type": "ExternalReference",
+      "keys": [
+       {
+        "type": "GlobalReference",
+        "value": "https://smartproductionlab.aau.dk/skill/Start"
+       }
+      ]
+     },
+     "value": [
+      {
+       "idShort": "InterfaceReference",
+       "description": [
+        {
+         "language": "en",
+         "text": "The AID action (arso:InterfaceSMC/InteractionMetadata/actions/{action}) that calls the command; in the short form, the action that starts the skill."
+        }
+       ],
+       "modelType": "ReferenceElement",
+       "value": {
+        "type": "ModelReference",
+        "keys": [
+         {
+          "type": "Submodel",
+          "value": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/AssetInterfacesDescription"
+         },
+         {
+          "type": "SubmodelElementCollection",
+          "value": "interface_opcua"
+         },
+         {
+          "type": "SubmodelElementCollection",
+          "value": "InteractionMetadata"
+         },
+         {
+          "type": "SubmodelElementCollection",
+          "value": "actions"
+         },
+         {
+          "type": "SubmodelElementCollection",
+          "value": "Dispensing"
+         }
+        ]
+       }
+      },
+      {
+       "idShort": "Start",
+       "description": [
+        {
+         "language": "en",
+         "text": "Operation to invoke this skill (delegated via operation delegation)."
+        }
+       ],
+       "modelType": "Operation",
+       "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+         {
+          "type": "GlobalReference",
+          "value": "https://smartproductionlab.aau.dk/skill/Start"
+         }
+        ]
+       },
+       "qualifiers": [
+        {
+         "value": "http://dmp:8080/submodels/aHR0cHM6Ly9zbWFydHByb2R1Y3Rpb25sYWIuYWF1LmRrL2Fhcy9EaXNwZW5zaW5nU3RhdGlvbkFBUy9zdWJtb2RlbHMvU2tpbGxz/submodel-elements/Dispensing.Start.Start/invoke",
+         "kind": "ConceptQualifier",
+         "valueType": "xs:string",
+         "type": "invocationDelegation"
+        }
+       ],
+       "inputVariables": [
+        {
+         "value": {
+          "idShort": "Volume",
+          "description": [
+           {
+            "language": "en",
+            "text": "The volume to dispense in ml"
+           }
+          ],
+          "modelType": "Property",
+          "semanticId": {
+           "type": "ExternalReference",
+           "keys": [
+            {
+             "type": "GlobalReference",
+             "value": "https://smartproductionlab.aau.dk/aas/OperationVariable/Parameter/1/0"
+            }
+           ]
+          },
+          "supplementalSemanticIds": [
+           {
+            "type": "ExternalReference",
+            "keys": [
+             {
+              "type": "GlobalReference",
+              "value": "https://smartproductionlab.aau.dk/semantics/Volume"
+             }
+            ]
+           }
+          ],
+          "qualifiers": [
+           {
+            "semanticId": {
+             "type": "ExternalReference",
+             "keys": [
+              {
+               "type": "GlobalReference",
+               "value": "https://smartproductionlab.aau.dk/aas/OperationVariable/AcceptsReference/1/0"
+              }
+             ]
+            },
+            "value": "true",
+            "kind": "ConceptQualifier",
+            "valueType": "xs:boolean",
+            "type": "AcceptsReference"
+           }
+          ],
+          "value": "1.0",
+          "valueType": "xs:double"
+         }
+        }
+       ],
+       "outputVariables": [
+        {
+         "value": {
+          "idShort": "State",
+          "description": [
+           {
+            "language": "en",
+            "text": "The state of the command being executed"
+           }
+          ],
+          "modelType": "Property",
+          "valueType": "xs:string"
+         }
+        },
+        {
+         "value": {
+          "idShort": "Outcome",
+          "modelType": "Property",
+          "qualifiers": [
+           {
+            "semanticId": {
+             "type": "ExternalReference",
+             "keys": [
+              {
+               "type": "GlobalReference",
+               "value": "https://smartproductionlab.aau.dk/aas/OperationVariable/Optional/1/0"
+              }
+             ]
+            },
+            "value": "true",
+            "kind": "ConceptQualifier",
+            "valueType": "xs:boolean",
+            "type": "Optional"
+           }
+          ],
+          "value": "0",
+          "valueType": "xs:integer"
+         }
+        }
+       ],
+       "inoutputVariables": [
+        {
+         "value": {
+          "idShort": "Uuid",
+          "description": [
+           {
+            "language": "en",
+            "text": "The UUID of the command"
+           }
+          ],
+          "modelType": "Property",
+          "valueType": "xs:string"
+         }
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "idShort": "Errors",
+   "description": [
+    {
+     "language": "en",
+     "text": "What the ErrorID in the answer of an Operation can be: one property per error."
+    }
+   ],
+   "modelType": "SubmodelElementCollection"
+  }
+ ]
+}

@@ -1,0 +1,70 @@
+system,scenario,label,payload_bytes,acknowledged,p25_ms,p50_ms,p75_ms
+dmp,aas-property,AAS-Camel-DMP to the AAS repository,256,600,5.652489,6.061048,6.92870475
+dmp,aas-property,AAS-Camel-DMP to the AAS repository,512,600,5.7235075,6.1409945,6.79536625
+dmp,aas-property,AAS-Camel-DMP to the AAS repository,1024,600,5.53046975,6.1161695,7.04332475
+dmp,aas-property,AAS-Camel-DMP to the AAS repository,2048,600,6.08311475,6.5201340000000005,7.220312249999999
+dmp,aas-property,AAS-Camel-DMP to the AAS repository,4096,600,6.149413,6.626605,7.52370825
+dmp,aas-property,AAS-Camel-DMP to the AAS repository,8192,600,5.9101295,6.5323645,7.369823
+dmp,aas-property,AAS-Camel-DMP to the AAS repository,16384,600,6.34185525,6.906013,7.76868475
+dmp,aas-property,AAS-Camel-DMP to the AAS repository,32768,600,6.298377,6.7420455,7.4678059999999995
+dmp,aas-property,AAS-Camel-DMP to the AAS repository,65536,600,7.1669755,7.7117345,8.6611125
+dmp,aas-property,AAS-Camel-DMP to the AAS repository,131072,600,7.813617750000001,8.409259,9.18676675
+dmp,aas-property,AAS-Camel-DMP to the AAS repository,262144,600,9.9052065,10.447779,11.4001115
+dmp,aas-property,AAS-Camel-DMP to the AAS repository,524288,600,15.5895735,16.5286705,17.79767175
+dmp,aas-property,AAS-Camel-DMP to the AAS repository,1048576,600,23.177782,25.2205625,28.18305225
+dmp,aas-property,AAS-Camel-DMP to the AAS repository,2097152,600,41.947914749999995,43.18503,44.68690925
+databridge,aas-property,BaSyx DataBridge,256,600,6.01525125,6.536587,7.296493
+databridge,aas-property,BaSyx DataBridge,512,600,5.74548575,6.559832500000001,7.1310155
+databridge,aas-property,BaSyx DataBridge,1024,600,5.784575,6.3449085,7.1831305
+databridge,aas-property,BaSyx DataBridge,2048,600,5.64904325,6.1464669999999995,6.891023
+databridge,aas-property,BaSyx DataBridge,4096,600,6.2718757499999995,6.726134,7.64798725
+databridge,aas-property,BaSyx DataBridge,8192,600,6.22981925,6.6345465,7.509102
+databridge,aas-property,BaSyx DataBridge,16384,600,5.94354925,6.5402365,7.292213
+databridge,aas-property,BaSyx DataBridge,32768,600,6.6998922499999995,7.221581,8.039762249999999
+databridge,aas-property,BaSyx DataBridge,65536,600,7.19883875,7.8303495000000005,8.6031995
+databridge,aas-property,BaSyx DataBridge,131072,600,7.786054999999999,8.4575195,9.345792
+databridge,aas-property,BaSyx DataBridge,262144,600,11.25836925,11.9266255,12.9362325
+databridge,aas-property,BaSyx DataBridge,524288,600,15.694727499999999,17.404175000000002,18.635541
+databridge,aas-property,BaSyx DataBridge,1048576,600,29.47105325,32.064343,34.97505225
+databridge,aas-property,BaSyx DataBridge,2097152,600,46.15283075,48.073395,51.071283
+nodered-dmp,aas-property,nodered-dmp,256,600,6.314381,6.8581075,7.583533500000001
+nodered-dmp,aas-property,nodered-dmp,512,600,6.9484385,7.496873,8.33901125
+nodered-dmp,aas-property,nodered-dmp,1024,600,6.619128249999999,7.554714,8.403636
+nodered-dmp,aas-property,nodered-dmp,2048,600,7.02242375,7.6913825,8.4838415
+nodered-dmp,aas-property,nodered-dmp,4096,600,7.08614925,7.7663575,8.68631275
+nodered-dmp,aas-property,nodered-dmp,8192,600,7.112705,7.648333,8.6163645
+nodered-dmp,aas-property,nodered-dmp,16384,600,7.1842965,7.836368,8.6677475
+nodered-dmp,aas-property,nodered-dmp,32768,600,7.67820025,8.280454500000001,9.10691975
+nodered-dmp,aas-property,nodered-dmp,65536,600,7.91880525,8.596748,9.800023249999999
+nodered-dmp,aas-property,nodered-dmp,131072,600,9.05040425,9.6699225,10.748740000000002
+nodered-dmp,aas-property,nodered-dmp,262144,600,10.98235875,11.6988315,12.5480225
+nodered-dmp,aas-property,nodered-dmp,524288,600,16.23787475,17.488443,19.892296
+nodered-dmp,aas-property,nodered-dmp,1048576,600,24.9460915,26.452406,28.673205
+nodered-dmp,aas-property,nodered-dmp,2097152,600,48.043308499999995,52.6676505,57.72577725
+dmp,influxdb-segment,AAS-Camel-DMP to InfluxDB 2,256,600,3.4990437500000002,3.6446435,3.78548625
+dmp,influxdb-segment,AAS-Camel-DMP to InfluxDB 2,512,600,3.17041275,3.5400970000000003,3.7413534999999998
+dmp,influxdb-segment,AAS-Camel-DMP to InfluxDB 2,1024,600,3.478279,3.6719910000000002,3.880916
+dmp,influxdb-segment,AAS-Camel-DMP to InfluxDB 2,2048,600,3.4317265,3.670858,3.8771762499999998
+dmp,influxdb-segment,AAS-Camel-DMP to InfluxDB 2,4096,600,3.45640075,3.703227,3.8887572500000003
+dmp,influxdb-segment,AAS-Camel-DMP to InfluxDB 2,8192,600,3.627217,3.8325329999999997,4.04947925
+dmp,influxdb-segment,AAS-Camel-DMP to InfluxDB 2,16384,600,3.63876825,3.8248,4.02729525
+dmp,influxdb-segment,AAS-Camel-DMP to InfluxDB 2,32768,600,4.18037275,4.332945499999999,4.51517325
+dmp,influxdb-segment,AAS-Camel-DMP to InfluxDB 2,65536,600,4.168332250000001,4.471629500000001,4.755522
+dmp,influxdb-segment,AAS-Camel-DMP to InfluxDB 2,131072,600,5.65326625,5.948691,6.430331499999999
+dmp,influxdb-segment,AAS-Camel-DMP to InfluxDB 2,262144,600,7.2873065,7.945878499999999,8.793543
+dmp,influxdb-segment,AAS-Camel-DMP to InfluxDB 2,524288,600,12.317747,13.7417355,15.43319125
+dmp,influxdb-segment,AAS-Camel-DMP to InfluxDB 2,1048576,600,22.26047225,25.182999000000002,58.4011475
+patch,aas-property,BaSyx PATCH alone (reference),256,600,4.77725575,5.2090335,6.00577425
+patch,aas-property,BaSyx PATCH alone (reference),512,600,4.8121575,5.4133595,6.15262075
+patch,aas-property,BaSyx PATCH alone (reference),1024,600,4.45273225,4.967529000000001,5.49909375
+patch,aas-property,BaSyx PATCH alone (reference),2048,600,4.763741,5.2114285,5.86092425
+patch,aas-property,BaSyx PATCH alone (reference),4096,600,4.3778245,4.860049500000001,5.373862750000001
+patch,aas-property,BaSyx PATCH alone (reference),8192,600,5.04599125,5.448874999999999,6.0531355
+patch,aas-property,BaSyx PATCH alone (reference),16384,600,4.992762,5.492637,6.105252999999999
+patch,aas-property,BaSyx PATCH alone (reference),32768,600,4.67734775,5.2134955000000005,5.99178475
+patch,aas-property,BaSyx PATCH alone (reference),65536,600,5.1413025,5.5158380000000005,6.18718775
+patch,aas-property,BaSyx PATCH alone (reference),131072,600,6.278253250000001,6.854183,7.5548945
+patch,aas-property,BaSyx PATCH alone (reference),262144,600,7.5960227499999995,8.33342,9.209515
+patch,aas-property,BaSyx PATCH alone (reference),524288,600,11.632380000000001,12.899829,14.3242575
+patch,aas-property,BaSyx PATCH alone (reference),1048576,600,15.769943249999999,16.7089255,17.72622925
+patch,aas-property,BaSyx PATCH alone (reference),2097152,600,25.4579055,26.7692185,28.477384

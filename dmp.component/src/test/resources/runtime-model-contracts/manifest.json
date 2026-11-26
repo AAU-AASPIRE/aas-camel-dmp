@@ -1,0 +1,540 @@
+{
+ "formatVersion": 2,
+ "generator": "aas-camel-dmp/fixtures/contracts.py",
+ "note": "generated; do not edit. Regenerate when the DMP's reading of the models changes and review every changed compile outcome.",
+ "cases": [
+  {
+   "name": "aas-property-event",
+   "description": "an AAS Property source, observed through change events",
+   "aimc": "aas-property-event/aimc.json",
+   "aid": "aas-property-event/aid.json",
+   "expected": "aas-property-event/expected.json",
+   "dependencies": [
+    {
+     "id": "a/submodels/Runtime",
+     "path": "dependencies/0.json"
+    },
+    {
+     "id": "contractAAS/submodels/KPI",
+     "path": "dependencies/1.json"
+    }
+   ],
+   "compiles": true
+  },
+  {
+   "name": "aas-property-poll",
+   "description": "an AAS Property source, polled",
+   "aimc": "aas-property-poll/aimc.json",
+   "aid": "aas-property-poll/aid.json",
+   "expected": "aas-property-poll/expected.json",
+   "dependencies": [
+    {
+     "id": "a/submodels/Runtime",
+     "path": "dependencies/0.json"
+    },
+    {
+     "id": "contractAAS/submodels/KPI",
+     "path": "dependencies/1.json"
+    }
+   ],
+   "compiles": true
+  },
+  {
+   "name": "aas-collection-poll",
+   "description": "an AAS SubmodelElementCollection source, polled",
+   "aimc": "aas-collection-poll/aimc.json",
+   "aid": "aas-collection-poll/aid.json",
+   "expected": "aas-collection-poll/expected.json",
+   "dependencies": [
+    {
+     "id": "a/submodels/Runtime",
+     "path": "dependencies/0.json"
+    },
+    {
+     "id": "contractAAS/submodels/KPI",
+     "path": "dependencies/1.json"
+    }
+   ],
+   "compiles": true
+  },
+  {
+   "name": "opcua-read",
+   "description": "a polled OPC UA variable",
+   "aimc": "opcua-read/aimc.json",
+   "aid": "opcua-read/aid.json",
+   "expected": "opcua-read/expected.json",
+   "dependencies": [
+    {
+     "id": "contractAAS/submodels/KPI",
+     "path": "dependencies/0.json"
+    }
+   ],
+   "compiles": true
+  },
+  {
+   "name": "http-poll",
+   "description": "a polled HTTP resource",
+   "aimc": "http-poll/aimc.json",
+   "aid": "http-poll/aid.json",
+   "expected": "http-poll/expected.json",
+   "dependencies": [
+    {
+     "id": "contractAAS/submodels/KPI",
+     "path": "dependencies/0.json"
+    }
+   ],
+   "compiles": true
+  },
+  {
+   "name": "plc4x",
+   "description": "a Modbus coil read and written through PLC4X",
+   "aimc": "plc4x/aimc.json",
+   "aid": "plc4x/aid.json",
+   "expected": "plc4x/expected.json",
+   "dependencies": [],
+   "compiles": true
+  },
+  {
+   "name": "fine-path",
+   "description": "a reference into an MQTT payload's schema",
+   "aimc": "fine-path/aimc.json",
+   "aid": "fine-path/aid.json",
+   "expected": "fine-path/expected.json",
+   "dependencies": [],
+   "compiles": true
+  },
+  {
+   "name": "fine-protocols",
+   "description": "references into HTTP and OPC UA schemas",
+   "aimc": "fine-protocols/aimc.json",
+   "aid": "fine-protocols/aid.json",
+   "expected": "fine-protocols/expected.json",
+   "dependencies": [],
+   "compiles": true
+  },
+  {
+   "name": "snmp",
+   "description": "an SNMP object read with GET, another written with SET",
+   "aimc": "snmp/aimc.json",
+   "aid": "snmp/aid.json",
+   "expected": "snmp/expected.json",
+   "dependencies": [
+    {
+     "id": "contractAAS/submodels/KPI",
+     "path": "dependencies/0.json"
+    }
+   ],
+   "compiles": true
+  },
+  {
+   "name": "fan-in-out",
+   "description": "two MQTT sources into two AAS sinks",
+   "aimc": "fan-in-out/aimc.json",
+   "aid": "fan-in-out/aid.json",
+   "expected": "fan-in-out/expected.json",
+   "dependencies": [
+    {
+     "id": "contractAAS/submodels/KPI",
+     "path": "dependencies/0.json"
+    }
+   ],
+   "compiles": true
+  },
+  {
+   "name": "opcua-method",
+   "description": "an Operation bound to an OPC UA Method",
+   "aimc": "opcua-method/aimc.json",
+   "aid": "opcua-method/aid.json",
+   "expected": "opcua-method/expected.json",
+   "dependencies": [
+    {
+     "id": "a/submodels/Skills",
+     "path": "dependencies/0.json"
+    }
+   ],
+   "compiles": true
+  },
+  {
+   "name": "http-operation",
+   "description": "an Operation bound to an HTTP action",
+   "aimc": "http-operation/aimc.json",
+   "aid": "http-operation/aid.json",
+   "expected": "http-operation/expected.json",
+   "dependencies": [
+    {
+     "id": "a/submodels/Skills",
+     "path": "dependencies/0.json"
+    }
+   ],
+   "compiles": true
+  },
+  {
+   "name": "grouped-action",
+   "description": "an Operation whose sinks fill members of one MQTT 5 request/reply action",
+   "aimc": "grouped-action/aimc.json",
+   "aid": "grouped-action/aid.json",
+   "expected": "grouped-action/expected.json",
+   "dependencies": [
+    {
+     "id": "contractAAS/submodels/Skills",
+     "path": "dependencies/0.json"
+    }
+   ],
+   "compiles": true
+  },
+  {
+   "name": "td-data-schemas",
+   "description": "an Operation whose action schemas use the TD DataSchema terms AID marks EXTERNAL",
+   "aimc": "td-data-schemas/aimc.json",
+   "aid": "td-data-schemas/aid.json",
+   "expected": "td-data-schemas/expected.json",
+   "dependencies": [
+    {
+     "id": "contractAAS/submodels/Skills",
+     "path": "dependencies/0.json"
+    }
+   ],
+   "compiles": true
+  },
+  {
+   "name": "projection-extensions",
+   "description": "the AIMC extensions project; an Operation sinking into an AAS Property is not a bridge the DMP compiles",
+   "aimc": "projection-extensions/aimc.json",
+   "aid": "projection-extensions/aid.json",
+   "expected": "projection-extensions/expected.json",
+   "dependencies": [
+    {
+     "id": "a/submodels/Skills",
+     "path": "dependencies/0.json"
+    },
+    {
+     "id": "contractAAS/submodels/KPI",
+     "path": "dependencies/1.json"
+    }
+   ],
+   "compiles": false
+  },
+  {
+   "name": "stoppering",
+   "description": "the stopperingStation resource of aas-model",
+   "aimc": "stoppering/aimc.json",
+   "aid": "stoppering/aid.json",
+   "expected": "stoppering/expected.json",
+   "dependencies": [
+    {
+     "id": "https://smartproductionlab.aau.dk/aas/StopperingStationAAS/submodels/Variables",
+     "path": "dependencies/0.json"
+    },
+    {
+     "id": "https://smartproductionlab.aau.dk/aas/StopperingStationAAS/submodels/Skills",
+     "path": "dependencies/1.json"
+    }
+   ],
+   "compiles": true
+  },
+  {
+   "name": "station-dispensingStation",
+   "description": "the dispensingStation resource of aas-model",
+   "aimc": "station-dispensingStation/aimc.json",
+   "aid": "station-dispensingStation/aid.json",
+   "expected": "station-dispensingStation/expected.json",
+   "dependencies": [
+    {
+     "id": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/Variables",
+     "path": "dependencies/0.json"
+    },
+    {
+     "id": "https://smartproductionlab.aau.dk/aas/DispensingStationAAS/submodels/Skills",
+     "path": "dependencies/1.json"
+    }
+   ],
+   "compiles": true
+  }
+ ],
+ "resources": {
+  "aas-collection-poll/aid.json": {
+   "byteLength": 9223,
+   "sha256": "c7499eda7cab7cd8b92fcbc0b251d01e6af5376196a8158e8c7796cb38264463"
+  },
+  "aas-collection-poll/aimc.json": {
+   "byteLength": 10723,
+   "sha256": "398dde978574bf54314dc5c29893f32402683cd7486a5410b7676c0c5e656d99"
+  },
+  "aas-collection-poll/dependencies/0.json": {
+   "byteLength": 184,
+   "sha256": "8cea92a672f54abdbace99465f905e85790f7e6a18b40cf846b6b07368b3eb6c"
+  },
+  "aas-collection-poll/dependencies/1.json": {
+   "byteLength": 184,
+   "sha256": "71480e93c852f9abc725a5659bd153696a7ca96728627022546318678aede91f"
+  },
+  "aas-collection-poll/expected.json": {
+   "byteLength": 380,
+   "sha256": "0d68e036a278d0c477eac5d2f7cd8f616c95eee3eb78b3fa087ef8ea0e2ffda6"
+  },
+  "aas-property-event/aid.json": {
+   "byteLength": 9223,
+   "sha256": "c7499eda7cab7cd8b92fcbc0b251d01e6af5376196a8158e8c7796cb38264463"
+  },
+  "aas-property-event/aimc.json": {
+   "byteLength": 9862,
+   "sha256": "41258fa2c782d9ab236eb33a05a9ff5f301cbdf218c873f13459bc13968ed35b"
+  },
+  "aas-property-event/dependencies/0.json": {
+   "byteLength": 196,
+   "sha256": "dae1229d0a4103ace33ab5eada37a2e053297d2c2f625489b78ecff484991f76"
+  },
+  "aas-property-event/dependencies/1.json": {
+   "byteLength": 184,
+   "sha256": "71480e93c852f9abc725a5659bd153696a7ca96728627022546318678aede91f"
+  },
+  "aas-property-event/expected.json": {
+   "byteLength": 380,
+   "sha256": "0d68e036a278d0c477eac5d2f7cd8f616c95eee3eb78b3fa087ef8ea0e2ffda6"
+  },
+  "aas-property-poll/aid.json": {
+   "byteLength": 9223,
+   "sha256": "c7499eda7cab7cd8b92fcbc0b251d01e6af5376196a8158e8c7796cb38264463"
+  },
+  "aas-property-poll/aimc.json": {
+   "byteLength": 10706,
+   "sha256": "b8a6312fb73a139abf08651cd6ad62c37e304e46dc7651503eda3f6252268065"
+  },
+  "aas-property-poll/dependencies/0.json": {
+   "byteLength": 196,
+   "sha256": "dae1229d0a4103ace33ab5eada37a2e053297d2c2f625489b78ecff484991f76"
+  },
+  "aas-property-poll/dependencies/1.json": {
+   "byteLength": 184,
+   "sha256": "71480e93c852f9abc725a5659bd153696a7ca96728627022546318678aede91f"
+  },
+  "aas-property-poll/expected.json": {
+   "byteLength": 380,
+   "sha256": "0d68e036a278d0c477eac5d2f7cd8f616c95eee3eb78b3fa087ef8ea0e2ffda6"
+  },
+  "fan-in-out/aid.json": {
+   "byteLength": 18923,
+   "sha256": "1c40d53a2b08b633ad41f86412a6c1eb0d5a57fe0cea8ae27aeff65dd929adad"
+  },
+  "fan-in-out/aimc.json": {
+   "byteLength": 15855,
+   "sha256": "d5ddaca3645ddb13b8baf8392045d89358e8eddf04f4196930b6a975d51cd5b1"
+  },
+  "fan-in-out/dependencies/0.json": {
+   "byteLength": 261,
+   "sha256": "bea3b89b754306786e02876c288cb4176b3e904655a73a0320896fbc04dce204"
+  },
+  "fan-in-out/expected.json": {
+   "byteLength": 406,
+   "sha256": "8b420dc4307d8673af7bfba1761d6bd1f795a694dc1eaa6ec676d65fe264cf7b"
+  },
+  "fine-path/aid.json": {
+   "byteLength": 17394,
+   "sha256": "a3e0d8109d37e5d0bc471850498bf2adaba6a2a8adbae29354bc5406edeadf8c"
+  },
+  "fine-path/aimc.json": {
+   "byteLength": 10844,
+   "sha256": "57fbf18b475533ed6a15b9d8ace287c4120f0d5c2fb4a49fb9c4e642f6134114"
+  },
+  "fine-path/expected.json": {
+   "byteLength": 383,
+   "sha256": "dea982ae44e6384e0d0978fcc09bd6d5ecbad73925b05daceafd50aff227c1e7"
+  },
+  "fine-protocols/aid.json": {
+   "byteLength": 32301,
+   "sha256": "d9b521b82a28a72094c328f64a28cd2fb7a96056af79beeeb4bdc687b96916d5"
+  },
+  "fine-protocols/aimc.json": {
+   "byteLength": 17936,
+   "sha256": "a80f00e1d1da672dd086e1d731bd26f92bf3dbc97558ccc5e8ab555fd4a30d14"
+  },
+  "fine-protocols/expected.json": {
+   "byteLength": 420,
+   "sha256": "3b542ec1899b5d89a63e24c974ab14b924f81e21aee29289db0542447a645a34"
+  },
+  "grouped-action/aid.json": {
+   "byteLength": 26852,
+   "sha256": "c33124d0a999652393820ab379da4223627a602c065d1c9650243f14673695c6"
+  },
+  "grouped-action/aimc.json": {
+   "byteLength": 13754,
+   "sha256": "cdf11ca6001cb9bf5b6ab0134b0a2137f181c6f5614e6a50efaa496c4c4524c8"
+  },
+  "grouped-action/dependencies/0.json": {
+   "byteLength": 576,
+   "sha256": "b619ddf86b09739539fb91b471f1f5223f51cde9792ce147f257a98780c687f9"
+  },
+  "grouped-action/expected.json": {
+   "byteLength": 388,
+   "sha256": "2af82a329f8b3c6e1a87d126645e622dd317b553e45a774dd30b9cef10b42a5b"
+  },
+  "http-operation/aid.json": {
+   "byteLength": 12986,
+   "sha256": "112e88c7a22b9477d07aa4c657c803c179b4f5739b525fda8492267a339e04c8"
+  },
+  "http-operation/aimc.json": {
+   "byteLength": 10580,
+   "sha256": "703948e9e14d08193886270f2e69a094cc5af5136bfdaed50ed2f943cc9e1bb0"
+  },
+  "http-operation/dependencies/0.json": {
+   "byteLength": 569,
+   "sha256": "3713caaea4a1682c863f6028372e84e7a25c0159681b854d68722a2552b0913f"
+  },
+  "http-operation/expected.json": {
+   "byteLength": 386,
+   "sha256": "6aff72064cd2ca4d5c41c68f188b008f34a9131fbc5adcd9126c0a40280851c6"
+  },
+  "http-poll/aid.json": {
+   "byteLength": 12404,
+   "sha256": "dd6b3803ac3c727f007dc7da113084d21573722a2f98c618e5cbbadfd3708c3a"
+  },
+  "http-poll/aimc.json": {
+   "byteLength": 11099,
+   "sha256": "d1ef38445a0a15ad87a22c63b19777fa16704c5a63d89ae9e52452fc5b14d15b"
+  },
+  "http-poll/dependencies/0.json": {
+   "byteLength": 184,
+   "sha256": "71480e93c852f9abc725a5659bd153696a7ca96728627022546318678aede91f"
+  },
+  "http-poll/expected.json": {
+   "byteLength": 383,
+   "sha256": "bb32dc9d5396cf176840385de64c4df0667d1d4f006623c30d74ca4b9ad20bf6"
+  },
+  "opcua-method/aid.json": {
+   "byteLength": 13030,
+   "sha256": "e920f47a98beb8b8ca4f39e8744c6f5984c4c7ed48017c3cffec524ef6fed58c"
+  },
+  "opcua-method/aimc.json": {
+   "byteLength": 10599,
+   "sha256": "f5a742b484e8ad81c4d61109486a3b7a2705bedeb2a42d29240a34b3d414e9c5"
+  },
+  "opcua-method/dependencies/0.json": {
+   "byteLength": 571,
+   "sha256": "77c3914744400f479495205414cae537bda515fb63316519ccfee9e3864d330c"
+  },
+  "opcua-method/expected.json": {
+   "byteLength": 390,
+   "sha256": "2dcedec89c9efb583f36f576277a96f59ef3ae8afd5121c921dba8ebeda92d7e"
+  },
+  "opcua-read/aid.json": {
+   "byteLength": 12447,
+   "sha256": "22011d81340a416d9fc2ec443cca9beb1404c4586c349860d25635b02b1adfa5"
+  },
+  "opcua-read/aimc.json": {
+   "byteLength": 11100,
+   "sha256": "e59f5e334f73ae5d507bb4a1ca73abd40cc98c2eb7fa5a54ccb6b75421f9ad5b"
+  },
+  "opcua-read/dependencies/0.json": {
+   "byteLength": 184,
+   "sha256": "71480e93c852f9abc725a5659bd153696a7ca96728627022546318678aede91f"
+  },
+  "opcua-read/expected.json": {
+   "byteLength": 383,
+   "sha256": "bb32dc9d5396cf176840385de64c4df0667d1d4f006623c30d74ca4b9ad20bf6"
+  },
+  "plc4x/aid.json": {
+   "byteLength": 12404,
+   "sha256": "8eda8a88cd97044328564358d5ef46fa726c506d99b5e43505af5c2b5a109613"
+  },
+  "plc4x/aimc.json": {
+   "byteLength": 11452,
+   "sha256": "ce4355c1bad15d806705da5d5257f197303392cd9504354d7953d857c0d8c869"
+  },
+  "plc4x/expected.json": {
+   "byteLength": 380,
+   "sha256": "4ba256484015542acce80f2e2b408ac3dbc7b729bcdcb3ace4f9f31a3f8ea98d"
+  },
+  "projection-extensions/aid.json": {
+   "byteLength": 13288,
+   "sha256": "97cf082f1e41064ddab4a7d72497bf87e90db3c338483b010452e3fd253b199c"
+  },
+  "projection-extensions/aimc.json": {
+   "byteLength": 11112,
+   "sha256": "a71a63905719a427aa49ea9e9629da4574e44b30ce6c4451d709117150da23fb"
+  },
+  "projection-extensions/dependencies/0.json": {
+   "byteLength": 566,
+   "sha256": "150c5161b3658e6da1b1ad8e2bbcfea30f8f1d06c656e316d4ed864bd9dd21db"
+  },
+  "projection-extensions/dependencies/1.json": {
+   "byteLength": 196,
+   "sha256": "56f4855d135aa7aef78da28a837cb6d78efe433562a95e50d1e2f743793b02ef"
+  },
+  "projection-extensions/expected.json": {
+   "byteLength": 385,
+   "sha256": "c52fdbdf94bef8a997a520ff31f1bf8732f2c894b0094d1dea0480f2ec499421"
+  },
+  "snmp/aid.json": {
+   "byteLength": 15209,
+   "sha256": "11a13f90c30c674d842b9543bf043a0e877f0476a149ed37cc647b6eb76036c2"
+  },
+  "snmp/aimc.json": {
+   "byteLength": 14020,
+   "sha256": "e9329f327623f1d52a247a47d7fa783a9efd771016047dcfc53db4d2a5392968"
+  },
+  "snmp/dependencies/0.json": {
+   "byteLength": 184,
+   "sha256": "71480e93c852f9abc725a5659bd153696a7ca96728627022546318678aede91f"
+  },
+  "snmp/expected.json": {
+   "byteLength": 396,
+   "sha256": "fe13710f7f83220928e1799665cf5857192c2c27c93ec8ccb751379943073b2d"
+  },
+  "station-dispensingStation/aid.json": {
+   "byteLength": 131697,
+   "sha256": "34a9b9697ae4985dade25ed6cac1921f76832552b94796828507b66979e648ce"
+  },
+  "station-dispensingStation/aimc.json": {
+   "byteLength": 125411,
+   "sha256": "8ccec77f210330d5de12dc6b9be66bcfae5034ac1778ded057d46529d0e46e25"
+  },
+  "station-dispensingStation/dependencies/0.json": {
+   "byteLength": 39651,
+   "sha256": "0296ce5917d24a71302f34643dbfcbec97049de8ba12df05a8a29ed64b1125a6"
+  },
+  "station-dispensingStation/dependencies/1.json": {
+   "byteLength": 18713,
+   "sha256": "6499ba3e1435d9b9ae494a6429f4d5df2baaa5ccbc9614f44234e2f96bdde988"
+  },
+  "station-dispensingStation/expected.json": {
+   "byteLength": 1068,
+   "sha256": "4327147a7e3b8825fbf26603c9a1bbc4a1df7a525055913088a192359ad0f67a"
+  },
+  "stoppering/aid.json": {
+   "byteLength": 129593,
+   "sha256": "113fae3ef516e73bd8a53a3a02ae4c4210ed5119c71efb4e9a0ce1a52c73116a"
+  },
+  "stoppering/aimc.json": {
+   "byteLength": 97800,
+   "sha256": "a5c9b9d5686072b63a0f123c3cbff63be4434caae243e6e90627e0f032929593"
+  },
+  "stoppering/dependencies/0.json": {
+   "byteLength": 31635,
+   "sha256": "e6e860d9f46491916b1b0cc84b725345f43cb3f8f1e06d6202ea680c65f91b3c"
+  },
+  "stoppering/dependencies/1.json": {
+   "byteLength": 17258,
+   "sha256": "ca3f327df1c25783f1df59e4a7f977ddc5b8ecd9c2132c8b9f834e94d0fa7fd7"
+  },
+  "stoppering/expected.json": {
+   "byteLength": 920,
+   "sha256": "6e6fd45ef4555ff3fcd4f06d9f88e6ab36cd8ea80e2248f1f85268472f70e9d8"
+  },
+  "td-data-schemas/aid.json": {
+   "byteLength": 63754,
+   "sha256": "9d3baeeb4fc680f0514641e7fb18a6cb5ae6f6cd2f4fd5198df144f5d217d762"
+  },
+  "td-data-schemas/aimc.json": {
+   "byteLength": 10587,
+   "sha256": "6a1532e0f7ef417333ccb5a3dc0e910f610a507b9d08a834f391ce882b9d1f28"
+  },
+  "td-data-schemas/dependencies/0.json": {
+   "byteLength": 579,
+   "sha256": "cae5e7b28da0bdd9d0a9002c3082f4104e8bfe0f716df30a637de43c59bcd7c6"
+  },
+  "td-data-schemas/expected.json": {
+   "byteLength": 386,
+   "sha256": "241b5da143eca74291211d549ed8f380fd302cba324cabb212915138a08e9f20"
+  }
+ }
+}

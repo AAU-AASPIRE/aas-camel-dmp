@@ -1,0 +1,105 @@
+/* Copyright (C) 2026 the aas-camel-dmp Authors
+ * SPDX-License-Identifier: MIT */
+package dk.aau.smartproductionlab.dmp.core.configuration.route.pipeline;
+
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import dk.aau.smartproductionlab.dmp.core.util.JsonCodec;
+
+import com.networknt.schema.Error;
+import com.networknt.schema.Schema;
+import com.networknt.schema.SchemaRegistry;
+import com.networknt.schema.SpecificationVersion;
+import tools.jackson.databind.json.JsonMapper;
+
+/** Compiled affordance schema guard; the node sets DMP_AFFORDANCE_VALIDATION. */
+public final class AffordanceValidation {
+	private static final Logger LOGGER = LoggerFactory.getLogger(AffordanceValidation.class);
+	private static final JsonMapper MAPPER = JsonMapper.builder().build();
+	private static final SchemaRegistry REGISTRY = SchemaRegistry.withDefaultDialect(SpecificationVersion.DRAFT_2020_12);
+
+	public enum Mode { OFF, ON, REPORT }
+
+	private final Mode mode;
+	private final String label;
+	private final Schema validator;
+
+	public AffordanceValidation(Object schema, String label) {
+		this(schema, label, configuredMode());
+	}
+
+	public AffordanceValidation(Object schema, String label, Mode mode) {
+		this.mode = mode;
+		this.label = label;
+		if (schema != null && !(schema instanceof java.util.Map<?, ?>) && !(schema instanceof Boolean)) {
+			throw new IllegalArgumentException("Invalid JSON Schema for " + label + ": expected object or boolean");
+		}
+		try {
+			// Compile at route build, including in OFF mode: malformed descriptors fail loudly.
+			this.validator = schema == null ? null : REGISTRY.getSchema(MAPPER.<tools.jackson.databind.JsonNode>valueToTree(schema));
+		} catch (RuntimeException e) {
+			throw new IllegalArgumentException("Invalid JSON Schema for " + label, e);
+		}
+	}
+
+	public static Mode configuredMode() {
+		String value = System.getenv().getOrDefault("DMP_AFFORDANCE_VALIDATION", "OFF");
+		try {
+			return Mode.valueOf(value.trim().toUpperCase(java.util.Locale.ROOT));
+		} catch (IllegalArgumentException e) {
+			throw new IllegalArgumentException("DMP_AFFORDANCE_VALIDATION must be OFF, ON or REPORT: " + value, e);
+		}
+	}
+
+	/** Returns false only when an incoming invalid contribution must be dropped. */
+	public boolean incoming(Object value) {
+		return validate(value, false);
+	}
+
+	/** An outgoing invalid payload is a mapping failure, never sent to the endpoint. */
+	public void outgoing(Object value) {
+		if (!validate(value, true)) {
+			throw new PayloadValidationException(
+					PayloadValidationException.Stage.COMMAND,
+					"Invalid outgoing affordance payload for " + label,
+					messages(value).stream().map(Error::getMessage).toList());
+		}
+	}
+
+	/** Correlated synchronous action replies fail their caller instead of being dropped. */
+	public void correlatedResponse(Object value) {
+		if (validator == null || mode == Mode.OFF) {
+			return;
+		}
+		List<Error> violations = messages(value);
+		if (violations.isEmpty()) {
+			return;
+		}
+		LOGGER.warn("response affordance {} violates schema: {}", label, violations);
+		if (mode == Mode.ON) {
+			throw new PayloadValidationException(
+					PayloadValidationException.Stage.RESPONSE,
+					"Device response violates the declared output schema", violations.stream()
+							.map(Error::getMessage).toList());
+		}
+	}
+
+	private boolean validate(Object value, boolean outgoing) {
+		if (validator == null || mode == Mode.OFF) {
+			return true;
+		}
+		List<Error> violations = messages(value);
+		if (violations.isEmpty()) {
+			return true;
+		}
+		LOGGER.warn("{} affordance {} violates schema: {}", outgoing ? "outgoing" : "incoming", label, violations);
+		return mode == Mode.REPORT;
+	}
+
+	private List<Error> messages(Object value) {
+		return validator == null ? List.of()
+				: validator.validate(MAPPER.valueToTree(JsonCodec.toJsonCompatibleValue(value)));
+	}
+}

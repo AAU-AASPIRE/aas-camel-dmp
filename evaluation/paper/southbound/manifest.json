@@ -1,0 +1,138 @@
+{
+  "experiment": "southbound",
+  "config": {
+    "experiment": "southbound",
+    "systems": [
+      "dmp",
+      "native"
+    ],
+    "scenarios": [
+      "write-mqtt",
+      "write-http",
+      "write-opcua",
+      "invoke-mqtt",
+      "invoke-http",
+      "invoke-opcua"
+    ],
+    "event_transports": [
+      "kafka",
+      "mqtt"
+    ],
+    "invoke_via": [
+      "aas",
+      "dmp"
+    ],
+    "payload_bytes": [
+      256
+    ],
+    "schedule": [
+      {
+        "phase": "warmup",
+        "rate": 10,
+        "seconds": 20
+      },
+      {
+        "phase": "measure",
+        "rate": 10,
+        "seconds": 60
+      }
+    ],
+    "seed": 2027,
+    "cooldown_s": 30
+  },
+  "configFile": "experiments/southbound.yaml",
+  "started": "2026-10-30T09:31:03.643088+00:00",
+  "command": [
+    "python",
+    "-m",
+    "harness.run",
+    "experiments/southbound.yaml"
+  ],
+  "repository": {
+    "commit": "b492f0701eee669f366c74bd3c546b0f9e8be691",
+    "evaluationDirty": false
+  },
+  "harness": {
+    "digest": "eff954120a446897b1f4ea2a4256442c34a5a0565808ea2a7e0f7e7b3c1a60ee",
+    "image": "dmp-eval-harness:local",
+    "imageId": "sha256:19c712d42fc8f8be7ae3566122483c13f4feae5113816ef19383d1196979b4f5"
+  },
+  "systemsUnderTest": {
+    "dmp": {
+      "image": "dmp:eval-b492f0701eee",
+      "imageId": "sha256:41688b902ef300245979723caa7ee4d6adbddc4550e1141f9b1c77cfb2c2eb7a",
+      "runtime": "OpenJDK Runtime Environment Temurin-21.0.13+9 (build 21.0.13+9-LTS)",
+      "commit": "b492f0701eee669f366c74bd3c546b0f9e8be691",
+      "dirty": false,
+      "heap": "1g"
+    },
+    "native": {
+      "image": "dmp-eval-harness:local",
+      "implementation": "tools/loadgen.py, tools/invoke.py to the device"
+    }
+  },
+  "scenarios": {
+    "aasModelCommit": "bd73e4088ca057fbadc06c07187cdf19c385ce60",
+    "sha256": {
+      "aas-property": "055c8851fe4404b5c9e4f1395c19ae6b95a3c2a8835b4621b2628f5f3e744e75",
+      "influxdb-segment": "52e67ba36df6e5d4b45a584530278580b127488cf854f7e94418207a1460dccc",
+      "write-mqtt": "228a42a19007c996c4603078de16c964d83c36250e29d232fd7478e4460502a0",
+      "write-http": "8b90f4239f25cd21590c76701cf732505a0d283fe0681df4290d4475f896ab70",
+      "write-opcua": "cf52218b0e885abec1baa06f7f88d93b24bd22b82d02f293767a885149a145ef",
+      "invoke-mqtt": "80a003a3c7b28b4f4bc893f2bf2c4df6b1092b8e087ef703ca88d0194ade6b62",
+      "invoke-http": "301f2a8d4ea377b2b49f4e66e0a8c83f7b25daa91af064a91b8136da544fa71a",
+      "invoke-opcua": "19e40e6e13c0a0d9603bd2809729feee9d5be9e6b875d883457ae0c762d12d8d"
+    }
+  },
+  "testbedImages": [
+    "confluentinc/cp-kafka:7.9.1@sha256:632e5f09affa3fe2a044da044ec4b40542a7aea5c48ac6eb13d42bc78ec9c9b5",
+    "dmp:eval",
+    "eclipse-mosquitto:2@sha256:a908c65cc8e67ec9d292ef27c2c0360dbaaee7eb1b935cdd194e67697f15dea1",
+    "eclipsebasyx/aas-environment:2.0.0-SNAPSHOT@sha256:88fc71ccc6074c7d80f0b49ce83685eeb756bc9ee0829a8b9acc91b0f65a4bc5",
+    "eclipsebasyx/databridge:1.0.0-milestone-08@sha256:206bc8a68ea73e06dac7d048c0bd9c4133697b7872790bf4b7bee44a10f1c16b",
+    "influxdb:2.7.12@sha256:b8d940ca9376f85118260f5b6bd236b8a00b1749c3350c5578d4cde8e27f31f2",
+    "mongo:5.0.10@sha256:ff4050d808f943c0835c0aa24cce07afd86193253713020ca399a2b6c7840a03",
+    "nodered/node-red:5.0.8@sha256:b5adb6c9dd29ab80c852d82bc87daed84e729dcff9b00ca1bf958e6de470f2c1"
+  ],
+  "limits": {
+    "cpus": "2",
+    "memory": "2g",
+    "cpusets": {
+      "systemUnderTest": "0-3",
+      "infrastructure": "4-7",
+      "tools": "8-15"
+    }
+  },
+  "host": {
+    "cpu": "13th Gen Intel(R) Core(TM) i7-1360P",
+    "cores": 16,
+    "memoryBytes": 33294876672,
+    "kernel": "7.0.0-42-generic",
+    "os": "Ubuntu 24.04.5 LTS",
+    "docker": "28.4.0",
+    "compose": "2.39.2",
+    "governor": "powersave"
+  },
+  "otherContainers": [],
+  "points": [
+    "native-invoke-opcua-256B",
+    "native-invoke-http-256B",
+    "native-write-mqtt-256B",
+    "dmp-invoke-http-aas-256B",
+    "dmp-write-mqtt-mqtt-256B",
+    "dmp-write-opcua-kafka-256B",
+    "dmp-invoke-mqtt-dmp-256B",
+    "dmp-invoke-http-dmp-256B",
+    "dmp-invoke-opcua-dmp-256B",
+    "native-invoke-mqtt-256B",
+    "native-write-http-256B",
+    "dmp-invoke-mqtt-aas-256B",
+    "dmp-write-opcua-mqtt-256B",
+    "dmp-invoke-opcua-aas-256B",
+    "dmp-write-mqtt-kafka-256B",
+    "dmp-write-http-kafka-256B",
+    "native-write-opcua-256B",
+    "dmp-write-http-mqtt-256B"
+  ],
+  "run": "20261030T093039Z"
+}

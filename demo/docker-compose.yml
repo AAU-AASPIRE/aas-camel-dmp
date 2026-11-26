@@ -1,0 +1,104 @@
+# A simulated filling station with its AAS, served by BaSyx and connected by the DMP.
+#
+#   docker compose up --build
+#
+# BaSyx loads the station's AAS (aas/filling-station.json) at startup. The DMP
+# reads its AIMC, connects to the station's OPC UA server, writes the station's
+# state and weight to InfluxDB, and serves the station's skills (Occupy,
+# Dispensing, Release, Halt) as AAS Operations that BaSyx delegates to it.
+
+name: aas-camel-dmp-demo
+
+services:
+  aas-env:
+    image: eclipsebasyx/aas-environment:2.0.0-SNAPSHOT-521472d@sha256:88fc71ccc6074c7d80f0b49ce83685eeb756bc9ee0829a8b9acc91b0f65a4bc5
+    environment:
+      - SERVER_PORT=8081
+      - BASYX_BACKEND=InMemory
+      - BASYX_ENVIRONMENT=file:/application/aas
+      - BASYX_EXTERNALURL=http://localhost:8081
+      - BASYX_CORS_ALLOWED_ORIGINS=*
+      - BASYX_CORS_ALLOWED_METHODS=GET,POST,PATCH,DELETE,PUT,OPTIONS,HEAD
+      # Submodel change events on MQTT, which the DMP follows.
+      - BASYX_SUBMODELREPOSITORY_FEATURE_MQTT_ENABLED=true
+      - MQTT_HOSTNAME=mosquitto
+      - MQTT_PORT=1883
+      - MQTT_CLIENTID=aas-env
+      # BaSyx delegates an Operation to a private address only if it is allowlisted.
+      - BASYX_SUBMODELREPOSITORY_FEATURE_OPERATION_DELEGATION_SECURITY_ALLOWLIST_HOSTS=dmp
+      - BASYX_SUBMODELREPOSITORY_FEATURE_OPERATION_DELEGATION_SECURITY_ALLOWLIST_PORTS=8080
+    volumes:
+      - ./aas:/application/aas:ro
+    ports:
+      - "127.0.0.1:8081:8081"
+    depends_on:
+      mosquitto:
+        condition: service_healthy
+
+  aas-web-ui:
+    image: eclipsebasyx/aas-gui:v2-261013@sha256:84b46bf73b6b6b8f7b9af6abe63b8d3b1509bc918ad29ccf31f014234fd307d7
+    environment:
+      - AAS_REPO_PATH=http://localhost:8081/shells
+      - SUBMODEL_REPO_PATH=http://localhost:8081/submodels
+      - CD_REPO_PATH=http://localhost:8081/concept-descriptions
+    ports:
+      - "127.0.0.1:${UI_PORT:-3000}:3000"
+
+  dmp:
+    build: ..
+    image: aas-camel-dmp:demo
+    environment:
+      - DMP_MANAGED_AAS_REPOSITORY_URI=http://aas-env:8081
+      - DMP_MANAGED_EVENT_TRANSPORT=mqtt
+      - DMP_MANAGED_MQTT_BROKER_URI=tcp://mosquitto:1883
+      - DMP_INFLUX_URL=http://influxdb:8086
+      - DMP_INFLUX_ORG=ap2030
+      - DMP_INFLUX_TOKEN=demo-token
+    ports:
+      - "127.0.0.1:8080:8080"
+    depends_on:
+      aas-env:
+        condition: service_started
+      influxdb:
+        condition: service_healthy
+
+  filling-station:
+    build: station
+    environment:
+      - MQTT_BROKER=mosquitto
+      - OPCUA_ADVERTISED_ENDPOINT=opc.tcp://filling-station:4840/dispensing/
+    ports:
+      - "127.0.0.1:4840:4840"
+    depends_on:
+      mosquitto:
+        condition: service_healthy
+
+  # The station's TimeSeries segments (org and bucket as its AAS names them).
+  influxdb:
+    image: influxdb:2.7.12@sha256:b8d940ca9376f85118260f5b6bd236b8a00b1749c3350c5578d4cde8e27f31f2
+    environment:
+      - DOCKER_INFLUXDB_INIT_MODE=setup
+      - DOCKER_INFLUXDB_INIT_USERNAME=demo
+      - DOCKER_INFLUXDB_INIT_PASSWORD=demo-password
+      - DOCKER_INFLUXDB_INIT_ORG=ap2030
+      - DOCKER_INFLUXDB_INIT_BUCKET=ap2030
+      - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=demo-token
+    ports:
+      - "127.0.0.1:8086:8086"
+    healthcheck:
+      test: ["CMD", "influx", "ping", "--host", "http://localhost:8086"]
+      interval: 2s
+      timeout: 5s
+      retries: 60
+
+  mosquitto:
+    image: eclipse-mosquitto:2@sha256:a908c65cc8e67ec9d292ef27c2c0360dbaaee7eb1b935cdd194e67697f15dea1
+    volumes:
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+    ports:
+      - "127.0.0.1:1883:1883"
+    healthcheck:
+      test: ["CMD-SHELL", "mosquitto_pub -h localhost -p 1883 -t demo/probe -m ok || exit 1"]
+      interval: 2s
+      timeout: 5s
+      retries: 30

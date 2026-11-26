@@ -1,0 +1,13 @@
+AAS-Camel-DMP
+
+This project is derived from Eclipse BaSyx DataBridge
+(https://github.com/eclipse-basyx/basyx-databridge), Copyright (C) 2021-2024
+the Eclipse BaSyx Authors, licensed under the MIT License. Source files that
+originate from it keep their original copyright notice.
+
+The string-pattern matcher in dmp.camel-lua is a port of Lua 5.2's lstrlib.c,
+Copyright (C) 1994-2015 Lua.org, PUC-Rio, licensed under the MIT License.
+
+demo/station is the simulated IMA dispensing station of the AP2030-UNS lab
+(https://github.com/AAUSmartProductionLab/AP2030-UNS), Copyright (c) 2024
+Aalborg University Smart Lab, licensed under the MIT License.

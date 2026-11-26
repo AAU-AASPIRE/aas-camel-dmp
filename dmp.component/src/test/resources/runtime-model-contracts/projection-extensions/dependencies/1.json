@@ -1,0 +1,12 @@
+{
+ "idShort": "KPI",
+ "modelType": "Submodel",
+ "id": "contractAAS/submodels/KPI",
+ "submodelElements": [
+  {
+   "idShort": "Out",
+   "modelType": "Property",
+   "valueType": "xs:string"
+  }
+ ]
+}
