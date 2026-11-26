@@ -12,8 +12,8 @@ when the DMP's reading of the models changes, not with every aas-model change:
 
     uv run python -m contracts
 
-Whether the DMP compiles every resource of the current aas-model is not a fixture: the repository that pins both
-(AP2030-UNS, ``scripts/check_dmp_compiles_models.sh``) writes the whole catalog to a temporary directory and runs
+Whether the DMP compiles every resource of the current aas-model is not a fixture: deploy, with both beside it
+(``scripts/check_dmp_compiles_models.sh``, in its stack workflow), writes the whole catalog to a temporary directory and runs
 ``RawModelContractFixtureTest`` on it (``-Ddmp.contracts.dir``):
 
     python -m contracts --catalog --out DIR
